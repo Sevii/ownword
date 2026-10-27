@@ -1,0 +1,43 @@
+{
+  "id": "email-0008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "hiring manager",
+  "markdown": "Hello Ms. Rivera,\n\nI am writing to follow up on my application for the junior analyst position. I submitted my materials on September 9 and wanted to make sure they were recieved.\n\nI remain very interested in the role and would welcome the chance to discuss my experiance with financial modeling.\n\nKind regards,\nDaniel Cho",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "experiance",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "experience"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "September 9",
+    "Daniel Cho",
+    "junior analyst"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

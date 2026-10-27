@@ -1,0 +1,35 @@
+{
+  "id": "email-0025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Fatima,\n\nI reviewed the contract and everything looks good except the payment terms. They have us paying within 15 days, but our standard is 45. Could you ask them if they would except net 30 as a compromise?\n\nThanks,\nJordan",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "except",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "accept"
+      ],
+      "after": " net 30"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "15 days",
+    "45",
+    "net 30"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

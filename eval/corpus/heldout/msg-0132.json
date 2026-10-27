@@ -1,0 +1,34 @@
+{
+  "id": "msg-0132",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "markdown": "Did you see the email from HR? Apparently we need to finish the compliance training by Friday or our acess gets suspended.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "acess",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "access"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "HR",
+    "by Friday",
+    "suspended"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

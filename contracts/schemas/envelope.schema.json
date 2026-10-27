@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "envelope.schema.json",
+  "title": "Review envelope",
+  "description": "The result of one analysis run, local or AI. The suggestion panel consumes only this shape.",
+  "type": "object",
+  "required": ["contractVersion", "requestId", "documentId", "sourceRevision", "settingsRevision", "status", "coverage", "summary", "findings", "rejectedFindingCount"],
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": { "const": 1 },
+    "requestId": { "type": "string", "minLength": 1 },
+    "documentId": { "type": "string", "minLength": 1 },
+    "sourceRevision": { "type": "integer", "minimum": 0 },
+    "settingsRevision": { "type": "integer", "minimum": 0 },
+    "status": { "enum": ["completed", "failed", "cancelled"] },
+    "coverage": {
+      "type": "object",
+      "required": ["requestedScope", "analyzedBlockIds", "contextBlockIds", "modes", "partial", "limitations"],
+      "additionalProperties": false,
+      "properties": {
+        "requestedScope": { "enum": ["document", "selection", "blocks"] },
+        "analyzedBlockIds": { "type": "array", "items": { "type": "string" } },
+        "contextBlockIds": { "type": "array", "items": { "type": "string" } },
+        "modes": { "type": "array", "items": { "type": "string" } },
+        "partial": { "type": "boolean" },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "summary": { "type": "string" },
+    "findings": { "type": "array", "items": { "$ref": "issue.schema.json" } },
+    "rejectedFindingCount": { "type": "integer", "minimum": 0 }
+  }
+}

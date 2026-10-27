@@ -1,0 +1,36 @@
+{
+  "id": "post-0136",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "public",
+  "markdown": "We're thrilled to welcome Dr. Amelia Ruiz as our new head of research. Amelia joins us from the University of Michigan, where she led a lab studying battery chemistry for over a decade.\n\nHer work on solid-state electrolytes has been cited more then 4,000 times, and she holds six patents. We couldn't be more excited to have her on the team.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Dr. Amelia Ruiz",
+    "University of Michigan",
+    "4,000",
+    "six patents",
+    "couldn't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

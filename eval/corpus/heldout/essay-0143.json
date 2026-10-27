@@ -1,0 +1,43 @@
+{
+  "id": "essay-0143",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "professionals",
+  "markdown": "Most advice about productivity focuses on doing more. But some of the most productive people I know are defined by what they say no to. They turn down meetings that don't need them, projects that don't fit their goals, and favors that would eat up there weekends.\n\nSaying no is uncomfortable, especially early in a career. It can feel like your being difficult. But every yes has a cost, and that cost is usually paid by the work that matters most.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're",
+        "you are"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "don't need them",
+    "every yes"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

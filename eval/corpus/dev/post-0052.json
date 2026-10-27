@@ -1,0 +1,48 @@
+{
+  "id": "post-0052",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "blog readers",
+  "markdown": "# Three things I learned running my first half marathon\n\nI signed up for the Portland half on a whim back in January. I had never run more then five miles at a time, and I was nervous the whole way to the start line.\n\nFirst, pacing matters more than fitness. I went out to fast and paid for it at mile nine.\n\nSecond, practice your fueling. The gels they hand out on the course did not agree with my stomach.\n\nThird, enjoy it. The crowd at the finish was incredible, and I'm already planning my next race.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "after": " five miles"
+    },
+    {
+      "block": 2,
+      "quote": "to",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too"
+      ],
+      "before": "went out ",
+      "after": " fast"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Portland",
+    "January",
+    "five miles",
+    "mile nine",
+    "did not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

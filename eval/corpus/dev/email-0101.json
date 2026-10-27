@@ -1,0 +1,43 @@
+{
+  "id": "email-0101",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "developer",
+  "markdown": "Hi Aiden,\n\nI reviewed you're pull request this morning. The logic looks good, but the tests dont cover the case where the user has no saved addresses. Can you add one before we merge?\n\nAlso, please rebase on main. There have been a few changes to the checkout module since you branched.\n\nThanks,\nMaya",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "dont",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "don't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "no saved addresses",
+    "main",
+    "checkout module"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

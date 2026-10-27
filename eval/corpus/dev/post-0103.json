@@ -1,0 +1,36 @@
+{
+  "id": "post-0103",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "customers",
+  "markdown": "New in version 3.2: you can now export reports as CSV or Excel files. Just click the export button in the top right corner of any report.\n\nWe also improved load times for large dashboards. In our tests, a dashboard with 50 widgets now loads in under two seconds, compared to almost eight seconds before.\n\nAs always, thank you for you're feedback. Many of these changes came directly from customer suggestions.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "3.2",
+    "CSV or Excel",
+    "50 widgets",
+    "two seconds",
+    "eight seconds"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

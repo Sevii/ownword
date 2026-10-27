@@ -1,0 +1,23 @@
+{
+  "id": "clean-0063",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "blog readers",
+  "markdown": "A lot of people ask me how I learned to cook. The honest answer is: badly, and for a long time. I burned rice, I undercooked chicken, and I once set off the smoke alarm making toast.\n\nWhat helped was cooking the same five dishes over and over until I could make them without a recipe. Repetition builds confidence.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "five dishes",
+    "without a recipe"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

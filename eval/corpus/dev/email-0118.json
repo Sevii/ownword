@@ -1,0 +1,44 @@
+{
+  "id": "email-0118",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Gabe,\n\nWeve finalized the menu for the retirement party. The caterer will bring sandwiches, a fruit tray and a cake from Delmonte's Bakery. Janets sister is handling the decorations.\n\nThe party starts at 4 pm on the 22nd in the second-floor lounge.\n\nThanks,\nRuth",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Weve",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "We've"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "Janets",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "Janet's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Delmonte's Bakery",
+    "4 pm",
+    "22nd",
+    "second-floor lounge"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

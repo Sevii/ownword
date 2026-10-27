@@ -1,0 +1,34 @@
+{
+  "id": "email-0026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Andrea,\n\nI just got off the phone with the printer. They cant finish the brochures before the 20th because their press is down for repairs. They offered a 15% discount for the delay.\n\nShould we accept, or look for another shop?\n\nPaul",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "cant",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "can't",
+        "cannot"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "20th",
+    "15%"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

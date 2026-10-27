@@ -1,0 +1,26 @@
+{
+  "id": "clean-0055",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "job seekers",
+  "markdown": "Hiring update: we're looking for a senior backend engineer to join our platform team. You'll work mostly in Go and Postgres, with some Kubernetes on the side.\n\nWe're a remote-first company, but we ask everyone to meet in person twice a year. Salary range is $160k to $190k depending on experience.\n\nIf this sounds like you, apply on our careers page or send your resume to jobs@fernhill.dev.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Go and Postgres",
+    "Kubernetes",
+    "$160k to $190k",
+    "jobs@fernhill.dev",
+    "twice a year"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

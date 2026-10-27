@@ -1,0 +1,33 @@
+{
+  "id": "msg-0134",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "Thanks again for watching the kids last night. They had a blast and wont stop talking about the board game you taught them.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "wont",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "won't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "last night",
+    "board game"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

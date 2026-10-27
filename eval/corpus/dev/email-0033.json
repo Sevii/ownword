@@ -1,0 +1,44 @@
+{
+  "id": "email-0033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "vendor support",
+  "markdown": "Hello,\n\nMy name is Teresa and I manage the front desk at Lakeview Dental. We have been using your scheduling software for two years and its been great, but we have recently noticed that the reminder texts are going out a day late.\n\nIs this a known issue? We have 600 patients in the system so it's a big problem for us.\n\nThank you,\nTeresa Gomez",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's",
+        "it has"
+      ],
+      "after": " been great"
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "We have 600 patients in the system so",
+      "category": "punctuation",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "Lakeview Dental",
+    "two years",
+    "600 patients",
+    "a day late"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Optional: comma before \"so\" is conventional but omission is common; not counted as an error."
+  }
+}

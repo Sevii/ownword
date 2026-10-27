@@ -1,0 +1,42 @@
+{
+  "id": "email-0022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Dear Customer,\n\nWe have recieved your return request for order 77-1904. Once the item arrives at our warehouse, a refund will be issued to your original payment method within 5 business days.\n\nPlease note that shipping charges are non-refundable.\n\nThe Brightlane Support Team",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "a refund will be issued",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "77-1904",
+    "5 business days",
+    "non-refundable",
+    "Brightlane"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

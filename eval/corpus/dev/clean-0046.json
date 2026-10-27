@@ -1,0 +1,27 @@
+{
+  "id": "clean-0046",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "teacher",
+  "markdown": "Hi Ms. Kowalski, this is Ana's mom. Ana has a dentist appointment on Thursday so she'll be leaving school at 1:15. Her dad will pick her up from the front office. Thank you!",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Ana's",
+    "Thursday",
+    "1:15"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

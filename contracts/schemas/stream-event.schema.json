@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stream-event.schema.json",
+  "title": "Stream event",
+  "description": "One newline-delimited JSON event from POST /api/ai/requests. Exactly one terminal event (completed, failed, cancelled) ends a stream.",
+  "type": "object",
+  "required": ["type", "requestId"],
+  "properties": {
+    "type": { "enum": ["started", "delta", "completed", "failed", "cancelled"] },
+    "requestId": { "type": "string", "minLength": 1 }
+  },
+  "oneOf": [
+    { "properties": { "type": { "const": "started" }, "model": { "type": "string" }, "promptVersion": { "type": "string" } }, "required": ["model"] },
+    { "properties": { "type": { "const": "delta" }, "text": { "type": "string" } }, "required": ["text"] },
+    { "properties": { "type": { "const": "completed" }, "text": { "type": "string" } }, "required": ["text"] },
+    {
+      "properties": {
+        "type": { "const": "failed" },
+        "error": { "enum": ["invalid-key", "usage-limit", "rate-limited", "unsupported", "input-too-large", "unavailable", "bad-request", "internal"] },
+        "message": { "type": "string" },
+        "manageUrl": { "type": "string" }
+      },
+      "required": ["error", "message"]
+    },
+    { "properties": { "type": { "const": "cancelled" } } }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "clean-0096",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Jonah,\n\nCongratulations on passing your certification exam! That's a huge accomplishment, especially while working full time.\n\nThe team wants to take you out for lunch next week. Does Wednesday or Thursday work better for you?\n\nCheers,\nPam",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "That's",
+    "next week",
+    "Wednesday or Thursday"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

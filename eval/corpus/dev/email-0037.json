@@ -1,0 +1,34 @@
+{
+  "id": "email-0037",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Jamal,\n\nI've been thinking about your question from the meeting. I don't think the delay was anyone's fault. The supplier changed there shipping schedule without telling us, and we found out the same day as everyone else.\n\nGoing forward, I'd like to get weekly updates from them.\n\nBest,\nClaire",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "don't",
+    "anyone's",
+    "weekly"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

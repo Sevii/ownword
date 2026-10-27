@@ -1,0 +1,33 @@
+{
+  "id": "email-0034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Ben,\n\nCan you send me the the final headcount for the retreat? The caterer needs it by Thursday, and I want to confirm the vegetarian options before then.\n\nThanks,\nMaria",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Thursday",
+    "vegetarian"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

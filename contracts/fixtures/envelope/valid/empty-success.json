@@ -1,0 +1,3 @@
+{"contractVersion":1,"requestId":"review-8","documentId":"doc-1","sourceRevision":42,"settingsRevision":3,"status":"completed",
+ "coverage":{"requestedScope":"selection","analyzedBlockIds":["b2"],"contextBlockIds":[],"modes":["tone-audience"],"partial":false,"limitations":[]},
+ "summary":"No findings returned for the selected audience and scope.","findings":[],"rejectedFindingCount":0}

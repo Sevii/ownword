@@ -1,0 +1,25 @@
+{
+  "id": "clean-0135",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "team",
+  "markdown": "Standup moved to 9:45 today bc of the all-hands. Same link. If you can't make it, drop your update in the thread.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "9:45",
+    "bc",
+    "can't",
+    "all-hands"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

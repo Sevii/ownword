@@ -1,0 +1,37 @@
+{
+  "id": "email-0097",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "professor",
+  "markdown": "Hello Professor Adeyemi,\n\nMy name is Grace and I'm a sophomore in your Tuesday section of Intro to Statistics. I wanted to ask if its possible to switch to the Thursday section, since I have a new work schedule that conflicts with Tuesday afternoons.\n\nI understand if the Thursday section is full.\n\nThank you,\nGrace Whitman",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's",
+        "it is"
+      ],
+      "after": " possible"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "sophomore",
+    "Intro to Statistics",
+    "Thursday section",
+    "Tuesday afternoons"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

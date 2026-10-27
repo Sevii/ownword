@@ -1,0 +1,34 @@
+{
+  "id": "email-0019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "markdown": "Hi Priya,\n\nSorry for the delay in getting back to you. The quote you asked for is attached. The total comes to $3,450, which includes installation but not the annual maintenence fee.\n\nThe price is valid for 30 days.\n\nBest,\nGareth",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "maintenence",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "maintenance"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "$3,450",
+    "not",
+    "30 days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

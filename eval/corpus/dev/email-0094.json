@@ -1,0 +1,44 @@
+{
+  "id": "email-0094",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Tasha,\n\nI went through the vendor list. Two of the vendors has already raised their prices for next year, and a third is closing it's Denver location. I think we should start looking at alternatives now rather than waiting until renewal.\n\nI'll put together a short list by Friday.\n\nThanks,\nRay",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "has",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "have"
+      ],
+      "before": "vendors "
+    },
+    {
+      "block": 1,
+      "quote": "it's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Two of the vendors",
+    "Denver",
+    "by Friday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

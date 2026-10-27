@@ -1,0 +1,25 @@
+{
+  "id": "clean-0092",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Kevin,\n\nThe hotel in Boston is booked for the 9th through the 12th. Your confirmation number is BK-55821. I also reserved a rental car, but the airline tickets are still pending because the fare went up overnight.\n\nDo you want me to book anyway, or wait a day to see if the price drops?\n\nThanks,\nAnna",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Boston",
+    "9th through the 12th",
+    "BK-55821",
+    "still pending"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "msg-0042",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "Hey! Just wanted to say congrats on the new job. Your gonna crush it. Let's celebrate when your back from Chicago.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "You're"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're"
+      ],
+      "before": "when "
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "gonna",
+    "Chicago"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"gonna\" is intentional casual register; only your/you're are errors."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

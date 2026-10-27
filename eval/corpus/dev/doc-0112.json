@@ -1,0 +1,52 @@
+{
+  "id": "doc-0112",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "employees",
+  "markdown": "# Travel reimbursement\n\nEmployees traveling on company business will be reimbursed for reasonable expenses. This includes airfare in economy class, hotel stays, ground transportation and meals.\n\nMeals are reimbursed up to $75 per day. Alcohol is not reimbursable. Please submit your expense report within 30 days of returning, along with itemized reciepts.\n\nUpgrades to business class are only permited for flights longer than eight hours, and must be approved in advance.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "reciepts",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receipts"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "permited",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "permitted"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "will be reimbursed",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "$75 per day",
+    "not reimbursable",
+    "30 days",
+    "eight hours",
+    "must"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

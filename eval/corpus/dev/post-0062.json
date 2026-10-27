@@ -1,0 +1,45 @@
+{
+  "id": "post-0062",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "customers",
+  "markdown": "Our support team will have reduced hours over the holidays. From December 24 to January 1, chat will be avalable from 10 am to 4 pm Eastern. Email support will continue as normal, but responses may take up to 48 hours.\n\nWe apologize for any inconvience and wish everyone a restful break.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "avalable",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "available"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "inconvience",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "inconvenience"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "December 24",
+    "January 1",
+    "10 am to 4 pm",
+    "may",
+    "48 hours"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

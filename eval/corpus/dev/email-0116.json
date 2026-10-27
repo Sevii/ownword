@@ -1,0 +1,34 @@
+{
+  "id": "email-0116",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "prospective client",
+  "markdown": "Hi Mr. Feld,\n\nThank you for your interest in our accounting servises. I've attached a brochure with our rates and a list of the industries we work with.\n\nWe offer a free 30-minute consultation for new clients. If you'd like to schedule one, just reply with a few times that work for you.\n\nKind regards,\nRachel Kim\nKim & Associates",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "servises",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "services"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "30-minute",
+    "free",
+    "Kim & Associates"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "msg-0156",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "Hey, do you know if the store on Main is still open? I need to pick up a few things for tommorow's picnic and I'm not sure what time they close on Sundays.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "tommorow's",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Main",
+    "I'm not sure",
+    "Sundays"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

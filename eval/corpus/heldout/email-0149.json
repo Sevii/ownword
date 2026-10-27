@@ -1,0 +1,36 @@
+{
+  "id": "email-0149",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Owen,\n\nThe quarterly report is almost done, I just need the sales figures from the western region. Can you send them by end of day?\n\nThe deadline for the board packet is tomorrow at noon.\n\nThanks,\nIsabel",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "done, I",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "done; I",
+        "done. I",
+        "done, but I"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "western region",
+    "end of day",
+    "tomorrow at noon"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Comma splice joining two independent clauses."
+  }
+}

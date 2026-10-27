@@ -1,0 +1,24 @@
+{
+  "id": "clean-0020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "internal staff",
+  "markdown": "Hi all,\n\nThe quarterly all-hands is moving to Thursday the 12th. We will meet in the large conference room on the third floor, and there will be a dial-in for remote staff.\n\nPlease submit any questions for leadership by Tuesday. Anonymous questions are welcome.\n\nThanks,\nPeople Ops",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Thursday the 12th",
+    "third floor",
+    "Tuesday"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

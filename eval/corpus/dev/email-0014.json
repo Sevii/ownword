@@ -1,0 +1,34 @@
+{
+  "id": "email-0014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer support",
+  "markdown": "Hello,\n\nI bought a pair of running shoes from your store last week (order #48213). They fit fine in the store but now they feel to loose at the heel. I would like to exchange them for a half size smaller.\n\nDo I need to bring them in, or can I mail them back?\n\nThanks,\nCarla Mendes",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "to",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too"
+      ],
+      "after": " loose"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "#48213",
+    "half size smaller"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"loose\" is correct here; the error is \"to\"."
+  }
+}

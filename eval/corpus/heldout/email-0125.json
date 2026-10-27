@@ -1,0 +1,35 @@
+{
+  "id": "email-0125",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "support technician",
+  "markdown": "Hi Viktor,\n\nThank you for the quick response. I tried the steps you suggested, but the printer still shows an error code E-204 when I try to print double-sided.\n\nI've attached a photo of the screen. Its a Brother HL-L2350DW, purchased about a year ago.\n\nRegards,\nJoanne",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's",
+        "It is"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "E-204",
+    "Brother HL-L2350DW",
+    "a year ago"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

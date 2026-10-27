@@ -1,0 +1,26 @@
+{
+  "id": "clean-0144",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general readers",
+  "markdown": "I grew up in a house without a television. At the time I thought this was the cruellest thing my parents could have done. My friends talked about cartoons I had never seen, and I nodded along.\n\nWhat I had instead was a library card and a lot of empty afternoons. I read everything: adventure novels, old encyclopaedias, the backs of cereal boxes. I didn't realise until much later how much those afternoons shaped me.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "cruellest",
+    "encyclopaedias",
+    "realise",
+    "never",
+    "didn't"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB spellings \"cruellest\", \"encyclopaedias\", \"realise\" are correct."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "clean-0001",
+  "source": { "kind": "synthetic", "author": "claude-opus-5-5", "license": "project" },
+  "genre": "email",
+  "dialect": "en-US",
+  "markdown": "Hi Priya,\n\nThanks for sending the Q3 forecast. I had a look at the numbers with Jordan this morning, and they line up with what finance shared last week.\n\nCould we meet on Thursday at 2 pm to go over the hiring plan? If that doesn't work, any time Friday is fine.\n\nBest,\nMarcus",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": ["Q3", "Thursday", "2 pm", "doesn't"],
+  "clean": true,
+  "labels": { "reviewers": 0, "notes": "Seed clean example." }
+}

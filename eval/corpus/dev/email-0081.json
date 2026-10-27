@@ -1,0 +1,36 @@
+{
+  "id": "email-0081",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "direct report",
+  "markdown": "Hi Laura,\n\ni wanted to follow up on the budget request. Finance approved the new monitors, but they rejected the request for standing desks this year.\n\nI know that's disappointing. We can try again in the spring cycle.\n\nThanks,\nMike",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "i",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "I"
+      ],
+      "after": " wanted"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "standing desks",
+    "this year",
+    "spring cycle",
+    "that's"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

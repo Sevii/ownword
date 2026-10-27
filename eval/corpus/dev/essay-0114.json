@@ -1,0 +1,55 @@
+{
+  "id": "essay-0114",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general readers",
+  "markdown": "The best teacher I ever had was my high school chemistry teacher, Mr. Delgado. He wasn't the funniest or the most popular, but he had a rare talent: he made you feel that your questions were interesting.\n\nWhen someone asked a question he didn't know the answer to, he would say, \"Good. Let's find out.\" Then we would spend the next ten minutes working it out together. I learned more from those detours then from any textbook.\n\nYears later, I realized he was teaching us something more important then chemistry. He was teaching us that not knowing is the begining of learning, not something to be ashamed of.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "detours "
+    },
+    {
+      "block": 2,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "important "
+    },
+    {
+      "block": 2,
+      "quote": "begining",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "beginning"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Mr. Delgado",
+    "Good. Let's find out.",
+    "ten minutes",
+    "not knowing"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

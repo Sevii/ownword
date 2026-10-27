@@ -1,0 +1,65 @@
+{
+  "id": "essay-0076",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general readers",
+  "markdown": "Every generation believes that the next one is lazier then it was. The ancient Greeks complained about young people, and so did the Victorians. The complaint seems to say more about aging than about youth.\n\nWhat does change is the enviroment people grow up in. Teenagers today have less unstructured time then their grandparents did, and much of there free time is spent online. Whether that is better or worse is a fair question, but it is not the same as laziness.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "lazier "
+    },
+    {
+      "block": 1,
+      "quote": "enviroment",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "environment"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "time ",
+      "after": " their"
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " free"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ancient Greeks",
+    "Victorians",
+    "not the same"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

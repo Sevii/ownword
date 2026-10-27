@@ -1,0 +1,14 @@
+{
+  "name": "open-writer-project",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "test": "npm --prefix frontend test",
+    "test:e2e": "npm --prefix frontend run test:e2e",
+    "eval:smoke": "npm --prefix frontend run eval:smoke",
+    "test:pages": "npm --prefix frontend run test:pages"
+  }
+}

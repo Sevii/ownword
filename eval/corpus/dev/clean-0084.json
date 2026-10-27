@@ -1,0 +1,36 @@
+{
+  "id": "clean-0084",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Noor,\n\nSorry I missed your call. I was in back to back meetings all afternoon. I'm free tomorrow between 10 and 11 if that works for you, otherwise Friday morning is open.\n\nSpeak soon,\nWill",
+  "expected": [],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "back to back",
+      "category": "punctuation",
+      "classification": "review-question"
+    },
+    {
+      "block": 1,
+      "quote": "if that works for you, otherwise",
+      "category": "punctuation",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "between 10 and 11",
+    "Friday morning"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Ambiguous: \"back-to-back\" is the standard hyphenation before a noun, and \"otherwise\" after a comma is a mild splice. Both are left as review questions; the case is treated as clean (no required corrections). Reviewer should confirm."
+  }
+}

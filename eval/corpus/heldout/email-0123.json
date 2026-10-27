@@ -1,0 +1,34 @@
+{
+  "id": "email-0123",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer support",
+  "markdown": "Hello,\n\nI'm writing about my order #30917. The tracking page says it was delivered yesterday, but I havent received anything and my neighbors haven't seen it either.\n\nCould you please look into this? The order was a birthday gift, so I'm hoping it can be resolved quickly.\n\nThanks,\nPriyanka Rao",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "havent",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "haven't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "#30917",
+    "yesterday",
+    "haven't seen"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

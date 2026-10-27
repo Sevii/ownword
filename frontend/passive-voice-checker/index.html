@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Passive voice checker, free and private | Open Writer</title>
+    <meta name="description" content="Find passive voice and other wordy constructions in your writing for free. Runs in your browser, so your text stays on your device." />
+    <meta property="og:title" content="Passive voice checker, free and private | Open Writer" />
+    <meta property="og:description" content="Find passive voice and other wordy constructions in your writing for free. Runs in your browser, so your text stays on your device." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="passive-voice-checker">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Passive voice checker</h1>
+      <p class="lede">Find sentences in the passive voice, along with wordy phrases and long sentences, and decide which ones to change.</p>
+      <form class="handoff" data-handoff="passive">
+        <label for="handoff-text">Your text</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste or type your text here" spellcheck="false"></textarea>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Check for passive voice</button>
+          <span class="handoff__note">Free, no account. Opens the editor with your text.</span>
+        </div>
+      </form>
+
+      <h2>Passive voice is not always wrong</h2>
+      <p>“The report was approved” hides who approved it. Sometimes that is fine; often “The board approved the report” is clearer. The checker marks passive constructions as optional style notes, separate from likely errors, so you choose.</p>
+      <h2>Also in the editor</h2>
+      <ul class="points">
+        <li>Spelling, grammar, and punctuation checks as you type</li>
+        <li>Readability score, sentence length, and reading time</li>
+        <li>Optional AI rewrites with your own AI account, shown as a diff before you apply them</li>
+      </ul>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": "email-0085",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "hiring committee",
+  "markdown": "Dear Hiring Committee,\n\nI am excited to apply for the Program Coordinator position at Greenway Trust. For the past four years I have managed volunteer programs at the Riverbend Conservancy, where I recruited and trained over 200 volunteers.\n\nI beleive my experience organising community events would be a strong fit for this role. I have attached my CV and two references.\n\nYours faithfully,\nImogen Clarke",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "beleive",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "believe"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Greenway Trust",
+    "four years",
+    "200 volunteers",
+    "organising",
+    "Yours faithfully"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: \"organising\" is correct British spelling and must not be flagged."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "email-0110",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Hello Mrs. Abbott,\n\nThank you for registering for the Saturday pottery workshop. The class begins at 10 am and lasts about three hours. All materials are included, but we recommend wearing old clothes, as the clay can be messy..\n\nYour pieces will be fired in the kiln and ready for pickup about two weeks later.\n\nSee you soon,\nHollis Clay Studio",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "messy..",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "messy."
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "10 am",
+    "three hours",
+    "two weeks",
+    "Hollis Clay Studio"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

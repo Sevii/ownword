@@ -1,0 +1,35 @@
+{
+  "id": "email-0155",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "markdown": "Hi Mr. Castillo,\n\nThank you for your payment of $1,275 for invoice 2024-118. We have applied it to your account, and your balance is now zero.\n\nWe appreciate your buisness and look forward to working with you again in the new year.\n\nBest regards,\nAccounts Receivable\nCobalt Engineering",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "buisness",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "business"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "$1,275",
+    "2024-118",
+    "zero",
+    "Cobalt Engineering"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

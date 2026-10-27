@@ -1,0 +1,44 @@
+{
+  "id": "doc-0064",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "project team",
+  "markdown": "# Meeting notes: website redesign\n\n**Date:** October 3\n**Attendees:** Priya, Tom, Sergei, Hana\n\n- Sergei presented three homepage concepts. The team prefered option B.\n- Hana raised concerns about accessability on the dark theme.\n- Tom will get a quote from the hosting provider by next week.\n- Launch is still planned for January, but it depends on the CMS migration.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "prefered",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "preferred"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "accessability",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "accessibility"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 3",
+    "option B",
+    "January",
+    "depends on"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The bold Date/Attendees lines are one paragraph block after joining."
+  }
+}

@@ -1,0 +1,27 @@
+name: Checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --prefix frontend
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+        working-directory: frontend
+      - run: npm run test:e2e -- --project=chromium --project=android --workers=2
+        working-directory: frontend
+      - name: Build a GitHub Pages project site
+        run: npm run build
+        env:
+          OW_BASE_PATH: /open-online-writer/
+      - name: Check project-site navigation and offline editing
+        run: npm run test:pages
+        env:
+          OW_BASE_PATH: /open-online-writer/

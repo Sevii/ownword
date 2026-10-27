@@ -1,0 +1,33 @@
+{
+  "id": "email-0018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "markdown": "Hi Carmen,\n\nFollowing up on our call: the team agreed to postpone the launch untill the payment integration passes security review. We don't want to ship anything that handles card data without sign-off.\n\nI'll send a new date once we hear back from the auditors.\n\nThanks,\nVictor",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "don't",
+    "without sign-off"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "email-0130",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Victor,\n\nThanks for the the reminder about the safety training. I've signed up for the Tuesday session. Is it the same content as last year, or has it been updated?\n\nI want to make sure I bring the right materials.\n\nCheers,\nLeah",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tuesday session",
+    "last year"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

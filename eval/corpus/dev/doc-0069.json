@@ -1,0 +1,36 @@
+{
+  "id": "doc-0069",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "volunteers",
+  "markdown": "# Volunteer roles\n\nThe festival needs about 40 volunteers each day. Shifts are four hours long, and every volunteer recieves a free T-shirt and a meal voucher.\n\n- **Gate staff** check tickets and wristbands.\n- **Info booth** volunteers answer questions and hand out maps.\n- **Green team** members keep the recycling stations organized.\n\nVolunteers must be 16 or older. Anyone under 18 needs a signed permission form.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieves",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receives"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "40 volunteers",
+    "four hours",
+    "must",
+    "16 or older",
+    "under 18"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "msg-0045",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "markdown": "lol that meeting could of been an email. anyway I'm heading out, see you tomorow",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "could of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have",
+        "could've"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "tomorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "lol",
+    "I'm heading out"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Lowercase sentence starts are intentional casual register and should not be flagged."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

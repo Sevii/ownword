@@ -1,0 +1,34 @@
+{
+  "id": "email-0100",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Brenda,\n\nWe finished the audit of the the payroll records for 2023. Everything matched except for two contractor payments, which were coded to the wrong department. Accounting has already corrected them.\n\nLet me know if you would like the full report.\n\nThanks,\nLuis",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "2023",
+    "two contractor payments",
+    "Accounting"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

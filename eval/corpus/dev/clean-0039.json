@@ -1,0 +1,25 @@
+{
+  "id": "clean-0039",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Tanya,\n\nThe new hire paperwork for Luis is complete. He starts on the 2nd and will be sitting with the support team for his first two weeks.\n\nHe will need a laptop, a badge and access to Zendesk. I've already submitted the request to IT, but they said it could take a few days, so we may need to lend him a spare.\n\nThanks,\nGreg",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "2nd",
+    "two weeks",
+    "Zendesk",
+    "may"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "No Oxford comma in \"a laptop, a badge and access\"; that is a valid style choice, not an error."
+  }
+}

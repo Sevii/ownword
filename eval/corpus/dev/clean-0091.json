@@ -1,0 +1,32 @@
+{
+  "id": "clean-0091",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "hall hirers",
+  "markdown": "# Visitor guidance: Ashcombe Village Hall\n\n## About the hall\n\nAshcombe Village Hall is a registered charity run entirely by volunteers. The main hall seats up to 120 people and is available to hire for parties, meetings, classes and community events. A smaller committee room, which seats 16, can be booked separately.\n\n## Booking\n\nBookings are made through the hall secretary, Mrs Joan Whitfield, either by telephone on 01632 960 418 or by email at bookings@ashcombehall.org.uk. We recommend booking at least six weeks in advance for weekends, particularly in summer and in the run-up to Christmas.\n\nA deposit of £50 is required to secure a booking. The deposit is refunded in full within 14 days of your event, provided the hall is left clean and undamaged. Regular hirers, such as weekly fitness classes, are invoiced monthly and do not pay a deposit.\n\n## Facilities\n\nThe hall has a fully equipped kitchen with a cooker, two fridges, a dishwasher and enough crockery for 100 guests. Tables and chairs are stored in the cupboard by the stage; hirers are responsible for setting them out and putting them away.\n\nThere is level access from the car park, and an accessible toilet is located next to the main entrance. A hearing loop is fitted in the main hall. Please let us know in advance if any of your guests have particular access needs and we will do our best to help.\n\n## Parking\n\nThe car park holds around 30 cars. On Saturday mornings it is shared with the farmers' market, so spaces may be limited before 1 pm. Please do not park on the verges of Mill Lane, as this blocks access for the neighbouring houses and for emergency vehicles.\n\n## Noise and licensing\n\nThe hall is licensed for amplified music until 11 pm. All music must stop by then, and guests should leave quietly, as the hall is in a residential area. The hall does not hold an alcohol licence. If you wish to sell alcohol at your event, you will need to apply to the district council for a Temporary Event Notice at least ten working days beforehand. Alcohol provided free of charge does not require a licence.\n\n## Safety\n\nHirers must familiarise themselves with the fire exits and the location of the extinguishers before their event begins. The fire assembly point is at the far end of the car park, by the noticeboard. Candles, confetti and smoke machines are not permitted inside the building.\n\n## Cleaning up\n\nPlease sweep the floors, wipe down the kitchen surfaces and take all rubbish home with you. Recycling bins are provided for glass, cans and cardboard. If the hall needs additional cleaning after your event, the cost will be deducted from your deposit.\n\n## Feedback\n\nWe are always looking to improve the hall. If you have any comments or suggestions, please leave a note in the visitors' book or speak to any member of the committee. Thank you for supporting your village hall.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Mrs Joan Whitfield",
+    "01632 960 418",
+    "bookings@ashcombehall.org.uk",
+    "£50",
+    "14 days",
+    "do not",
+    "licence",
+    "must",
+    "until 11 pm",
+    "familiarise",
+    "neighbouring"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long clean en-GB document. Traps: \"licence\" (noun), \"familiarise\", \"neighbouring\", \"Mrs\" without full stop, \"car park\", UK phone number, £ amounts, no Oxford commas. Should receive no corrections."
+  }
+}

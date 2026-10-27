@@ -1,0 +1,35 @@
+{
+  "id": "email-0124",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Brian,\n\nEach of the team leads have submitted their goals for next quarter, except for operations. I'll follow up with Dana today.\n\nOnce I have all of them, I'll put together a summary for the leadership meeting on the 30th.\n\nBest,\nChloe",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "have",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "has"
+      ],
+      "before": "leads "
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "next quarter",
+    "Dana",
+    "30th"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"Each ... have submitted their goals\": \"has\" is the formal fix; singular \"their\" is acceptable."
+  }
+}

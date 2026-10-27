@@ -1,0 +1,5 @@
+{"contractVersion":1,"id":"i","documentId":"d","sourceRevision":0,"settingsRevision":0,
+ "origin":{"kind":"local","engine":"harper","engineVersion":"2.13.0","ruleId":"r"},
+ "category":"spelling","classification":"likely-error","severity":"minor",
+ "anchor":{"blockId":"b","from":0,"to":1,"expectedText":"a"},"evidence":[{"blockId":"b","quote":"a"}],
+ "message":"m","replacements":[],"state":"current"}

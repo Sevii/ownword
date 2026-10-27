@@ -1,0 +1,44 @@
+{
+  "id": "email-0015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "markdown": "Hi Nate,\n\nThanks for covering my shift on Saturday. i owe you one. If you ever need me to swap a weekend, just ask.\n\nAlso, the new schedule is posted in the break room. It looks like we're both on the closing rotation in november.\n\nJess",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "i",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "I"
+      ],
+      "before": "Saturday. ",
+      "after": " owe"
+    },
+    {
+      "block": 2,
+      "quote": "november",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "November"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Saturday",
+    "closing rotation"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

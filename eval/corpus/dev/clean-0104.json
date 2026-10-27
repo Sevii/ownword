@@ -1,0 +1,24 @@
+{
+  "id": "clean-0104",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Natalie,\n\nThanks for sending the photos from the offsite. They turned out great! The one of the team on the bridge is my favorite.\n\nWould you mind if we used a few of them in the company newsletter? We'd credit you, of course.\n\nBest,\nSimone",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "offsite",
+    "the bridge",
+    "of course"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

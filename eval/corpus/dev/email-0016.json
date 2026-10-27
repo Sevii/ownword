@@ -1,0 +1,35 @@
+{
+  "id": "email-0016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "external speaker",
+  "markdown": "Dear Dr. Huang,\n\nThank you for agreeing to speak at our annual conference. We have scheduled your keynote for 9:00 am on June 4 in the main hall. The session will last 45 minutes, followed by a 15 minute Q&A.\n\nWe will cover your hotel and travel expenses. Please send your reciepts to events@cascadeforum.org after the event.\n\nWarm regards,\nLena Fischer",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "reciepts",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receipts"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "9:00 am",
+    "June 4",
+    "45 minutes",
+    "events@cascadeforum.org"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"15 minute Q&A\" could arguably take a hyphen (\"15-minute\"); left unlabeled as minor."
+  }
+}

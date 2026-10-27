@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "issue.schema.json",
+  "title": "Issue",
+  "description": "One finding from a local engine, a local rule, or an AI review. See docs/review-contracts-and-evaluation.md section 3.",
+  "type": "object",
+  "required": ["contractVersion", "id", "documentId", "sourceRevision", "settingsRevision", "origin", "category", "classification", "severity", "message", "replacements", "state"],
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": { "const": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "documentId": { "type": "string", "minLength": 1 },
+    "sourceRevision": { "type": "integer", "minimum": 0 },
+    "settingsRevision": { "type": "integer", "minimum": 0 },
+    "origin": {
+      "type": "object",
+      "required": ["kind", "engine", "engineVersion", "ruleId"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["local", "ai"] },
+        "engine": { "type": "string" },
+        "engineVersion": { "type": "string" },
+        "ruleId": { "type": "string" },
+        "requestId": { "type": "string" },
+        "model": { "type": "string" },
+        "promptVersion": { "type": "string" }
+      }
+    },
+    "category": { "enum": ["spelling", "grammar", "punctuation", "capitalization", "word-choice", "repetition", "conciseness", "sentence-length", "readability", "passive-voice", "hedging", "tone", "clarity", "consistency", "other"] },
+    "classification": { "enum": ["likely-error", "style", "review-question"] },
+    "severity": { "enum": ["minor", "meaningful", "critical"] },
+    "anchor": { "$ref": "#/$defs/anchor" },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidence" } },
+    "message": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "replacements": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["text"],
+        "additionalProperties": false,
+        "properties": { "text": { "type": "string", "maxLength": 2000 } }
+      }
+    },
+    "state": { "enum": ["current", "stale", "dismissed", "applied"] }
+  },
+  "oneOf": [
+    { "required": ["anchor"], "not": { "required": ["evidence"] } },
+    { "required": ["evidence"], "not": { "required": ["anchor"] } }
+  ],
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "required": ["blockId", "from", "to", "expectedText"],
+      "additionalProperties": false,
+      "properties": {
+        "blockId": { "type": "string", "minLength": 1 },
+        "from": { "type": "integer", "minimum": 0 },
+        "to": { "type": "integer", "minimum": 0 },
+        "expectedText": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["blockId", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "blockId": { "type": "string", "minLength": 1 },
+        "quote": { "type": "string", "minLength": 1 },
+        "before": { "type": "string" },
+        "after": { "type": "string" }
+      }
+    }
+  }
+}

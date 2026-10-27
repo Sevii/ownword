@@ -1,0 +1,43 @@
+{
+  "id": "doc-0065",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "markdown": "# Returns policy\n\nItems may be returned within 30 days of delivery for a full refund. Items must be unused and in there original packaging. Sale items are final and can not be returned.\n\nTo start a return, log in to your account and select the order. A prepaid shipping label will be emailed to you within one business day.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "can not",
+      "category": "spelling",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "30 days",
+    "may",
+    "must",
+    "one business day",
+    "final"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"can not\" vs \"cannot\": \"cannot\" is standard, but \"can not\" is not strictly wrong; left optional."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "email-0003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "internal staff",
+  "markdown": "Hello team,\n\nThe new expense policy goes into effect on March 1. Receipts over $25 must be uploaded within 14 days, and any claim without a receipt will be returned. Its important that everyone reads the full policy before submitting there next report.\n\nQuestions can go to finance@northwind-labs.com.\n\nRegards,\nHelen Okafor\nFinance",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's",
+        "It is"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " next report"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "March 1",
+    "$25",
+    "must",
+    "14 days",
+    "finance@northwind-labs.com"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

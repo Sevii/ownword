@@ -1,0 +1,35 @@
+{
+  "id": "essay-0075",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general readers",
+  "markdown": "Public libraries are often described as quiet places for reading, but that description misses most of what they do. In my town, the library runs English classes for new immigrants, lends out laptops and hotspots, and hosts a weekly job club.\n\nDuring the pandemic, the parking lot became one of the only places where people without home internet could get online. Families would sit in there cars after dark so their kids could finish homework.\n\nWhen people argue that libraries are obsolete, they are usually thinking of books. But a library was never just about books; it is about access.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " cars"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "weekly job club",
+    "without home internet",
+    "never just about books"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

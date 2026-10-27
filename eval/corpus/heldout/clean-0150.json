@@ -1,0 +1,27 @@
+{
+  "id": "clean-0150",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "resident",
+  "markdown": "Dear Ms. Harrington,\n\nThank you for your complaint regarding the noise from the construction site on Elm Street. We have spoken to the contractor, and they have agreed not to begin work before 8 am on weekdays or 9 am on Saturdays.\n\nIf the problem persists, please contact the city's code enforcement office at 555-0199.\n\nSincerely,\nOffice of Councilmember Reyes",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Elm Street",
+    "not to begin work",
+    "8 am",
+    "9 am",
+    "555-0199",
+    "If the problem persists"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

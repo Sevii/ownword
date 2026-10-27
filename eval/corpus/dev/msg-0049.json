@@ -1,0 +1,36 @@
+{
+  "id": "msg-0049",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "Thanks for lunch today! I really enjoyed hearing about you're trip to Portugal. Send me the name of that hotel in Lisbon when you get a chance.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Portugal",
+    "Lisbon"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

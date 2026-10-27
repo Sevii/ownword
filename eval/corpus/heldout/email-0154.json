@@ -1,0 +1,37 @@
+{
+  "id": "email-0154",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Stefan,\n\nThe data from the survey are now in the shared drive. I've cleaned up the duplicates and removed responses that were less than half complete, which left us with 412 usable responses.\n\nThe results on question 7 is surprising. Almost 60% of respondents said they would pay more for faster shipping.\n\nTalk soon,\nMei",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "is",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "are"
+      ],
+      "before": "question 7 ",
+      "after": " surprising"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "412",
+    "question 7",
+    "60%",
+    "less than half"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"The data ... are\" is a valid (formal) plural usage and must not be flagged. The error is \"results ... is\"."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "clean-0121",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "guest",
+  "markdown": "Dear Mr. Okonkwo,\n\nWe are pleased to confirm your reservation at the Seaview Inn for three nights, arriving Friday, August 15. Your room includes breakfast and free parking.\n\nCheck-in begins at 3 pm. If you expect to arrive after 10 pm, please let us know so we can arrange late check-in.\n\nWe look forward to welcoming you.\n\nWarm regards,\nThe Seaview Inn",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "three nights",
+    "Friday, August 15",
+    "3 pm",
+    "after 10 pm",
+    "Seaview Inn"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

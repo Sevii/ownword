@@ -1,0 +1,25 @@
+{
+  "id": "clean-0128",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "team",
+  "markdown": "Hi Doug,\n\nThe new software licence has been purchased and will be active from Monday. I've set up accounts for everyone in the analytics team; you should each receive an email with your login details.\n\nPlease change your password the first time you sign in, and don't share your account with anyone else.\n\nKind regards,\nPriti",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "licence",
+    "Monday",
+    "don't",
+    "analytics team"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: \"licence\" (noun) is correct."
+  }
+}

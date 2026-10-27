@@ -1,0 +1,44 @@
+{
+  "id": "email-0113",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Derek,\n\nThanks for flagging the issue with the login page. I was able to reproduce it on Safari but not on Chrome. it looks like the session cookie is being blocked when third-party cookies are disabled.\n\nI'll have a fix ready for review by tommorow afternoon.\n\nCheers,\nInes",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "it",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "It"
+      ],
+      "before": "Chrome. "
+    },
+    {
+      "block": 2,
+      "quote": "tommorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Safari",
+    "not on Chrome",
+    "third-party cookies"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "email-0115",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Simon,\n\nI've put together the seating chart for the gala. We have 18 tables of ten, plus a head table for the board. The Hendersons asked to sit near the stage, and I've put the sponsors at tables 1 through 4.\n\nPlease let me know if anyone needs to be moved. I'd like to send the final version to the venue on monday.\n\nThanks,\nAbigail",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "monday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Monday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "18 tables of ten",
+    "Hendersons",
+    "tables 1 through 4"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

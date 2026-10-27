@@ -1,0 +1,25 @@
+{
+  "id": "clean-0131",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "omw, traffic is awful on 101. gonna be like 15 min late. save me a seat?",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "omw",
+    "101",
+    "gonna",
+    "15 min"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text with lowercase starts, \"omw\", and \"gonna\"; intentional."
+  }
+}

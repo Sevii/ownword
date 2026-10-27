@@ -1,0 +1,33 @@
+{
+  "id": "email-0006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "internal staff",
+  "markdown": "Hi everyone,\n\nThe office will be closed on monday for the holiday. The building's heating will also be shut off over the weekend, so please take any plants home with you.\n\nWe'll reopen Tuesday at 8:30.\n\nThanks,\nFacilities",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "monday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Monday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tuesday",
+    "8:30"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

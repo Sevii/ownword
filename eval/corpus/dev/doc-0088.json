@@ -1,0 +1,64 @@
+{
+  "id": "doc-0088",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineering team",
+  "markdown": "# Design proposal: background job retries\n\n## Background\n\nOur background workers process roughly 2 million jobs per day: sending emails, generating PDFs, and syncing data with partner APIs. Today, when a job fails, the worker logs the error and moves on. The job is never retried. Support has to find the failure in the logs and re-queue it by hand.\n\nThis has caused several customer-facing problems. In August, a partner API was down for 40 minutes, and about 3,000 invoice syncs were silently dropped. It took two days to notice.\n\n## Proposal\n\nWe will add automatic retries with exponential backoff to the job runner. When a job fails with a retryable error, it will be scheduled to run again after a delay. The delay doubles after each attempt, starting at 30 seconds, up to a maximum of five attempts.\n\n```\ndelay = 30s * 2^(attempt - 1)\nmax_attempts = 5\n```\n\nAfter the fifth failure, the job moves to a dead-letter queue, where it can be inspected and retried manually from the admin dashboard.\n\n## What counts as retryable\n\nNot every error should be retried. Network timeouts, HTTP 429 and 503 responses, and database deadlocks are retryable. Validation errors and HTTP 400 responses are not, because retrying them will fail in exactly the same way.\n\nEach job type can override the default list. For example, the PDF generator should not retry if the template is missing.\n\n## Idempotency\n\nRetries are only safe if jobs are idempotent: running a job twice must have the same effect as running it once. Most of our jobs already meet this requirement, but the email sender does not. If it fails after the message has been handed to the mail provider, a retry would send a duplicate.\n\nTo fix this, we will store a unique key for each email and check it before sending. This adds one database read per email, which is acceptable at current volumes.\n\n## Monitoring\n\nWe will add three metrics to the Grafana dashboard: retry count by job type, dead-letter queue size, and time spent in retry. An alert will fire if the dead-letter queue grows by more then 100 jobs in an hour.\n\n## Alternatives considered\n\nWe looked at moving to a managed queue service that supports retries out of the box. This would of been less code for us to maintain, but it would require migrating every worker and changing our deployment process. We may revisit this next year.\n\n## Rollout\n\nWe will enable retries for one job type at a time, starting with partner syncs, since they're the most likely to hit transient errors. Each step will run for a week before we move to the next.\n\n## Open questions\n\n- Should customers be notified when a job lands in the dead-letter queue?\n- How long should we keep dead-letter jobs before deleting them?",
+  "expected": [
+    {
+      "block": 15,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "more "
+    },
+    {
+      "block": 17,
+      "quote": "would of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "would have",
+        "would've"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 5,
+      "quote": "it will be scheduled to run again",
+      "category": "passive-voice",
+      "classification": "style"
+    },
+    {
+      "block": 3,
+      "quote": "It took two days to notice.",
+      "category": "clarity",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "2 million",
+    "40 minutes",
+    "3,000",
+    "30 seconds",
+    "five attempts",
+    "must",
+    "not",
+    "100 jobs",
+    "may"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long technical document with a fenced code block; code must not be \"corrected\". \"It took two days to notice\" has no explicit subject for who noticed; review question only."
+  }
+}

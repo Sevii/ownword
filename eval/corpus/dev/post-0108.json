@@ -1,0 +1,55 @@
+{
+  "id": "post-0108",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "parents",
+  "markdown": "Spring registration for youth soccer is now open! Children ages 5 to 14 are eligable to play. The season runs from April 6 to June 8, with games on Saturday mornings.\n\nRegistration closes on March 15 or when teams are full. Financial assistance is available, just check the box on the form.\n\nWe are also looking for volunteer coachs. No experience necessary.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "eligable",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "eligible"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "coachs",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "coaches"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "available, just",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "available; just",
+        "available. Just"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ages 5 to 14",
+    "April 6",
+    "June 8",
+    "March 15",
+    "No experience necessary"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"Financial assistance is available, just check the box\" is a comma splice with an imperative second clause; fairly clear. \"coachs\" could be seen as grammar (plural formation); labeled spelling."
+  }
+}

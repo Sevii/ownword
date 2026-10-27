@@ -1,0 +1,35 @@
+{
+  "id": "email-0119",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "landlord",
+  "markdown": "Hi Bethany,\n\nThanks for sending over the lease renewal. I read through it last night and noticed that the rent increase is listed as 6%, but in our call you mentioned 4%. Could you check which one is correct before I sign?\n\nAlso, the the parking space number is missing from page two.\n\nThanks,\nMalik",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "6%",
+    "4%",
+    "page two",
+    "before I sign"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

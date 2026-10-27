@@ -1,0 +1,42 @@
+{
+  "id": "email-0093",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Hi Mr. Grady,\n\nThank you for you're patience while we looked into your billing question. You were charged twice for the March subscription because of an error on our side. A refund of $29.99 has been issued and should appear on your statement within 3 to 5 business days.\n\nWe're sorry for the trouble.\n\nBest,\nKelsey\nCustomer Support",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "A refund of $29.99 has been issued",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "March",
+    "$29.99",
+    "3 to 5 business days",
+    "twice"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "email-0157",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Leon,\n\nNeither the manager nor the assistants was told about the schedule change. That's why nobody was at the front desk on Saturday morning.\n\nI'll make sure updates go to the whole team from now on.\n\nThanks,\nCorinne",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "was",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "were"
+      ],
+      "before": "assistants "
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Neither",
+    "nor",
+    "Saturday morning",
+    "nobody"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "With \"neither ... nor\", the verb agrees with the nearer subject (\"assistants\"), so \"were\"."
+  }
+}

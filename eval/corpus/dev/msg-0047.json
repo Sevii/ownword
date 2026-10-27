@@ -1,0 +1,36 @@
+{
+  "id": "msg-0047",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "roommate",
+  "markdown": "Hey, the wifi password changed. Its now on the fridge. Don't share it with the neighbors again please",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Don't",
+    "fridge"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing final period and \"wifi\" lowercase are casual-register choices; not labeled."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "clean-0098",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "office staff",
+  "markdown": "Morning all. Reminder that the fire drill is at 11. Please leave by the east stairwell, not the elevators, and meet in the parking lot.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "at 11",
+    "east stairwell",
+    "not the elevators"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

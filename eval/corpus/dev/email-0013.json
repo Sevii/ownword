@@ -1,0 +1,36 @@
+{
+  "id": "email-0013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Grace,\n\nEach of the new laptops come with a three-year warranty, so we don't need to buy the extended plan. I checked with Dell and the coverage includes accidental damage.\n\nI'll place the order for 12 units today.\n\nThanks,\nPete",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "come",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "comes"
+      ],
+      "before": "laptops "
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "three-year",
+    "don't",
+    "Dell",
+    "12 units"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

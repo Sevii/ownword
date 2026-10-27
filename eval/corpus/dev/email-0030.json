@@ -1,0 +1,34 @@
+{
+  "id": "email-0030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "engineering team",
+  "markdown": "Hi Dev team,\n\nPlease remember to update you're local branches before Friday's release. We had two merge conflicts last week because people were working off stale code.\n\nIf you run into problems, ping me in the #release channel.\n\nThanks,\nKara",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Friday's",
+    "two merge conflicts",
+    "#release"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

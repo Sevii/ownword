@@ -1,0 +1,47 @@
+{
+  "id": "email-0011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "parents",
+  "markdown": "Dear Parents,\n\nOur fourth-grade class will visit the Museum of Natural History on Friday, May 16. The bus leaves at 8:15 and returns by 2:30. Students should bring a packed lunch and a water bottle.\n\nPermission slips are due by Wednesday. Students without a signed slip will not be able to attend, and will spend the day with Mrs. Grant's class.\n\nTheir are still two spots for parent chaperones. If your interested, please reply to this email.\n\nThank you,\nMs. Albright",
+  "expected": [
+    {
+      "block": 3,
+      "quote": "Their",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "There"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're",
+        "you are"
+      ],
+      "after": " interested"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "May 16",
+    "8:15",
+    "2:30",
+    "not",
+    "Wednesday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The comma before \"and will spend\" is debatable but not flagged."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "email-0122",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Stella,\n\nThe marketing team needs the final product photos by Wendsday. The photographer says she can deliver on Tuesday if we approve the shot list today, so could you take a look this afternoon?\n\nThe list is in the shared folder under \"Fall Launch.\"\n\nThanks,\nIsaac",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Wendsday",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "Wednesday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tuesday",
+    "today",
+    "Fall Launch"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

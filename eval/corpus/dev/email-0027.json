@@ -1,0 +1,34 @@
+{
+  "id": "email-0027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "hiring manager",
+  "markdown": "Hello Mr. Brooks,\n\nThank you for meeting with me yesterday. I enjoyed learning about the company's plans for the Austin office and the role the new operations team will play.\n\nAs we discussed, I have attached my portfolio and two writing samples.. Please let me know if you need anything else.\n\nBest regards,\nHannah Lee",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "samples..",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "samples."
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Austin",
+    "two writing samples",
+    "company's"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

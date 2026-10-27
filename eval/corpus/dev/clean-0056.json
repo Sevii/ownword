@@ -1,0 +1,25 @@
+{
+  "id": "clean-0056",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "blog readers",
+  "markdown": "I've been using a standing desk for six months now, and honestly the biggest change hasn't been my back. It's my focus. When I stand, I'm less likely to drift into email or social media.\n\nThat said, I don't stand all day. I alternate every hour or so, and I wear decent shoes. Standing in socks on a hard floor is a mistake I only made once.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "six months",
+    "don't",
+    "every hour or so",
+    "only made once"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Fragment \"It's my focus.\" and conversational \"honestly\" are intentional."
+  }
+}

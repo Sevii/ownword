@@ -1,0 +1,5 @@
+{"contractVersion":1,"id":"issue-ai-1","documentId":"doc-1","sourceRevision":42,"settingsRevision":3,
+ "origin":{"kind":"ai","engine":"relay","engineVersion":"1","ruleId":"ai.consistency","requestId":"req-9","model":"some-model","promptVersion":"consistency-1"},
+ "category":"consistency","classification":"review-question","severity":"meaningful",
+ "evidence":[{"blockId":"b2","quote":"Friday"},{"blockId":"b5","quote":"Monday"}],
+ "message":"Two different delivery days are given. Which one applies?","replacements":[],"state":"current"}

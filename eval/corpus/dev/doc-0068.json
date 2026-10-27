@@ -1,0 +1,53 @@
+{
+  "id": "doc-0068",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineering leadership",
+  "markdown": "# Incident report: API outage, July 18\n\n## Summary\n\nBetween 14:05 and 14:47 UTC, roughly 30% of API requests failed with 503 errors. The cause was a misconfigured load balancer rule that was deployed as part of a routine change.\n\n## Impact\n\nCustomers on the EU cluster were effected. No data was lost.\n\n## Follow-up\n\n- Add a staging check for load balancer rules.\n- Update the the change review template.",
+  "expected": [
+    {
+      "block": 4,
+      "quote": "effected",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "affected"
+      ]
+    },
+    {
+      "block": 7,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "that was deployed",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "July 18",
+    "14:05",
+    "14:47 UTC",
+    "30%",
+    "503",
+    "No data was lost"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

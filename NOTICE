@@ -1,0 +1,9 @@
+Open Writer derives its editor, analysis engine, document handling, UI,
+contracts, evaluation corpus, and tests from Abstract Writer's online-writer
+project, copied at the project owner's direction on 2026-10-26.
+The browser writing prompts are adapted from its Rust provider prompts.
+
+Third-party packages and bundled assets remain subject to their respective
+licenses. In particular, Harper (harper.js) is Apache-2.0 and Spectral is
+licensed under the SIL Open Font License. Package licenses accompany the
+installed dependencies.

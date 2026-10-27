@@ -1,0 +1,44 @@
+{
+  "id": "doc-0141",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "users",
+  "markdown": "# Release notes: version 5.0\n\n- Added dark mode, which can be turned on in settings.\n- Improved search so results apear as you type.\n- Fixed a bug where notifications were sent twice.\n- Removed support for iOS 14. Users on older devices will continue to receive security updates untill March.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "apear",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "appear"
+      ]
+    },
+    {
+      "block": 4,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "5.0",
+    "iOS 14",
+    "March",
+    "twice"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

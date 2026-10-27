@@ -1,0 +1,34 @@
+{
+  "id": "email-0010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Raj,\n\nThe client asked whether we could of delivered the report earlier if they had sent the data on time. Honestly, I think the answer is yes, but I don't want to sound defensive.\n\nHow would you phrase it?\n\nMia",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "could of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have",
+        "could've"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "don't",
+    "Honestly"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

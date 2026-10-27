@@ -1,0 +1,43 @@
+{
+  "id": "email-0153",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "markdown": "Hi Nora,\n\nI spoke to the contractor this morning. The new windows will be installed on the 9th, weather permiting. They'll need access to the back yard, so please make sure the gate is unlocked.\n\nThe total cost is $4,850, which is a little less then the original estimate.\n\nThanks,\nGary",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "permiting",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "permitting"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "9th",
+    "$4,850",
+    "weather"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "clean-0031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "professor",
+  "markdown": "Dear Ms. Laurent,\n\nI am writing to request an extension on my final paper for HIST 210. I was sick for most of last week and was not able to complete the reading. I have attached a note from the campus health center.\n\nWould it be possible to submit the paper on December 9 instead of December 5? I understand if this is not possible.\n\nThank you for your consideration,\nEthan Park",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "HIST 210",
+    "December 9",
+    "December 5",
+    "not able"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

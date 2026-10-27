@@ -1,0 +1,35 @@
+{
+  "id": "email-0029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Monica,\n\nWe're running a little behind on the Henderson account. The design mockups are finished, the copy is still with legal. I expect we'll have everything ready by next Wednesday.\n\nI'll keep you posted.\n\nSteve",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "finished, the",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "finished; the",
+        "finished, but the",
+        "finished. The"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Henderson",
+    "next Wednesday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Unambiguous comma splice joining two independent clauses."
+  }
+}

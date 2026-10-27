@@ -1,0 +1,42 @@
+{
+  "id": "email-0032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Julia,\n\nI wanted to thank you for all you're help with the onboarding sessions this month. The new hires said they were the most useful part of there first week.\n\nLunch is on me next time.\n\nBest,\nAnil",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "this month",
+    "first week"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

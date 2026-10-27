@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Free grammar checker, private and on your device | Open Writer</title>
+    <meta name="description" content="Check spelling, grammar, punctuation, and style for free. The checker runs in your browser, so your writing never leaves your device. No account needed." />
+    <meta property="og:title" content="Free grammar checker, private and on your device | Open Writer" />
+    <meta property="og:description" content="Check spelling, grammar, punctuation, and style for free. The checker runs in your browser, so your writing never leaves your device. No account needed." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="grammar-checker">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Free grammar checker</h1>
+      <p class="lede">Find spelling, grammar, and punctuation mistakes, plus wordy phrases and repeated words. The checker runs in your browser, so your text stays on your device.</p>
+      <form class="handoff" data-handoff="grammar">
+        <label for="handoff-text">Your text</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste or type your text here" spellcheck="false"></textarea>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Check my writing</button>
+          <span class="handoff__note">Free, no account. Opens the editor with your text.</span>
+        </div>
+      </form>
+
+      <h2>What it checks</h2>
+      <ul class="points">
+        <li>Spelling, including words added to your personal dictionary</li>
+        <li>Grammar and common confusions, such as “their” and “they’re”</li>
+        <li>Punctuation and capitalization</li>
+        <li>Optional style notes: wordy phrases, repeated words, long sentences, passive voice, and hedging</li>
+      </ul>
+      <h2>How it is different</h2>
+      <p>Mistakes are underlined as you type. Click one to see the fix, apply it, and undo it if you change your mind. Likely errors and optional style notes are shown separately, so you can ignore the style notes when they don’t fit.</p>
+      <p>Checking runs locally. Nothing you type is uploaded unless you choose an AI action with your own AI account.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

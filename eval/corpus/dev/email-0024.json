@@ -1,0 +1,33 @@
+{
+  "id": "email-0024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Hi Liam,\n\nThanks for your patience. The team has finished testing the new firmware, and the update fixes the bluetooth pairing issue you reported. You can install version 2.4.1 from the settings menu.\n\nIf the problem continues, please send us the the diagnostic log and we'll take another look.\n\nBest regards,\nSupport",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "2.4.1",
+    "If the problem continues"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"bluetooth\" is usually capitalized (Bluetooth, a trademark); left unlabeled because many writers lowercase it. Consider making it optional."
+  }
+}

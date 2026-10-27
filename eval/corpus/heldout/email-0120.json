@@ -1,0 +1,55 @@
+{
+  "id": "email-0120",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Connor,\n\nI wanted to give you a heads up that the client is not happy with the latest draft. They feel the tone is to formal for there audience, which is mostly college students.\n\nCan we set up a call tomorrow to go over there notes?\n\nThanks,\nAmy",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "to",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too"
+      ],
+      "after": " formal"
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " audience"
+    },
+    {
+      "block": 2,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " notes"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "not happy",
+    "college students",
+    "tomorrow"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "msg-0051",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hey Carlos, are you free on wendesday afternoon? I need a second pair of eyes on the Q4 slides before I send them to Diane.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "wendesday",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "Wednesday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Carlos",
+    "Q4",
+    "Diane"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Both misspelled and lowercase; the single correction \"Wednesday\" fixes both. Categorized as spelling."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

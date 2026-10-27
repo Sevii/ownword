@@ -1,0 +1,44 @@
+{
+  "id": "doc-0066",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "developers",
+  "markdown": "## Installation\n\n1. Clone the repository.\n2. Run `npm install` to install the dependancies.\n3. Copy `.env.example` to `.env` and fill in your API key.\n4. Start the development server with `npm run dev`.\n\nThe app will be avaliable at http://localhost:5173.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "dependancies",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "dependencies"
+      ]
+    },
+    {
+      "block": 5,
+      "quote": "avaliable",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "available"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "npm install",
+    ".env.example",
+    "npm run dev",
+    "http://localhost:5173"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Inline code markers are stripped; quotes cite visible text."
+  }
+}

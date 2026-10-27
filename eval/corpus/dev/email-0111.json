@@ -1,0 +1,43 @@
+{
+  "id": "email-0111",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "principal",
+  "markdown": "Hi Wendy,\n\nThe childrens art show was a big success. We had over 150 visitors, and the bake sale raised $620 for the school library.\n\nA special thanks to Mr. Ortiz, who spent his whole weekend hanging the artwork. We couldnt have done it without him.\n\nBest,\nLorraine",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "childrens",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "children's"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "couldnt",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "couldn't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "150 visitors",
+    "$620",
+    "Mr. Ortiz"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

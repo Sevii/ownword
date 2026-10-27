@@ -1,0 +1,25 @@
+{
+  "id": "clean-0126",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "freelancer",
+  "markdown": "Hi Felix,\n\nJust checking in on the website copy. The client wants to launch on the 1st, so we really need the final text by next Friday at the latest.\n\nIf you think that's not realistic, let me know now and we can talk about cutting a page or two.\n\nThanks,\nRhea",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "the 1st",
+    "next Friday",
+    "not realistic",
+    "a page or two"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

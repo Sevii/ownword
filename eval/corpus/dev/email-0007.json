@@ -1,0 +1,35 @@
+{
+  "id": "email-0007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "contractor",
+  "markdown": "Hi Olivia,\n\nThanks for the the quick turnaround on the logo files. The client loved the darker version, and they want to use it on the packaging too.\n\nCould you send the SVG and a PNG at 2000 pixels wide? No rush; Friday is fine.\n\nBest,\nTom",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "SVG",
+    "PNG",
+    "2000 pixels",
+    "Friday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

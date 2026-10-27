@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Paraphrasing tool with a diff you can review | Open Writer</title>
+    <meta name="description" content="Rewrite text to be clearer, shorter, or friendlier, then review every change in a diff before applying it. Uses your own OpenAI, Anthropic, Gemini, or OpenRouter account." />
+    <meta property="og:title" content="Paraphrasing tool with a diff you can review | Open Writer" />
+    <meta property="og:description" content="Rewrite text to be clearer, shorter, or friendlier, then review every change in a diff before applying it. Uses your own OpenAI, Anthropic, Gemini, or OpenRouter account." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="paraphrasing-tool">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Paraphrasing tool you can check</h1>
+      <p class="lede">Rewrite a passage to be clearer, shorter, or in a different tone, then see exactly what changed before you accept it.</p>
+      <form class="handoff" data-handoff="paraphrase">
+        <label for="handoff-text">Text to rephrase</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste or type your text here" spellcheck="false"></textarea>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Open in the editor</button>
+          <span class="handoff__note">Rewriting uses your own AI account; grammar checking is free.</span>
+        </div>
+      </form>
+
+      <h2>How it works</h2>
+      <ul class="points">
+        <li>Choose Clarify, Shorten, Fix grammar, or Adjust tone, or say what you want in your own words.</li>
+        <li>Every change is shown as a diff. Nothing is applied until you choose Apply, and one Undo reverses it.</li>
+        <li>A meaning check warns when a rewrite changes amounts, dates, names, negations, or conditions.</li>
+        <li>Bold, italic, and links are kept.</li>
+      </ul>
+      <h2>Your AI account</h2>
+      <p>Rewriting uses an AI model from OpenAI, Anthropic, Google Gemini, or OpenRouter, with your own API key. The key stays in your browser. Each request goes directly from your browser to the provider you chose.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

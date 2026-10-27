@@ -1,0 +1,34 @@
+{
+  "id": "email-0028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Mark,\n\nThe customers order was shipped to the wrong address. I've contacted the courier and they will reroute it, but it won't arrive until Thursday.\n\nCould you call her and explain? I think it will mean more coming from you.\n\nThanks,\nRosa",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "customers",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "customer's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "won't",
+    "Thursday",
+    "until Thursday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "doc-0073",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "employees",
+  "markdown": "# Parking\n\nEmployees can park in Lot C, which is located behind the warehouse. Visitors should use the spaces in front of the main entrance. Their are eight reserved spots for visitors, and they fill up quickly on Mondays.\n\nIf you need a parking permit, request one from the front desk. Permits are free but must be renewed every year.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Their",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "There"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "which is located",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Lot C",
+    "eight reserved spots",
+    "Mondays",
+    "must"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

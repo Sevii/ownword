@@ -1,0 +1,34 @@
+{
+  "id": "email-0148",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "volunteer",
+  "markdown": "Hi Martin,\n\nI'm writing to let you know that the board has approved the new budget. The biggest change is an increase in funding for the after-school program, which will allow us to hire two additional tutors.\n\nWe will begin recruiting immediatly. If you know anyone who might be interested, please send them my way.\n\nRegards,\nCeleste",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "immediatly",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "immediately"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "two additional tutors",
+    "after-school program",
+    "might"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

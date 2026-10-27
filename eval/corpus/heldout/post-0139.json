@@ -1,0 +1,34 @@
+{
+  "id": "post-0139",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "professionals",
+  "markdown": "Unpopular opinion: most meetings would be better as a shared document. Write down the question, give people a day to respond, and only meet if theres real disagreement.\n\nI've tried this with my team for three months and we've cut our meeting time almost in half. Nobody misses the status updates.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "theres",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "there's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "a day",
+    "three months",
+    "almost in half"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

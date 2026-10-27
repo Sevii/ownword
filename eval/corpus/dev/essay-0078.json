@@ -1,0 +1,43 @@
+{
+  "id": "essay-0078",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "professionals",
+  "markdown": "Remote work has changed how teams communicate. In an office, a quick question can be answered in a few seconds. Remotely, the same question might sit in a chat channel for hours.\n\nSome teams solve this with more meetings, which defeats the purpose. A better aproach is to write things down: decisions, context, and the reasoning behind them. Good documentation lets people work independantly without waiting for an answer.\n\nOf course, writing takes time. But it takes less time than a meeting that ten people have to attend.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "aproach",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "approach"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "independantly",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "independently"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "a few seconds",
+    "for hours",
+    "ten people"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

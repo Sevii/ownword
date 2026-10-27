@@ -1,0 +1,36 @@
+{
+  "id": "msg-0043",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "partner",
+  "markdown": "Can you grab milk on the way home? We also need eggs, bread and and coffee filters.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "and and",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "and"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "milk",
+    "coffee filters"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

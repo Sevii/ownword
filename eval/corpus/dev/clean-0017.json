@@ -1,0 +1,24 @@
+{
+  "id": "clean-0017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Alicia,\n\nQuick update on the warehouse move. The movers confirmed they can start on the 14th, and the new racks should arrive a day earlier. We still need someone to sign for the delivery, though.\n\nI'm not sure who will be on site that morning. Can you check with Brian?\n\nThanks,\nOmar",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "14th",
+    "I'm not sure",
+    "Brian"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

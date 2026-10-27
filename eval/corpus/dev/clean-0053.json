@@ -1,0 +1,26 @@
+{
+  "id": "clean-0053",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "customers",
+  "markdown": "We're excited to announce that Sledgeworx now supports single sign-on through Okta and Azure AD. Admins can turn it on from the Security tab in workspace settings.\n\nThis has been one of our most requested features, and we want to thank everyone who sent feedback during the beta. SSO is available on the Team and Enterprise plans starting today.\n\nRead the setup guide at https://docs.sledgeworx.io/sso.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Sledgeworx",
+    "Okta",
+    "Azure AD",
+    "https://docs.sledgeworx.io/sso",
+    "Team and Enterprise"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

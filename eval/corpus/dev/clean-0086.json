@@ -1,0 +1,27 @@
+{
+  "id": "clean-0086",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "supplier",
+  "markdown": "Hi Tom,\n\nJust to confirm, the colour proofs for the autumn catalogue arrived this morning. The team are happy with them, apart from the grey on page 12, which looks a bit flat.\n\nCould the printer adjust it before the final run? We'd like the finished catalogues delivered by the 15th.\n\nCheers,\nFiona",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "colour",
+    "catalogue",
+    "The team are",
+    "grey",
+    "page 12",
+    "15th"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB trap: \"colour\", \"catalogue\", \"grey\", and plural \"the team are\" are all correct British usage."
+  }
+}

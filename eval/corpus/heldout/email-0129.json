@@ -1,0 +1,53 @@
+{
+  "id": "email-0129",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "applicant",
+  "markdown": "Hi Annette,\n\nWe recieved your application for the summer internship and we are reviewing it now. Interviews will take place over the next too weeks, and we will contact all candidates by May 2.\n\nThank you for your intrest in Ridgeway Labs.\n\nBest,\nNadia Brooks\nTalent Team",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "too",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "two"
+      ],
+      "after": " weeks"
+    },
+    {
+      "block": 2,
+      "quote": "intrest",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "interest"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "summer internship",
+    "May 2",
+    "Ridgeway Labs"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

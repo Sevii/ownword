@@ -1,0 +1,25 @@
+{
+  "id": "clean-0074",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholders",
+  "markdown": "# Project charter: customer portal\n\n## Goal\n\nGive customers a single place to view invoices, update payment details and open support tickets.\n\n## Scope\n\nThe first release will not include live chat or a mobile app. Both may be considered for a later phase.\n\n## Success metrics\n\nWe will measure success by a reduction in support calls about billing. Our target is a 25% drop within six months of launch.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "not include",
+    "may",
+    "25%",
+    "six months"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

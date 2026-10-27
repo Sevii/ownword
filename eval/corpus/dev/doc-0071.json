@@ -1,0 +1,35 @@
+{
+  "id": "doc-0071",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "students",
+  "markdown": "# Lab safety rules\n\n- Safety goggles must be worn at all times in the lab.\n- Never eat or drink near the work benches.\n- Report any spills or broken glass to the instructor immediatly.\n- Long hair must be tied back.\n- Do not leave a burner unattended.",
+  "expected": [
+    {
+      "block": 3,
+      "quote": "immediatly",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "immediately"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "must",
+    "Never",
+    "Do not",
+    "at all times"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

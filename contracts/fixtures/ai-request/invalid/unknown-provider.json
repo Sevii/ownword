@@ -1,0 +1,2 @@
+{"contractVersion":1,"clientRequestId":"c-1","provider":"acme","model":"m","action":"improve","sourceRevision":1,
+ "blocks":[{"id":"b","type":"paragraph","text":"x"}],"editableBlockIds":["b"]}

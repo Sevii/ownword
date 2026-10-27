@@ -1,0 +1,26 @@
+{
+  "id": "clean-0082",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "board members",
+  "markdown": "Good morning,\n\nPlease find attached the agenda for Thursday's board meeting. The finance committee will present the audit results, and we will vote on the proposed changes to the bylaws.\n\nBoard members who cannot attend in person may join by phone. The dial-in number is 1-800-555-0142, access code 4471.\n\nBest regards,\nMargaret Ellis\nBoard Secretary",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Thursday's",
+    "cannot",
+    "may",
+    "1-800-555-0142",
+    "4471"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"Please find attached\" is a formal stock phrase, not an error."
+  }
+}

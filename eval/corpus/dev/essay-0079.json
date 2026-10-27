@@ -1,0 +1,50 @@
+{
+  "id": "essay-0079",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "markdown": "Many students think of grammer as a set of arbitrary rules. In fact, most rules exist to help the reader. A comma in the right place can change the meaning of a sentence entirely.\n\nConsider the difference between \"Let's eat, Grandma\" and \"Let's eat Grandma.\" The first is an invitation, the second is a very different proposition.\n\nLearning these rules isn't about pleasing a teacher. Its about being understood.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "grammer",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "grammar"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "The first is an invitation, the second",
+      "category": "punctuation",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "Let's eat, Grandma",
+    "Let's eat Grandma.",
+    "isn't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Quoted examples must not be changed. The comma joining \"The first is an invitation, the second is...\" is a comma splice that many style guides allow for short parallel clauses; left as review-question, not expected. \"Its about being understood\" is a deliberate fragment-like sentence, but \"Its\" is wrong."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "email-0035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Sarah,\n\nAs requested, here is the summary of the incident. At 4:12 pm the payment service started returning errors for about 20 minutes. The root cause was an expired certificate that should of been renewed automatically.\n\nWe have added an alert so this does not happen again.\n\nRegards,\nTim",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "should of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "should have",
+        "should've"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "4:12 pm",
+    "20 minutes",
+    "does not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

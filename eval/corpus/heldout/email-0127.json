@@ -1,0 +1,34 @@
+{
+  "id": "email-0127",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "organizer",
+  "markdown": "Hi Hannah,\n\nI'm sorry to let you know that I won't be able to attend the workshop on thursday. My daughter is having surgery that morning, and I need to be at the hospital.\n\nCould you send me the slides afterward? I'd hate to miss the section on budgeting.\n\nThank you,\nRosalind",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "thursday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Thursday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "won't",
+    "surgery",
+    "budgeting"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

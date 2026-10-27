@@ -1,0 +1,24 @@
+{
+  "id": "clean-0147",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "organizer",
+  "markdown": "Hi Jasmine,\n\nThanks for organizing the volunteer day. Unfortunately I won't be able to make it on the 18th because of a family commitment, but I'd love to help with the next one.\n\nCould you add me to the mailing list?\n\nBest,\nTheo",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "won't",
+    "18th",
+    "family commitment"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

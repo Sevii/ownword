@@ -1,0 +1,81 @@
+{
+  "id": "doc-0087",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "employees",
+  "markdown": "# Remote work policy\n\n## Purpose\n\nThis policy explains how employees at Harbor & Pine Consulting can work remotely, what we expect from remote employees, and what the company provides in return. It applies to all full-time and part-time staff. Contractors are covered by the terms of their individual agreements.\n\n## Eligibility\n\nMost roles are eligible for remote work. Roles that require regular access to client sites, the print room, or the server closet may be eligible for a hybrid arrangement instead. Your manager will confirm your eligibility during onboarding, and you can request a review at any time.\n\nNew employees must work from the office for there first two weeks. This gives you time to meet the team, set up your equipment, and learn how we work before you go remote.\n\n## Working hours\n\nOur core hours are 10 am to 3 pm in your local time zone. During core hours, you should be available on Slack and able to join a call with short notice. Outside core hours, you are free to arrange your schedule as you like, as long as you work your contracted hours and meet your deadlines.\n\nIf you need to be unavailable during core hours for an appointment, let your team know in advance and update your Slack status. You do not need to ask permission for occasional appointments.\n\n## Equipment\n\nThe company will provide a laptop, a monitor, a keyboard, and a mouse. Each employee also recieves a one-time home office stipend of $500, which can be used for a desk, a chair, or other equipment that makes your workspace more comfortable. Receipts must be submitted through Expensify within 60 days of purchase.\n\nCompany equipment remains company property. If you leave Harbor & Pine, you must return all equipment within 10 business days. We will send you a prepaid shipping box.\n\n## Security\n\nRemote employees are responsible for keeping company data secure. At a minimum, you must:\n\n- Use the company VPN when accessing client systems.\n- Lock your screen whenever you step away from your computer.\n- Never store client data on personal devices or personal cloud accounts.\n- Report a lost or stolen device to IT within 24 hours.\n\nWorking from public places such as cafes is allowed, but avoid discussing confidential matters where others can overhear. Public Wi-Fi should only be used with the VPN turned on.\n\n## Communication\n\nBecause we don't share an office, we rely on clear written communication. Post updates in the relevant project channel rather then in direct messages, so that others can follow along. Use video for conversations that are sensitive or complicated, and summarize any decisions in writing afterward.\n\nEach team holds a weekly check-in. Attendence is expected unless you are on leave.\n\n## Expenses\n\nInternet and phone costs are reimbursed up to $60 per month. Coworking memberships are not covered unless approved in advance by your manager and the finance team.\n\n## Changes to this policy\n\nWe review this policy every year. If we make significant changes, we will give employees at least 30 days notice.",
+  "expected": [
+    {
+      "block": 5,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " first two weeks"
+    },
+    {
+      "block": 10,
+      "quote": "recieves",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receives"
+      ]
+    },
+    {
+      "block": 20,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "rather "
+    },
+    {
+      "block": 21,
+      "quote": "Attendence",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "Attendance"
+      ]
+    },
+    {
+      "block": 25,
+      "quote": "30 days notice",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "30 days' notice"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Harbor & Pine",
+    "must",
+    "may",
+    "10 am to 3 pm",
+    "$500",
+    "60 days",
+    "10 business days",
+    "24 hours",
+    "Never",
+    "$60 per month",
+    "unless approved",
+    "at least 30 days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long document. \"30 days notice\" -> \"30 days' notice\" is a possessive-apostrophe error per most style guides; the quoted span includes \"30\" which is also a forbidden number, so a correction must keep \"30\". Several forbidden entries exceed 5 because the document is long."
+  }
+}

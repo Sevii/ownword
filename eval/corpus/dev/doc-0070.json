@@ -1,0 +1,46 @@
+{
+  "id": "doc-0070",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "leadership",
+  "markdown": "# Q3 marketing summary\n\nWebsite traffic grew 22% compared to Q2, driven mostly by organic search. Email open rates held steady at 31%. The webinar series was less succesful than we hoped: we averaged 45 attendees per session against a goal of 100.\n\nFor Q4, we plan to cut the webinar budget in half and put the savings into paid social. We will revisit the decision in january.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "succesful",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "successful"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "january",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "January"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "22%",
+    "Q2",
+    "31%",
+    "45 attendees",
+    "100",
+    "in half"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

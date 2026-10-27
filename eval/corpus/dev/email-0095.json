@@ -1,0 +1,35 @@
+{
+  "id": "email-0095",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Elena,\n\nthe shipment from Rotterdam cleared customs this morning. It should reach our warehouse on Thursday, a day later than planned.\n\nI let the sales team know so they can update the customers who are waiting on back orders.\n\nBest,\nHugo",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The"
+      ],
+      "after": " shipment"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Rotterdam",
+    "Thursday",
+    "a day later"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

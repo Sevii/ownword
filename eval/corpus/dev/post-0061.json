@@ -1,0 +1,53 @@
+{
+  "id": "post-0061",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "hobbyists",
+  "markdown": "I finally finished restoring my grandfather's 1967 Schwinn. It took almost two years, mostly because finding original parts is harder then you would think.\n\nThe paint is the original color, a deep red, and I kept the the leather seat even though it's cracked. Some things should show there age.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " age"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "grandfather's",
+    "1967 Schwinn",
+    "two years"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

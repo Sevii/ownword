@@ -1,0 +1,52 @@
+{
+  "id": "email-0107",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Hi Paula,\n\nYour package was delivered on friday, but our records show that it was left at the front desk of you're building. If you haven't recieved it, please check with your building manager first.\n\nIf it still can't be found, reply to this email and we'll start a claim.\n\nBest,\nRyan\nSwiftline Couriers",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "friday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Friday"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "haven't",
+    "can't",
+    "Swiftline"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

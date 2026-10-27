@@ -1,0 +1,5 @@
+{"contractVersion":1,"id":"issue-17","documentId":"doc-1","sourceRevision":42,"settingsRevision":3,
+ "origin":{"kind":"local","engine":"harper","engineVersion":"2.13.0","ruleId":"harper.The"},
+ "category":"spelling","classification":"likely-error","severity":"minor",
+ "anchor":{"blockId":"b2","from":4,"to":7,"expectedText":"teh"},
+ "message":"Did you mean the definite article?","replacements":[{"text":"the"}],"state":"current"}

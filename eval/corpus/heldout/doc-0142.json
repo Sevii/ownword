@@ -1,0 +1,34 @@
+{
+  "id": "doc-0142",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "office staff",
+  "markdown": "# Kitchen rules\n\nPlease label any food you leave in the fridge with your name and the date. The fridge is cleaned out every friday afternoon, and anything unlabeled will be thrown away.\n\nDishes should be washed and put away, not left in the sink. If the dishwasher is full and clean, please empty it.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "friday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Friday"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "every",
+    "not left in the sink",
+    "If the dishwasher is full"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "clean-0080",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general readers",
+  "markdown": "When my father retired after thirty-one years at the plant, he didn't know what to do with himself. For the first few months he reorganized the garage twice and repainted the fence.\n\nThen he started volunteering at the animal shelter. He walks dogs three mornings a week, and he talks about them the way he used to talk about his coworkers. He knows which ones are shy, which ones pull, and which ones will steal a sandwich if you aren't paying attention.\n\nRetirement, it turns out, wasn't the end of his working life. It was the start of a different one.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "thirty-one years",
+    "three mornings a week",
+    "aren't",
+    "wasn't"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

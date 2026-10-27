@@ -1,0 +1,43 @@
+{
+  "id": "email-0004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Dear Mr. Patel,\n\nThank you for your order. Unfortunately, the walnut desk you selected is currently out of stock. We expect new inventory on October 28, and we will ship your order then unless you would prefer a refund.\n\nWe definately apologize for the inconvenience. As a small thank-you, we have applied a 10% discount to your next purchase.\n\nSincerely,\nThe Oakline Furniture Team",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "definately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "definitely"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "We definately apologize",
+      "category": "conciseness",
+      "classification": "style",
+      "after": " for the inconvenience"
+    }
+  ],
+  "forbiddenChanges": [
+    "October 28",
+    "unless",
+    "10%",
+    "Oakline"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Optional note is mild: \"definitely apologize\" is a slightly odd intensifier; editors may drop it."
+  }
+}

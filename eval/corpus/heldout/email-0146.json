@@ -1,0 +1,45 @@
+{
+  "id": "email-0146",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "partner",
+  "markdown": "Hi Lydia,\n\nThe vet called about Max. His bloodwork came back normal, and they think the limp is just a sprain. They want us to keep him off long walks for too weeks and give him the anti-inflammatory with food.\n\ni'll pick up the medicine on the way home.\n\nLove,\nDan",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "too",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "two"
+      ],
+      "after": " weeks"
+    },
+    {
+      "block": 2,
+      "quote": "i",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "I"
+      ],
+      "after": "'ll"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Max",
+    "normal",
+    "with food"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

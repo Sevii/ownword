@@ -1,0 +1,42 @@
+{
+  "id": "email-0012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Ken,\n\nI've attached the revised proposal. The main change is in section 3, where we now recommend a phased rollout rather then a single launch. This should effect our timeline by about two weeks, but it lowers the risk considerably.\n\nLet me know if you have questions.\n\nBest,\nAmara",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "effect",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "affect"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "section 3",
+    "two weeks"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

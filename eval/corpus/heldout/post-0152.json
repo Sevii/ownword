@@ -1,0 +1,63 @@
+{
+  "id": "post-0152",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "blog readers",
+  "markdown": "# Notes from a week without my phone\n\nLast month I put my phone in a drawer for seven days. I didn't delete any apps or announce it on social media. I just told a few people how to reach me in an emergency, bought a cheap alarm clock, and closed the drawer.\n\n## Day one\n\nThe first day was harder than I expected. I reached for my pocket at least thirty times before lunch. Every time I was waiting for something, the kettle, a bus, a friend running late, I felt a small jolt of panic at having nothing to look at.\n\n## Days two and three\n\nBy the second day, the reaching had slowed down. I started noticing things I usually miss: the man who walks three greyhounds past my building every morning, the the smell of the bakery on the corner, the fact that my neighbor has been learning the trumpet.\n\nI also noticed how often I use my phone to avoid being bored. Without it, boredom turned into something else. On the bus, I made a list of people I hadn't called in too long. In line at the grocery store, I worked out the plot of a short story I've been trying to write for a year.\n\n## Days four and five\n\nPractical problems started to show up. I missed a message about a change to a meeting time, and I had to call my bank from a payphone (they still exist, barely). Navigation was the hardest part. I printed directions to a friends house and still got lost.\n\nThese weren't disasters, but they were reminders of how much of my life depends on one device. It made me think about which uses I actually value and which ones are just habits.\n\n## Days six and seven\n\nBy the end of the week, I felt calmer than I had in months. I was sleeping better, probably because I wasn't scrolling in bed. I read two books. I definately wasn't more productive at work, but I was less scattered.\n\n## What I changed afterward\n\nI didn't stay phone-free. That wasn't realistic, and I don't think it was the point. But I made a few changes that have stuck:\n\n- The phone charges in the kitchen overnight.\n- Social media apps live in a folder on the last screen.\n- I leave the phone at home when I go for a walk.\n\nNone of this is new advice. You've probably read it all before. The difference for me was feeling, for a full week, what my attention was like without the constant pull. I hadn't realized how much I'd missed it.",
+  "expected": [
+    {
+      "block": 5,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 8,
+      "quote": "friends",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "friend's"
+      ],
+      "after": " house"
+    },
+    {
+      "block": 11,
+      "quote": "definately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "definitely"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 3,
+      "quote": "Every time I was waiting for something, the kettle, a bus, a friend running late, I felt",
+      "category": "punctuation",
+      "classification": "review-question"
+    }
+  ],
+  "forbiddenChanges": [
+    "seven days",
+    "thirty times",
+    "three greyhounds",
+    "two books",
+    "didn't",
+    "don't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long post. The list set off by commas (\"something, the kettle, a bus, a friend running late, I felt\") would read better with dashes; a review question, not an error. \"greyhounds\" lowercase is correct."
+  }
+}

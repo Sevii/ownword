@@ -1,0 +1,25 @@
+{
+  "id": "clean-0067",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "new hires",
+  "markdown": "# Onboarding checklist\n\nBefore your first day, please complete the following:\n\n- Sign and return the offer letter.\n- Fill out the W-4 and I-9 forms.\n- Set up direct deposit through Gusto.\n- Read the employee handbook, especially the section on remote work.\n\nOn your first day, your manager will walk you through the team's goals for the quarter.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "W-4",
+    "I-9",
+    "Gusto",
+    "team's"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

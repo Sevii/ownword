@@ -1,0 +1,43 @@
+{
+  "id": "email-0145",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "partner",
+  "markdown": "Hi Patrick,\n\nI've attached the signed NDA. Please note that our legal team made one change: the confidentiality period is now three years instead of five. Let me know if that's acceptable.\n\nOnce we have you're countersignature, we can schedule the techincal deep dive.\n\nBest,\nAisha",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "techincal",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "technical"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "NDA",
+    "three years instead of five",
+    "that's acceptable"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

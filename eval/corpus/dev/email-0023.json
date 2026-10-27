@@ -1,0 +1,35 @@
+{
+  "id": "email-0023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Rebecca,\n\nI wanted to let you know that I'll be out of the office from the 3rd through the 7th. Derek will cover any urgent requests while I'm away.\n\nI have already shared the client folders with him, and he knows were the backup drive is.\n\nThanks,\nNina",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "were",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "where"
+      ],
+      "after": " the backup"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "3rd",
+    "7th",
+    "Derek"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Could be categorized as grammar or word-choice; labeled word-choice."
+  }
+}

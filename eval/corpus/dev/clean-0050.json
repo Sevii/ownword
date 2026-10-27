@@ -1,0 +1,28 @@
+{
+  "id": "clean-0050",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "engineering team",
+  "markdown": "FYI the build is broken on main. Looks like the lockfile wasn't updated after the Node 20 upgrade. I'm on it.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "main",
+    "Node 20",
+    "wasn't",
+    "I'm on it"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

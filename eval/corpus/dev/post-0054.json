@@ -1,0 +1,43 @@
+{
+  "id": "post-0054",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community",
+  "markdown": "Our community garden had it's best season yet. Volunteers harvested over 900 pounds of tomatoes, squash, and beans, and all of it went to the Eastside food pantry.\n\nA huge thank you to everyone who showed up on those hot Saturday mornings. We couldn't of done it without you.\n\nPlanning for next year starts in February. Watch this page for details.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "it's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "couldn't of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "couldn't have"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "900 pounds",
+    "Eastside",
+    "February"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

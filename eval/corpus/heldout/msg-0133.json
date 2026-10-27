@@ -1,0 +1,33 @@
+{
+  "id": "msg-0133",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "family",
+  "markdown": "Hey, just landed. Their's a huge line at customs so it might be a while. I'll text you when I'm out.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Their's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "There's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "customs",
+    "might"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

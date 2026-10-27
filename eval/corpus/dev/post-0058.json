@@ -1,0 +1,43 @@
+{
+  "id": "post-0058",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community",
+  "markdown": "Book club update! This month we're reading *The Remains of the Day* by Kazuo Ishiguro. We'll meet on the last thursday of the month at the library, room 2B.\n\nNew members are always welcome. You dont need to have finished the book to come.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "thursday",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Thursday"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "dont",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "don't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "The Remains of the Day",
+    "Kazuo Ishiguro",
+    "room 2B"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

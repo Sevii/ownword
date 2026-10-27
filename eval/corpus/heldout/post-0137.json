@@ -1,0 +1,43 @@
+{
+  "id": "post-0137",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "home bakers",
+  "markdown": "Tip of the week: if your sourdough isn't rising, check the temperature of your kitchen. Starters are happiest between 75 and 80 degrees. In the winter, I put mine in the oven with just the light on.\n\nIts a small trick, but it made a huge diffrence for me.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "diffrence",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "difference"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "isn't",
+    "75 and 80 degrees",
+    "light on"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

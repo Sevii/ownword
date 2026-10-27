@@ -1,0 +1,35 @@
+{
+  "id": "post-0060",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "neighbors",
+  "markdown": "Reminder: the neighborhood cleanup is this Saturday from 9 to noon. We'll meet at the corner of Elm and 4th. Gloves and bags will be provided, but bring your own water.\n\nLast year we filled 40 bags of trash. Lets beat that!",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Lets",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "Let's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Saturday",
+    "9 to noon",
+    "Elm and 4th",
+    "40 bags"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

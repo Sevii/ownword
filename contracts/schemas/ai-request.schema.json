@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ai-request.schema.json",
+  "title": "AI request",
+  "description": "Browser to Rust relay. The API key travels in the X-Provider-Key header, never in this body.",
+  "type": "object",
+  "required": ["contractVersion", "clientRequestId", "provider", "model", "action", "sourceRevision", "blocks", "editableBlockIds"],
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": { "const": 1 },
+    "clientRequestId": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "provider": { "enum": ["openai", "anthropic", "gemini", "openrouter", "fixture"] },
+    "model": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "action": { "enum": ["improve", "instruct", "tone-audience", "explain", "proofread"] },
+    "sourceRevision": { "type": "integer", "minimum": 0 },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "type": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "editableBlockIds": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "goals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "audience": { "type": "string", "maxLength": 200 },
+        "formality": { "enum": ["casual", "neutral", "formal"] },
+        "intent": { "type": "string", "maxLength": 200 }
+      }
+    },
+    "instruction": { "type": "string", "maxLength": 2000 },
+    "preset": { "enum": ["clarify", "shorten", "grammar", "tone"] }
+  }
+}

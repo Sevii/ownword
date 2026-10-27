@@ -1,0 +1,36 @@
+{
+  "id": "msg-0109",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hey, the client moved the call to 2:30. Can you let Peter know? Also we need the the updated deck before then.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "2:30",
+    "Peter"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

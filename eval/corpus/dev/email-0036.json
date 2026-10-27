@@ -1,0 +1,34 @@
+{
+  "id": "email-0036",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "markdown": "Hi Lucy,\n\nMe and Jordan finished the inventory count on Saturday. We found three cases of printer paper that wasn't in the system and a box of toner that had expired.\n\nThe updated spreadsheet is in the shared drive.\n\nThanks,\nAbby",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Me and Jordan",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Jordan and I"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Saturday",
+    "three cases",
+    "wasn't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"cases of printer paper that wasn't\" is arguably an agreement error (cases ... weren't), but \"paper\" can be read as the head; left unlabeled. Consider adding as review-question."
+  }
+}

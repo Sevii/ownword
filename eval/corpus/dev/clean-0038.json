@@ -1,0 +1,26 @@
+{
+  "id": "clean-0038",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "patient",
+  "markdown": "Hi Mr. Novak,\n\nYour appointment with Dr. Simmons is confirmed for Tuesday, April 8 at 11:30 am. Please arrive 15 minutes early to complete your paperwork.\n\nIf you need to cancel, please call us at least 24 hours in advance to avoid a $40 fee.\n\nRiverside Family Clinic",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tuesday, April 8",
+    "11:30 am",
+    "15 minutes",
+    "24 hours",
+    "$40"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "clean-0041",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Running 10 min late. Train stuck outside Jamaica station. Start without me.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "10 min",
+    "Jamaica"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Fragments used intentionally in a short status message."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

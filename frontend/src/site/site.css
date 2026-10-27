@@ -1,0 +1,39 @@
+/* Landing and information pages, on the app's tokens (styles.css). */
+
+html:has(body.site), body.site { height: auto; }
+body.site { display: block; min-height: 100dvh; background: var(--bg); color: var(--fg); font-family: var(--font-ui); }
+.site-header {
+  display: flex; align-items: center; gap: .75rem; padding: .8rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 1px solid var(--border); background: var(--topbar-bg);
+}
+.site-header a { color: inherit; text-decoration: none; }
+.site-header .brand img { width: 28px; height: 28px; border-radius: 7px; }
+.site-header nav { margin-left: auto; display: flex; gap: 1rem; font-size: .9rem; }
+.site-header nav a { color: var(--accent-dark); }
+
+.site-main { max-width: 46rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3.5rem) 1rem 3rem; }
+.site-main h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 .8rem; }
+.site-main h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; margin: 2.2rem 0 .6rem; }
+.site-main p, .site-main li { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.65; }
+.site-main .lede { font-size: 1.2rem; color: var(--muted-text); margin: 0 0 1.6rem; }
+.site-main a { color: var(--accent-dark); }
+
+.handoff { display: grid; gap: .7rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1rem; box-shadow: var(--shadow-md); }
+.handoff label { font-weight: 600; font-size: .9rem; }
+.handoff textarea {
+  width: 100%; min-height: 12rem; resize: vertical; padding: .8rem .9rem; border: 1px solid var(--border);
+  border-radius: var(--r-md); background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 1.05rem; line-height: 1.6;
+}
+.handoff textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.handoff__row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+.handoff__row .btn { font-size: 1rem; padding: .55rem 1.2rem; }
+.handoff__note { font-size: .85rem; color: var(--muted-text); }
+
+.points { padding-left: 1.2rem; }
+.points li { margin: .35rem 0; }
+.flow { border-collapse: collapse; width: 100%; font-size: .95rem; margin: .5rem 0 1rem; }
+.flow th, .flow td { text-align: left; vertical-align: top; padding: .55rem .6rem; border-bottom: 1px solid var(--border); font-family: var(--font-ui); line-height: 1.45; }
+.flow th { font-weight: 600; }
+.site-footer { border-top: 1px solid var(--border); padding: 1.2rem 1rem 2rem; text-align: center; font-size: .85rem; color: var(--muted-text); }
+.site-footer a { color: var(--accent-dark); margin: 0 .5rem; }
+@media (max-width: 560px) { .flow th, .flow td { display: block; border: 0; padding: .2rem 0; } .flow tr { display: block; border-bottom: 1px solid var(--border); padding: .5rem 0; } }

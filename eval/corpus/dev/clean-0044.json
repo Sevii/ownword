@@ -1,0 +1,29 @@
+{
+  "id": "clean-0044",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Quick heads up: the 3pm with Acme got pushed to 4. Same Zoom link. They want to go over the SOW before signing.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "3pm",
+    "4",
+    "Acme",
+    "Zoom",
+    "SOW"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

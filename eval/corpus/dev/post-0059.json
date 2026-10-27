@@ -1,0 +1,34 @@
+{
+  "id": "post-0059",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "small business owners",
+  "markdown": "Small business tip: keep your personal and buisness expenses in separate accounts from day one. It makes tax season so much easier, and it protects you if you're ever audited.\n\nI learned this the hard way. My first year, I spent an entire weekend going through bank statements with a highlighter.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "buisness",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "business"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "separate accounts",
+    "day one",
+    "first year"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

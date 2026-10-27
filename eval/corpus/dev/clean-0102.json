@@ -1,0 +1,25 @@
+{
+  "id": "clean-0102",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "company",
+  "markdown": "Dear Sir or Madam,\n\nI am writing to complain about the condition of the rental car I collected from your Newark Airport branch on 2 June. The interior smelled strongly of smoke, and the tire pressure warning light was on for the entire trip.\n\nI was charged a $150 cleaning fee when I returned the car, even though the smell was there when I picked it up. I would like this fee refunded.\n\nSincerely,\nMartin Doyle",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Newark Airport",
+    "2 June",
+    "$150",
+    "even though"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"2 June\" date format in an en-US letter is unusual but not an error."
+  }
+}

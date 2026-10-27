@@ -1,0 +1,28 @@
+{
+  "id": "clean-0040",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "hey, you still coming tonight? we're gonna grab tacos first and then head to Kim's around 8. no pressure if you're wiped, y'know how it is after a double shift.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "gonna",
+    "y'know",
+    "Kim's",
+    "around 8"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text: lowercase sentence starts, \"gonna\", \"y'know\", and a run-on are intentional register. A checker should stay silent."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}

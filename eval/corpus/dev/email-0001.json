@@ -1,0 +1,18 @@
+{
+  "id": "email-0001",
+  "source": { "kind": "synthetic", "author": "claude-opus-5-5", "license": "project" },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "markdown": "Hi Sam,\n\nTeh invoice for $1,200 may arrive Friday. In order to avoid delays, please confirm you recieved it.\n\nThanks,\nAlex",
+  "expected": [
+    { "block": 1, "quote": "Teh", "category": "spelling", "classification": "likely-error", "accept": ["The"] },
+    { "block": 1, "quote": "recieved", "category": "spelling", "classification": "likely-error", "accept": ["received"] }
+  ],
+  "optional": [
+    { "block": 1, "quote": "In order to", "category": "conciseness", "classification": "style" }
+  ],
+  "forbiddenChanges": ["$1,200", "may", "Friday"],
+  "clean": false,
+  "labels": { "reviewers": 0, "notes": "Seed example." }
+}

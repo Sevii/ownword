@@ -1,0 +1,26 @@
+{
+  "id": "clean-0140",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "students",
+  "markdown": "# Equipment checkout\n\nLaptops, cameras, and microphones can be borrowed from the media desk for up to seven days. Students must show a valid ID and sign the checkout form.\n\nLate returns are charged $5 per day. Damaged equipment must be reported immediately; the borrower may be responsible for the cost of repairs.\n\nThe media desk is open Monday through Friday, 9 am to 6 pm.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "seven days",
+    "must",
+    "$5 per day",
+    "may",
+    "9 am to 6 pm"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

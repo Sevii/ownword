@@ -1,0 +1,28 @@
+{
+  "id": "clean-0072",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "writers",
+  "markdown": "# Style guide: product names\n\nAlways write Sledgeworx with a capital S and no space. Our desktop app is Sledgeworx Studio, and the command-line tool is `swx`, always lowercase.\n\nRefer to third-party products by their official names: GitHub, iPhone, macOS, PostgreSQL, and JavaScript. Don't abbreviate Kubernetes as K8s in customer-facing copy.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Sledgeworx Studio",
+    "swx",
+    "GitHub",
+    "iPhone",
+    "macOS",
+    "PostgreSQL",
+    "Don't"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Trap case: lowercase \"swx\" and camel-case product names are correct."
+  }
+}

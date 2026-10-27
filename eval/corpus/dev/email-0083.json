@@ -1,0 +1,34 @@
+{
+  "id": "email-0083",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Shawn,\n\nThanks for the update. I agree that we should hold off on the the hiring decision until we see the final budget numbers.\n\nOne question: does the revised plan still include the contractor for the data migration? If not, we'll need to push the timeline back.\n\nRegards,\nDeb",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "hold off",
+    "If not",
+    "contractor"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "email-0106",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "finance team",
+  "markdown": "Hi team,\n\nA few reminders before the audit next week:\n\n- Make sure all invoices from Q2 are scanned and filed.\n- Double-check that every purchase over $5,000 has a signed approval.\n- Dont delete any emails related to the Marlow contract.\n\nThanks for your help. I know its a busy time.\n\nKim",
+  "expected": [
+    {
+      "block": 4,
+      "quote": "Dont",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "Don't"
+      ]
+    },
+    {
+      "block": 5,
+      "quote": "its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's",
+        "it is"
+      ],
+      "after": " a busy"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Q2",
+    "$5,000",
+    "Marlow"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

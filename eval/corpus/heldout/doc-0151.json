@@ -1,0 +1,81 @@
+{
+  "id": "doc-0151",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "support agents",
+  "markdown": "# Customer support handbook: refunds and escalations\n\n## Who this is for\n\nThis section is for everyone on the Tidewater support team, including part-time agents and contractors. It explains when you can issue a refund on your own, when you need approval, and how to escalate a case that you cannot resolve.\n\n## Refunds you can issue yourself\n\nYou may issue a full refund without approval if all of the following are true:\n\n- The purchase was made within the last 30 days.\n- The order total is $200 or less.\n- The customer has not received a refund in the past 12 months.\n\nUse the Refund button in the order view and choose a reason from the dropdown. Always add a short note explaining what happened, so that the next agent who opens the case has the full picture.\n\n## Refunds that need approval\n\nAnything outside those rules needs approval from a team lead. This includes partial refunds on bundles, refunds on orders older than 30 days, and any refund over $200. Post the request in the #refund-approvals channel with the order number, the amount, and a one-sentence summary. A team lead will usually respond within an hour during business hours.\n\nDo not promise the customer a refund before it is approved. Instead, tell them that you are checking with you're team and will follow up by a specific time. Then make sure you do.\n\n## Escalations\n\nSome cases need more help then a team lead can give. Escalate to the Tier 2 queue if:\n\n- The customer reports a security or privacy concern.\n- A bug is preventing the customer from using the product.\n- The customer mentions legal action or contacts us through a lawyer.\n\nWhen you escalate, write a summary that someone with no context can understand. Include what the customer asked for, what you have already tried, and any relevent order numbers or screenshots. A good escalation note saves the next person twenty minutes of reading.\n\n## Difficult conversations\n\nOccasionally a customer will be angry, rude, or abusive. You are not expected to tolerate abuse. If a customer uses threatening or discriminatory language, you may end the conversation after one warning. Use the template \"Ending chat – conduct\" and tag the case for review.\n\nMost angry customers, though, are simply frustrated. Acknowledge the problem, apologize for the inconvenience, and focus on what you can do. Avoid phrases like \"That's our policy\" on there own; explain the reason behind the policy when you can.\n\n## Tracking your work\n\nEvery case should be closed with the correct tag so we can report on trends. If you're not sure which tag to use, ask in #support-help. We review tag accuracy every month, and the results are shared at the team meeting, not used in individual performance reviews.\n\n## Questions\n\nThis handbook is a living document. If something is unclear or out of date, suggest an edit or message the support operations manager, Keisha Banks. We would rather hear about a confusing rule then have agents guess.",
+  "expected": [
+    {
+      "block": 11,
+      "quote": "you're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your"
+      ],
+      "after": " team"
+    },
+    {
+      "block": 13,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "more help "
+    },
+    {
+      "block": 17,
+      "quote": "relevent",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "relevant"
+      ]
+    },
+    {
+      "block": 20,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " own"
+    },
+    {
+      "block": 24,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "confusing rule "
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tidewater",
+    "may",
+    "30 days",
+    "$200",
+    "12 months",
+    "Do not promise",
+    "#refund-approvals",
+    "Keisha Banks",
+    "Ending chat – conduct",
+    "That's our policy"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long document. Quoted template names and quoted phrases must not change. The en dash in the template name is intentional."
+  }
+}

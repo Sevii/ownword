@@ -1,0 +1,66 @@
+{
+  "id": "post-0089",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "blog readers",
+  "markdown": "# What I wish I'd known before adopting a rescue dog\n\nTwo years ago, my partner and I adopted a three-year-old shepherd mix named Juniper from a shelter in Tacoma. The adoption counselor told us she was \"a little shy.\" That turned out to be an understatement.\n\nFor the first month, Juniper wouldn't eat in front of us. She hid behind the couch whenever someone knocked on the door, and she wouldn't walk past the recycling bins at the end of our street. We had read the advice online and we thought we were prepared, but nothing really prepares you for a dog who is afraid of almost everything.\n\nHere are a few things I wish someone had told me.\n\n## Patience is measured in months, not days\n\nMost of the articles I read talked about the \"3-3-3 rule\": three days to decompress, three weeks to learn your routine, three months to feel at home. That is a useful starting point, but it's not a deadline. Juniper didn't wag her tail at us untill almost five months in. Some dogs take longer, and that's okay.\n\n## A routine is the best gift you can give\n\nFearful dogs need predictability. We fed Juniper at the same times every day, walked the same route, and kept the house quiet in the evenings. It felt boring, but it worked. Once she knew what was coming next, she could relax enough to be curious.\n\n## Find a trainer who uses positive methods\n\nOur first trainer recommended a prong collar. We tried it for one walk and Juniper shut down completely. Our second trainer, who specialized in fearful dogs, taught us to reward small brave choices: sniffing a new object, looking at a stranger without running, walking one house further then the day before. Progress was slow, but it was real.\n\n## Your life will change\n\nWe stopped having big dinner parties. We take vacations seperately, or we bring her with us to places we know she can handle. We have turned down invitations because Juniper had a bad week. I don't regret any of it, but I wish I had understood the the trade-offs going in.\n\n## It gets better\n\nToday, Juniper greets the mail carrier at the door, sleeps on her back with her paws in the air, and has a best friend at the dog park named Biscuit. She is still nervous around men in hats and she will probably never love the recycling bins. But she trusts us, and that trust was worth every slow, frustrating, wonderful day.\n\nIf you are thinking about adopting a fearful dog, I'd encourage you to do it. Just go in with your eyes open.",
+  "expected": [
+    {
+      "block": 5,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    },
+    {
+      "block": 9,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ],
+      "before": "further "
+    },
+    {
+      "block": 11,
+      "quote": "seperately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separately"
+      ]
+    },
+    {
+      "block": 11,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "three-year-old",
+    "Juniper",
+    "Tacoma",
+    "3-3-3 rule",
+    "five months",
+    "Biscuit",
+    "never"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long post. Quoted phrases \"a little shy\" and \"3-3-3 rule\" must not be changed."
+  }
+}

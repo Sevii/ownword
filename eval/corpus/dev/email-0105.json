@@ -1,0 +1,43 @@
+{
+  "id": "email-0105",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "customer",
+  "markdown": "Hi Owen,\n\nI'm sorry about the mix-up with yesterday's delivery. The driver went to our old adress on Pine Street instead of the new warehouse. I've updated the address in the system and the order will go out again tomorow morning.\n\nThere will be no extra charge.\n\nRegards,\nCelia",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "adress",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "address"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "tomorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "yesterday's",
+    "Pine Street",
+    "no extra charge"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

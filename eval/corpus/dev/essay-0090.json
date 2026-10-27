@@ -1,0 +1,61 @@
+{
+  "id": "essay-0090",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "software engineers",
+  "markdown": "# The case for boring technology\n\nEvery few months, a new framework promises to make software development faster, safer, and more fun. Some of these promises are real. But in my experience, the teams that ship reliably are rarely the ones chasing the newest tools. They are the ones who picked something boring and learned it deeply.\n\nBy \"boring,\" I don't mean bad. I mean technology whose failure modes are well understood. PostgreSQL has been around since the 1990s. When it breaks, someone has already written a blog post about exactly how it broke and how to fix it. When a database that was released eighteen months ago breaks, you may be the first person to see that particular error.\n\n## Innovation has a budget\n\nEvery team has a limited amount of attention. Each new technology you adopt spends some of it: you have to learn the tool, figure out how to deploy it, write runbooks for it, and train new hires on it. If you spend that attention on infrastructure, you have less of it left for the problem your customers are actually paying you to solve.\n\nThis is why I like to think of new technology as a budget. A small startup might be able to afford two or three novel choices. The rest of the stack should be things the team already knows how to operate at three in the morning.\n\n## The hidden cost of choice\n\nOne of the most common mistakes I see are teams adopting a different tool for every new service. One service uses MongoDB, another uses DynamoDB, and a third stores it's data in Redis because someone wanted to try it. Each choice made sense on its own. Together, they mean that nobody on the team can confidently debug the whole system.\n\nConsolidating on fewer tools has costs too. Sometimes the boring option is a slightly worse fit for the job. But a slightly worse tool that everyone understands is usually better than a perfect tool that only one person knows, especially when that person goes on vacation.\n\n## When new is worth it\n\nNone of this means you should never adopt anything new. Sometimes a new tool solves a problem that the old ones simply can't. Containers, for example, were once a risky choice, and now they are the boring default.\n\nThe question to ask is not \"Is this better?\" but \"Is this better enough to justify what it will cost us to learn and run it?\" Often, the honest answer is no. When the answer is yes, go for it, and be prepared to spend some of your innovation budget.\n\n## Conclusion\n\nChoosing boring technology isn't glamorous. Nobody writes conference talks about how they used a relational database and a cron job and everything was fine. But \"everything was fine\" is exactly what most businesses need from there software. Save the excitement for the product.",
+  "expected": [
+    {
+      "block": 7,
+      "quote": "are",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "is"
+      ],
+      "before": "I see ",
+      "after": " teams"
+    },
+    {
+      "block": 7,
+      "quote": "it's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its"
+      ],
+      "after": " data"
+    },
+    {
+      "block": 13,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ],
+      "after": " software"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "PostgreSQL",
+    "1990s",
+    "eighteen months",
+    "MongoDB",
+    "DynamoDB",
+    "Redis",
+    "never",
+    "can't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Long essay. \"One of the most common mistakes ... are\" is subject-verb agreement (head noun \"One\"). Quoted questions must not change."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "email-0117",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Yusuf,\n\nThe conference room projector is broken again. I've submitted a ticket with IT, but in the meantime we'll need to use the portable one for the the client presentation on Thursday.\n\nCould you make sure it's charged and in the room by 9? The batterys don't last long.\n\nThanks,\nGloria",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "batterys",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "batteries"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Thursday",
+    "by 9",
+    "don't"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

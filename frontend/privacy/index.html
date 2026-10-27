@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Privacy and data | Open Writer</title>
+    <meta name="description" content="Where your writing goes in Open Writer: proofreading runs on your device, drafts stay in your browser, and AI requests go only to the provider you connect." />
+    <meta property="og:title" content="Privacy and data | Open Writer" />
+    <meta property="og:description" content="Where your writing goes in Open Writer: proofreading runs on your device, drafts stay in your browser, and AI requests go only to the provider you connect." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Privacy and data</h1>
+      <p class="lede">Open Writer is built so your writing stays with you. This page explains exactly what goes where.</p>
+      <h2>Where your data goes</h2>
+      <table class="flow">
+        <thead><tr><th>What</th><th>Where it goes</th><th>Stored</th></tr></thead>
+        <tbody>
+          <tr><td>Your writing, while you proofread</td><td>Nowhere. Checking runs in your browser.</td><td>In your browser only (IndexedDB), with recovery copies</td></tr>
+          <tr><td>Text you send to an AI action</td><td>Directly from your browser to the AI provider you connected</td><td>The provider handles it under its own terms</td></tr>
+          <tr><td>Your AI API key</td><td>Sent with each AI request, in a request header, directly to the provider</td><td>Saved in this browser (not encrypted). Remove it in Settings on shared devices</td></tr>
+        </tbody>
+      </table>
+      <h2>Your drafts</h2>
+      <p>Drafts live in this browser’s storage. Clearing site data deletes them, and some browsers, such as Safari, may remove storage for sites you have not visited in a while. Export anything you want to keep. There are no accounts and no cloud sync.</p>
+      <h2>AI actions</h2>
+      <p>AI runs only when you choose an action, on the text you chose: a selection or the whole document. The request names the provider and model, and every result says which model produced it. Your provider may retain requests under its own policy:
+        <a href="https://openai.com/policies/privacy-policy/">OpenAI</a>,
+        <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>,
+        <a href="https://ai.google.dev/gemini-api/terms">Google Gemini</a>,
+        <a href="https://openrouter.ai/privacy">OpenRouter</a>.
+        Cancelling a request stops it here, but the provider may already have processed or billed it.</p>
+      <h2>No analytics</h2>
+      <p>Open Writer sends no usage counts or feedback. There is no application server, account, or cloud sync. Static hosting may have ordinary access logs for downloading app files.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

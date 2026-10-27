@@ -1,0 +1,35 @@
+{
+  "id": "email-0021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "roommate",
+  "markdown": "Hey Sam,\n\nI talked to the landlord and he said the repair guy is coming Wednesday between 1 and 4. Somebody needs to be home to let him in. I can't, because I have class untill 5.\n\nAre you around? If not, I'll ask him to reschedule.\n\nEllie",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Wednesday",
+    "between 1 and 4",
+    "can't",
+    "If not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

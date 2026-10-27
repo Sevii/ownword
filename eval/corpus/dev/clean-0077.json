@@ -1,0 +1,25 @@
+{
+  "id": "clean-0077",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general readers",
+  "markdown": "The first time I travelled alone, I was nineteen and had saved just enough for a month in Spain. I didn't speak much Spanish and I got lost almost every day.\n\nLooking back, getting lost was the best part. It forced me to ask for directions, to try the cafe on the wrong street, to sit on a bench and actually look around. I've travelled a lot since then, but I've never learned as much as I did that month.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "nineteen",
+    "Spain",
+    "didn't",
+    "never"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"travelled\" is the British spelling, also accepted in American usage; it should not be flagged in this en-US case. \"cafe\" without accent is fine."
+  }
+}

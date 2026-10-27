@@ -1,0 +1,44 @@
+{
+  "id": "email-0009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "colleague",
+  "markdown": "Hi Sophie,\n\nWe need to decide wether to keep the Thursday standup or move it to Wednesday. Most of the design team prefers Wednesday, but QA has a conflict at 9.\n\nLet me know what you think and I'll update the calender invite.\n\nCheers,\nLeo",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "wether",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "whether"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "calender",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "calendar"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Thursday",
+    "Wednesday",
+    "QA",
+    "at 9"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"wether\" is technically a real word (a castrated ram) but is clearly a misspelling of \"whether\" here."
+  }
+}

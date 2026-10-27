@@ -1,0 +1,25 @@
+{
+  "id": "clean-0138",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community",
+  "markdown": "Our annual charity run raised $42,300 this year, the most in the event's history. Over 600 runners took part, and every dollar goes directly to the children's hospital.\n\nThank you to our sponsors, our volunteers, and everyone who came out to cheer. See you next year!",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "$42,300",
+    "event's",
+    "Over 600",
+    "children's"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

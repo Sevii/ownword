@@ -1,0 +1,36 @@
+{
+  "id": "clean-0099",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-opus-5-5",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "classmate",
+  "markdown": "hey can u send me the notes from bio? i missed class bc of the dentist",
+  "expected": [],
+  "optional": [
+    {
+      "block": 0,
+      "quote": "i",
+      "category": "capitalization",
+      "classification": "review-question",
+      "before": "bio? ",
+      "after": " missed"
+    }
+  ],
+  "forbiddenChanges": [
+    "bio",
+    "bc",
+    "u"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Very informal text with \"u\", \"bc\", lowercase \"i\". Intentional register; a checker in a general mode might flag \"i\", but for casual messages the expected behavior is silence. Reviewer should confirm whether lowercase \"i\" in texting counts as an error for this product."
+  },
+  "goals": {
+    "formality": "casual"
+  }
+}
