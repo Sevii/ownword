@@ -52,6 +52,19 @@ export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRe
           <span>Pause checking</span>
         </label>
 
+        <h3>Writing</h3>
+        <label className="field field--check">
+          <input type="checkbox" checked={Boolean(prefs.typewriter)} onChange={(e) => onChange({ typewriter: e.target.checked })} />
+          <span>Typewriter scrolling: keep the line I am typing in the middle of the screen</span>
+        </label>
+        <label className="field">
+          <span>Daily word goal</span>
+          <span className="field__inline">
+            <WordGoalInput value={prefs.wordGoal ?? 0} onChange={(n) => onChange({ wordGoal: n })} />{' '}
+            words added per day (0 turns it off; shown in the status bar)
+          </span>
+        </label>
+
         <h3>Personal dictionary</h3>
         {prefs.dictionary.length ? (
           <ul className="chips">
@@ -195,6 +208,30 @@ function FolderSection({ folder }) {
         </>
       )}
     </section>
+  );
+}
+
+/** Whole numbers from 0 to 100000; the field keeps what is typed until it leaves. */
+function WordGoalInput({ value, onChange }) {
+  const [draft, setDraft] = useState(String(value));
+  useEffect(() => setDraft(String(value)), [value]);
+  const valid = (n) => Number.isInteger(n) && n >= 0 && n <= 100000;
+  return (
+    <input
+      type="number"
+      min={0}
+      max={100000}
+      step={50}
+      aria-label="Daily word goal"
+      value={draft}
+      aria-invalid={!valid(Number(draft))}
+      onChange={(e) => {
+        setDraft(e.target.value);
+        const n = Number(e.target.value);
+        if (e.target.value !== '' && valid(n) && n !== value) onChange(n);
+      }}
+      onBlur={() => setDraft(String(value))}
+    />
   );
 }
 

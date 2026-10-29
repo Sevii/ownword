@@ -592,3 +592,36 @@ test('history: save a version, see the diff, and restore it', async ({ page }) =
   await expect(page.getByRole('button', { name: 'History (2)' })).toBeVisible();
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('outline, typewriter setting, daily goal, and PWA file handlers', async ({ page, request }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  // Outline lists the welcome headings and clicking one moves the cursor there.
+  const outline = page.locator('.outline__link');
+  await expect(outline).toHaveCount(3);
+  await expect(outline.nth(1)).toHaveText('Try it');
+  await outline.nth(2).click();
+  const focusedHeading = await page.evaluate(() => { const ed = document.querySelector('.ProseMirror').editor; return ed.state.selection.$from.parent.textContent; });
+  expect(focusedHeading).toBe('Good to know');
+
+  // Daily goal: set in Settings, shown in the status bar, counts words typed.
+  await page.getByRole('button', { name: 'Settings' }).click();
+  await page.getByLabel('Daily word goal').fill('100');
+  await page.getByLabel('Typewriter scrolling', { exact: false }).check();
+  await page.getByRole('button', { name: 'Done' }).click();
+  await expect(page.locator('.goal__text')).toHaveText('0 / 100 today');
+  await page.locator('.prose p').last().click();
+  await page.keyboard.press('End');
+  await page.keyboard.type(' one two three');
+  await expect(page.locator('.goal__text')).toHaveText('3 / 100 today');
+  await page.reload();
+  await expect(page.locator('.goal__text')).toHaveText('3 / 100 today');
+
+  // The manifest declares file handlers and a large icon.
+  const manifest = await (await request.get('/manifest.webmanifest')).json();
+  expect(manifest.file_handlers[0].accept['text/markdown']).toContain('.md');
+  expect(manifest.icons.some((i) => i.sizes === '512x512')).toBe(true);
+  expect((await request.get('/logo-512.png')).ok()).toBe(true);
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});

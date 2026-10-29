@@ -14,6 +14,19 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 );
 
+// Files opened with the installed app (manifest file_handlers). The document
+// hook picks them up; anything that arrives before it listens is queued.
+window.__owPendingFiles = [];
+if ('launchQueue' in window) {
+  window.launchQueue.setConsumer(async (params) => {
+    for (const handle of params.files ?? []) {
+      const file = await handle.getFile();
+      window.__owPendingFiles.push(file);
+      window.dispatchEvent(new CustomEvent('ow:open-file', { detail: file }));
+    }
+  });
+}
+
 // The service worker caches the app for offline use; it never caches /api.
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {

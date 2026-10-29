@@ -1,4 +1,6 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import * as db from '../documents/db.js';
+import { advanceGoal, todayKey } from './goal.js';
 import { EditorContent } from '@tiptap/react';
 import * as connections from '../ai/connections.js';
 import { AssistPanel } from './AssistPanel.jsx';
@@ -90,6 +92,7 @@ export function App() {
     pendingImport,
     proofreading,
     scheduleSave: documents.scheduleSave,
+    typewriter: Boolean(prefs.typewriter),
   });
 
   const { exportAs, taskCompleted } = useImportExport({ currentRequest, docRef, announce: setAnnouncement });
@@ -128,6 +131,23 @@ export function App() {
       if (!popover && focusMode) setFocusMode(false);
     },
   });
+
+  // Daily word goal: growth of each document's count adds to today's total.
+  const [goalProgress, setGoalProgress] = useState({ date: todayKey(), words: 0 });
+  const baselines = useRef(new Map());
+  useEffect(() => {
+    db.getPref('goalProgress', null).then((p) => { if (p && typeof p.words === 'number') setGoalProgress(p); }).catch(() => {});
+  }, []);
+  useEffect(() => {
+    if (!doc || !profile) return;
+    const next = advanceGoal(goalProgress, baselines.current, doc.id, profile.counts.words);
+    if (next !== goalProgress) {
+      setGoalProgress(next);
+      db.setPref('goalProgress', next).catch(() => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [doc?.id, profile?.counts.words]);
+  const goal = prefs.wordGoal > 0 ? { target: prefs.wordGoal, words: goalProgress.date === todayKey() ? goalProgress.words : 0 } : null;
 
   // ---- render ------------------------------------------------------------------------
 
@@ -253,6 +273,7 @@ export function App() {
         onSelect={proofreading.selectIssue}
         onRetry={proofreading.retry}
         onReturnFocus={() => editor?.commands.focus()}
+        onOutlineSelect={(pos) => editor?.chain().focus().setTextSelection(pos).scrollIntoView().run()}
         tab={assistTab}
         onTab={setAssistTab}
         aiBusy={aiReview.state.status === 'running' || aiReview.state.status === 'validating-output'}
@@ -272,6 +293,15 @@ export function App() {
       <div className={`scrim${assistOpen || (drawerOpen && window.innerWidth <= 900) ? ' scrim--on' : ''}`} onClick={() => (setAssistOpen(false), window.innerWidth <= 900 && setDrawerOpen(false))} />
       <footer className="statusbar" aria-label="Status">
         <span>{c ? `${c.words.toLocaleString()} words · ${Math.max(1, Math.round(c.readingMinutes))} min read` : ''}</span>
+        {goal && (
+          <span className="goal" title={`Daily goal: ${goal.target.toLocaleString()} words. Counts words added today across all documents.`}>
+            <svg className="goal__ring" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="8" />
+              <circle cx="10" cy="10" r="8" pathLength="100" strokeDasharray={`${Math.min(100, (goal.words / goal.target) * 100)} 100`} />
+            </svg>
+            <span className="goal__text">{goal.words.toLocaleString()} / {goal.target.toLocaleString()} today</span>
+          </span>
+        )}
         <span className={`status__check status__check--${checkStatus}`}>{CHECK_STATUS_LABELS[checkStatus]}</span>
         <span className="statusbar__spacer" />
         <span className="statusbar__hint">Alt+↓ next suggestion · {navigator.platform.includes('Mac') ? '⌘' : 'Ctrl+'}Shift+F focus</span>
@@ -305,7 +335,7 @@ export function App() {
         onClose={() => setSettingsOpen(false)}
         prefs={prefs}
         persisted={documents.persisted}
-        onChange={(patch) => proofreading.changePrefs(patch, { recheck: !('paused' in patch) })}
+        onChange={(patch) => proofreading.changePrefs(patch, { recheck: !('paused' in patch || 'typewriter' in patch || 'wordGoal' in patch) })}
         onRemoveWord={(w) => proofreading.changePrefs({ dictionary: prefsRef.current.dictionary.filter((x) => x !== w) })}
         onEnableRule={(id) => proofreading.changePrefs({ disabledRules: prefsRef.current.disabledRules.filter((x) => x !== id) })}
         onExportLibrary={documents.exportLibrary}

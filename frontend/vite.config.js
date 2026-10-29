@@ -26,7 +26,7 @@ function serviceWorker() {
     generateBundle: { order: 'post', handler(_options, bundle) {
       // The WebLLM chunk is only wanted by people who choose an in-browser model.
       const files = Object.keys(bundle).filter((f) => !f.endsWith('.map') && f !== 'sw.js' && !/webllm/u.test(f));
-      const urls = [base, ...files.map((f) => `${base}${f}`), `${base}logo.png`, `${base}manifest.webmanifest`];
+      const urls = [base, ...files.map((f) => `${base}${f}`), `${base}logo.png`, `${base}logo-512.png`, `${base}manifest.webmanifest`];
       const version = Date.now().toString(36);
       this.emitFile({
         type: 'asset',

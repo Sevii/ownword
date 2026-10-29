@@ -130,6 +130,18 @@ export function AssistPanel(props) {
         </div>
       )}
 
+      {profile?.outline?.length > 0 && (
+        <div className="section">
+          <p className="eyebrow">Outline</p>
+          <ul className="outline" aria-label="Outline">
+            {profile.outline.map((h) => (
+              <li key={h.id} className={`outline__item outline__item--${h.level}`}>
+                <button type="button" className="outline__link" onClick={() => props.onOutlineSelect?.(h.pos)}>{h.text}</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {profile && <Stats profile={profile} />}
       </>
       )}

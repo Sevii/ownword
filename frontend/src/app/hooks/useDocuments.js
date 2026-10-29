@@ -13,7 +13,7 @@ import { count } from '../telemetry.js';
 import { WELCOME_HTML, WELCOME_TITLE } from '../welcome.js';
 import { useAutosave } from './useAutosave.js';
 
-export const DEFAULT_PREFS = { dialect: 'en-US', dictionary: [], disabledRules: [], longSentenceWords: 30, paused: false };
+export const DEFAULT_PREFS = { dialect: 'en-US', dictionary: [], disabledRules: [], longSentenceWords: 30, paused: false, typewriter: false, wordGoal: 0 };
 const MAX_DISMISSALS = 500;
 
 /**
@@ -91,6 +91,22 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Files opened with the installed app (PWA file handlers) arrive as events;
+  // main.jsx queues any that came before this hook was listening.
+  useEffect(() => {
+    if (!prefsLoaded) return undefined;
+    const onFile = (e) => {
+      if (!(e.detail instanceof File)) return;
+      window.__owPendingFiles = (window.__owPendingFiles ?? []).filter((f) => f !== e.detail);
+      importFile(e.detail);
+    };
+    for (const f of window.__owPendingFiles ?? []) importFile(f);
+    window.__owPendingFiles = [];
+    window.addEventListener('ow:open-file', onFile);
+    return () => window.removeEventListener('ow:open-file', onFile);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prefsLoaded]);
 
   async function openDocument(id) {
     await flushSave();

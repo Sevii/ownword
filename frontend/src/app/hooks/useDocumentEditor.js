@@ -14,9 +14,10 @@ import { countWords } from '../../analysis/text/segment.js';
  *   pendingImport: React.MutableRefObject<{ html: string, parseOptions?: object } | null>,
  *   proofreading: ReturnType<typeof import('./useProofreading.js').useProofreading>,
  *   scheduleSave: () => void,
+ *   typewriter?: boolean, keep the caret's line vertically centered while typing
  * }} deps
  */
-export function useDocumentEditor({ doc, loadKey, editorRef, pendingImport, proofreading, scheduleSave }) {
+export function useDocumentEditor({ doc, loadKey, editorRef, pendingImport, proofreading, scheduleSave, typewriter = false }) {
   const { findings, activeId, setActiveId, setPopover, revealRef, revealTick, rangesRef, schedulerRef, updateProfile, onEditorUpdate } = proofreading;
   const [selectionWords, setSelectionWords] = useState(0);
 
@@ -105,6 +106,30 @@ export function useDocumentEditor({ doc, loadKey, editorRef, pendingImport, proo
       editor.off('update', onSelection);
     };
   }, [editor]);
+
+  // Typewriter scrolling (plan §4.5): after each edit, move the scroll
+  // container so the caret sits mid-screen. Only on edits, so reading and
+  // clicking around are not hijacked.
+  useEffect(() => {
+    if (!editor || !typewriter) return undefined;
+    let frame = 0;
+    const center = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        if (editor.isDestroyed || !editor.isFocused) return;
+        const desk = editor.view.dom.closest('.desk');
+        if (!desk) return;
+        const caret = editor.view.coordsAtPos(editor.state.selection.head);
+        const box = desk.getBoundingClientRect();
+        desk.scrollTop += caret.top - (box.top + box.height / 2);
+      });
+    };
+    editor.on('update', center);
+    return () => {
+      cancelAnimationFrame(frame);
+      editor.off('update', center);
+    };
+  }, [editor, typewriter]);
 
   return { editor, selectionWords };
 }

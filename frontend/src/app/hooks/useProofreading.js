@@ -114,7 +114,10 @@ export function useProofreading({ editorRef, docRef, prefsRef, dismissalsRef, pr
   function updateProfile() {
     const req = currentRequest();
     if (!req) return;
-    setProfile(documentProfile(req.snapshot, req.settings, { protectedSpans: false }));
+    const outline = req.snapshot.blocks
+      .filter((b) => b.type === 'heading' && b.text.trim())
+      .map((b) => ({ id: b.id, level: b.level ?? 1, text: b.text, pos: req.positions.get(b.id) ?? 0 }));
+    setProfile({ ...documentProfile(req.snapshot, req.settings, { protectedSpans: false }), outline });
   }
 
   /** Stats walk the whole document, so they wait for a pause in typing. */
