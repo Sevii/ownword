@@ -1,0 +1,9 @@
+{
+  "_comment": "Floors and ceilings for eval/harness/gate.js. Set a little below the committed dev result so a small corpus change does not fail CI, and raise them when quality improves. 2026-10-29 dev: precision 0.914, recall 0.755, clean FPs 2.02/1k, forbidden 3.",
+  "dev": {
+    "minPrecision": 0.88,
+    "minRecallLenient": 0.72,
+    "maxCleanFalsePositivesPer1k": 3.0,
+    "maxForbiddenTouched": 5
+  }
+}

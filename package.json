@@ -9,6 +9,8 @@
     "test": "npm --prefix frontend test",
     "test:e2e": "npm --prefix frontend run test:e2e",
     "eval:smoke": "npm --prefix frontend run eval:smoke",
-    "test:pages": "npm --prefix frontend run test:pages"
+    "test:pages": "npm --prefix frontend run test:pages",
+    "eval:full": "npm --prefix frontend run eval:full",
+    "eval:gate": "npm --prefix frontend run eval:gate"
   }
 }

@@ -9,6 +9,9 @@
     "test": "vitest run",
     "eval": "node ../eval/harness/run.js",
     "eval:smoke": "node ../eval/harness/run.js --smoke",
+    "eval:full": "node ../eval/harness/run.js --split dev",
+    "eval:gate": "node ../eval/harness/gate.js",
+    "eval:rules": "node ../eval/harness/rules-report.js",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "test:pages": "playwright test --config playwright.pages.config.js"
