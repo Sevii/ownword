@@ -625,3 +625,48 @@ test('outline, typewriter setting, daily goal, and PWA file handlers', async ({ 
   expect((await request.get('/logo-512.png')).ok()).toBe(true);
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('a share link opens as a new document and the fragment is cleared', async ({ page }) => {
+  const { encodeShare } = await import('../../src/site/share.js');
+  const fragment = await encodeShare({ title: 'From a friend', markdown: '# Shared\n\nThis came in a **link**.\n' });
+  const errors = watchErrors(page);
+  await page.goto(`/${fragment}`);
+  await expect(page.locator('.prose h1')).toHaveText('Shared');
+  await expect(page.locator('.prose strong')).toHaveText('link');
+  await expect(page.locator('.doc-title')).toHaveValue('From a friend');
+  expect(page.url()).not.toContain('#share');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  // The welcome document was not created; a reload keeps one document and does not import again.
+  await page.reload();
+  await expect(page.locator('.doclist__item')).toHaveCount(1);
+  // The export menu offers a link; the text goes to the clipboard, never to the server.
+  await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.locator('summary[aria-label="Export"]').click();
+  await page.getByRole('button', { name: 'Copy share link' }).click();
+  await expect(page.locator('[role="status"][aria-live="polite"]')).toContainText('Link copied');
+  const link = await page.evaluate(() => navigator.clipboard.readText());
+  expect(link).toMatch(/#share=[A-Za-z0-9_-]+$/u);
+  expect(link).not.toContain('Shared');
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});
+
+test('the install offer appears from the second visit and the update toast after a worker change', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('ow:visits', '1');
+    window.__prompted = 0;
+  });
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await expect(page.getByRole('region', { name: 'Install' })).toHaveCount(0);
+  await page.evaluate(() => {
+    const e = new Event('beforeinstallprompt');
+    e.prompt = () => { window.__prompted++; };
+    e.userChoice = Promise.resolve({ outcome: 'accepted' });
+    window.dispatchEvent(e);
+  });
+  const offer = page.getByRole('region', { name: 'Install' });
+  await expect(offer).toBeVisible();
+  await offer.getByRole('button', { name: 'Install' }).click();
+  expect(await page.evaluate(() => window.__prompted)).toBe(1);
+  await expect(offer).toHaveCount(0);
+});

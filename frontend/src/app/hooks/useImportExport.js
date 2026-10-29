@@ -2,6 +2,7 @@
 // marker. Imports live in useDocuments because they create documents.
 
 import { toPlainText, toMarkdown, toDocx, download, safeFilename } from '../../documents/export.js';
+import { encodeShare, shareUrl } from '../../site/share.js';
 import { count } from '../telemetry.js';
 
 /**
@@ -16,6 +17,17 @@ export function useImportExport({ currentRequest, docRef, announce }) {
       // The print stylesheet shows the document alone; the browser's dialog saves a PDF.
       window.print();
       count('export.print');
+      return;
+    }
+    if (kind === 'share') {
+      try {
+        const fragment = await encodeShare({ title: docRef.current.title, markdown: toMarkdown(req.snapshot) });
+        await navigator.clipboard.writeText(shareUrl(fragment));
+        announce(`Link copied (${Math.max(1, Math.round(fragment.length / 1024))} KB). The text is inside the link itself, not on any server, so anyone with the link can read it.`);
+        count('export.share');
+      } catch (err) {
+        announce(err?.message ?? 'Could not make a link.');
+      }
       return;
     }
     if (kind === 'copy') {

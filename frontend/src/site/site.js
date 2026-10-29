@@ -8,6 +8,8 @@ import '../app/styles.css';
 import './site.css';
 import { count } from '../app/telemetry.js';
 import { HANDOFF_KEY } from './handoff.js';
+import { documentProfile } from '../analysis/profile.js';
+import { snapshotFromText } from '../analysis/snapshot/from-markdown.js';
 
 const page = document.body.dataset.page;
 const form = document.querySelector('[data-handoff]');
@@ -21,6 +23,28 @@ if (form && page) {
   };
   box.addEventListener('input', update);
   update();
+  if (form.dataset.stats) {
+    // Live counts on the page itself (plan §5.2); the same code as the editor's stats.
+    const set = (name, value) => { const el = form.querySelector(`[data-stat="${name}"]`); if (el) el.textContent = value; };
+    const level = (x) => (x >= 70 ? 'Easy' : x >= 50 ? 'Fairly standard' : x >= 30 ? 'Fairly difficult' : 'Difficult');
+    const stats = () => {
+      const p = documentProfile(snapshotFromText(box.value), {}, { protectedSpans: false });
+      const c = p.counts;
+      set('words', c.words.toLocaleString());
+      set('characters', c.characters.toLocaleString());
+      set('charactersNoSpaces', c.charactersNoSpaces.toLocaleString());
+      set('sentences', c.sentences.toLocaleString());
+      set('paragraphs', c.paragraphs.toLocaleString());
+      set('readingTime', c.words ? `${Math.max(1, Math.round(c.readingMinutes))} min` : '0 min');
+      set('meanSentence', `${Math.round(p.sentenceLengths.mean)} words`);
+      set('maxSentence', `${p.sentenceLengths.max} words`);
+      const score = p.readability.score;
+      set('score', score === null ? '–' : `${Math.round(Math.max(0, Math.min(100, score)))}${p.readability.stable ? '' : ' (short sample)'}`);
+      set('level', score === null ? '–' : level(score));
+    };
+    box.addEventListener('input', stats);
+    stats();
+  }
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const text = box.value.trim();

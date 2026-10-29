@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Sentence rewriter you can check, with your own AI | Open Writer</title>
+    <meta name="description" content="Rewrite a sentence to be clearer, shorter, or in a different tone, and see every change as a diff before you accept it. Your text goes only to the AI you choose." />
+    <meta property="og:title" content="Sentence rewriter you can check, with your own AI | Open Writer" />
+    <meta property="og:description" content="Rewrite a sentence to be clearer, shorter, or in a different tone, and see every change as a diff before you accept it. Your text goes only to the AI you choose." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="sentence-rewriter">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+        <a href="%BASE_URL%word-counter/">Word counter</a>
+        <a href="%BASE_URL%readability-checker/">Readability</a>
+        <a href="%BASE_URL%sentence-rewriter/">Sentence rewriter</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Sentence rewriter</h1>
+      <p class="lede">Make a sentence clearer, shorter, or more formal, then see exactly what changed before you accept it.</p>
+      <form class="handoff" data-handoff="paraphrase">
+        <label for="handoff-text">Text to rewrite</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste the sentence here" spellcheck="false"></textarea>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Rewrite in the editor</button>
+          <span class="handoff__note">Rewriting uses your own AI account or a model on your machine; checking is free.</span>
+        </div>
+      </form>
+      <h2>How it works</h2>
+      <ul class="points">
+        <li>Select the sentence in the editor and choose Clarify, Shorten, Fix grammar, or Adjust tone, or describe the change you want.</li>
+        <li>The rewrite appears as a diff: removed words struck through, added words highlighted. Nothing changes until you choose Apply.</li>
+        <li>A meaning check warns when a rewrite changes amounts, dates, names, negations, or conditions.</li>
+      </ul>
+      <h2>Where the text goes</h2>
+      <p>Only the sentence you selected is sent, directly from your browser to the AI you connected: OpenAI, Anthropic, Google Gemini, OpenRouter, an OpenAI-compatible server such as Ollama on your own computer, or a small model running inside the browser with nothing sent anywhere.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

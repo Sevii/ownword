@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Readability checker: Flesch reading ease, private | Open Writer</title>
+    <meta name="description" content="Score how easy your writing is to read with the Flesch Reading Ease formula, plus sentence length. Runs in your browser; nothing is uploaded." />
+    <meta property="og:title" content="Readability checker: Flesch reading ease, private | Open Writer" />
+    <meta property="og:description" content="Score how easy your writing is to read with the Flesch Reading Ease formula, plus sentence length. Runs in your browser; nothing is uploaded." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="readability-checker">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+        <a href="%BASE_URL%word-counter/">Word counter</a>
+        <a href="%BASE_URL%readability-checker/">Readability</a>
+        <a href="%BASE_URL%sentence-rewriter/">Sentence rewriter</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Readability checker</h1>
+      <p class="lede">A Flesch Reading Ease score and sentence lengths as you type, then an editor that marks long sentences, passive voice, and hedging.</p>
+      <form class="handoff" data-handoff="grammar" data-stats="readability">
+        <label for="handoff-text">Your text</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste at least a hundred words for a reliable score" spellcheck="false"></textarea>
+        <dl class="stats stats--site" aria-live="polite">
+          <div><dt>Reading ease</dt><dd data-stat="score">–</dd></div>
+          <div><dt>Level</dt><dd data-stat="level">–</dd></div>
+          <div><dt>Average sentence</dt><dd data-stat="meanSentence">0 words</dd></div>
+          <div><dt>Longest sentence</dt><dd data-stat="maxSentence">0 words</dd></div>
+          <div><dt>Words</dt><dd data-stat="words">0</dd></div>
+          <div><dt>Reading time</dt><dd data-stat="readingTime">0 min</dd></div>
+        </dl>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Check readability in the editor</button>
+          <span class="handoff__note">The score is computed on this page; nothing is uploaded.</span>
+        </div>
+      </form>
+      <h2>Reading the score</h2>
+      <ul class="points">
+        <li><strong>70 and above</strong>: easy, like a popular magazine. Most emails and web pages should land here.</li>
+        <li><strong>50 to 70</strong>: fairly standard, like a newspaper. Fine for reports and documentation.</li>
+        <li><strong>30 to 50</strong>: fairly difficult, like academic writing. Expect readers to slow down.</li>
+        <li><strong>Below 30</strong>: difficult. Shorter sentences and shorter words raise the score fastest.</li>
+      </ul>
+      <p>The formula rewards short sentences and short words. Short samples swing a lot; aim for a hundred words or more.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

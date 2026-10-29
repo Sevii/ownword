@@ -37,3 +37,7 @@ body.site { display: block; min-height: 100dvh; background: var(--bg); color: va
 .site-footer { border-top: 1px solid var(--border); padding: 1.2rem 1rem 2rem; text-align: center; font-size: .85rem; color: var(--muted-text); }
 .site-footer a { color: var(--accent-dark); margin: 0 .5rem; }
 @media (max-width: 560px) { .flow th, .flow td { display: block; border: 0; padding: .2rem 0; } .flow tr { display: block; border-bottom: 1px solid var(--border); padding: .5rem 0; } }
+
+.stats--site { grid-template-columns: repeat(3, 1fr); margin: .2rem 0; }
+.stats--site dd { font-size: 1.2rem; }
+@media (max-width: 560px) { .stats--site { grid-template-columns: repeat(2, 1fr); } }

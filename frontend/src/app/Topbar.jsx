@@ -96,6 +96,7 @@ export function Topbar(props) {
           </summary>
           <div className="menu__body">
             <button type="button" className="menu__item" onClick={() => exportAs('copy')}>Copy text</button>
+            <button type="button" className="menu__item" onClick={() => exportAs('share')}>Copy share link <small>text in the link</small></button>
             <button type="button" className="menu__item" onClick={() => exportAs('docx')}>Word document <small>.docx</small></button>
             <button type="button" className="menu__item" onClick={() => exportAs('md')}>Markdown <small>.md</small></button>
             <button type="button" className="menu__item" onClick={() => exportAs('txt')}>Plain text <small>.txt</small></button>

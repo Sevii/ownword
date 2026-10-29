@@ -103,7 +103,7 @@ export default defineConfig({
     // The editor plus the landing and privacy pages (frontend/<page>/index.html).
     rollupOptions: {
       input: Object.fromEntries(
-        ['index.html', 'privacy/index.html', 'grammar-checker/index.html', 'paraphrasing-tool/index.html', 'passive-voice-checker/index.html']
+        ['index.html', 'privacy/index.html', 'grammar-checker/index.html', 'paraphrasing-tool/index.html', 'passive-voice-checker/index.html', 'word-counter/index.html', 'readability-checker/index.html', 'sentence-rewriter/index.html']
           .map((p) => [p.replace(/\/?index\.html$/u, '') || 'main', fileURLToPath(new URL(p, import.meta.url))]),
       ),
       output: {

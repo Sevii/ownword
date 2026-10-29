@@ -8,6 +8,8 @@ import { buildLibrary, readLibrary, mergeDocuments, mergePrefs, libraryFilename,
 import { previewOf } from '../../documents/content.js';
 import { sanitizeDocJson, sanitizePastedHtml } from '../../editor/sanitize.js';
 import { takeHandoff, textToHtml, titleFrom } from '../../site/handoff.js';
+import { takeShareLink } from '../../site/share.js';
+import { contentFromMarkdown } from '../../documents/content.js';
 import * as connections from '../../ai/connections.js';
 import { count } from '../telemetry.js';
 import { WELCOME_HTML, WELCOME_TITLE } from '../welcome.js';
@@ -62,6 +64,18 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
         setDismissals(await db.getPref('dismissals', []));
         setAi(connections.normalize(await db.getPref('aiConnections', null)));
         let list = await db.listDocuments();
+        const shared = await takeShareLink();
+        if (shared) {
+          // A share link: the text is in the fragment and becomes a document here.
+          const content = sanitizeDocJson(contentFromMarkdown(shared.markdown));
+          const created = await db.createDocument({ title: shared.title || titleFrom(shared.markdown), content, preview: previewOf(content) });
+          count('document.created');
+          await refreshDocs();
+          await openDocument(created.id);
+          setPersisted(navigator.storage?.persisted ? await navigator.storage.persisted() : false);
+          announce('Opened the shared text as a new document.');
+          return;
+        }
         const handoff = takeHandoff();
         if (handoff) {
           // Text pasted on a landing page becomes its own document.

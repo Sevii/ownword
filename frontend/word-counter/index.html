@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Free word counter, private and instant | Open Writer</title>
+    <meta name="description" content="Count words, characters, sentences, and paragraphs as you type, with reading time. Runs in your browser; nothing is uploaded." />
+    <meta property="og:title" content="Free word counter, private and instant | Open Writer" />
+    <meta property="og:description" content="Count words, characters, sentences, and paragraphs as you type, with reading time. Runs in your browser; nothing is uploaded." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%logo.png" type="image/png" />
+  </head>
+  <body class="site" data-page="word-counter">
+    <header class="site-header">
+      <a class="brand" href="%BASE_URL%"><img src="%BASE_URL%logo.png" alt="" /> <span class="brand__name">Open Writer</span></a>
+      <nav aria-label="Site">
+        <a href="%BASE_URL%grammar-checker/">Grammar checker</a>
+        <a href="%BASE_URL%paraphrasing-tool/">Paraphrasing</a>
+        <a href="%BASE_URL%passive-voice-checker/">Passive voice</a>
+        <a href="%BASE_URL%word-counter/">Word counter</a>
+        <a href="%BASE_URL%readability-checker/">Readability</a>
+        <a href="%BASE_URL%sentence-rewriter/">Sentence rewriter</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <h1>Free word counter</h1>
+      <p class="lede">Words, characters, sentences, paragraphs, and reading time, updated as you type. Nothing leaves your browser.</p>
+      <form class="handoff" data-handoff="grammar" data-stats="words">
+        <label for="handoff-text">Your text</label>
+        <textarea id="handoff-text" name="text" placeholder="Paste or type your text here" spellcheck="false"></textarea>
+        <dl class="stats stats--site" aria-live="polite">
+          <div><dt>Words</dt><dd data-stat="words">0</dd></div>
+          <div><dt>Characters</dt><dd data-stat="characters">0</dd></div>
+          <div><dt>Characters, no spaces</dt><dd data-stat="charactersNoSpaces">0</dd></div>
+          <div><dt>Sentences</dt><dd data-stat="sentences">0</dd></div>
+          <div><dt>Paragraphs</dt><dd data-stat="paragraphs">0</dd></div>
+          <div><dt>Reading time</dt><dd data-stat="readingTime">0 min</dd></div>
+        </dl>
+        <div class="handoff__row">
+          <button type="submit" class="btn">Open in the editor</button>
+          <span class="handoff__note">Counts update as you type and never leave this page.</span>
+        </div>
+      </form>
+      <h2>What is counted</h2>
+      <ul class="points">
+        <li>Words are runs of letters and numbers; hyphenated words count once.</li>
+        <li>Reading time assumes 238 words per minute, the average for adults reading silently.</li>
+        <li>Sentences end at a period, question mark, or exclamation mark; abbreviations are not counted.</li>
+      </ul>
+      <h2>Keep going in the editor</h2>
+      <p>Open the text in the editor for spelling, grammar, and style checks that also run on your device, plus a daily word goal in the status bar.</p>
+    </main>
+    <footer class="site-footer">
+      <a href="%BASE_URL%">Open the editor</a> · <a href="%BASE_URL%privacy/">Privacy and data</a>
+    </footer>
+    <script type="module" src="/src/site/site.js"></script>
+  </body>
+</html>

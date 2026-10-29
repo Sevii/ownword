@@ -23,6 +23,7 @@ import { useImportExport } from './hooks/useImportExport.js';
 import { useExtensionBridge } from './hooks/useExtensionBridge.js';
 import { useShortcuts } from './hooks/useShortcuts.js';
 import { useFolderSync } from './hooks/useFolderSync.js';
+import { useInstallPrompt } from './hooks/useInstallPrompt.js';
 
 /**
  * Composition only: documents and preferences (useDocuments), local checking
@@ -96,6 +97,7 @@ export function App() {
   });
 
   const { exportAs, taskCompleted } = useImportExport({ currentRequest, docRef, announce: setAnnouncement });
+  const installer = useInstallPrompt();
 
   const activeAi = connections.activeConnection(documents.ai);
   const aiReview = useAiReview({
@@ -250,6 +252,19 @@ export function App() {
             Your latest changes are not saved.
             <button type="button" className="btn btn--sm" onClick={() => save()}>Try again</button>
             or export your work.
+          </div>
+        )}
+        {installer.updateReady && (
+          <div className="banner banner--info" role="status">
+            Open Writer was updated. Reload to use the new version.
+            <button type="button" className="btn btn--sm" onClick={installer.reload}>Reload</button>
+          </div>
+        )}
+        {installer.canInstall && (
+          <div className="banner banner--info" role="region" aria-label="Install">
+            Install Open Writer as an app: it opens in its own window and works offline.
+            <button type="button" className="btn btn--sm" onClick={installer.install}>Install</button>
+            <button type="button" className="btn btn--sm btn--ghost banner__close" onClick={installer.dismiss}>Not now</button>
           </div>
         )}
         {documents.persisted === false && !storageNoticeHidden && (

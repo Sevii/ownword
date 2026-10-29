@@ -52,7 +52,9 @@ See [GitHub's custom-workflow instructions](https://docs.github.com/en/pages/get
 
 - Rich text editing, local autosave and recovery copies, multiple documents.
 - Local spelling, grammar, and style suggestions with dictionary and dialect settings.
-- Word, Markdown, and text import/export.
+- Word, Markdown, and text import/export; print or save as PDF; find and replace; version history with diffs.
+- Share links that carry the text inside the URL fragment, so nothing is uploaded or stored anywhere.
+- Landing pages for a grammar checker, paraphrasing tool, passive voice checker, word counter, readability checker, and sentence rewriter.
 - AI proofreading, tone/audience review, rewriting, and explanations.
 - Review diffs and meaning changes before applying; undo an accepted rewrite.
 - OpenAI Responses, Anthropic Messages, Gemini, and OpenRouter streaming directly from the browser.
