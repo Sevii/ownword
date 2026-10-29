@@ -9,3 +9,4 @@ playwright-report/
 eval/reports/*
 !eval/reports/baseline-*
 !eval/reports/heldout-exposure.log
+!eval/reports/final-*

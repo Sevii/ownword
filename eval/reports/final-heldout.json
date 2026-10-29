@@ -1,0 +1,4109 @@
+{
+  "label": "harper+rules",
+  "date": "2026-10-29T16:18:45.786Z",
+  "split": "heldout",
+  "versions": {
+    "harness": "2",
+    "harper": "2.13.0",
+    "rules": "2",
+    "corpus": "e3d51b094c24"
+  },
+  "engines": [
+    "harper",
+    "rules"
+  ],
+  "elapsedMs": 3895,
+  "caseErrors": [],
+  "summary": {
+    "cases": 99,
+    "cleanCases": 33,
+    "words": 7750,
+    "correction": {
+      "detections": 99,
+      "falsePositives": 16,
+      "precision": 0.8383838383838383,
+      "expected": 112,
+      "foundLenient": 83,
+      "foundStrict": 73,
+      "recallLenient": 0.7410714285714286,
+      "recallStrict": 0.6517857142857143,
+      "fixAccuracy": 0.963855421686747
+    },
+    "cleanText": {
+      "words": 2721,
+      "falsePositives": 8,
+      "perThousandWords": 2.940095553105476
+    },
+    "forbiddenTouched": 7,
+    "style": {
+      "detections": 171,
+      "onAnnotated": 16
+    },
+    "rejectedAnchors": 0,
+    "categories": {
+      "capitalization": {
+        "expected": 6,
+        "found": 6,
+        "detections": 7,
+        "falsePositives": 3,
+        "recall": 1,
+        "precision": 0.5714285714285714
+      },
+      "spelling": {
+        "expected": 29,
+        "found": 28,
+        "detections": 47,
+        "falsePositives": 12,
+        "recall": 0.9655172413793104,
+        "precision": 0.7446808510638298
+      },
+      "grammar": {
+        "expected": 41,
+        "found": 23,
+        "detections": 20,
+        "falsePositives": 0,
+        "recall": 0.5609756097560976,
+        "precision": 1
+      },
+      "word-choice": {
+        "expected": 20,
+        "found": 14,
+        "detections": 14,
+        "falsePositives": 0,
+        "recall": 0.7,
+        "precision": 1
+      },
+      "repetition": {
+        "expected": 8,
+        "found": 8,
+        "detections": 8,
+        "falsePositives": 0,
+        "recall": 1,
+        "precision": 1
+      },
+      "punctuation": {
+        "expected": 8,
+        "found": 4,
+        "detections": 3,
+        "falsePositives": 1,
+        "recall": 0.5,
+        "precision": 0.6666666666666666
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "clean-0121",
+      "clean": true,
+      "words": 64,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0126",
+      "clean": true,
+      "words": 52,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0128",
+      "clean": true,
+      "words": 56,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0131",
+      "clean": true,
+      "words": 16,
+      "detections": 3,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "omw",
+          "replacements": [
+            "Omw"
+          ]
+        },
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "gonna",
+          "replacements": [
+            "Gonna"
+          ]
+        },
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "save",
+          "replacements": [
+            "Save"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "capitalization": {
+          "expected": 0,
+          "found": 0,
+          "detections": 3,
+          "falsePositives": 3
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "omw",
+          "replacements": [
+            "Omw"
+          ]
+        },
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "gonna",
+          "replacements": [
+            "Gonna"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0135",
+      "clean": true,
+      "words": 24,
+      "detections": 1,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "bc",
+          "replacements": [
+            "be",
+            "bi",
+            "bk"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "bc",
+          "replacements": [
+            "be",
+            "bi",
+            "bk"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0138",
+      "clean": true,
+      "words": 46,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0140",
+      "clean": true,
+      "words": 65,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0144",
+      "clean": true,
+      "words": 75,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0147",
+      "clean": true,
+      "words": 43,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "clean-0150",
+      "clean": true,
+      "words": 61,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-0141",
+      "clean": false,
+      "words": 47,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "apear",
+          "replacements": [
+            "appear",
+            "ape's",
+            "pear"
+          ]
+        },
+        {
+          "rule": "harper.WrongNegative",
+          "category": "spelling",
+          "text": "untill",
+          "replacements": [
+            "until"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 2,
+          "found": 2,
+          "detections": 2,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-0142",
+      "clean": false,
+      "words": 54,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "friday",
+          "replacements": [
+            "Friday",
+            "fray",
+            "friar"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 4,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-0151",
+      "clean": false,
+      "words": 497,
+      "detections": 3,
+      "expected": 5,
+      "matchedLenient": 3,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "you're",
+          "replacements": [
+            "your"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "relevent",
+          "replacements": [
+            "relevant",
+            "referent",
+            "reinvent"
+          ]
+        },
+        {
+          "rule": "harper.ThereOwn",
+          "category": "word-choice",
+          "text": "there",
+          "replacements": [
+            "their"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "word-choice",
+          "quote": "then"
+        },
+        {
+          "category": "word-choice",
+          "quote": "then"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 2,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 2,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 3,
+      "correctFixes": 3,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 9,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2001",
+      "clean": false,
+      "words": 88,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "systemctl",
+          "replacements": [
+            "system's",
+            "systemd's",
+            "systemic's"
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "logs shows"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "systemctl",
+          "replacements": [
+            "system's",
+            "systemd's",
+            "systemic's"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 5,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2007",
+      "clean": false,
+      "words": 62,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SentenceCapitalization",
+          "category": "capitalization",
+          "text": "median",
+          "replacements": [
+            "Median"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "tickets have"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2011",
+      "clean": false,
+      "words": 105,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 4,
+        "onAnnotated": 2
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2013",
+      "clean": false,
+      "words": 73,
+      "detections": 3,
+      "expected": 3,
+      "matchedLenient": 3,
+      "matchedStrict": 3,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "recieved",
+          "replacements": [
+            "received",
+            "relieved",
+            "receive"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "occured",
+          "replacements": [
+            "occurred",
+            "occur",
+            "obscured"
+          ]
+        },
+        {
+          "rule": "harper.CapitalizePersonalPronouns",
+          "category": "capitalization",
+          "text": "i",
+          "replacements": [
+            "I"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 2,
+          "found": 2,
+          "detections": 2,
+          "falsePositives": 0
+        },
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 3,
+      "correctFixes": 3,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2018",
+      "clean": false,
+      "words": 53,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "The the",
+          "replacements": [
+            "The"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "calender",
+          "replacements": [
+            "calendar",
+            "cylinder",
+            "calendars"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2019",
+      "clean": false,
+      "words": 70,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.ThenThan",
+          "category": "word-choice",
+          "text": "then",
+          "replacements": [
+            "than"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2021",
+      "clean": false,
+      "words": 65,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "seperate",
+          "replacements": [
+            "separate",
+            "sewerage",
+            "separated"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 2
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2025",
+      "clean": true,
+      "words": 86,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-2026",
+      "clean": true,
+      "words": 102,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3002",
+      "clean": true,
+      "words": 158,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 4,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3003",
+      "clean": true,
+      "words": 153,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3004",
+      "clean": true,
+      "words": 152,
+      "detections": 1,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "rata",
+          "replacements": [
+            "rat",
+            "rate",
+            "rota"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 5,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3006",
+      "clean": true,
+      "words": 163,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3011",
+      "clean": true,
+      "words": 141,
+      "detections": 1,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "afterwards",
+          "replacements": [
+            "afterwords",
+            "afterward",
+            "afterword's"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3025",
+      "clean": false,
+      "words": 103,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "your",
+          "replacements": [
+            "you're"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "acheive",
+          "replacements": [
+            "achieve",
+            "adhesive",
+            "achene"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3030",
+      "clean": false,
+      "words": 109,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "goverment",
+          "replacements": [
+            "government",
+            "governments",
+            "movement"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 4,
+        "onAnnotated": 2
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3031",
+      "clean": false,
+      "words": 105,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "linter handle"
+        }
+      ],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "doc-3034",
+      "clean": false,
+      "words": 124,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "neccessary",
+          "replacements": [
+            "necessary"
+          ]
+        },
+        {
+          "rule": "harper.ThereToTheir",
+          "category": "grammar",
+          "text": "there",
+          "replacements": [
+            "their"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0119",
+      "clean": false,
+      "words": 55,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0120",
+      "clean": false,
+      "words": 49,
+      "detections": 2,
+      "expected": 3,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ThereToTheir",
+          "category": "grammar",
+          "text": "there",
+          "replacements": [
+            "their"
+          ]
+        },
+        {
+          "rule": "harper.ThereToTheir",
+          "category": "grammar",
+          "text": "there",
+          "replacements": [
+            "their"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "word-choice",
+          "quote": "to"
+        }
+      ],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 2,
+          "found": 2,
+          "detections": 2,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0122",
+      "clean": false,
+      "words": 47,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "spelling",
+          "quote": "Wendsday"
+        }
+      ],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0123",
+      "clean": false,
+      "words": 50,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "havent",
+          "replacements": [
+            "haven't",
+            "haven",
+            "havens"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "punctuation": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0124",
+      "clean": false,
+      "words": 43,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "have"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0125",
+      "clean": false,
+      "words": 50,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.ItsContraction",
+          "category": "punctuation",
+          "text": "Its",
+          "replacements": [
+            "It's",
+            "It has"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0127",
+      "clean": false,
+      "words": 52,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "thursday",
+          "replacements": [
+            "Thursday",
+            "Thursdays"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0129",
+      "clean": false,
+      "words": 47,
+      "detections": 3,
+      "expected": 3,
+      "matchedLenient": 3,
+      "matchedStrict": 3,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "recieved",
+          "replacements": [
+            "received",
+            "relieved",
+            "receive"
+          ]
+        },
+        {
+          "rule": "harper.ToTwoToo",
+          "category": "word-choice",
+          "text": "too",
+          "replacements": [
+            "to"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "intrest",
+          "replacements": [
+            "interest",
+            "ingress",
+            "intent"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 2,
+          "found": 2,
+          "detections": 2,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 3,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0130",
+      "clean": false,
+      "words": 43,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0145",
+      "clean": false,
+      "words": 46,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.PronounContraction",
+          "category": "grammar",
+          "text": "you're",
+          "replacements": [
+            "your"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "techincal",
+          "replacements": [
+            "technical"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0146",
+      "clean": false,
+      "words": 52,
+      "detections": 3,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ToTwoToo",
+          "category": "word-choice",
+          "text": "too",
+          "replacements": [
+            "to"
+          ]
+        },
+        {
+          "rule": "harper.CapitalizePersonalPronouns",
+          "category": "capitalization",
+          "text": "i'll",
+          "replacements": [
+            "I'll"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "bloodwork",
+          "replacements": [
+            "woodwork"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0148",
+      "clean": false,
+      "words": 58,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "immediatly",
+          "replacements": [
+            "immediately",
+            "immediate",
+            "immediacy"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0149",
+      "clean": false,
+      "words": 38,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "punctuation",
+          "quote": "done, I"
+        }
+      ],
+      "perCategory": {
+        "punctuation": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0153",
+      "clean": false,
+      "words": 51,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "permiting",
+          "replacements": [
+            "permitting",
+            "permuting",
+            "periling"
+          ]
+        },
+        {
+          "rule": "harper.ThenThan",
+          "category": "word-choice",
+          "text": "then",
+          "replacements": [
+            "than"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0154",
+      "clean": false,
+      "words": 56,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "is"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0155",
+      "clean": false,
+      "words": 49,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "buisness",
+          "replacements": [
+            "business",
+            "bigness",
+            "briskness"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-0157",
+      "clean": false,
+      "words": 39,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "was"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2002",
+      "clean": false,
+      "words": 55,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "Priya",
+          "replacements": [
+            "Pica",
+            "Pray",
+            "Prey"
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "team have"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "Priya",
+          "replacements": [
+            "Pica",
+            "Pray",
+            "Prey"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2003",
+      "clean": false,
+      "words": 68,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "Your",
+          "replacements": [
+            "You're"
+          ]
+        },
+        {
+          "rule": "grammar.confusables",
+          "category": "word-choice",
+          "text": "to",
+          "replacements": [
+            "too"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2007",
+      "clean": false,
+      "words": 67,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.ModalOf",
+          "category": "word-choice",
+          "text": "could of",
+          "replacements": [
+            "could have"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2015",
+      "clean": false,
+      "words": 64,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "You're",
+          "replacements": [
+            "Your"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2019",
+      "clean": false,
+      "words": 45,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.CapitalizePersonalPronouns",
+          "category": "capitalization",
+          "text": "i",
+          "replacements": [
+            "I"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "capitalization": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2025",
+      "clean": false,
+      "words": 60,
+      "detections": 2,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "Your",
+          "replacements": [
+            "You're"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.WellBeing",
+          "category": "punctuation",
+          "text": "wellbeing",
+          "replacements": [
+            "well-being"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2026",
+      "clean": false,
+      "words": 57,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "recieved",
+          "replacements": [
+            "received",
+            "relieved",
+            "receive"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "eng",
+          "replacements": [
+            "egg",
+            "end",
+            "erg"
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "there"
+        }
+      ],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 2,
+          "falsePositives": 1
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "eng",
+          "replacements": [
+            "egg",
+            "end",
+            "erg"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2030",
+      "clean": true,
+      "words": 58,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2032",
+      "clean": true,
+      "words": 65,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2034",
+      "clean": true,
+      "words": 65,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "email-2040",
+      "clean": true,
+      "words": 82,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-0143",
+      "clean": false,
+      "words": 81,
+      "detections": 3,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ThereToTheir",
+          "category": "grammar",
+          "text": "there",
+          "replacements": [
+            "their"
+          ]
+        },
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "your",
+          "replacements": [
+            "you're"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.NotTo",
+          "category": "spelling",
+          "text": "no to",
+          "replacements": [
+            "not to"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 2,
+          "detections": 2,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 4,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2002",
+      "clean": true,
+      "words": 133,
+      "detections": 1,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "endosymbiotic",
+          "replacements": [
+            "symbiotic"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2003",
+      "clean": true,
+      "words": 164,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 5,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2014",
+      "clean": true,
+      "words": 154,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 5,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2017",
+      "clean": true,
+      "words": 157,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 8,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2021",
+      "clean": false,
+      "words": 119,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "arguement",
+          "replacements": [
+            "argument",
+            "agreement",
+            "arguments"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "your embarrassed"
+        }
+      ],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 6,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2024",
+      "clean": false,
+      "words": 131,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        },
+        {
+          "rule": "harper.ToLoseTooLoose",
+          "category": "spelling",
+          "text": "to loose",
+          "replacements": [
+            "to lose",
+            "too loose"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2026",
+      "clean": false,
+      "words": 128,
+      "detections": 1,
+      "expected": 3,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "independant",
+          "replacements": [
+            "independent",
+            "independents"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "word-choice",
+          "quote": "principal"
+        },
+        {
+          "category": "punctuation",
+          "quote": "work they"
+        }
+      ],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 7,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2027",
+      "clean": false,
+      "words": 128,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "it's",
+          "replacements": [
+            "its"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "word-choice",
+          "quote": "less thin bags"
+        }
+      ],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2033",
+      "clean": false,
+      "words": 138,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "acheive",
+          "replacements": [
+            "achieve",
+            "adhesive",
+            "achene"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 8,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2034",
+      "clean": false,
+      "words": 139,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.TheirToThere",
+          "category": "grammar",
+          "text": "their",
+          "replacements": [
+            "there",
+            "there's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "Science says"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 7,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "essay-2037",
+      "clean": false,
+      "words": 139,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.NounVerbConfusion",
+          "category": "word-choice",
+          "text": "effect",
+          "replacements": [
+            "affect"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 1
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-0132",
+      "clean": false,
+      "words": 22,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "acess",
+          "replacements": [
+            "ace's",
+            "access",
+            "aces"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-0133",
+      "clean": false,
+      "words": 21,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.TheirToThere",
+          "category": "grammar",
+          "text": "Their's",
+          "replacements": [
+            "There",
+            "There's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-0134",
+      "clean": false,
+      "words": 23,
+      "detections": 0,
+      "expected": 1,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "punctuation",
+          "quote": "wont"
+        }
+      ],
+      "perCategory": {
+        "punctuation": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-0156",
+      "clean": false,
+      "words": 33,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "tommorow's",
+          "replacements": [
+            "tomorrow's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2006",
+      "clean": false,
+      "words": 44,
+      "detections": 1,
+      "expected": 3,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.ModalOf",
+          "category": "word-choice",
+          "text": "should of",
+          "replacements": [
+            "should have"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "their way"
+        },
+        {
+          "category": "word-choice",
+          "quote": "to early"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 2,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 3,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2009",
+      "clean": false,
+      "words": 45,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "there",
+          "replacements": [
+            "they're"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2013",
+      "clean": false,
+      "words": 50,
+      "detections": 3,
+      "expected": 3,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ThenThan",
+          "category": "word-choice",
+          "text": "then",
+          "replacements": [
+            "than"
+          ]
+        },
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "your",
+          "replacements": [
+            "you're"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "bouldering",
+          "replacements": [
+            "blundering",
+            "boltering",
+            "bordering"
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "its way"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2017",
+      "clean": false,
+      "words": 40,
+      "detections": 2,
+      "expected": 3,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ModalOf",
+          "category": "word-choice",
+          "text": "would of",
+          "replacements": [
+            "would have"
+          ]
+        },
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "its",
+          "replacements": [
+            "it's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "your having"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2019",
+      "clean": false,
+      "words": 40,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "tomorow",
+          "replacements": [
+            "tomorrow",
+            "tomorrows",
+            "Comoros"
+          ]
+        },
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2023",
+      "clean": true,
+      "words": 43,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2025",
+      "clean": true,
+      "words": 58,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2031",
+      "clean": true,
+      "words": 37,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2034",
+      "clean": true,
+      "words": 37,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "msg-2040",
+      "clean": true,
+      "words": 63,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-0136",
+      "clean": false,
+      "words": 62,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.ThenThan",
+          "category": "word-choice",
+          "text": "then",
+          "replacements": [
+            "than"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-0137",
+      "clean": false,
+      "words": 49,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.ItsContraction",
+          "category": "punctuation",
+          "text": "Its",
+          "replacements": [
+            "It's",
+            "It has"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "diffrence",
+          "replacements": [
+            "difference",
+            "deference",
+            "differences"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-0139",
+      "clean": false,
+      "words": 51,
+      "detections": 1,
+      "expected": 1,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "theres",
+          "replacements": [
+            "there's",
+            "theses",
+            "themes"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "punctuation": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-0152",
+      "clean": false,
+      "words": 436,
+      "detections": 2,
+      "expected": 3,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "definately",
+          "replacements": [
+            "definitely",
+            "defiantly",
+            "delicately"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "punctuation",
+          "quote": "friends"
+        }
+      ],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 5,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2007",
+      "clean": false,
+      "words": 41,
+      "detections": 1,
+      "expected": 3,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "its",
+          "replacements": [
+            "it's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "and its honestly"
+        },
+        {
+          "category": "grammar",
+          "quote": "there regular"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 3,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2010",
+      "clean": false,
+      "words": 49,
+      "detections": 3,
+      "expected": 3,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "freindly",
+          "replacements": [
+            "friendly"
+          ]
+        },
+        {
+          "rule": "harper.ModalOf",
+          "category": "word-choice",
+          "text": "may of",
+          "replacements": [
+            "may have"
+          ]
+        }
+      ],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "microchipped",
+          "replacements": [
+            "microchip's",
+            "microchip",
+            "microchips"
+          ]
+        }
+      ],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "you're garages"
+        }
+      ],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 2,
+          "falsePositives": 1
+        },
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2012",
+      "clean": false,
+      "words": 48,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.RepeatedWords",
+          "category": "repetition",
+          "text": "the the",
+          "replacements": [
+            "the"
+          ]
+        },
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "your",
+          "replacements": [
+            "you're"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "repetition": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "grammar": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2014",
+      "clean": false,
+      "words": 43,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 0,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "hasnt",
+          "replacements": [
+            "hasn't",
+            "haunt",
+            "hast"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "out their"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 1,
+          "found": 0,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2015",
+      "clean": false,
+      "words": 54,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 2,
+      "truePositives": [
+        {
+          "rule": "harper.ThenThan",
+          "category": "word-choice",
+          "text": "then",
+          "replacements": [
+            "than"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "Definately",
+          "replacements": [
+            "Definitely",
+            "Defiantly",
+            "Delicately"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "word-choice": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        },
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2016",
+      "clean": false,
+      "words": 37,
+      "detections": 1,
+      "expected": 2,
+      "matchedLenient": 1,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "grammar.confusables",
+          "category": "grammar",
+          "text": "its",
+          "replacements": [
+            "it's"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [
+        {
+          "category": "grammar",
+          "quote": "your driving"
+        }
+      ],
+      "perCategory": {
+        "grammar": {
+          "expected": 2,
+          "found": 1,
+          "detections": 1,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 1,
+      "correctFixes": 1,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2020",
+      "clean": false,
+      "words": 42,
+      "detections": 2,
+      "expected": 2,
+      "matchedLenient": 2,
+      "matchedStrict": 1,
+      "truePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "tomorow",
+          "replacements": [
+            "tomorrow",
+            "tomorrows",
+            "Comoros"
+          ]
+        },
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "dont",
+          "replacements": [
+            "don't",
+            "dent",
+            "don"
+          ]
+        }
+      ],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 1,
+          "found": 1,
+          "detections": 2,
+          "falsePositives": 0
+        },
+        "punctuation": {
+          "expected": 1,
+          "found": 1,
+          "detections": 0,
+          "falsePositives": 0
+        }
+      },
+      "fixable": 2,
+      "correctFixes": 2,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 1,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2030",
+      "clean": true,
+      "words": 39,
+      "detections": 1,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "etc",
+          "replacements": [
+            "eta",
+            "etc.",
+            "enc"
+          ]
+        }
+      ],
+      "missed": [],
+      "perCategory": {
+        "spelling": {
+          "expected": 0,
+          "found": 0,
+          "detections": 1,
+          "falsePositives": 1
+        }
+      },
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [
+        {
+          "rule": "harper.SpellCheck",
+          "category": "spelling",
+          "text": "etc",
+          "replacements": [
+            "eta",
+            "etc.",
+            "enc"
+          ]
+        }
+      ],
+      "style": {
+        "detections": 2,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2036",
+      "clean": true,
+      "words": 52,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    },
+    {
+      "id": "post-2040",
+      "clean": true,
+      "words": 57,
+      "detections": 0,
+      "expected": 0,
+      "matchedLenient": 0,
+      "matchedStrict": 0,
+      "truePositives": [],
+      "falsePositives": [],
+      "missed": [],
+      "perCategory": {},
+      "fixable": 0,
+      "correctFixes": 0,
+      "forbiddenTouched": [],
+      "style": {
+        "detections": 0,
+        "onAnnotated": 0
+      },
+      "rejected": 0
+    }
+  ]
+}
