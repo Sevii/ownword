@@ -51,7 +51,9 @@ export function useDocumentEditor({ doc, loadKey, editorRef, pendingImport, proo
         ed.view.dispatch(ed.state.tr.setMeta(ENSURE_BLOCK_IDS, true).setMeta('addToHistory', false));
         if (pendingImport.current) {
           const { html, parseOptions } = pendingImport.current;
-          ed.commands.setContent(html, { parseOptions });
+          // Not an edit: imported text must not be undoable, and an edit made
+          // right after it must not join it in one undo step.
+          ed.chain().setMeta('addToHistory', false).setContent(html, { parseOptions }).run();
           pendingImport.current = null;
         }
         updateProfile();
