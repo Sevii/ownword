@@ -1,0 +1,50 @@
+{
+  "id": "essay-2024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Teenagers do not stay up late because they are lazy. Their circadian clocks shift by about two hours during puberty, which is why a sixteen-year-old is wide awake at eleven and barely conscious at seven. Schools that start at 7:30 in the morning are asking students to perform at the the equivalent of 5:30 for an adult.\n\nWhen Seattle moved its high school start time to 8:45 in 2016, researchers at the University of Washington found students gained a median of 34 minutes of sleep a night and their grades rose. Districts that refuse to follow stand to loose more than they save on bus schedules.\n\nThe science has been settled for twenty years. The obstacle is a bus timetable, and bus timetables can be changed.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "loose",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "lose"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "7:30",
+    "5:30",
+    "Seattle",
+    "8:45",
+    "2016",
+    "University of Washington",
+    "34 minutes"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Repeated word plus loose/lose."
+  }
+}

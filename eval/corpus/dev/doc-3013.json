@@ -1,0 +1,29 @@
+{
+  "id": "doc-3013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "The thermostat compares the room temperature with the target you set and turns the furnace or air conditioner on when the difference exceeds a threshold, usually one degree. This gap, called the deadband, prevents the system from switching on and off every few seconds.\n\nWhen the schedule is enabled, the thermostat also looks ahead. It learns how long your home takes to warm by one degree and starts the furnace early, so the room reaches the target at the scheduled time instead of starting to warm up at that time. Most homes stabilize within a week of learning.\n\nThe thermostat communicates with the app over wifi and with remote sensors over Bluetooth. If wifi drops, the schedule continues to run from the thermostat's own memory; only remote control and energy reports are affected.\n\nEnergy reports are generated nightly by comparing run time with the outdoor temperature from the NOAA feed for your zip code.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "NOAA",
+    "one degree",
+    "wifi",
+    "Bluetooth",
+    "deadband"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean product explainer."
+  }
+}

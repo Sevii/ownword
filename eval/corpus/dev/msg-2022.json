@@ -1,0 +1,33 @@
+{
+  "id": "msg-2022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok who's in for trivia tonight at the Fox & Hound? starts at 8, i'll grab a table at 7:30 if at least 3 ppl say yes\n\ntbh we need Marcus or we're gonna lose the music round again 😅",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "ok who's",
+    "tbh",
+    "ppl",
+    "gonna",
+    "😅",
+    "Fox & Hound",
+    "Marcus",
+    "7:30",
+    "at 8"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual group text."
+  }
+}

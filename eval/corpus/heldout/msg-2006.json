@@ -1,0 +1,60 @@
+{
+  "id": "msg-2006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "omg the concert last night was insane. we got their way to early tho, like 5pm for an 8pm show, so we just sat on the curb eating pretzels for three hours lol\n\nanyway you should of come, Jess kept asking where u were",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "their way",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "there way"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "to early",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too early"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "should of come",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "should have come",
+        "should've come"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "omg",
+    "tho",
+    "lol",
+    "u were",
+    "Jess",
+    "5pm",
+    "8pm"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text with three usage slips."
+  }
+}

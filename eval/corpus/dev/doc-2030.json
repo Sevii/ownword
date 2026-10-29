@@ -1,0 +1,34 @@
+{
+  "id": "doc-2030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Office wifi changes on November 10\n\nOn November 10, the guest wifi network changes its name from Visitor to Harbor-Guest. The password rotates monthly and appears on the screen at reception.\n\nStaff laptops should use the Harbor-Staff network, which authenticates with your badge certificate; no password is needed. If your laptop does not join automatically, open the Company Portal app and run the network profile check.\n\nContact the help desk through Slack at #it-help if you have trouble.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "November 10",
+    "wifi",
+    "Visitor",
+    "Harbor-Guest",
+    "Harbor-Staff",
+    "no password",
+    "does not",
+    "Company Portal",
+    "Slack",
+    "#it-help"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"its name\" is the correct possessive."
+  }
+}

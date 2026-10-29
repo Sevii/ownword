@@ -1,0 +1,32 @@
+{
+  "id": "email-2043",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Dear Mr. Petrakis,\n\nThank you for your questions about the Q4 forecast. The revised figure of $4.2 million reflects the delayed Halston contract, which now closes in January rather than December. Excluding that one item, the quarter tracks within 2 percent of the original plan.\n\nMs. Chen will walk through the detail at the finance review on November 19. I have attached the bridge she prepared.\n\nRegards,\nIsabel Moreau",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Q4",
+    "$4.2 million",
+    "Halston",
+    "January",
+    "December",
+    "2 percent",
+    "Ms. Chen",
+    "November 19"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

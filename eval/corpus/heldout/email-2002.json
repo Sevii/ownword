@@ -1,0 +1,47 @@
+{
+  "id": "email-2002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi all,\n\nQuick update on the webhook retries. The team have agreed to cap retries at five attempts with exponential backoff, and anything that still fails after that goes to the dead-letter queue. I think this is the right call, but shout if you disagree.\n\nPriya will update the runbook by Friday.\n\nThanks,\nMarcus",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "team have",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "team has"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "I think",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "five attempts",
+    "dead-letter queue",
+    "Friday",
+    "Priya",
+    "webhook",
+    "runbook"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "US dialect: collective noun takes a singular verb. \"I think\" is an optional hedging note."
+  }
+}

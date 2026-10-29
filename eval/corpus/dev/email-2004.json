@@ -1,0 +1,47 @@
+{
+  "id": "email-2004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "manager",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Whitcombe,\n\nI am writing to confirm that the organisation has approved the revised training programme for the autumn intake. The budget of £18,500 was approved by the finance committee on 12 September, and the first cohort will begin on 6 October.\n\nThe tutors have been asked to submit there reading lists by 22 September so that the library can order copies in time.\n\nYours sincerely,\nHelena Marsh",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "was approved by",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "organisation",
+    "programme",
+    "£18,500",
+    "12 September",
+    "6 October",
+    "22 September"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "British spellings are correct for en-GB and must not be flagged. Only \"there\" is an error."
+  }
+}

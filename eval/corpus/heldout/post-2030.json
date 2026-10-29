@@ -1,0 +1,30 @@
+{
+  "id": "post-2030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "y'all. the guy at the farmers market gave me a free peach bc i 'looked like i needed it.' do i look that tired?? it was a really good peach tho\n\nanyway drink water, eat fruit, go outside etc",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "y'all",
+    "bc",
+    "tho",
+    "??",
+    "etc",
+    "'looked like i needed it.'"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post; doubled question marks are deliberate."
+  }
+}

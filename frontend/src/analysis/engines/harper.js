@@ -19,11 +19,26 @@ export const HARPER_VERSION = '2.13.0';
 // preference, not an error), and the expansion and formatting rules below
 // (0 hits each) that rewrite deliberate shorthand such as "min", "FYI",
 // "4 B", or a hyphen in a numeric range. Users can re-enable any rule.
+// Second round, 2026-10-29 on the enlarged dev split (299 cases): more
+// expansion rules with no hits (ExpandTimeShorthands 0/6 on "ms" and "min",
+// ExpandConfiguration, ExpandStandardInputAndOutput), MissingPreposition
+// 0/5, PhrasalVerbAsCompoundNoun 0/2 ("checkout"), AvoidCurses 0/1 (a
+// surname), DisjointPrefixes 0/1 ("re-enter"), and TheMy, whose fix for
+// "its the" deletes a word; the confusables rule handles those.
 export const DEFAULT_OFF_RULES = [
   'OrthographicConsistency', 'SplitWords', 'OkToOkay', 'DayOneNames', 'OxfordComma',
   'ExpandMinimum', 'ForYourInformation', 'ExpandMemoryShorthands', 'NumericRangeEnDash',
   'ArriveOnWeekday', 'HaveTakeALook', 'MergeWords', 'CompoundNouns',
+  'ExpandTimeShorthands', 'ExpandConfiguration', 'ExpandStandardInputAndOutput', 'MissingPreposition',
+  'PhrasalVerbAsCompoundNoun', 'AvoidCurses', 'DisjointPrefixes', 'TheMy',
 ];
+
+// Harper's suggestion is wrong for these; the corpus says what people mean.
+/** @type {Record<string, Record<string, string[]>>} rule -> lowercased problem text -> replacements */
+export const REPLACEMENT_FIXES = {
+  WrongNegative: { untill: ['until'] },
+  EllipsisLength: { '..': ['.', '...'] },
+};
 
 // Rules Harper reports under a style-like kind (Word Choice, Miscellaneous,
 // Enhancement) although the finding is a definite mistake. Same evidence run:
@@ -44,14 +59,17 @@ export const RULE_OVERRIDES = {
 };
 
 // Rules skipped when the document's writing goal is casual: lowercase
-// sentence starts are deliberate in texts and chat ("hey, running late").
-export const CASUAL_OFF_RULES = new Set(['SentenceCapitalization']);
+// sentence starts and "i" are deliberate in texts and chat ("hey, running
+// late"), as are "thru", "tho", and "honestly" (CapitalizePersonalPronouns
+// 3/45 on the casual cases).
+export const CASUAL_OFF_RULES = new Set(['SentenceCapitalization', 'CapitalizePersonalPronouns', 'ExpandThrough', 'ExpandThough', 'DiscourseMarkers']);
 
 // Chat shorthand that is not a misspelling in casual writing.
 export const CASUAL_WORDS = new Set([
   'u', 'ur', 'bc', 'b4', 'pls', 'plz', 'thx', 'ty', 'tbh', 'idk', 'imo', 'imho', 'btw', 'fyi', 'asap',
   'lol', 'omg', 'brb', 'ttyl', 'np', 'nvm', 'rn', 'tmrw', 'tho', 'cuz', 'gonna', 'wanna', 'gotta',
   'kinda', 'sorta', 'dunno', 'ya', 'yep', 'yup', 'nope', 'ok', 'okay', "y'know", 'ppl', 'msg', 'w/', 'w/o',
+  'im', 'ive', 'mon', 'tues', 'tue', 'weds', 'wed', 'thurs', 'thu', 'fri', 'sat', 'sun', 'wknd', 'bday', 'convo', 'def', 'prob', 'obvs', 'fomo', 'vibes', 'lmk', 'ikr', 'omw', 'hbu', 'wya', 'fr', 'ngl', 'smh', 'tbd', 'eta',
 ]);
 
 // Everyday technical and modern words missing from Harper's dictionary.
@@ -62,7 +80,12 @@ export const EXTRA_WORDS = [
   'frontend', 'frontends', 'login', 'logins', 'signup', 'signups', 'webhook', 'webhooks', 'changelog',
   'changelogs', 'roadmap', 'roadmaps', 'timebox', 'timeboxed', 'uptime', 'downtime', 'retest', 'retests',
   'subfolder', 'subfolders', 'podcast', 'podcasts', 'emoji', 'emojis', 'selfie', 'selfies', 'livestream',
-  'livestreams', 'hashtag', 'hashtags', 'smartwatch', 'smartwatches', 'airfryer', 'doomscrolling', 'cron', 'crontab', 'sudo', 'async', 'uuid', 'uuids', 'json', 'yaml', 'regex', 'regexes',
+  'livestreams', 'hashtag', 'hashtags', 'smartwatch', 'smartwatches', 'airfryer', 'doomscrolling', 'helpdesk',
+  'kubectl', 'stdout', 'stderr', 'stdin', 'wireframe', 'wireframes', 'deadband', 'habanero', 'fomo', 'playbook', 'playbooks', 'postmortem',
+  'postmortems', 'standup', 'standups', 'sprint', 'sprints', 'backlog', 'microservice', 'microservices', 'middleware',
+  // Doubled-l spellings are accepted in American English too.
+  'cancelled', 'cancelling', 'travelled', 'travelling', 'traveller', 'travellers', 'labelled', 'labelling', 'modelled',
+  'modelling', 'counselling', 'counsellor', 'counsellors', 'fuelled', 'totalled', 'signalled', 'levelled', 'cron', 'crontab', 'sudo', 'async', 'uuid', 'uuids', 'json', 'yaml', 'regex', 'regexes',
 ];
 
 /** @typedef {import('../types.js').RawFinding} RawFinding */
@@ -143,6 +166,7 @@ export function createHarperEngine(linter, { policy = true } = {}) {
       /** @type {RawFinding[]} */
       const findings = [];
       let rejected = 0;
+      const names = policy ? documentNames(snapshot) : new Set();
       for (const block of snapshot.blocks) {
         if (block.type === 'codeBlock' || !block.text.trim()) continue;
         if (blockIds && !blockIds.has(block.id)) continue;
@@ -151,6 +175,7 @@ export function createHarperEngine(linter, { policy = true } = {}) {
           ...block.marks.filter((m) => m.type === 'code'),
         ];
         const starts = sentenceStarts(block.text);
+        const nameLine = policy && isNameLine(block.text);
         const organized = await linter.organizedLints(block.text, { language: 'plaintext' });
         const casual = policy && settings.goals?.formality === 'casual';
         for (const [rule, lints] of Object.entries(organized)) {
@@ -163,12 +188,15 @@ export function createHarperEngine(linter, { policy = true } = {}) {
             if (!raw) rejected++;
             else if (
               !overlapsAny(skip, raw.from, raw.to) &&
-              !(casual && isCasualWord(raw, block.text)) &&
-              !(policy && likelyProperNoun(raw, block.text, starts)) &&
+              !(casual && (isCasualWord(raw, block.text) || isCaseOnlyFix(raw, block.text))) &&
+              !(policy && likelyProperNoun(raw, block.text, starts, names)) &&
+              !(policy && nameLine && raw.category === 'spelling') &&
               !(policy && isAcronym(raw, block.text)) &&
+              !(policy && isCodeLike(raw, block.text)) &&
+              !(policy && isUnitLetter(raw, block.text)) &&
               !(policy && (await isDerivedKnownWord(raw, block.text)))
             ) {
-              findings.push(raw);
+              findings.push(policy ? fixReplacements(rule, raw, block.text) : raw);
             }
             lint.free?.();
           }
@@ -211,6 +239,53 @@ export function stems(word) {
   return PREFIXES.filter((p) => lower.startsWith(p)).map((p) => lower.slice(p.length).replace(/^-/u, ''));
 }
 
+/** Capitalized words that sit mid-sentence anywhere in the document: names the dictionary lacks. */
+function documentNames(snapshot) {
+  const names = new Set();
+  for (const b of snapshot.blocks) {
+    if (b.type === 'codeBlock') continue;
+    const starts = sentenceStarts(b.text);
+    for (const m of b.text.matchAll(/\p{Lu}[\p{L}'’-]+/gu)) if (!starts.has(m.index)) names.add(m[0]);
+  }
+  return names;
+}
+
+/** A block that is only one to three capitalized words ("Jen", "Priya Nair"): a sign-off or a name. */
+export function isNameLine(text) {
+  const words = text.trim().replace(/[,.!]+$/u, '').split(/\s+/u);
+  return words.length <= 3 && words.every((w) => /^\p{Lu}[\p{L}'’.-]*$/u.test(w));
+}
+
+/** In casual writing, "sunday" and "friday" are left alone: the fix would only change case. */
+export function isCaseOnlyFix(raw, text) {
+  if (raw.category !== 'spelling' || !raw.replacements?.length) return false;
+  const word = text.slice(raw.from, raw.to).toLowerCase();
+  return raw.replacements.some((r) => r.toLowerCase() === word);
+}
+
+/** Paths, identifiers, and commands ("secret/helpdesk/zendesk", "kubectl", "my_var", "v2.1"). */
+export function isCodeLike(raw, text) {
+  if (raw.category !== 'spelling') return false;
+  let from = raw.from;
+  let to = raw.to;
+  while (from > 0 && !/\s/u.test(text[from - 1])) from--;
+  while (to < text.length && !/\s/u.test(text[to])) to++;
+  const token = text.slice(from, to).replace(/^[("'“‘[]+|[)"'”’\].,;:!?]+$/gu, '');
+  return /[/\\_]|\p{L}\.\p{L}|\p{L}\d|\d\p{L}|^[a-z]+[A-Z]/u.test(token);
+}
+
+/** A one- or two-letter unit after a number ("1.2 s", "45 ms", "3 kg"). */
+export function isUnitLetter(raw, text) {
+  if (raw.category !== 'spelling' || raw.to - raw.from > 2) return false;
+  return /\d\s*$/u.test(text.slice(0, raw.from)) && /^[a-z]{1,2}$/u.test(text.slice(raw.from, raw.to));
+}
+
+/** Replace suggestions the corpus showed to be wrong (REPLACEMENT_FIXES). */
+function fixReplacements(rule, raw, text) {
+  const fixes = REPLACEMENT_FIXES[rule]?.[text.slice(raw.from, raw.to).toLowerCase()];
+  return fixes ? { ...raw, replacements: fixes } : raw;
+}
+
 /** Chat shorthand ("u", "bc", "y'know") is not a misspelling in casual writing. */
 export function isCasualWord(raw, text) {
   return raw.category === 'spelling' && CASUAL_WORDS.has(text.slice(raw.from, raw.to).toLowerCase());
@@ -235,10 +310,12 @@ function sentenceStarts(text) {
  * "Janet's"), which is a real error.
  * @param {RawFinding} raw @param {string} text @param {Set<number>} starts
  */
-export function likelyProperNoun(raw, text, starts) {
+export function likelyProperNoun(raw, text, starts, names = new Set()) {
   if (raw.category !== 'spelling') return false;
   const word = text.slice(raw.from, raw.to);
-  if (!/^\p{Lu}/u.test(word) || starts.has(raw.from)) return false;
+  if (!/^\p{Lu}/u.test(word)) return false;
+  // At a sentence start, only a word seen mid-sentence elsewhere counts as a name.
+  if (starts.has(raw.from) && !names.has(word)) return false;
   const apostropheFix = (raw.replacements ?? []).some((r) => r.replace(/['’]/gu, '') === word && r !== word);
   return !apostropheFix;
 }

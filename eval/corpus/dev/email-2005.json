@@ -1,0 +1,46 @@
+{
+  "id": "email-2005",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Castellanos,\n\nThank you for the revised quote. The unit price of $42.80 is higher then the figure we discussed on the call, so I would like to understand what changed before we proceed..\n\nWe still intend to order 1,200 units for delivery in the first week of December, provided the pricing can be brought back in line with the earlier estimate.\n\nRegards,\nMeredith Lang",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "..",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "."
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "$42.80",
+    "1,200 units",
+    "first week of December"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

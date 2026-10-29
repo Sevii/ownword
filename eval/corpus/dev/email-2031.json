@@ -1,0 +1,33 @@
+{
+  "id": "email-2031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "manager",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Ashworth,\n\nI am pleased to confirm that the organisation has approved the pilot programme for the Manchester office. The budget of £42,000 covers equipment, two part-time coordinators, and the evaluation that Dr. Okafor will lead in March.\n\nWe will analyse the first month of data in February and share a short report with the board on 4 March.\n\nYours sincerely,\nCharlotte Benning",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "organisation",
+    "programme",
+    "Manchester",
+    "£42,000",
+    "Dr. Okafor",
+    "March",
+    "February",
+    "4 March",
+    "analyse"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB clean case: organisation, programme, analyse are correct spellings."
+  }
+}

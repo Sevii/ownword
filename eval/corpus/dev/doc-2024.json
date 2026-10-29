@@ -1,0 +1,34 @@
+{
+  "id": "doc-2024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Project Atlas: status for the week of October 26\n\nThe team completed the vendor integration ahead of schedule, and the first end-to-end order flowed through the new system on Thursday. Load testing begins on November 2 and runs for two weeks.\n\nTwo risks remain. The warehouse scanners still run the old firmware, and Ms. Delgado expects the upgrade to take until mid-November. The second is the holiday code freeze, which starts on December 11; any slip past that date pushes launch into January.\n\nBudget stands at 94 percent of plan, with no change requests outstanding.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 26",
+    "Thursday",
+    "November 2",
+    "two weeks",
+    "Ms. Delgado",
+    "mid-November",
+    "December 11",
+    "January",
+    "94 percent",
+    "no change requests"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "msg-2014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "neighbor",
+  "markdown": "Hi Mrs. Okafor, this is Ben from 4B. The package that was delivered to your door this afternoon is actually ours. The courier mixed up the apartment numbers again.\n\nCould I swing by around 6 to grab it? No rush if your out, just let me know a good time.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "your out",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're out"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Mrs. Okafor",
+    "Ben",
+    "4B",
+    "around 6",
+    "your door"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"your door\" in the first paragraph is correct."
+  }
+}

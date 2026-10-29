@@ -1,0 +1,31 @@
+{
+  "id": "doc-3002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Hiring a bike\n\nOpen the app, tap the map, and choose a bike at any docking station in the city centre. Each hire includes the first thirty minutes free; after that, the standard rate applies in fifteen-minute blocks. Members on the annual programme pay nothing for rides under an hour.\n\nTo unlock the bike, hold your phone against the reader on the handlebar until the light turns green. The lock releases within a few seconds. If the light flashes red, the bike has been reported as faulty and you should choose another.\n\nYou can save up to five favourite stations in the app so they appear at the top of the list. The app also shows how many docks are free at each station, updated every minute.\n\nA full driving licence is not required, but riders must be at least sixteen. Helmets are recommended and can be borrowed free from the Bristol Bike Hub on Queen Square.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Bristol Bike Hub",
+    "Queen Square",
+    "thirty minutes",
+    "centre",
+    "programme",
+    "favourite",
+    "licence"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB product documentation. British spellings (centre, programme, favourite, licence) are correct for the dialect."
+  }
+}

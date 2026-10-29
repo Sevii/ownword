@@ -1,0 +1,31 @@
+{
+  "id": "doc-3003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Webhook delivery\n\nWhen an event occurs on your account, we send an HTTP POST request to the URL you configured in the dashboard. The body is a JSON object encoded as UTF-8, and the `X-Signature` header carries an HMAC of the body computed with your signing secret.\n\nYour endpoint must respond with a 2xx status within ten seconds. Any other response, including an HTTP 503 or a timeout, is treated as a failed delivery. Failed deliveries are retried with exponential backoff for up to 24 hours, after which the event is marked as undeliverable and shown in the dashboard.\n\nDeliveries can arrive out of order and, in rare cases, more than once. Use the `event_id` field to deduplicate; the same event always carries the same id.\n\n- Verify the signature before parsing the body.\n\n- Return quickly and process the event in a background job.\n\n- Log the `event_id` with every record you create.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "UTF-8",
+    "HTTP 503",
+    "X-Signature",
+    "event_id",
+    "24 hours",
+    "HMAC",
+    "2xx"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean API documentation. Technical identifiers and status codes must not be changed."
+  }
+}

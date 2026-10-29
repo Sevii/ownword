@@ -1,0 +1,30 @@
+{
+  "id": "email-2041",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Jenna,\n\nWe tested the three fabric samples you sent last week. The charcoal twill held up best in the abrasion test, lasting 22,000 cycles against 14,500 for the navy canvas and 9,800 for the linen blend.\n\nWe would like to order 600 yards of the charcoal twill for the spring run. Can you confirm the lead time and whether the $11.20 per yard price still stands at that quantity?\n\nThanks,\nMateo",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "three fabric samples",
+    "22,000",
+    "14,500",
+    "9,800",
+    "600 yards",
+    "$11.20"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

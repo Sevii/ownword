@@ -1,0 +1,43 @@
+{
+  "id": "doc-3028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "This product is covered against defects in materials and workmanship for two years from the date of purchase. The warranty applies to the original purchaser and is not transferable.\n\nClaims must be submitted by the customer through the support portal with proof of purchase and a description of the fault. If the product has been opened, modified, or used outside it's rated voltage, the warranty does not apply.\n\nApproved claims are repaired or replaced at our discretion. Shipping to the service center is at the customer's expense; return shipping is free.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "it's rated",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its rated"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "Claims must be submitted by the customer",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "two years",
+    "service center"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "its/it's plus a passive-voice note. Other passives in warranty language are conventional and not annotated."
+  }
+}

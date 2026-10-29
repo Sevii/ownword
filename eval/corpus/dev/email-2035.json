@@ -1,0 +1,35 @@
+{
+  "id": "email-2035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi all,\n\nI updated the runbook for the nightly export. The cron entry now runs at 01:30 UTC instead of midnight, which avoids the backup window on the primary database.\n\nThe export also treats HTTP 429 and 503 responses from the warehouse as retryable, with three attempts and a 20-second backoff. Anything else fails fast and posts to the #data-alerts webhook.\n\nLet me know if you spot anything odd in tomorrow's run.\n\nPriyanka",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "runbook",
+    "cron",
+    "01:30 UTC",
+    "429",
+    "503",
+    "retryable",
+    "three attempts",
+    "20-second",
+    "#data-alerts",
+    "webhook",
+    "tomorrow's"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Dense technical vocabulary (runbook, cron, retryable, webhook) that must not be treated as misspellings."
+  }
+}

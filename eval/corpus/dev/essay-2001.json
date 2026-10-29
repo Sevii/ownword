@@ -1,0 +1,28 @@
+{
+  "id": "essay-2001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "# The canal that made New York\n\nWhen the Erie Canal opened in 1825, it cut the cost of shipping a ton of flour from Buffalo to New York City from roughly one hundred dollars to about ten. DeWitt Clinton, who had staked his political career on the project, was mocked for years as the builder of a ditch.\n\nThe mockery did not last. Within a decade, towns such as Rochester and Syracuse grew from villages into cities, and the port of New York overtook Philadelphia and Boston as the nation's busiest. Farmers in Ohio who had once hauled grain over the Appalachians by wagon could now reach the Atlantic in a matter of weeks.\n\nThe canal's success was never only about engineering. It was about a state willing to borrow against an uncertain future, and about the Irish and local laborers who dug most of its 363 miles by hand.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "1825",
+    "DeWitt Clinton",
+    "Rochester and Syracuse",
+    "363 miles"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean history essay with proper nouns and numbers mid-sentence. A checker should stay silent."
+  }
+}

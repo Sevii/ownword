@@ -1,0 +1,46 @@
+{
+  "id": "doc-3034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "employees",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Phishing reminder\n\nSeveral staff received an email this week that appeared to come from the CEO asking them to buy gift cards. The message was a phishing attempt. Nobody in the company will ever ask you to buy gift cards or to share your password by email.\n\nIf you receive a suspicious message, forward it to the security inbox and then delete it. It is not neccessary to reply to the sender or to warn colleagues individually; the security team will send a company-wide note if one is needed.\n\nStaff who have already clicked a link should change there password immediately and let the security team know. There is no penalty for reporting a mistake, and reporting quickly is what stops it spreading.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "neccessary",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "necessary"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "there password",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their password"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "CEO",
+    "gift cards",
+    "security inbox"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus there/their. \"There is no penalty\" in the same block is correct."
+  }
+}

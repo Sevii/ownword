@@ -1,0 +1,35 @@
+{
+  "id": "essay-2007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "When the Great Exhibition opened in Hyde Park in May 1851, six million people travelled to see it, roughly a third of the population of Britain at the time. Joseph Paxton's Crystal Palace, a glass hall nearly 600 metres long, was raised in under nine months by a workforce that had mostly built greenhouses.\n\nContemporaries realised almost at once that the building mattered more than the exhibits. Punch mocked it, John Ruskin despised it, and the public queued for hours to stand inside it. The iron frame and the prefabricated panes showed that a structure could be assembled rather than built, an idea that reached every railway station and shopping centre in the next century.\n\nThe palace was moved to Sydenham in 1854 and burned in 1936. What survives is the method, and the memory of a nation briefly delighted by light and colour.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Hyde Park",
+    "May 1851",
+    "Joseph Paxton",
+    "600 metres",
+    "John Ruskin",
+    "Sydenham",
+    "1936",
+    "travelled",
+    "realised",
+    "centre",
+    "colour"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB history essay. \"Punch\" is a magazine title. British spellings are intentional."
+  }
+}

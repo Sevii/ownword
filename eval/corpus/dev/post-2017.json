@@ -1,0 +1,53 @@
+{
+  "id": "post-2017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Big news: after four years of renting a booth, we're opening our own shop at 212 Harbor Street on November 1. Its been a long road and we're grateful to everyone who stuck with us.\n\nLets celebrate properly. Opening day coffee is on us, and the first 50 customers recieve a tote bag.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Its been",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's been"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "Lets celebrate",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "Let's celebrate"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "recieve",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receive"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "212 Harbor Street",
+    "November 1",
+    "first 50",
+    "four years"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Announcement with three slips."
+  }
+}

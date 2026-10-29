@@ -1,0 +1,50 @@
+{
+  "id": "msg-2011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-GB",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "mate the queue at the new bakery was mental, i travelled 40 minutes for a sausage roll and they'd sold out by half ten. there doing another batch at noon apparently so im gonna hang about\n\nu want anything? there cinnamon buns look unreal",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "there doing",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're doing"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there cinnamon",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their cinnamon"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "mate",
+    "travelled",
+    "half ten",
+    "im",
+    "gonna",
+    "u want",
+    "i travelled"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "British casual text; \"travelled\" and \"im\" are not errors here, the two \"there\" slips are."
+  }
+}

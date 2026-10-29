@@ -1,0 +1,48 @@
+{
+  "id": "doc-3016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "We keep account data for as long as your account is active and for ninety days after it is closed, so that it can be restored if you change your mind. After ninety days, personal data is deleted and backups are rotated within a further thirty days.\n\nUsage statistics are retained in aggregate form and may be shared publically in our annual transparency report. Aggregate data cannot be traced to an individual account.\n\nCustomers who want there data exported before closing an account can request a full export from the settings page. The export is a ZIP archive containing JSON files and arrives by email within 24 hours.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "publically",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "publicly"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "there data",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their data"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ninety days",
+    "thirty days",
+    "ZIP",
+    "JSON",
+    "24 hours"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus there/their."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "doc-2033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Decision record: retry policy for outbound webhooks\n\nWe will retry failed webhook deliveries up to eight times over 24 hours, with delays of 1, 5, 15, 30, 60, 180, 360, and 720 minutes. Only responses with status 5xx or a connection timeout count as retryable; a 4xx response stops the retries and marks the delivery as failed.\n\nCustomers can replay failed deliveries from the dashboard for 14 days. Tanaka raised the option of a longer window, but that period matches the retention of the event log, so we kept them aligned.\n\nThis decision takes effect with release 2.19.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "eight times",
+    "24 hours",
+    "1, 5, 15, 30, 60, 180, 360, and 720 minutes",
+    "5xx",
+    "4xx",
+    "retryable",
+    "14 days",
+    "Tanaka",
+    "release 2.19",
+    "webhook"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "doc-3007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Version 4.2 release notes\n\nThis release improves connection reliability and fixes several issues reported by customers since 4.1.\n\n- Bluetooth pairing now completes in under five seconds on most Android phones. Previously, some Samsung devices required two attempts.\n\n- The app no longer drops the wifi connection when the phone switches between 2.4 GHz and 5 GHz bands on the same network.\n\n- Firmware updates can be scheduled overnight. The device must be plugged in and connected to wifi for the update to start.\n\n- Fixed a bug where the battery indicator showed 100% for several minutes after unplugging.\n\n- The settings screen now supports Dynamic Type on iOS, so larger text sizes are respected throughout.\n\nTo update, open the App Store or Google Play and check for updates. Devices running firmware older than 3.0 must be updated to 3.0 first; the app will guide you through this.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "4.2",
+    "4.1",
+    "2.4 GHz",
+    "5 GHz",
+    "100%",
+    "3.0",
+    "Bluetooth",
+    "wifi",
+    "Dynamic Type",
+    "iOS"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean release notes. Sentence fragments beginning \"Fixed a bug\" are conventional in changelogs."
+  }
+}

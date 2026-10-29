@@ -1,0 +1,32 @@
+{
+  "id": "msg-2029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "yo the game got moved to 1pm on sat instead of 3, Coach sent an email. carpool still leaving from Nate's at noon\n\nwhoever has the orange cones pls bring them, we lost ours somehow lol",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "yo",
+    "1pm",
+    "sat",
+    "instead of 3",
+    "Coach",
+    "Nate's",
+    "pls",
+    "lol"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual group text."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "post-2035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "A few notes from my first year running a stall at the Saturday market. Customers remember the person, not the product, so talk to everyone. Price in round numbers; nobody wants to make change for $7.25. And bring a second cash box, because the first one will run out of ones by ten.\n\nHappy to answer questions if you're thinking about starting.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "$7.25",
+    "Saturday market",
+    "by ten"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral advice post; sentence-initial \"And\" is deliberate."
+  }
+}

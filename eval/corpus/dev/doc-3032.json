@@ -1,0 +1,45 @@
+{
+  "id": "doc-3032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Energy monitor overview\n\nThe monitor clips around the main feed in your breaker panel and reports power use every second to the hub over Bluetooth. The hub forwards the data to the app over wifi. Installation requires opening the panel and should be done by an electrician.\n\nThe basic fundamentals of the readings are simple: watts is what you are using now, and kilowatt-hours is what you have used over time. The app shows both, plus an estimate of cost based on the tariff you enter.\n\nThe hub is rated for an indoor enviroment between 0°C and 40°C. Mount it within three meters of the panel for a reliable Bluetooth link.",
+  "expected": [
+    {
+      "block": 3,
+      "quote": "enviroment",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "environment"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "basic fundamentals",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "0°C and 40°C",
+    "three meters",
+    "Bluetooth",
+    "wifi"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus the redundant \"basic fundamentals\". \"watts is\" treats the unit as a singular term, which is acceptable."
+  }
+}

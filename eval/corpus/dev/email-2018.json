@@ -1,0 +1,49 @@
+{
+  "id": "email-2018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Ms. Hartigan,\n\nThe list of changes for release 4.2 were sent to the QA team this morning. The release plan was approved by Tomás Herrera on Wednesday, and the deployment window is set for Saturday between 01:00 and 03:00 Pacific.\n\nI will confirm the go/no-go decision by 17:00 on Friday.\n\nRegards,\nBeatrice Hull",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "were sent",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "was sent"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "was approved by",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "release 4.2",
+    "Tomás Herrera",
+    "Wednesday",
+    "Saturday",
+    "01:00",
+    "03:00 Pacific",
+    "17:00",
+    "Friday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject is \"The list\", so the verb is singular."
+  }
+}

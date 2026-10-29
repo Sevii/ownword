@@ -1,0 +1,31 @@
+{
+  "id": "essay-2011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "readers of a blog",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## What on-call is for\n\nEvery engineering organisation I have worked in has treated on-call as a tax: a rota to be filled, a pager to be carried, a weekend to be lost. I think that framing is why so many of them do it badly. On-call is not a tax. It is the only time an engineer is forced to see the system behave as it actually does rather than as the design document says it should.\n\nThe teams that recognise this run on-call differently. They write a runbook for every alert and delete the alert if nobody can write one. They analyse each page the next morning, not to assign blame but to ask whether the page should have fired at all. They treat a quiet week as evidence of good engineering, not as a licence to add more monitoring.\n\nIf your programme of alerts wakes someone up and the right response is to do nothing, that alert is a bug, and it belongs in the backlog with the others.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "runbook",
+    "on-call",
+    "organisation",
+    "recognise",
+    "analyse",
+    "licence",
+    "programme"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB technical blog essay. \"licence\" (noun) and other British spellings are correct for the dialect."
+  }
+}

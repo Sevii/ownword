@@ -1,0 +1,30 @@
+{
+  "id": "essay-2004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "readers of a blog",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Readers who give up on Moby-Dick usually stop somewhere around the chapters on cetology, where Herman Melville pauses the hunt to classify whales by size as if they were books on a shelf. It is tempting to call these chapters a mistake. I think they are the point.\n\nMelville wrote the novel in 1850 and 1851, when the whaling fleet out of Nantucket and New Bedford was the largest industrial enterprise in America. Ishmael's digressions are an attempt to hold the whole enterprise in view at once: the oil, the ships, the ropes, the men, and the animal none of them understood.\n\nAhab wants a single meaning. Ishmael is content to collect facts and let them sit beside each other. The book sides with Ishmael, which is why it ends with him floating on a coffin and still talking.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Moby-Dick",
+    "Herman Melville",
+    "1850 and 1851",
+    "Nantucket and New Bedford",
+    "Ishmael",
+    "Ahab"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean literature essay. Title of a work and character names must not be altered."
+  }
+}

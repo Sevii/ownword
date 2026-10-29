@@ -1,0 +1,30 @@
+{
+  "id": "email-2034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Dear Dr. Lindgren,\n\nThe ethics committee met on October 27 and approved the amended protocol without further changes. Enrollment may resume immediately, and the cap remains at 180 participants across the four sites.\n\nPlease ask each site coordinator to file the updated consent form in REDCap before enrolling anyone new. Ms. Halvorsen in our office can help with the upload if needed.\n\nSincerely,\nThomas Agyeman",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 27",
+    "without further changes",
+    "180 participants",
+    "four sites",
+    "REDCap",
+    "Ms. Halvorsen"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

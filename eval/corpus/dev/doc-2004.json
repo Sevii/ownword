@@ -1,0 +1,51 @@
+{
+  "id": "doc-2004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Findings from the October user interviews\n\nWe spoke to nine customers between 6 and 17 October to analyse how they use the reporting dashboard. Seven of them said the export flow takes longer then it should, mostly because the file picker opens in a seperate window.\n\nThe behaviour we observed matches the Hotjar recordings. The organisation of the filters was not raised as a problem by anyone.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "seperate",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separate"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "analyse",
+    "behaviour",
+    "organisation",
+    "nine customers",
+    "6 and 17 October",
+    "Seven",
+    "Hotjar",
+    "was not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB spellings (analyse, behaviour, organisation) are correct."
+  }
+}

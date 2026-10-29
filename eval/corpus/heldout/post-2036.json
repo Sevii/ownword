@@ -1,0 +1,27 @@
+{
+  "id": "post-2036",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-GB",
+  "audience": "followers",
+  "markdown": "We've spent the past month cataloguing the old parish records before they go off to the county archive. Some of the entries date to 1783, and the handwriting is remarkable. One clerk apparently favoured green ink.\n\nIf you've got relatives from the village, the archive's catalogue should be searchable online by December.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "cataloguing",
+    "1783",
+    "favoured",
+    "catalogue",
+    "December",
+    "parish"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean British post; \"cataloguing\", \"favoured\", \"catalogue\" are correct en-GB spellings."
+  }
+}

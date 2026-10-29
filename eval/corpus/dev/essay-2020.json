@@ -1,0 +1,47 @@
+{
+  "id": "essay-2020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "# The case for public railways\n\nBritain privatised its railways in the mid-1990s on the promise that competition would lower fares and improve punctuality. Three decades on, fares have risen faster then wages in almost every year, and the operators that were meant to compete have mostly been replaced by the government when they failed.\n\nIt could be argued that the problem was never ownership but the way the network was organised, with track and trains split between separate companies that had no reason to cooperate. That is true as far as it goes. But a programme that needs public money every time it stumbles is public in all but name.\n\nI am not in favour of nostalgia for British Rail. I am in favour of admitting what has already happened.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "faster then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "faster than"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "It could be argued that",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "mid-1990s",
+    "British Rail",
+    "privatised",
+    "organised",
+    "programme",
+    "favour"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "then/than error plus a hedging style note. British spellings are correct for the dialect."
+  }
+}

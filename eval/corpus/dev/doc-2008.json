@@ -1,0 +1,50 @@
+{
+  "id": "doc-2008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Vendor evaluation: warehouse management systems\n\nWe evaluated three vendors against the requirements agreed in August. Each and every vendor met the baseline for inventory tracking, but only Stockwise and Lattice supported cycle counting out of the box.\n\nLattice scored higher on reporting, and there implementation timeline of 10 weeks was the shortest. We recommend proceeding to a paid pilot with Lattice at a cost of $18,000.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Each and every",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "Each",
+        "Every"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "three vendors",
+    "August",
+    "Stockwise",
+    "Lattice",
+    "10 weeks",
+    "$18,000"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

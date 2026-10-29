@@ -1,0 +1,43 @@
+{
+  "id": "post-2015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Tried the new Thai place on Hollis last night. The green curry was excellent, maybe the best I've had outside of Bangkok, and the service was quick even though the room was full.\n\nThe portions are smaller then you'd expect for $18, so order an appetizer. Definately getting the mango sticky rice next time.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "smaller then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "smaller than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "Definately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "Definitely"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Hollis",
+    "Bangkok",
+    "$18"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Restaurant review with two slips in the second paragraph."
+  }
+}

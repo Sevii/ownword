@@ -1,0 +1,26 @@
+{
+  "id": "post-2038",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "After eleven years, the Bluebird Diner will close its doors on December 20. We've been through two floods, one recession, and more pancake batter than anyone could count. Thank you to every regular who made this place feel like home.\n\nCome by for one last breakfast. The first 100 customers on closing day eat free.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "eleven years",
+    "Bluebird Diner",
+    "December 20",
+    "first 100",
+    "its doors"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral announcement; possessive \"its\" is correct."
+  }
+}

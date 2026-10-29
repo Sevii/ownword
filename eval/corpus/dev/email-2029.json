@@ -1,0 +1,31 @@
+{
+  "id": "email-2029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Ms. Thornton,\n\nThank you for meeting with us on Tuesday. As promised, I have attached the revised proposal, which reflects the two changes you requested: a shorter discovery phase of three weeks and a fixed fee of $27,500 for the design work.\n\nIf the terms look right, Mr. Castillo will send the contract through DocuSign on Friday. We can begin on November 9 once we have the signed copy.\n\nKind regards,\nEvelyn Park",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Tuesday",
+    "three weeks",
+    "$27,500",
+    "Mr. Castillo",
+    "DocuSign",
+    "Friday",
+    "November 9"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

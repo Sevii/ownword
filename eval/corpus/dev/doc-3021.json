@@ -1,0 +1,45 @@
+{
+  "id": "doc-3021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Most people loose photos not to hardware failure but to a lost or stolen phone. A backup that lives only on the same device is not a backup.\n\nTurn on iCloud Photos or Google Photos so new pictures upload automatically over wifi. Then, perhaps once a month, copy the library to an external drive and keep that drive somewhere other than your desk. Two copies in two places survive almost everything short of a house fire.\n\nCheck the backup twice a year by opening a few old photos from the drive. A backup you have never restored from is a hope, not a plan.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "loose",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "lose"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "perhaps",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "iCloud Photos",
+    "Google Photos",
+    "wifi",
+    "twice a year"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "loose/lose plus a hedging note."
+  }
+}

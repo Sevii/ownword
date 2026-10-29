@@ -1,0 +1,48 @@
+{
+  "id": "doc-2012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Statement of work: data center cabling, phase 2\n\nThe companys existing fiber runs between racks 12 and 24 will be replaced by the vendor with OM4 cable during the weekend of November 21. Work will begin at 18:00 on Friday and must finish by 06:00 on Monday.\n\nThe vendor will label every cable at both ends and deliver an updated patch schedule within five business days of completion.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "companys",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "company's"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "will be replaced by",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "racks 12 and 24",
+    "OM4",
+    "November 21",
+    "18:00",
+    "Friday",
+    "06:00",
+    "Monday",
+    "five business days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

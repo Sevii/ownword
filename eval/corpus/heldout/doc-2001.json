@@ -1,0 +1,51 @@
+{
+  "id": "doc-2001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Runbook: restarting the ingest worker\n\nThe ingest worker runs as a systemd service on ingest-01 and ingest-02. In order to restart it safely, drain the queue first by setting the INGEST_PAUSE flag in Consul and waiting until the queue depth reaches zero.\n\nOnce the queue is empty, run sudo systemctl restart ingest-worker on each host. The logs shows a line reading \"worker ready\" within about 20 seconds. If that line does not appear, do not restart the second host; page the on-call engineer instead.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "In order to",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "To"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "logs shows",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "logs show"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ingest-01",
+    "ingest-02",
+    "INGEST_PAUSE",
+    "Consul",
+    "sudo systemctl restart ingest-worker",
+    "20 seconds",
+    "does not",
+    "do not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Block 0 is the heading. Commands and hostnames must stay untouched."
+  }
+}

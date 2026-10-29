@@ -1,0 +1,52 @@
+{
+  "id": "doc-3022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Deploy note: 2026-04-09\n\nThe 14:00 deploy had went out to the EU cluster before the migration finished on the primary, so the API returned HTTP 500 on the orders endpoint for about six minutes. The on-call engineer rolled the deploy back at 14:09.\n\nThe pipeline checks for a running migration, but it's check only looks at the US primary. Until the check is fixed, deploys to EU must wait for a manual confirmation in the deploys channel.\n\nTicket OPS-2231 tracks the pipeline fix. Owner: Mei.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "had went",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "had gone",
+        "went"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "it's check",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its check"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "2026-04-09",
+    "14:00",
+    "HTTP 500",
+    "14:09",
+    "OPS-2231",
+    "Mei",
+    "EU",
+    "US"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Wrong past participle (\"had went\") plus its/it's."
+  }
+}

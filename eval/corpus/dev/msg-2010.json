@@ -1,0 +1,52 @@
+{
+  "id": "msg-2010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "markdown": "Quick heads up: the vendor said they'd rather meet Thursday then Friday, so I moved the walkthrough to 3pm on the 12th. Let me know if that clashes with anything on you're calendar.\n\nI'll send the the updated invite once Ravi confirms the room.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "you're calendar",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your calendar"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "3pm",
+    "12th",
+    "Ravi"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Three errors in a work message."
+  }
+}

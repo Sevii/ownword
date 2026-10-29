@@ -1,0 +1,27 @@
+{
+  "id": "post-2021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok i finally did it, i deleted every delivery app off my phone. day 4 and i've cooked dinner every night. nothing fancy, mostly pasta, but the bank account is noticeably happier\n\nask me again in a week lol",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "ok i finally",
+    "day 4",
+    "lol"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "doc-3035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Plots are assigned each March and must be planted by May 15. A plot that shows no activity by June 1 may be reassigned to someone on the waiting list.\n\nGardeners are responsible for keeping the paths on all sides of their own plot free of weeds and tools, for watering only between 6 a.m. and 9 a.m. or after 6 p.m. so that pressure stays high for everyone, and for taking home any produce they harvest on the same day rather than leaving it in the shared shed, where it attracts rodents and has in past years caused an arguement that nobody enjoyed.\n\nPesticides are not permitted. Compost goes in the bins by the gate, not on the plots.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "arguement",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "argument"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "Gardeners are responsible for keeping the paths on all sides of their own plot free of weeds and tools, for watering only between 6 a.m. and 9 a.m. or after 6 p.m. so that pressure stays high for everyone, and for taking home any produce they harvest on the same day rather than leaving it in the shared shed, where it attracts rodents and has in past years caused an arguement that nobody enjoyed.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "March",
+    "May 15",
+    "June 1",
+    "6 a.m. and 9 a.m.",
+    "6 p.m."
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling inside a 74-word sentence that is also flagged for length."
+  }
+}

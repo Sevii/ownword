@@ -1,0 +1,47 @@
+{
+  "id": "essay-2022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "When the Metropolitan Museum of Art ended pay-what-you-wish admission for out-of-state visitors in 2018, attendance barely moved. That fact is often cited as proof that fees do no harm. It proves something narrower: that tourists who have already flown to New York will pay twenty-five dollars for a museum.\n\nThe people a fee keeps out are the ones who were never going to be counted. A student from Queens who might have wandered in on a rainy afternoon does not appear in any attendance figure, because she never came. The galleries that benefit most from a free door is the ones nobody planned to visit.\n\nA museum that charges to much has decided who its public is. It should at least say so.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "door is the",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "door are the"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "to much",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too much"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Metropolitan Museum of Art",
+    "2018",
+    "Queens",
+    "twenty-five dollars"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject-verb agreement (\"galleries ... is\") plus to/too."
+  }
+}

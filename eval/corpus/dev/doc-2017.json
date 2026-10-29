@@ -1,0 +1,47 @@
+{
+  "id": "doc-2017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Reminder: security training due November 30\n\nEveryone must complete the annual security training in Workday by November 30. You're manager will receive a list of anyone who has not finished.\n\nThe modules take about 45 minutes in total. If that is to long for one sitting, Workday saves your progress between sessions.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "You're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Your"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "to long",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too long"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "November 30",
+    "Workday",
+    "has not",
+    "45 minutes"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

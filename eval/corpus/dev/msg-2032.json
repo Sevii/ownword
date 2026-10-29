@@ -1,0 +1,33 @@
+{
+  "id": "msg-2032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-GB",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "lads the footie is on at 3 tomorrow, i've got the big telly sorted and Amir is bringing crisps. colours are optional but if you turn up in a City shirt you're sitting outside lol\n\ntext me if you're coming so i know how many cans to get",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "lads",
+    "footie",
+    "telly",
+    "crisps",
+    "colours",
+    "City",
+    "lol",
+    "at 3",
+    "Amir"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean British casual text; \"colours\" is correct en-GB spelling."
+  }
+}

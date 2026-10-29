@@ -1,0 +1,31 @@
+{
+  "id": "post-2025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "life update: moved to Denver last week, found a coffee shop with good wifi (Huckleberry on 44th), and have already gotten lost twice. 10/10 so far\n\nif u know people here, send them my way. i need friends lol",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Denver",
+    "Huckleberry",
+    "44th",
+    "10/10",
+    "u know",
+    "lol",
+    "wifi"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "doc-2003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Expense policy update\n\nStarting January 1, the company will reimburse meals up to $60 per day while traveling. Its important to attach itemized receipts, since the finance team can no longer accept credit card statements alone.\n\nIf your traveling with a client, note the client's name and company on the receipt. Alcohol is reimbursable only at client dinners, up to $40 per person.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "January 1",
+    "$60 per day",
+    "no longer",
+    "$40 per person",
+    "client's"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

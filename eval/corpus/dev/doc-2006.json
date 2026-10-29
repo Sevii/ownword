@@ -1,0 +1,50 @@
+{
+  "id": "doc-2006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Deploy notes for release 5.0\n\nBefore running the migration make sure the read replica has caught up; lag over 30 seconds will cause the backfill to to skip rows. The migration itself takes about 12 minutes on production.\n\nAfter it finishes, flip the FEATURE_NEW_LEDGER flag in LaunchDarkly and watch the error rate for 15 minutes before announcing in Slack.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the migration make",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "the migration, make"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "to to",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "to"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "release 5.0",
+    "30 seconds",
+    "12 minutes",
+    "FEATURE_NEW_LEDGER",
+    "LaunchDarkly",
+    "15 minutes",
+    "Slack"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

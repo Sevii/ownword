@@ -1,0 +1,51 @@
+{
+  "id": "msg-2016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "markdown": "Could you send me the login for the shared drive when you get a chance? I need to upload the recipts from the conference before Friday or finance won't reimburse them.\n\nAlso, I seperated the hotel and flight costs into two sheets like Dana asked, so it shouldn't be to hard to review.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "recipts",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receipts"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "seperated",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separated"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "to hard",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too hard"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Dana",
+    "Friday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Two misspellings and one to/too slip."
+  }
+}

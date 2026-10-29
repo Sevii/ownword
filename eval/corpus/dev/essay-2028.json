@@ -1,0 +1,47 @@
+{
+  "id": "essay-2028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Athenian democracy is often held up as the ancestor of our own, and the comparison flatters both sides. In the fifth century BC, the assembly on the Pnyx was open to every adult male citizen, which excluded women, slaves, and resident foreigners. That left perhaps thirty thousand voters in a city of a quarter million.\n\nWithin that group, the practice was more direct than anything modern. Most offices were filled by lottery rather than election, on the theory that elections favor the rich and the eloquent. the courts, with juries of several hundred, decided cases without judges.\n\nThe lesson Athens teach is not that we should copy it. It is that representation was a choice, made later and for reasons, and that the choice can be examined.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the courts",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The courts"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "Athens teach",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Athens teaches"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "fifth century BC",
+    "Pnyx",
+    "thirty thousand",
+    "quarter million"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Sentence-start capitalization plus subject-verb agreement. \"perhaps thirty thousand\" is a numeric estimate, not hedging."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "doc-3029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "A starter needs flour, water, and time, and nothing else. Feed it once a day at room temperature or once a week in the refrigerator. Discard all but about 50 grams, then add 50 grams of flour and 50 grams of water and stir until no dry flour remains.\n\nWhole wheat or rye flour ferments faster then white flour because there is more for the yeast to eat. If your starter smells like nail polish remover, it is hungry, not dead; feed it twice a day for two days and it will recover.\n\nBakers who keep they're starter in the fridge should give it two feedings at room temperature before baking, so it is active enough to raise a loaf.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "faster then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "faster than"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "they're starter",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their starter"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "50 grams",
+    "twice a day",
+    "two days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "then/than plus they're/their. \"there is more\" in block 2 is correct."
+  }
+}

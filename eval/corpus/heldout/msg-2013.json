@@ -1,0 +1,59 @@
+{
+  "id": "msg-2013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "soooo i finally tried that climbing gym on Fulton. its way bigger then the old one and the bouldering wall is like twice as tall. day pass was $22 which is kinda steep but they do a $65 monthly\n\nyour welcome to come with me sat morning if ur free",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "its way",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's way"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "then the old",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than the old"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "your welcome",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're welcome"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "soooo",
+    "kinda",
+    "ur free",
+    "$22",
+    "$65",
+    "Fulton",
+    "sat morning"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text with three slips; \"soooo\", \"kinda\", \"ur\" are register."
+  }
+}

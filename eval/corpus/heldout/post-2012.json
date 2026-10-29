@@ -1,0 +1,44 @@
+{
+  "id": "post-2012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "The library's spring book sale is back on April 18 and 19. Hardcovers are $2, paperbacks are $1, and everything is half off on the the second day.\n\nVolunteers are still needed for setup on the 17th. If your free that afternoon, sign up at the front desk.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "your free",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're free"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "April 18 and 19",
+    "$2",
+    "$1",
+    "17th"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Announcement with a doubled word and a your/you're slip."
+  }
+}

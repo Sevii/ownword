@@ -1,0 +1,34 @@
+{
+  "id": "essay-2003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "# In favour of the allotment\n\nEvery city I have lived in has a waiting list for allotments, and in London the list in some boroughs now runs to more than a decade. That demand tells us something that planners have been slow to recognise: people want to grow things, even when the supermarket round the corner sells tomatoes for less than the cost of the seed.\n\nAn allotment is not really about food. It is about a patch of ground that a neighbour cannot pave over, a programme of work that follows the seasons rather than the calendar, and the odd pleasure of watching colour return to a bed you cleared in February. The Royal Horticultural Society has argued for years that councils should treat allotments as infrastructure, like libraries or leisure centres, rather than as spare land waiting for a developer.\n\nI think they are right. A city that organises its space around cars and car parks has forgotten what people are for.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "London",
+    "Royal Horticultural Society",
+    "February",
+    "favour",
+    "recognise",
+    "neighbour",
+    "programme",
+    "colour",
+    "centres",
+    "organises"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB opinion essay. British spellings (favour, recognise, neighbour, programme, colour, centres, organises) are correct for the dialect."
+  }
+}

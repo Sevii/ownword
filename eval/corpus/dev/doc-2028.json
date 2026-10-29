@@ -1,0 +1,31 @@
+{
+  "id": "doc-2028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Changelog: mobile app 3.8.0\n\nThis release adds offline mode for the order history screen and fixes two crashes reported through Crashlytics. It caches the last 50 orders on the device and refreshes them when the connection returns.\n\nThe Bluetooth printer integration now reconnects automatically after the phone sleeps. Thanks to Marchetti for tracking down the root cause in the Android lifecycle handling.\n\nMinimum supported versions remain iOS 16 and Android 12.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "3.8.0",
+    "Crashlytics",
+    "50 orders",
+    "Bluetooth",
+    "Marchetti",
+    "iOS 16",
+    "Android 12"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

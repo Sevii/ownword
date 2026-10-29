@@ -1,0 +1,59 @@
+{
+  "id": "essay-2038",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The licence fee has funded the BBC since 1922, and every decade someone proposes to abolish it. The proposal is usually made by people who do not watch the programmes, which is fair, since they are paying for them.\n\nI am in favour of keeping it, for one reason. A broadcaster that must recieve its money from every household has to make something for every household, and the pressure shows: Radio 4, the Proms, the natural history unit, and the Welsh-language channel are all things a subscription service would cut in it's first year.\n\nThe fee is unfair in the way that all flat charges are unfair. The organisation it pays for is not.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieve",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receive"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "it's first",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its first"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 0,
+      "quote": "The proposal is usually made by people",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "BBC",
+    "1922",
+    "Radio 4",
+    "the Proms",
+    "Welsh-language",
+    "licence",
+    "programmes",
+    "favour",
+    "organisation"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling, its/it's, and a passive-voice note. \"recieve its money\" earlier in the sentence uses the correct \"its\"."
+  }
+}

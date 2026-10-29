@@ -1,0 +1,31 @@
+{
+  "id": "msg-2026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "roommate",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "hey i'm gonna be home late, the dishwasher repair guy is coming between 4 and 6 so can u let him in? he's called Dev, i already paid online\n\nalso we're out of coffee again 😩 i'll grab some tmrw",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "gonna",
+    "u let",
+    "Dev",
+    "4 and 6",
+    "😩",
+    "tmrw",
+    "hey i'm"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text with chat shorthand."
+  }
+}

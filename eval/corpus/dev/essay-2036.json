@@ -1,0 +1,42 @@
+{
+  "id": "essay-2036",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Every semester a student tells me that theory kills the music. the complaint is sincere, and it is wrong. Nobody says that grammar kills the novel, or that knowing what a cadence is spoils the end of a Beethoven sonata.\n\nWhat students actually resent is being asked to learn the basic fundamentals before they are allowed to be interesting. I understand the feeling. But the composers they admire learned the same scales, and most of them learned them earlier and harder.\n\nTheory is a vocabulary for hearing. You can play without it, as you can speak without knowing what a verb is, but you will have a harder time saying what you mean.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "the complaint",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The complaint"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "basic fundamentals",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Beethoven"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Sentence-start capitalization plus the redundant \"basic fundamentals\"."
+  }
+}

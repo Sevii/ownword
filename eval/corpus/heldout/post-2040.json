@@ -1,0 +1,23 @@
+{
+  "id": "post-2040",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Three things I learned from a month without social media. First, the mornings got longer, and I started reading again. Second, I missed exactly two events, and both hosts texted me anyway. Third, the urge to check never fully went away, but it got quieter.\n\nI'm back now, but with the apps off my phone. Laptop only.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "two events",
+    "Laptop only"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral reflective post; the closing fragment is deliberate."
+  }
+}

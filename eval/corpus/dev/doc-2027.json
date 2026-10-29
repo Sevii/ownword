@@ -1,0 +1,32 @@
+{
+  "id": "doc-2027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Proposal summary: customer portal redesign\n\nWe propose a 14-week engagement to redesign the Brightline customer portal. The work falls into three phases: four weeks of research and information architecture, five of visual design and prototyping, and five of front-end implementation.\n\nThe fixed fee is $96,000, payable in three installments tied to phase completion. Mr. Okonjo will lead the engagement, with Ms. Reinholt as design lead.\n\nThe proposal remains valid until December 15.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "14-week",
+    "Brightline",
+    "four weeks",
+    "$96,000",
+    "three installments",
+    "Mr. Okonjo",
+    "Ms. Reinholt",
+    "December 15"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

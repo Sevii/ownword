@@ -16,7 +16,8 @@ import { createNodeHarperEngine } from '../../frontend/src/analysis/engines/harp
 import { createRulesEngine, RULES_VERSION } from '../../frontend/src/analysis/rules/index.js';
 import { HARPER_VERSION } from '../../frontend/src/analysis/engines/harper.js';
 
-export const HARNESS_VERSION = '1';
+// 2: fix accuracy compares resulting text, not replacement strings.
+export const HARNESS_VERSION = '2';
 
 const { values: args } = parseArgs({
   options: {

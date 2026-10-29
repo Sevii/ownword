@@ -1,0 +1,50 @@
+{
+  "id": "msg-2001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "hey Dana, your gonna love this place. the ramen at Kojin on 5th is unreal and its only $14 a bowl. wanna go Thursday around 7? i can book a table if you're in.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "your gonna",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're gonna"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "its only",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's only"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "gonna",
+    "wanna",
+    "Kojin",
+    "$14",
+    "around 7",
+    "hey Dana",
+    "i can"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text with two homophone slips; lowercase starts and slang are intentional."
+  }
+}

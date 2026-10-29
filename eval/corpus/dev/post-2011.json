@@ -1,0 +1,48 @@
+{
+  "id": "post-2011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "week 3 of learning to bake sourdough and i finally got a loaf that didnt come out like a frisbee lol. the trick was apparently a longer proof, like 14 hours in the fridge\n\nnext up is figuring out why my crust is always to pale 🍞",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "didnt",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "didn't"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "to pale",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too pale"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "lol",
+    "🍞",
+    "14 hours",
+    "week 3",
+    "i finally"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual post with two slips."
+  }
+}

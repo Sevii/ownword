@@ -1,0 +1,49 @@
+{
+  "id": "doc-2016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Weekly summary, engineering, October 23\n\nthe search team shipped the typo-tolerant query parser on Tuesday. Early numbers show a 9% drop in zero-result searches.\n\nThe mobile team is still blocked on the App Store review. Apple asked for a clarification on the location permission, and there response was sent on Thursday.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the search",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The search"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 23",
+    "Tuesday",
+    "9%",
+    "App Store",
+    "Apple",
+    "Thursday"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

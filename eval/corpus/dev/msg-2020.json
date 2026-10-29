@@ -1,0 +1,33 @@
+{
+  "id": "msg-2020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "Thanks again for lending me the tent. I'll drop it back off Monday evening. Its all dried out and packed up.\n\nOne of the poles bent a little on the second night. I don't think it's a big deal, but I can replace it if you'd rather have a new one.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Its all",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's all"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Monday evening",
+    "it's a big deal"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The \"it's\" in the second paragraph is correct."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "msg-2025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-GB",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "right, i've booked the cottage for the bank holiday weekend. it's £280 for the three nights so like £70 each. there's a pub in the village and a decent walk up to the moor if the weather behaves\n\nbring a jumper tbh, it was freezing last time. also just realised they do a sunday roast at the pub 🙌",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "£280",
+    "£70",
+    "bank holiday",
+    "jumper",
+    "tbh",
+    "moor",
+    "right, i've",
+    "realised",
+    "🙌",
+    "sunday roast"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean British casual text; \"realised\" is correct en-GB spelling."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "doc-3010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Frequently asked questions\n\n## Where is the box office?\n\nThe box office is in the main foyer of the Playhouse on Lime Street, opposite the city centre bus station. It opens two hours before each performance and from 10:00 to 17:00 on weekdays for general enquiries.\n\n## Can I exchange my tickets?\n\nTickets can be exchanged for another performance of the same production up to 48 hours before the show, subject to availability. A programme of alternative dates is listed on each production page. We cannot refund tickets unless a performance is cancelled.\n\n## Do you accept cheques?\n\nNo. We accept all major cards, Apple Pay, and cash at the box office. Group bookings of ten or more can be organised by invoice; contact the groups team for details.\n\n## Is the building accessible?\n\nYes. Step-free access is available from Lime Street, and the stalls have six wheelchair spaces. Assistance dogs are welcome in all areas.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Playhouse",
+    "Lime Street",
+    "10:00 to 17:00",
+    "48 hours",
+    "Apple Pay",
+    "centre",
+    "enquiries",
+    "programme",
+    "cancelled",
+    "cheques",
+    "organised"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB FAQ with question headings. British spellings are correct for the dialect."
+  }
+}

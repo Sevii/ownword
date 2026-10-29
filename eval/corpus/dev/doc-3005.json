@@ -1,0 +1,28 @@
+{
+  "id": "doc-3005",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# How to sharpen a kitchen knife\n\nYou need a whetstone with a coarse side (around 1000 grit) and a fine side (around 6000 grit), a towel, and ten minutes. Soak the stone in water until it stops releasing bubbles, usually five to ten minutes.\n\n- Place the stone on the towel so it cannot slide.\n\n- Hold the knife at about fifteen degrees to the stone. A stack of two coins under the spine gives roughly the right angle.\n\n- Push the blade across the coarse side, heel to tip, ten strokes per side. Keep the angle steady; the angle matters more than the pressure.\n\n- Repeat on the fine side with lighter strokes.\n\n- Wipe the blade and test it on a sheet of paper. A sharp edge slices cleanly without tearing.\n\nMost home cooks need to do this every month or two. Honing with a steel between sessions keeps the edge aligned but does not replace sharpening.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "1000 grit",
+    "6000 grit",
+    "fifteen degrees",
+    "ten strokes"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean how-to guide with a bullet list and numbers."
+  }
+}

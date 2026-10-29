@@ -1,0 +1,28 @@
+{
+  "id": "post-2028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "shoutout to whoever left a sticky note on my car that said 'nice parking job' with a smiley face. i genuinely can't tell if it was sarcastic. it was a pretty bad parking job tbh\n\neither way, made my day lol",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "'nice parking job'",
+    "tbh",
+    "lol",
+    "shoutout"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

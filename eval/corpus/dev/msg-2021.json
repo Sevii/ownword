@@ -1,0 +1,34 @@
+{
+  "id": "msg-2021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "lol no i'm not mad, i just thought u were gonna text when u landed. anyway glad you're back. wanna do dinner thurs? Priya found a dumpling spot on Clement that's supposedly amazing and cheap. i'm free after 6:30.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "lol",
+    "u were",
+    "gonna",
+    "u landed",
+    "wanna",
+    "thurs",
+    "Priya",
+    "Clement",
+    "6:30",
+    "i'm free"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; lowercase starts and chat shorthand are intentional."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "doc-3031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Code review guidelines\n\nReviews should be returned within one business day. If you cannot review in that time, say so in the the thread so the author can find someone else.\n\n- Comment on behavior, not style; the linter handle formatting.\n\n- Prefer questions to commands when the intent is unclear.\n\n- Approve when the change is correct and safe, even if you would have written it differently.\n\n- Block only for bugs, security issues, or missing tests. Everything else is a suggestion.\n\nLarge changes are easier to review in parts. If a pull request touches more than about 400 lines, ask the author whether it can be split.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "linter handle",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "linter handles"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "one business day",
+    "400 lines",
+    "linter"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Repeated word plus subject-verb agreement in a list item."
+  }
+}

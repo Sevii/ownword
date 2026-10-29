@@ -1,0 +1,34 @@
+{
+  "id": "email-2044",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Theo,\n\nI finished the Bluetooth audit for the handheld scanners. Of the 48 units, 45 pair cleanly with the new firmware; the other three have a hardware fault, and Kowalski has already filed an RMA for them.\n\nThe pairing guide in the runbook needs one update: step 4 should say hold the side button for five seconds, not three.\n\nI can make that change tomorrow unless you want to.\n\nNadia",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Bluetooth",
+    "48 units",
+    "45",
+    "Kowalski",
+    "RMA",
+    "step 4",
+    "five seconds",
+    "not three",
+    "unless",
+    "runbook"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "doc-2031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Post-incident review: checkout latency, October 14\n\nBetween 09:12 and 09:58 Eastern, checkout requests took a median of 6.4 seconds, against a normal 0.8 seconds. About 3 percent of customers abandoned their carts during that window.\n\nThe cause was an eviction storm after a config change reduced the cache size from 8 GB to 2 GB. Vasquez reverted the change at 09:51, and latency returned to normal within seven minutes.\n\nThe follow-up actions are a review gate for cache config changes and an alert on eviction rate, both owned by Abernathy and due November 6.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 14",
+    "09:12",
+    "09:58 Eastern",
+    "6.4 seconds",
+    "0.8 seconds",
+    "3 percent",
+    "8 GB",
+    "2 GB",
+    "Vasquez",
+    "09:51",
+    "seven minutes",
+    "Abernathy",
+    "November 6"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

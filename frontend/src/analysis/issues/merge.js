@@ -16,6 +16,7 @@ const CLASS_ORDER = { 'likely-error': 0, style: 1, 'review-question': 2 };
  */
 export function mergeIssues(snapshot, issues) {
   const order = new Map(snapshot.blocks.map((b, i) => [b.id, i]));
+  const texts = new Map(snapshot.blocks.map((b) => [b.id, b.text]));
   /** @type {Map<string, Issue>} */
   const byKey = new Map();
   /** @type {Map<string, string[]>} */
@@ -24,7 +25,9 @@ export function mergeIssues(snapshot, issues) {
   const byRange = new Map();
   for (const issue of issues) {
     const range = rangeKey(issue);
-    const existing = range && byRange.get(range)?.find((e) => sameSuggestion(e, issue));
+    const existing =
+      (range && byRange.get(range)?.find((e) => sameSuggestion(e, issue))) ||
+      (issue.anchor && [...byKey.values()].find((e) => sameEdit(e, issue, texts.get(issue.anchor.blockId))));
     if (existing) {
       provenance.get(existing.id)?.push(issue.id);
       // Prefer the stronger classification when sources disagree.
@@ -46,6 +49,21 @@ export function mergeIssues(snapshot, issues) {
 function rangeKey(issue) {
   const a = issue.anchor;
   return a ? `${a.blockId}:${a.from}:${a.to}` : null;
+}
+
+/**
+ * Two overlapping findings in one block are the same correction when some
+ * replacement of each produces the same block text ("Its"→"It's" and
+ * "Its the"→"It's the").
+ */
+function sameEdit(a, b, text) {
+  const x = a.anchor;
+  const y = b.anchor;
+  if (!x || !y || text === undefined || x.blockId !== y.blockId) return false;
+  if (!(x.from < y.to && y.from < x.to) || !a.replacements.length || !b.replacements.length) return false;
+  const apply = (r, t) => text.slice(0, r.from) + t + text.slice(r.to);
+  const results = new Set(a.replacements.map((r) => apply(x, r.text)));
+  return b.replacements.some((r) => results.has(apply(y, r.text)));
 }
 
 /** Two findings on one range say the same thing when a replacement is shared. */

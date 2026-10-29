@@ -1,0 +1,50 @@
+{
+  "id": "doc-3024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "employees",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Office move: what to expect\n\nThe move to the new building on Castle Street is scheduled for the weekend of 7 June. Removals will be organised by the facilities team, and each person will be given two crates on Thursday for there personal items.\n\nDesks in the new office are not assigned, so staff who have a preference for a particular floor, a window, a quiet corner, or a seat near the people they work with most often should mention it to their team lead before the end of May, because the floor plan will be finalised in the first week of June and will be very difficult to change once the furniture has been installed.\n\nThe new building has a staffed reception, a bike store in the basement, and a lunch programme in the ground-floor café. Parking in the city centre is limited; the facilities team can advise on season tickets for the train.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "there personal",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their personal"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "Desks in the new office are not assigned, so staff who have a preference for a particular floor, a window, a quiet corner, or a seat near the people they work with most often should mention it to their team lead before the end of May, because the floor plan will be finalised in the first week of June and will be very difficult to change once the furniture has been installed.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Castle Street",
+    "7 June",
+    "Thursday",
+    "May",
+    "June",
+    "organised",
+    "finalised",
+    "programme",
+    "centre"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "there/their plus a 72-word sentence. British spellings are correct for the dialect."
+  }
+}

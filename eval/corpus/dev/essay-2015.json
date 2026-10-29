@@ -1,0 +1,36 @@
+{
+  "id": "essay-2015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "instructor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "# Photograph 51\n\nRosalind Franklin arrived at King's College London in January 1951 to set up an X-ray diffraction programme for biological fibres. Within two years she had produced the clearest images of DNA that anyone had made, including the photograph later numbered 51, which showed the X-shaped pattern of a helix.\n\nMaurice Wilkins showed that photograph to James Watson without Franklin's knowledge, and Watson and Francis Crick used it, along with a report of her analysed data, to build their model in the spring of 1953. Franklin's own papers from the same period show she had already worked out that the sugar-phosphate backbone sat on the outside of the molecule.\n\nShe died in 1958, four years before the Nobel Prize was awarded to Watson, Crick and Wilkins. The prize is not given posthumously, so the question of whether she would have shared it cannot be answered. The question of whether she should be recognised as a co-discoverer has, I think, been answered already.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "King's College London",
+    "January 1951",
+    "Maurice Wilkins",
+    "James Watson",
+    "Francis Crick",
+    "1953",
+    "1958",
+    "Nobel Prize",
+    "programme",
+    "fibres",
+    "analysed",
+    "recognised"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB science essay. No serial comma in \"Watson, Crick and Wilkins\" is house style, not an error."
+  }
+}

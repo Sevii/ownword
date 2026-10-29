@@ -1,0 +1,48 @@
+{
+  "id": "post-2018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "went to the Mariners game last night and sat in the nosebleeds bc tickets were $14. honestly the view was fine from up their and the beer was cheaper\n\nthe guy next to us had been to every home game this season, could of talked to him for hours",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "up their",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "up there"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "could of talked",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have talked",
+        "could've talked"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "bc",
+    "$14",
+    "Mariners",
+    "nosebleeds"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual post with two slips."
+  }
+}

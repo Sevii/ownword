@@ -1,0 +1,53 @@
+{
+  "id": "essay-2034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-AU",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The Great Barrier Reef has bleached five times since 2016, and the pattern of the bleaching is now well understood: a summer of unusually warm water drives the algae out of the coral, and the coral loses its colour and, if the heat lasts, its life. The reef stretches 2,300 kilometres, and no two sections respond alike.\n\nScientists at the Australian Institute of Marine Science says the northern sections have lost half their coral cover since the 1990s, while some southern reefs have recovered between events. The difference is not resilience; it is distance from the warmest water.\n\nTourism operators argue that the reef is still beautiful, and their right. But a reef that is beautiful in patches is not the reef we were asked to protect, and the organisations that recognise this are the ones worth listening to.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Science says",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Science say"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "their right",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're right",
+        "they are right"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Great Barrier Reef",
+    "2016",
+    "2,300 kilometres",
+    "Australian Institute of Marine Science",
+    "1990s",
+    "colour",
+    "kilometres",
+    "organisations",
+    "recognise"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject-verb agreement (\"Scientists ... says\") plus their/they're. Australian spellings are correct for the dialect."
+  }
+}

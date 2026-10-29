@@ -1,0 +1,48 @@
+{
+  "id": "email-2015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Lindqvist,\n\nAt this point in time, we have completed the first two phases of the audit. You're team has been very responsive, and we appreciate the quick turnaround on the access requests.\n\nPhase three will begin on November 12 and should take about three weeks. We will send the draft findings to you and Ms. Berg by December 5.\n\nSincerely,\nAdaeze Nwosu",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "You're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Your"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "At this point in time",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "Now"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "November 12",
+    "three weeks",
+    "Ms. Berg",
+    "December 5",
+    "first two phases"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "msg-2035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ur not gonna believe this, i ran into Mr. Delgado from 9th grade at the DMV. he remembered my name AND that i never turned in that essay on The Giver. 15 years later lol\n\nanyway i finally got my license renewed, dinner to celebrate?",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "ur not",
+    "gonna",
+    "Mr. Delgado",
+    "9th grade",
+    "DMV",
+    "The Giver",
+    "15 years",
+    "lol",
+    "AND"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; capitalized \"AND\" is deliberate emphasis."
+  }
+}

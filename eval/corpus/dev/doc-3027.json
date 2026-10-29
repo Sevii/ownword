@@ -1,0 +1,48 @@
+{
+  "id": "doc-3027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Applying for a building permit\n\nBefore you submit the application gather the site plan, the contractor's license number, and a written description of the work. Applications missing any of these are returned without review, and the thirty-day clock starts over when you resubmit.\n\nMost residential permits are reviewed within thirty days. A second occurence of the same deficiency on a resubmitted application triggers a meeting with the plans examiner, which can be scheduled online.\n\nPermits are valid for one year from the date of issue. Work that has not started within six months requires a renewal, which is free the first time.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "application gather",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "application, gather"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "occurence",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "occurrence"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "thirty-day",
+    "thirty days",
+    "one year",
+    "six months",
+    "license"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing comma after an introductory \"Before\" clause plus a misspelling. \"license\" is the correct US spelling."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "essay-2025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Since 2005 the United States has lost more than a quarter of its newspapers, most of them weeklies in small towns. The usual explanation is the internet, and the explanation is true, but it hides the question of who's job it was to keep them alive.\n\nA newspaper in a town of eight thousand people does not exist in order to make money. It exists to tell the town what the council did on Tuesday night. When it closes, the council still meets, but the record of what it decided moves from the front page to a PDF nobody reads.\n\nStudies by economists at Notre Dame and the University of Illinois have found that borrowing costs rise for municipalities after their paper closes, because nobody is watching. That is a bill the whole town pays.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "who's job",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "whose job"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "in order to",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "2005",
+    "Notre Dame",
+    "University of Illinois",
+    "Tuesday night",
+    "PDF"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "who's/whose plus \"in order to\" style note."
+  }
+}

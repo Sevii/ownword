@@ -1,0 +1,49 @@
+{
+  "id": "doc-3018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Platform sync, October 14\n\nAttendees: Dana, Luis, Priyanka, Owen.\n\n- Luis reported that the new ingestion path is faster then the old one by about 40% on the benchmark set. the team agreed to switch the default next sprint.\n\n- Priyanka is blocked on the Kafka upgrade until the ops team confirms the broker version.\n\n- Owen will write the runbook for the new alert before it goes live.\n\nNext sync is October 21. Dana to send the agenda by Friday.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "faster then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "faster than"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "the team",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The team"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 14",
+    "40%",
+    "Kafka",
+    "October 21",
+    "runbook",
+    "Dana, Luis, Priyanka, Owen"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "then/than plus a lowercase sentence start inside a list item. \"Dana to send the agenda\" is conventional meeting-notes shorthand."
+  }
+}

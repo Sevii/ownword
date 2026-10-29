@@ -1,0 +1,53 @@
+{
+  "id": "essay-2031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "readers of a blog",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "People who take their tea seriously disagree about almost everything except the water. Boil it fresh, they say, and use it at once, because water that has been boiled twice has lost its oxygen and gives a flat flavour. I have never been able to taste the difference, but I follow the rule anyway.\n\nMilk first or tea first is perhaps the oldest argument in the kitchen. George Orwell was somewhat firm on the point: tea first, so you can judge the colour. The chemists say milk first, because adding cold milk to hot tea scalds the proteins. I realise that neither side will ever concede.\n\nMy favourite cup is stronger then most people would tolerate, brewed for five minutes in a pot that has not been washed with soap in a decade. That, at least, is a rule I can defend.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "stronger then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "stronger than"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "perhaps",
+      "category": "hedging",
+      "classification": "style"
+    },
+    {
+      "block": 1,
+      "quote": "somewhat",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "George Orwell",
+    "five minutes",
+    "flavour",
+    "colour",
+    "realise",
+    "favourite"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "then/than plus two hedging style notes. British spellings are correct for the dialect."
+  }
+}

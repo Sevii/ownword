@@ -1,0 +1,30 @@
+{
+  "id": "post-2031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "update on the sourdough saga: loaf #6 is edible!! crust is actually crunchy and it didn't stick to the pan. took 3 weeks and like 10 lbs of flour but we got there\n\nnext goal: a loaf that doesn't look like a potato 🥔",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "#6",
+    "edible!!",
+    "3 weeks",
+    "10 lbs",
+    "🥔",
+    "we got there"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "doc-2009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Parking changes starting November 16\n\nThe north lot will be closed for resurfacing from November 16 to December 4. There are to few spaces in the south lot for everyone, so we have arranged overflow parking at the Grant Street garage, which is a five-minute walk.\n\nYou just need to show your badge at the garage entrance. The company will cover the daily fee.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "to few",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too few"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "just",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "November 16",
+    "December 4",
+    "Grant Street",
+    "five-minute",
+    "daily fee"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

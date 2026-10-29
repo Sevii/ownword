@@ -1,0 +1,37 @@
+{
+  "id": "msg-2018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-GB",
+  "audience": "friend",
+  "markdown": "Just checked and the train to Edinburgh on the 3rd is £41 if we book tonight, but it's gone up to £78 by tomorrow. Shall I just grab two tickets?\n\nThe hotel has it's own car park, so we don't need to organise a taxi from the station.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "it's own",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its own"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Edinburgh",
+    "£41",
+    "£78",
+    "3rd",
+    "organise",
+    "car park"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "British spelling (organise) is correct; the possessive \"it's\" is the only error."
+  }
+}

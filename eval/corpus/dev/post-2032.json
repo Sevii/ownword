@@ -1,0 +1,29 @@
+{
+  "id": "post-2032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "idk who needs to hear this but it's ok to leave the party at 9:30. i left at 9:30. i'm in bed. i'm happy\n\nthe fomo is a lie, the pajamas are real",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "idk",
+    "fomo",
+    "9:30",
+    "i'm in bed",
+    "the pajamas are real"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post; short fragments are the point."
+  }
+}

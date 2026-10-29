@@ -1,0 +1,45 @@
+{
+  "id": "email-2010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Dana,\n\nThe Zendesk migration is sort of on track. Its going to take one more week than planned because the export tool chokes on tickets with more than 50 attachments.\n\nWe found 212 of those. Rather than fixing the tool, we'll move them by hand over the weekend.\n\nLet me know if you want a formal status update for the leadership call.\n\nKai",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Its",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "sort of",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Zendesk",
+    "one more week",
+    "50 attachments",
+    "212"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

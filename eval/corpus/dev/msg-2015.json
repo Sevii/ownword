@@ -1,0 +1,48 @@
+{
+  "id": "msg-2015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok final headcount for Saturday is 9. i told the restaurant 8 so someone text them, there number is on the website\n\nalso Maya is bringing her cousin, he just moved here and doesnt know anyone so be nice lol",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "there number",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their number"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "doesnt",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "doesn't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "lol",
+    "Maya",
+    "is 9",
+    "restaurant 8",
+    "ok final"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual group text with two slips."
+  }
+}

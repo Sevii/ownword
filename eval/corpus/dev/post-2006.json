@@ -1,0 +1,52 @@
+{
+  "id": "post-2006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Lets talk about the trail cleanup on November 8. We're meeting at the north parking lot at 9am, and the city is providing gloves and bags.\n\nBring water and wear shoes you dont mind getting muddy. Last time we filled 32 bags in two hours, so lets see if we can beat that.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "Lets talk",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "Let's talk"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "dont mind",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "don't mind"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "lets see",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "let's see"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "November 8",
+    "9am",
+    "32 bags"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Three missing apostrophes."
+  }
+}

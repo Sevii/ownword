@@ -1,0 +1,47 @@
+{
+  "id": "email-2020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Abernathy,\n\nPlease find attached the vendors invoice for the October maintenance visit. The total of $3,250 matches the estimate we shared on September 28..\n\nPayment is due within 30 days. If you need the invoice reissued to a different billing entity, let me know by November 5.\n\nBest regards,\nCeline Marchetti",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "vendors invoice",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "vendor's invoice"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "..",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "."
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "$3,250",
+    "September 28",
+    "30 days",
+    "November 5"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

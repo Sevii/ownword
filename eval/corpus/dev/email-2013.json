@@ -1,0 +1,43 @@
+{
+  "id": "email-2013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Board Members,\n\nAs discussed at the September meeting, the finance team has completed the review of the vendor contracts that were flagged during the audit, and after comparing the renewal terms against the market rates we obtained from three independent brokers, we recommend renegotiating the Halvorsen agreement before it renews automatically on January 31.\n\nThe other four contracts can be renewed as they stand.\n\nRespectfully,\nMargaret Osei",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "As discussed at the September meeting, the finance team has completed the review of the vendor contracts that were flagged during the audit, and after comparing the renewal terms against the market rates we obtained from three independent brokers, we recommend renegotiating the Halvorsen agreement before it renews automatically on January 31.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "were flagged",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "September",
+    "three independent brokers",
+    "Halvorsen",
+    "January 31",
+    "four contracts"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "A 52-word sentence; the style note covers the whole sentence. No likely errors."
+  }
+}

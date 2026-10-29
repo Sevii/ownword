@@ -1,0 +1,30 @@
+{
+  "id": "email-2039",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Mei,\n\nWelcome aboard! Your onboarding checklist is in Jira under ONB-914; most of the items are self-serve, and the rest point to the person who can help.\n\nFor your first task, take a look at the changelog for the last three releases and tell me where the wording is unclear. Fresh eyes catch things the rest of us skip over.\n\nWe will grab lunch on Thursday with the rest of the platform group.\n\nWelcome again,\nGabriel",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "onboarding",
+    "Jira",
+    "ONB-914",
+    "three releases",
+    "Thursday",
+    "changelog"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

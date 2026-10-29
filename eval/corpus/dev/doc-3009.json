@@ -1,0 +1,28 @@
+{
+  "id": "doc-3009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Most vegetables can be started indoors six to eight weeks before the last frost. In Minneapolis that means sowing tomatoes and peppers in early March; check your local extension office for the date in your area.\n\nFill small containers with seed-starting mix, not garden soil, which compacts and may carry disease. Plant seeds at the depth given on the packet, usually twice the width of the seed, and water from below by setting the containers in a tray.\n\nSeeds need warmth to germinate and light to grow. A heat mat set to 75°F speeds up germination; once the seedlings are up, move them under a shop light hung two inches above the leaves and raise it as they grow. A sunny window is rarely bright enough and produces tall, weak plants.\n\nHarden the seedlings off over a week by placing them outside for a few hours a day before transplanting.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Minneapolis",
+    "75°F",
+    "six to eight weeks",
+    "two inches"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean gardening how-to."
+  }
+}

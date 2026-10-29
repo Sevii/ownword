@@ -1,0 +1,44 @@
+{
+  "id": "doc-3014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Staging enviroment\n\nStaging mirrors production except for scale: one replica of each service instead of three, and a database restored nightly from a scrubbed production snapshot. Customer email addresses and payment tokens are replaced with synthetic values during the restore, so it is safe to send email from staging.\n\nDeployments to staging are triggered by the CI pipeline on every merge to main. The deploy is approved by the release manager before it continues to production. If staging is broken, post in the deploys channel rather than reverting on your own; someone may be mid-test.\n\nFeature flags in staging are managed in LaunchDarkly under the staging project. Flags do not sync between environments.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "enviroment",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "environment"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "The deploy is approved by the release manager",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "LaunchDarkly",
+    "CI pipeline",
+    "main"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling in the heading (block 0) plus a passive-voice note."
+  }
+}

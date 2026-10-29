@@ -1,0 +1,50 @@
+{
+  "id": "post-2004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "PSA: the pool at Riverside closes for the season on sunday. i went today and it was basically empty, lifeguard said there shutting it down early bc of the budget stuff\n\nif you wanna squeeze in one more swim, nows the time 🏊",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "there shutting",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're shutting"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "nows",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "now's"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "PSA",
+    "bc",
+    "wanna",
+    "🏊",
+    "Riverside",
+    "sunday",
+    "i went"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual post; lowercase \"sunday\" is register."
+  }
+}

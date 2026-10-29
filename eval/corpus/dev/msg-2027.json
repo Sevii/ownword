@@ -1,0 +1,29 @@
+{
+  "id": "msg-2027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ngl that hike was harder than i expected. my legs are jelly. but the view from the top was worth it 100%\n\nsame time next sunday? i'll bring snacks this time instead of just one sad granola bar lol",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "ngl",
+    "100%",
+    "lol",
+    "sunday",
+    "i'll bring"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; \"than\" is correct."
+  }
+}

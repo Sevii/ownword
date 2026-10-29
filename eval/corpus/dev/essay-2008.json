@@ -1,0 +1,30 @@
+{
+  "id": "essay-2008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Alfred Wegener proposed continental drift in 1912, and for forty years most geologists treated the idea as a curiosity. The fit between the coasts of Africa and South America was suggestive, and the matching fossils on both shores were hard to explain, but Wegener could not say what force moved a continent. Without a mechanism, the evidence counted for little.\n\nThe mechanism arrived from the ocean floor. In the early 1960s, Harry Hess at Princeton argued that new crust forms at mid-ocean ridges and spreads outward, and magnetic surveys by the British geophysicists Vine and Matthews found the striped record of that spreading in the rock. Within a decade, plate tectonics was the framework of the field.\n\nThe story is often told as a lesson about stubborn experts. It is better told as a lesson about evidence: the geologists were not wrong to wait, and they were right to move quickly once the data arrived.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Alfred Wegener",
+    "1912",
+    "Harry Hess",
+    "Princeton",
+    "Vine and Matthews",
+    "1960s"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean science history essay. \"the data arrived\" treats data as a mass noun, which is standard."
+  }
+}

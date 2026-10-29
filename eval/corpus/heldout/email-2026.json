@@ -1,0 +1,47 @@
+{
+  "id": "email-2026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi all,\n\nWe recieved the updated changelog from the platform team, and there planning to ship the new auth flow on November 7. Nothing on our side needs to change, but the wifi login page will look different for a few days while both versions are live.\n\nI'll post in #eng-announcements when the switch happens.\n\nLena",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "changelog",
+    "November 7",
+    "wifi",
+    "#eng-announcements"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "email-2036",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Robert,\n\nQuick note before the weekend. Nguyen and Patel both signed off on the wireframes, so we are moving into visual design on Monday. Expect the first round of mockups by November 13.\n\nOne open question: do you want the pricing page to show annual or monthly figures by default? Rodriguez suggested the yearly figure, since most of your customers pay that way, but it is your call.\n\nHave a good weekend,\nLaura",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Nguyen",
+    "Patel",
+    "Monday",
+    "November 13",
+    "Rodriguez"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Surnames used alone mid-sentence (Nguyen, Patel, Rodriguez) are not errors."
+  }
+}

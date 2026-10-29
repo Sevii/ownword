@@ -1,0 +1,36 @@
+{
+  "id": "doc-3006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Incident review: search outage, 14 March\n\n## What happened\n\nAt 09:12 GMT the search service in the London data centre began returning empty results for roughly 40% of queries. The on-call engineer was paged at 09:15 and recognised the pattern from a similar incident in November. Service was fully restored at 09:51.\n\n## Cause\n\nA nightly cron job that rebuilds the product catalogue index ran forty minutes late because of a slow upstream export. It was still writing the new index when the morning traffic peak began, and the search nodes analysed the half-written file as if it were complete. The behaviour was not an error in the indexer; the job simply assumed it would finish before anyone was awake.\n\n## Actions\n\n- Write the index to a temporary file and rename it atomically when complete.\n\n- Alert if the catalogue job has not finished by 06:00.\n\n- Add the November incident and this one to the runbook so the pattern is documented.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "14 March",
+    "09:12 GMT",
+    "40%",
+    "09:51",
+    "06:00",
+    "cron job",
+    "runbook",
+    "centre",
+    "recognised",
+    "catalogue",
+    "analysed",
+    "behaviour"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-GB incident review with headings and a list. British spellings are correct for the dialect."
+  }
+}

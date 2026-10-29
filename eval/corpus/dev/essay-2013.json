@@ -1,0 +1,31 @@
+{
+  "id": "essay-2013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Engineers tend to measure latency at the median because the median is stable, and they tend to ignore the tail because the tail is noisy. Users experience the tail. A checkout page that responds in 80 milliseconds for most requests and in four seconds for one request in a hundred will feel slow to every customer who places more than a few orders.\n\nThe usual sources of tail latency are mundane. A piece of middleware retries a request that was never retryable. A webhook handler waits on a third-party API that has no timeout. A cron job rebuilds an index at the moment traffic peaks. None of these shows up in the median, and all of them show up in support tickets.\n\nMeasure the 99th percentile, put it on the dashboard next to the median, and give the on-call engineer permission to care about it. The tail is not noise. It is the part of the system your most loyal users live in.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "80 milliseconds",
+    "99th percentile",
+    "middleware",
+    "retryable",
+    "webhook",
+    "cron job",
+    "API"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean technical essay. \"None of these shows up\" is a correct singular agreement."
+  }
+}

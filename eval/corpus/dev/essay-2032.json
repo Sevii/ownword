@@ -1,0 +1,46 @@
+{
+  "id": "essay-2032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Housing in American cities is expensive due to the fact that most of the land is reserved for one kind of building. In Los Angeles, roughly three quarters of residential land is zoned for detached single-family houses, and an apartment building on those lots is simply illegal regardless of demand.\n\nMinneapolis ended single-family zoning in 2019, and the city has since seen rents rise more slowly than its neighbors. Its too early to call the experiment a success, but it is not too early to say that the sky did not fall.\n\nA city that forbids most of what people want to build should not be surprised when they cannot afford to live in it.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Its too early",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "It's too early",
+        "It is too early"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 0,
+      "quote": "due to the fact that",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Los Angeles",
+    "three quarters",
+    "Minneapolis",
+    "2019"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "its/it's plus \"due to the fact that\" style note. \"its neighbors\" in the same block is correct."
+  }
+}

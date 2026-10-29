@@ -1,0 +1,48 @@
+{
+  "id": "essay-2037",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Economists have argued since the 1990s about how minimum wage increases effect employment, and the argument has become more interesting as the evidence has improved. David Card and Alan Krueger's 1994 study of fast-food restaurants in New Jersey and Pennsylvania found no drop in hiring after New Jersey raised its wage, a result that contradicted the textbooks of the time.\n\nIt could be argued that one study proves little, and that is fair. But the studies since have mostly pointed the same way: moderate increases cost few jobs, and large ones are rarer than the debate suggests. Seattle's rise to fifteen dollars in 2017 is the exception everyone cites, and even there the effect on hours was small.\n\nThe remaining question is not whether the wage can rise. It is how far, how fast, and in which city.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "effect employment",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "affect employment"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "It could be argued that",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "1990s",
+    "David Card and Alan Krueger",
+    "1994",
+    "New Jersey and Pennsylvania",
+    "Seattle",
+    "fifteen dollars",
+    "2017"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "affect/effect as a verb (unambiguous) plus hedging. \"the effect on hours\" in block 1 is correct."
+  }
+}

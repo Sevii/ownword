@@ -1,0 +1,31 @@
+{
+  "id": "email-2038",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Ms. Whitfield,\n\nI am writing to request approval for a conference trip. The Strata Data Conference runs from March 9 to March 11 in San Jose. The total cost comes to $3,180, including the early registration fee of $1,450, flights, and three nights at the venue hotel.\n\nTwo of the sessions cover the streaming architecture we plan to adopt next year, and I will share notes with the team on my return.\n\nThank you for considering it.\n\nBest regards,\nNoah Bergstrom",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Strata Data Conference",
+    "March 9",
+    "March 11",
+    "San Jose",
+    "$1,450",
+    "three nights",
+    "$3,180"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

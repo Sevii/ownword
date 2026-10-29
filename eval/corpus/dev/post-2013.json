@@ -1,0 +1,44 @@
+{
+  "id": "post-2013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-GB",
+  "audience": "followers",
+  "markdown": "After six months with the Brompton, I can say its the best money I've spent on commuting. The fold takes ten seconds, it fits under my desk, and I've not had a single puncture on London's roads.\n\nThe only thing I'd change is the saddle, which is seperate purchase territory for anyone with a longer ride.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "its the best",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's the best"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "seperate",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separate"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Brompton",
+    "London's",
+    "six months",
+    "ten seconds"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "British review; \"I've not had\" is idiomatic en-GB and must not be flagged."
+  }
+}

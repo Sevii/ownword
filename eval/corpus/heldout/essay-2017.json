@@ -1,0 +1,28 @@
+{
+  "id": "essay-2017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The Black Death killed somewhere between a third and a half of the population of Europe between 1347 and 1351. Historians have argued for a century about what it did to the survivors, and the argument matters because it is really an argument about how much a shock can change a society.\n\nIn England, the evidence points in one direction. Wages for farm laborers roughly doubled in the decades after the plague, and Parliament passed the Statute of Labourers in 1351 in a failed attempt to hold them down. Landlords who could not find tenants let fields revert to pasture, and the sheep that replaced the plowmen fed the wool trade that made the country rich.\n\nNone of this was intended by anyone. The lesson is not that catastrophe is good for the poor, which would be obscene, but that the arrangements people call permanent are usually just the arrangements nobody has yet been forced to renegotiate.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "1347 and 1351",
+    "Statute of Labourers",
+    "Parliament",
+    "laborers"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-US history essay. \"Statute of Labourers\" is a title and keeps its British spelling even in US text."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "doc-2002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Project Harbor status, week of October 26\n\nThe data migration from the legacy billing system to the new platform, which was originally scheduled to finish by the end of September but slipped after the vendor discovered inconsistencies in roughly 4,000 customer records, is now expected to complete on November 14, assuming the remaining records are corrected by the vendor this week.\n\nNo change to budget. The go-live date of December 1 remains achievable if the November 14 date holds.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "The data migration from the legacy billing system to the new platform, which was originally scheduled to finish by the end of September but slipped after the vendor discovered inconsistencies in roughly 4,000 customer records, is now expected to complete on November 14, assuming the remaining records are corrected by the vendor this week.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "are corrected by",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "October 26",
+    "September",
+    "4,000",
+    "November 14",
+    "December 1",
+    "No change"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "A 54-word sentence. Style only; no likely errors."
+  }
+}

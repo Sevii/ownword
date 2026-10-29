@@ -1,0 +1,53 @@
+{
+  "id": "post-2002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Review of the Marlow 2 headphones after three weeks: the sound is warm and the battery easily lasts a full workday. The case, however, is bigger then it needs to be and it's hinge feels cheap.\n\nWould I recommend them at $149? Yes, but wait for a sale. There worth about $110.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "then it needs",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than it needs"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "it's hinge",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its hinge"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "There worth",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "They're worth"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Marlow 2",
+    "$149",
+    "$110",
+    "three weeks"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Product review with three slips."
+  }
+}

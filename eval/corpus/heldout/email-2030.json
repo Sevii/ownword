@@ -1,0 +1,32 @@
+{
+  "id": "email-2030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi team,\n\nThe wifi in the Oak conference room now uses the new corporate SSID. If your laptop still shows the old network, forget it in your settings and reconnect; the password is in 1Password under Office Network.\n\nSeparately, Bluetooth pairing with the room's display works again after the firmware update Ingrid Solberg pushed on Monday.\n\nThanks,\nFelix",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "wifi",
+    "SSID",
+    "1Password",
+    "Office Network",
+    "Bluetooth",
+    "Ingrid Solberg",
+    "Monday",
+    "room's"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Technical terms (wifi, SSID, Bluetooth, 1Password) and a surname mid-sentence; nothing to flag."
+  }
+}

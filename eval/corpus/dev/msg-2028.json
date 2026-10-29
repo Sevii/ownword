@@ -1,0 +1,30 @@
+{
+  "id": "msg-2028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "partner",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "running about 15 min late, the bus just sat at Powell for ages. order me the usual if they ask, and get the fries bc i'm starving\n\nlove u, see u soon ❤️",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "15 min",
+    "Powell",
+    "bc",
+    "love u",
+    "see u soon",
+    "❤️"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; fragments and shorthand are intentional."
+  }
+}

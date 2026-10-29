@@ -1,0 +1,52 @@
+{
+  "id": "post-2003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community group",
+  "markdown": "Does anyone know if the farmers market on Grove Street is open this weekend? There website still says summer hours and I cant tell if they've updated it.\n\nLast year they ran untill the end of October, but the weather has been rough.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "There website",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Their website"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "cant",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "can't"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Grove Street",
+    "October",
+    "farmers market"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Forum question with three slips."
+  }
+}

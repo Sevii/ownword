@@ -1,0 +1,56 @@
+{
+  "id": "doc-2005",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Support escalation summary for ticket 48213\n\nThe customers account was locked on October 21 after six failed login attempts from an unrecognized device. At this point in time, we have confirmed that no data was accessed and that the attempts came from a single IP address in a different country.\n\nThe account will be unlocked once the customer completes identity verification by phone. We recommend enabling two-factor authentication on the account afterward.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "customers account",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "customer's account"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "At this point in time",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "Now"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "will be unlocked",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "48213",
+    "October 21",
+    "six failed",
+    "no data was accessed",
+    "single IP address",
+    "two-factor"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "One customer, so \"customer's account\"."
+  }
+}

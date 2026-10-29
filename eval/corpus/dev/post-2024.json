@@ -1,0 +1,30 @@
+{
+  "id": "post-2024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-GB",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "three weeks into the allotment and i've got courgettes coming out of my ears. the neighbours have been very polite about it but i think they're hiding when they see me coming with another bag 🥒\n\nanyone got a decent courgette recipe that isn't just 'make a cake'?",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "allotment",
+    "courgettes",
+    "neighbours",
+    "🥒",
+    "courgette recipe",
+    "'make a cake'"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean British casual post; \"neighbours\" and \"courgettes\" are correct en-GB."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "email-2032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Carla,\n\nWe got the 40 replacement brackets this morning. Thank you for turning that around in two days.\n\nOne request for the next order: could you ship to the Reno warehouse instead of Sacramento? Our receiving team there has a loading dock, which makes the pallet deliveries much easier. The address is on the attached purchase order, PO 2026-1187.\n\nThanks again,\nDiego Ramos",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "40",
+    "two days",
+    "Reno",
+    "Sacramento",
+    "PO 2026-1187",
+    "there has"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"there has\" is correct here."
+  }
+}

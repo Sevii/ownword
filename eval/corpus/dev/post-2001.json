@@ -1,0 +1,49 @@
+{
+  "id": "post-2001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "finally tried the new taco truck on Mission and 24th and wow. the al pastor is $3.50 and its the best in the city, dont @ me\n\nyour gonna want to get there before 7 tho, the line gets ridiculous",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "its the best",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's the best"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "your gonna",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're gonna"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "dont @ me",
+    "tho",
+    "gonna",
+    "$3.50",
+    "Mission and 24th",
+    "before 7"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"dont @ me\" is a fixed meme phrase and must be left alone; the two homophone slips are real."
+  }
+}

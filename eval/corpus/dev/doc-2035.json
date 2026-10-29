@@ -1,0 +1,38 @@
+{
+  "id": "doc-2035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Meeting notes: Fairmont site visit, October 20\n\nAttendees: Bauer, Lindqvist, and Osei from our side; Mr. Takahashi and Ms. Cole for Fairmont.\n\nFairmont confirmed the loading dock can take 53-foot trailers, which removes the need for the smaller fleet we priced in September. They asked for deliveries between 06:00 and 09:00 to avoid the shift change.\n\nOpen items: Cole will send the insurance certificate by October 30, and Bauer will revise the quote to reflect the larger trailers. Next call is November 4 at 14:00.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Fairmont",
+    "October 20",
+    "Bauer",
+    "Lindqvist",
+    "Osei",
+    "Mr. Takahashi",
+    "Ms. Cole",
+    "53-foot",
+    "September",
+    "06:00",
+    "09:00",
+    "October 30",
+    "November 4",
+    "14:00"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Many bare surnames; none are errors."
+  }
+}

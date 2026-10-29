@@ -1,0 +1,56 @@
+{
+  "id": "post-2007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok hear me out: pineapple on pizza is fine but pineapple on a burger is where its at. the place on Dixon does one with jalapeño and its honestly the best thing on there regular menu\n\n$12 and worth every penny",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "where its at",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "where it's at"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "and its honestly",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "and it's honestly"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "there regular",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their regular"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ok hear me out",
+    "$12",
+    "Dixon",
+    "jalapeño"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Two \"its\" slips in the same paragraph plus one \"there\"."
+  }
+}

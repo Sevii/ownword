@@ -1,0 +1,29 @@
+{
+  "id": "msg-2031",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "can't make it tonight after all, work ran long and i'm wiped. rain check for fri? i'll even cook\n\nsorry for bailing last minute, i know i've done it twice now 😬 drinks on me next time fr",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "fri",
+    "😬",
+    "fr",
+    "rain check",
+    "can't make it"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; \"fr\" is deliberate slang."
+  }
+}

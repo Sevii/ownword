@@ -1,0 +1,47 @@
+{
+  "id": "email-2017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi both,\n\nThe new colour palette is is ready for review on the staging site. I tried to organise the swatches by brand first and then by shade, which should make it easier to compare.\n\nThe contrast ratios are better then the old set across the board, so accessibility should be fine.\n\nCheers,\nFiona",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "is is",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "is"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "colour",
+    "organise",
+    "staging site",
+    "and then by shade"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The \"then\" in block 1 is correct; only the comparative \"better then\" in block 2 is wrong."
+  }
+}

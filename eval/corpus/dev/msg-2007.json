@@ -1,0 +1,53 @@
+{
+  "id": "msg-2007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "roommate",
+  "markdown": "Hey, the landlord is coming by tomorow at 10 to look at the leak under the sink. Can you make sure you're stuff under there is cleared out before you leave?\n\nAlso, we still owe Sam $40 for the pizza. I'll Venmo him tonight if you cant.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "tomorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "you're stuff",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your stuff"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "cant",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "can't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Sam",
+    "$40",
+    "at 10",
+    "Venmo"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Three errors across two paragraphs."
+  }
+}

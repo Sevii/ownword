@@ -1,0 +1,25 @@
+{
+  "id": "post-2033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Finished a week on the Lost Coast Trail with the Kestrel 38 pack. The hip belt is the best I've used, and the side pockets are reachable without taking the pack off. The rain cover is thin and tore on day two, so bring your own.\n\nAt $190, it's a solid buy for anyone doing multi-day trips.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Kestrel 38",
+    "Lost Coast Trail",
+    "$190",
+    "day two"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral gear review."
+  }
+}

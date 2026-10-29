@@ -1,0 +1,26 @@
+{
+  "id": "post-2037",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Our book club is reading The Overstory for November. We meet on the 19th at 7pm at the Linden Library, second floor. New members are welcome, and you don't need to have finished the book to join the conversation.\n\nCoffee and cookies are provided. Bring a friend.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "The Overstory",
+    "19th",
+    "7pm",
+    "Linden Library",
+    "November"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral announcement."
+  }
+}

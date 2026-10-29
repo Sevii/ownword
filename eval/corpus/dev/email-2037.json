@@ -1,0 +1,29 @@
+{
+  "id": "email-2037",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi both,\n\nThanks for your patience while we sorted the licence renewal. The new keys for the modelling software arrived this morning, and I have added them to the shared vault under Engineering Tools.\n\nThe old keys stop working on 30 November, so please update your installations before then. Shout if you hit any trouble; Mr. Okeke on the IT desk has done a few already.\n\nCheers,\nTamsin",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "licence",
+    "modelling",
+    "Engineering Tools",
+    "30 November",
+    "Mr. Okeke"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: \"licence\" (noun) and \"modelling\" are correct."
+  }
+}

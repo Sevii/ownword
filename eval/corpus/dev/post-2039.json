@@ -1,0 +1,25 @@
+{
+  "id": "post-2039",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "The city's budget survey closes Friday at 5pm, and so far only 412 residents have responded. It takes about eight minutes, and the questions cover parks, road repair, and the proposed transit line.\n\nHere is the link: https://example.gov/budget-survey. Please share it with neighbors who might not see this.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "412",
+    "5pm",
+    "https://example.gov/budget-survey",
+    "eight minutes"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral post with a URL."
+  }
+}

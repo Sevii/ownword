@@ -1,0 +1,30 @@
+{
+  "id": "doc-3008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Engineering onboarding: week one\n\nWelcome. By the end of your first week you should have a working development environment, a merged pull request, and a rough map of who owns what. Your onboarding buddy is listed in the welcome email and is your first stop for any question.\n\nDay one is accounts. You will receive SSO access to GitHub, Slack, and the AWS console. Request anything missing through the IT portal rather than asking a colleague to share credentials.\n\nDays two and three are the local build. Follow the README in the `platform` repo; it is kept up to date and tested on every merge. If a step fails, that is a bug in the README, and fixing it makes a good first pull request.\n\nDays four and five are shadowing. Sit with the on-call engineer for a few hours and read the last three incident reviews. You are not expected to understand everything, only to learn where the documentation lives.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "SSO",
+    "GitHub",
+    "Slack",
+    "AWS",
+    "README",
+    "onboarding buddy"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean onboarding guide with acronyms and repo names."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "doc-3012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-CA",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Seasonal tire changeover\n\nBook your changeover online or by phone at any of our three service centres in Ottawa. Appointments take about forty-five minutes, and we recommend booking before the first week of November, when demand peaks.\n\nIf you store your tires with us, bring your storage ticket; the tires are brought from the warehouse the day before your appointment. Tires stored at home should be labelled by position so the technician can rotate them correctly. Winter tires are required by law in Quebec from December 1, and the Ontario Ministry of Transportation recommends them whenever the temperature stays below 7°C.\n\nWe check tread depth and air pressure during every changeover and will let you know if a tire has less than four millimetres of tread. A cheque, debit, or credit card is accepted at all locations, and your receipt lists the odometer reading in kilometres for your records.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Ottawa",
+    "Quebec",
+    "December 1",
+    "Ontario Ministry of Transportation",
+    "7°C",
+    "four millimetres",
+    "centres",
+    "labelled",
+    "cheque",
+    "kilometres"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-CA product documentation. Canadian spellings (centres, labelled, cheque, kilometres) alongside \"tire\" are correct for the dialect."
+  }
+}

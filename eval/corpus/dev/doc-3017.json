@@ -1,0 +1,51 @@
+{
+  "id": "doc-3017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Troubleshooting the Model 7 printer\n\nIf the printer does not respond when you send a job check the status light on the front panel first. A steady green light means the printer is ready; an amber light means it is waiting for paper or ink; a flashing red light means it has detected a jam.\n\nWhen the colour output looks faded, run the cleaning programme from the maintenance menu. The printer will recognise a new cartridge automatically, but it's firmware must be at version 2.4 or later for third-party cartridges to be accepted.\n\nFor wifi problems, hold the network button for five seconds to reset the connection, then reconnect from the app. The support centre can be reached on weekdays between 9:00 and 17:30.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "job check",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "job, check"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "it's firmware",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its firmware"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Model 7",
+    "2.4",
+    "9:00 and 17:30",
+    "wifi",
+    "colour",
+    "programme",
+    "recognise",
+    "centre"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing comma after an introductory \"If\" clause plus its/it's. British spellings are correct for the dialect."
+  }
+}

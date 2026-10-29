@@ -1,0 +1,30 @@
+{
+  "id": "msg-2023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "dude the new season dropped at midnight and i've already watched 4 episodes. no spoilers but episode 3 ends on something wild\n\nidk how i'm gonna function at work tomorrow lol. text me when you've caught up so we can scream about it",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "dude",
+    "idk",
+    "gonna",
+    "lol",
+    "4 episodes",
+    "episode 3"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; fragments are deliberate."
+  }
+}

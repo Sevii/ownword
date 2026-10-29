@@ -1,0 +1,44 @@
+{
+  "id": "essay-2033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "instructor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Students are told to set goals, and most of them do. What they are rarely told is that a goal without a schedule is a wish. The students who acheive the most in my classes are not the ones with the grandest ambitions but the ones who have decided, in advance, which hour of which day the work will happen.\n\nI learned this the hard way during my own doctorate, when I spent the better part of two years intending to write a dissertation chapter every month and producing almost nothing, until a supervisor who had lost patience with my excuses told me to stop setting targets for output and start setting targets for hours, which turned out to be the only advice I ever needed.\n\nTwo hours, every morning, before email. The chapter arrived in six weeks.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "acheive",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "achieve"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "I learned this the hard way during my own doctorate, when I spent the better part of two years intending to write a dissertation chapter every month and producing almost nothing, until a supervisor who had lost patience with my excuses told me to stop setting targets for output and start setting targets for hours, which turned out to be the only advice I ever needed.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "two years",
+    "six weeks",
+    "Two hours"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus a 66-word sentence. The fragment in the last paragraph is deliberate."
+  }
+}

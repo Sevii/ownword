@@ -1,0 +1,49 @@
+{
+  "id": "doc-3026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "The object store is at 71% of its provisioned capacity, up from 58% at the start of the quarter. Growth is mostly from raw event logs, which now accounts for more than half of the total.\n\nWe need to add capacity before November due to the fact that the retention change for logs will not land until December. The cheapest option is to extend the current cluster by two nodes, which covers us through January at the present growth rate.\n\nLonger term, moving logs older than thirty days to cold storage would cut the growth rate by roughly 60%. That work is scheduled for Q4.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "now accounts",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "now account"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "due to the fact that",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "71%",
+    "58%",
+    "November",
+    "December",
+    "January",
+    "thirty days",
+    "60%",
+    "Q4"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject-verb agreement (\"logs, which ... accounts\") plus \"due to the fact that\"."
+  }
+}

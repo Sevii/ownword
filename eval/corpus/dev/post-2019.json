@@ -1,0 +1,52 @@
+{
+  "id": "post-2019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "If you're repotting houseplants this fall, do it before the heat comes on. The dry indoor air stresses them, and a plant that just lost half it's roots doesn't need the extra pressure.\n\nWater lightly for the first week. To much water in fresh soil is the number one way people kill a plant there trying to save.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "it's roots",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its roots"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "To much",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "Too much"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there trying",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're trying"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "first week",
+    "number one",
+    "If you're"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The opening \"you're\" is correct."
+  }
+}

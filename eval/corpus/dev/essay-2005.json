@@ -1,0 +1,29 @@
+{
+  "id": "essay-2005",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "GDP was never designed to measure well-being. Simon Kuznets, who built the first national accounts for the United States in the 1930s, warned Congress that the welfare of a nation could scarcely be inferred from a measure of its income. The warning has been quoted ever since and ignored almost as often.\n\nThe trouble is not that GDP is wrong but that it is narrow. It counts a hospital stay and a vacation the same way, as spending. It counts nothing for the hours a parent spends at home or the forest that a town decides not to cut. When the World Bank or the IMF reports growth, those omissions travel with the number.\n\nNone of this means we should discard GDP. It means we should stop treating it as a verdict. A country can grow richer while its rivers grow dirtier, and the accounts will not notice.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "GDP",
+    "Simon Kuznets",
+    "1930s",
+    "World Bank",
+    "IMF"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean economics essay with acronyms. \"the World Bank or the IMF reports\" takes a singular verb with \"or\"."
+  }
+}

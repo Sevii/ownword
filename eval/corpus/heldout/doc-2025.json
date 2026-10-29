@@ -1,0 +1,36 @@
+{
+  "id": "doc-2025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "all staff",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Travel and expenses policy, revised October 2026\n\nThis policy applies to every employee of the organisation. Claim expenses through the Expensify programme within 30 days of the trip and attach an itemised receipt for each item over £20.\n\nBook standard-class rail tickets unless the journey exceeds three hours; anything longer may go first class with line-manager approval. Hotels in London should not exceed £180 per night; elsewhere in the UK the limit is £130.\n\nQuestions about the policy go to Mrs. Oyelaran in Finance.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "organisation",
+    "Expensify",
+    "programme",
+    "30 days",
+    "itemised",
+    "£20",
+    "unless",
+    "three hours",
+    "should not",
+    "£180",
+    "£130",
+    "Mrs. Oyelaran"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB clean case: organisation, programme, itemised are correct."
+  }
+}

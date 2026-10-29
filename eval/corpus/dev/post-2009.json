@@ -1,0 +1,38 @@
+{
+  "id": "post-2009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "my sister just texted me 'your the only person who would find this funny' and sent a photo of a pigeon sitting in a shopping cart at Costco. she's right tbh\n\nidk what this says about me 🐦",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "your the only",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're the only"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "tbh",
+    "idk",
+    "🐦",
+    "Costco"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The error sits inside a quoted text message; still a likely error."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "doc-3025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Getting started with your workspace\n\nYour workspace is where your team's projects, files, and conversations live. When you first sign in, your invited to create a project; most teams start with one project per client or product.\n\nTo acheive the best results, connect your calendar and Slack in the first week. Tasks assigned to you will then appear on your calendar, and comments will reach you in Slack without a separate notification.\n\n- Invite teammates from the People page.\n\n- Set a weekly digest under Notifications so you are not emailed for every change.\n\n- Use the search bar to find anything, including text inside PDFs.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "your invited",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're invited",
+        "you are invited"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "acheive",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "achieve"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Slack",
+    "People page",
+    "Notifications",
+    "PDFs"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "your/you're plus a misspelling. The other instances of \"your\" in block 1 are correct."
+  }
+}

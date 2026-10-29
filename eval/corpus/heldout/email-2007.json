@@ -1,0 +1,44 @@
+{
+  "id": "email-2007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Dr. Nakamura,\n\nI want to apologize for the delay in the quarterly report. We could of sent a partial version last week, but the figures from the Denver site were still being reconciled and I did not want to circulate numbers that might change.\n\nThe complete report will be reviewed by the steering committee on Thursday and shared with you the same afternoon.\n\nSincerely,\nGrant Ellison",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "could of",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "will be reviewed",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Denver",
+    "Thursday",
+    "did not"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

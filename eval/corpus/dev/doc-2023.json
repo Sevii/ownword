@@ -1,0 +1,31 @@
+{
+  "id": "doc-2023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Runbook: rotating the Zendesk API token\n\nThe Zendesk API token expires every 90 days. Rotate it during business hours, since the support integration stops syncing while the old token is invalid.\n\nGenerate a new token in the Zendesk admin center under Apps and Integrations, then store it in Vault at secret/helpdesk/zendesk. Then run kubectl rollout restart deployment/support-sync and confirm that the next cron run at the top of the hour completes without errors.\n\nIf the worker logs a 401, check the token for a trailing space, re-enter it, and run the rollout command again.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Zendesk",
+    "90 days",
+    "Vault",
+    "secret/helpdesk/zendesk",
+    "kubectl rollout restart deployment/support-sync",
+    "cron",
+    "401"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Heading plus commands and paths that must not be edited."
+  }
+}

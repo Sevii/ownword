@@ -1,0 +1,51 @@
+{
+  "id": "essay-2030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "An incident review is not a search for the person who typed the command. It is an attempt to describe an occurence precisely enough that the next engineer can recognize the same shape before it repeats. The best reviews read like a short story with the ending removed.\n\nMost organizations handle the technical fix and the process change seperately, and the process change is usually the one that slips. The fix was shipped by the on-call engineer within an hour; the alerting change sat in a backlog for a quarter.\n\nIf the review does not produce a ticket with an owner and a date, it has produced a document and nothing else.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "occurence",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "occurrence"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "seperately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separately"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "The fix was shipped by the on-call engineer",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "on-call engineer"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Two common misspellings plus a passive-voice style note."
+  }
+}

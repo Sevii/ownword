@@ -1,0 +1,58 @@
+{
+  "id": "essay-2026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "instructor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Adam Smith is remembered for a single sentence about the butcher, the brewer and the baker, and the sentence is usually read as a defence of self-interest. The principal behind it is narrower than that. Smith was describing how strangers manage to trade without affection, not recommending that affection be abandoned.\n\nHis earlier book, The Theory of Moral Sentiments, is about sympathy, and he never withdrew it. When readers treat The Wealth of Nations as an independant work they lose the half of Smith's argument that explains why markets need trust to function at all.\n\nA student who has recognised both halves will read the butcher differently. The butcher is not greedy. He is simply not your friend, and Smith's point is that the dinner arrives anyway.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "principal",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "principle"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "independant",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "independent"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "work they",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "work, they"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Adam Smith",
+    "The Theory of Moral Sentiments",
+    "The Wealth of Nations",
+    "the butcher, the brewer and the baker",
+    "defence",
+    "recognised"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "principal/principle, a misspelling, and a missing comma after an introductory \"When\" clause. British spellings are correct."
+  }
+}

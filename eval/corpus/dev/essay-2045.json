@@ -1,0 +1,51 @@
+{
+  "id": "essay-2045",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Every translation is an argument about whose voice matters more, the author's or the reader's. Constance Garnett, who's translations introduced Tolstoy and Dostoevsky to English readers a century ago, chose the reader, smoothing the Russian into Edwardian prose. Richard Pevear and Larissa Volokhonsky chose the author, and their Dostoevsky is stranger, rougher, and, perhaps, closer.\n\nReaders argue about which is better, and the argument is somewhat beside the point. We are lucky to have both. A novel that can survive two such different translators is a novel that was never really in Russian or English to begin with.\n\nRead Garnett first, for the story. Read Pevear and Volokhonsky second, for the sentences.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "who's translations",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "whose translations"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 0,
+      "quote": "perhaps",
+      "category": "hedging",
+      "classification": "style"
+    },
+    {
+      "block": 1,
+      "quote": "somewhat",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Constance Garnett",
+    "Tolstoy and Dostoevsky",
+    "Richard Pevear and Larissa Volokhonsky",
+    "Edwardian"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "who's/whose plus two hedging notes. \"whose voice\" at the start of block 0 is correct."
+  }
+}

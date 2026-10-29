@@ -1,0 +1,49 @@
+{
+  "id": "post-2016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "reminder that the 5k on saturday starts at 8am sharp, not 8:30 like last year. parking fills up fast so if your driving, carpool\n\nalso its supposed to rain so bring a hat. see u there 🏃",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "your driving",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're driving"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "its supposed",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's supposed"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "5k",
+    "saturday",
+    "8am",
+    "8:30",
+    "see u there",
+    "🏃"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"see u there\" is correct and deliberate shorthand."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "essay-2002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Most introductory biology courses describe mitochondria as the powerhouse of the cell, and the phrase has stuck because it is almost true. Mitochondria convert the energy stored in glucose into ATP, the molecule that nearly every process in the body spends. What the slogan leaves out is where mitochondria came from.\n\nThe endosymbiotic theory, championed by Lynn Margulis in the 1960s, holds that mitochondria were once free-living bacteria that took up residence inside a larger cell. The evidence is hard to dismiss: mitochondria carry their own DNA, divide on their own schedule, and have membranes that resemble those of modern bacteria.\n\nIf Margulis was right, then every one of our cells is a partnership that began more than a billion years ago. That is a stranger and better story than a powerhouse.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Lynn Margulis",
+    "1960s",
+    "ATP",
+    "DNA"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean science essay. \"If Margulis was right\" is an ordinary conditional, not a subjunctive error."
+  }
+}

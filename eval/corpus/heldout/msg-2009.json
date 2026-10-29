@@ -1,0 +1,41 @@
+{
+  "id": "msg-2009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "who's driving to Leo's thing friday? i can take 3 ppl but my car is tiny so no luggage lol\n\nalso he said bring your own drinks, there not providing anything except snacks. idk if that means beer is ok or not, someone ask him",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "there not",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "they're not"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "ppl",
+    "lol",
+    "idk",
+    "Leo's",
+    "friday",
+    "i can",
+    "your own drinks"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Only one real error; \"your own drinks\" is correct and lowercase \"friday\" is register."
+  }
+}

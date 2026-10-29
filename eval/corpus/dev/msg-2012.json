@@ -1,0 +1,44 @@
+{
+  "id": "msg-2012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "family",
+  "markdown": "Mom, the pharmacy said your prescription wont be ready untill Wednesday because they're waiting on a shipment. I asked them to call you when it comes in.\n\nDo you want me to pick it up, or will Dad be in town anyway?",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "wont",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "won't"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Mom",
+    "Dad",
+    "Wednesday",
+    "your prescription"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"your prescription\" and \"they're\" are correct."
+  }
+}

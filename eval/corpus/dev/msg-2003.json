@@ -1,0 +1,44 @@
+{
+  "id": "msg-2003",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "markdown": "I think you left you're charger at my place last night. It's the white one with the frayed cable. I could of sworn you packed it, but it was under the couch cushion this morning.\n\nWant me to drop it off on the way to work tomorrow? I pass your building around 8:15.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "you're charger",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your charger"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "could of sworn",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have sworn",
+        "could've sworn"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "8:15",
+    "It's the white one",
+    "your building"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"your building\" in the second paragraph is correct."
+  }
+}

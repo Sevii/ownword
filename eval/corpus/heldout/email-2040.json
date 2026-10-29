@@ -1,0 +1,33 @@
+{
+  "id": "email-2040",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mr. Haddad,\n\nPlease find attached the final invoice for the Lakeside project, number INV-3321, for $18,640. This covers the remaining 40 percent of the fee plus the two change orders you approved on September 30.\n\nPayment is due by November 28. If you prefer to pay by ACH, our banking details are on the second page.\n\nIt has been a pleasure working with your team. Ms. Varga asked me to pass on her thanks as well.\n\nBest regards,\nSamuel Oduya",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Lakeside",
+    "INV-3321",
+    "$18,640",
+    "40 percent",
+    "two change orders",
+    "September 30",
+    "November 28",
+    "ACH",
+    "Ms. Varga"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

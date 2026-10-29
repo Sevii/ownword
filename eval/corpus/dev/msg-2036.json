@@ -1,0 +1,29 @@
+{
+  "id": "msg-2036",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "poll: beach or lake for the long weekend? beach is further but there's that taco place. lake has the dock and Nina's parents said we can use the kayaks\n\nvote by tonight pls bc i need to book something by thurs",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "poll:",
+    "Nina's",
+    "pls",
+    "bc",
+    "thurs"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual group text; \"further\" is acceptable."
+  }
+}

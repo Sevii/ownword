@@ -1,0 +1,46 @@
+{
+  "id": "essay-2039",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Jury duty is the only civic obligation most Americans will ever be compelled to perform, and most of them try to get out of it. I understand the impulse. The summons arrives at a bad time, the pay is forty dollars a day, and the parking is is never free.\n\nBut the jury is the one place where the state must persuade twelve ordinary people before it can take someone's liberty. That is not a procedural detail. It is a principal, and it is the reason the Sixth Amendment exists.\n\nIf you want to know what your government is like, spend a week in a courtroom watching it try to prove something.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "is is",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "is"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "a principal",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "a principle"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "forty dollars",
+    "Sixth Amendment",
+    "twelve"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Repeated word plus principal/principle."
+  }
+}

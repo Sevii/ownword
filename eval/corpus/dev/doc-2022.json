@@ -1,0 +1,51 @@
+{
+  "id": "doc-2022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Contract amendment 3: delivery schedule\n\nThis amendment moves the delivery date for milestone 4 from November 20 to December 11.. All other terms of the agreement dated March 3, 2026 remain unchanged.\n\nThe amendment takes effect once the clients signature is received. The client is Brightwater Holdings, represented by Ms. Elena Fischer.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "..",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "."
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "clients signature",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "client's signature"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "milestone 4",
+    "November 20",
+    "December 11",
+    "March 3, 2026",
+    "takes effect",
+    "Brightwater Holdings",
+    "Ms. Elena Fischer",
+    "remain unchanged"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"takes effect\" is correct and must stay."
+  }
+}

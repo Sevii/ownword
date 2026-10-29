@@ -1,0 +1,30 @@
+{
+  "id": "essay-2010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Persuasion is the quietest of Jane Austen's novels and, I would argue, the best. Anne Elliot is twenty-seven when the book begins, which in 1817 placed her well past the age at which a heroine was expected to be interesting. She broke an engagement eight years earlier on the advice of a family friend, and she has regretted it every day since.\n\nWhat makes the novel remarkable is how little happens. Captain Wentworth returns, the families visit Lyme and then Bath, and a letter is written. Austen trusts the reader to feel the weight of small gestures: a hand on a carriage door, a sentence overheard through a wall.\n\nThe book was published after Austen's death, and its last chapters were rewritten in the final months of her life. It reads like the work of someone who had stopped performing and started telling the truth.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Persuasion",
+    "Jane Austen",
+    "Anne Elliot",
+    "1817",
+    "Captain Wentworth",
+    "Lyme and then Bath"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean literature essay. Short passive constructions (\"a letter is written\") are deliberate and not worth flagging."
+  }
+}

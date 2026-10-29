@@ -1,0 +1,32 @@
+{
+  "id": "msg-2033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "happy friday!! 🎉 just booked our flights for Lisbon, Apr 10 to 17, $540 each round trip. i'll send you the confirmation in a sec\n\nnow we need to figure out where to stay. i found a place near Alfama for like $90 a night, looks cute",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "happy friday!!",
+    "🎉",
+    "Lisbon",
+    "Apr 10 to 17",
+    "$540",
+    "Alfama",
+    "$90",
+    "in a sec"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text with dates and prices."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "post-2034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community group",
+  "markdown": "The Oak Street Community Garden has three open plots for the spring season. Plots are 10 by 12 feet, cost $45 for the year, and come with water access and shared tools.\n\nApplications are due March 1. Priority goes to households within a half mile of the garden. Email gardens@oakstreet.org to apply.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Oak Street",
+    "10 by 12",
+    "$45",
+    "March 1",
+    "gardens@oakstreet.org",
+    "half mile"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean neutral announcement with an email address."
+  }
+}

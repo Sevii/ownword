@@ -1,0 +1,47 @@
+{
+  "id": "doc-2019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Design handover: Meridian brand refresh\n\nThe final colour palette and type scale were approved by the Meridian board on 19 October. All assets have been uploaded to the shared Figma file, and each component can be customised through the variables panel.\n\nThe new logo is slightly wider then the old one, so the header on the customer centre page will need a small layout change before launch on 1 December.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "were approved by",
+      "category": "passive-voice",
+      "classification": "style"
+    },
+    {
+      "block": 2,
+      "quote": "then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "than"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "colour",
+    "customised",
+    "centre",
+    "Meridian",
+    "19 October",
+    "Figma",
+    "1 December"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: colour, customised, centre are correct."
+  }
+}

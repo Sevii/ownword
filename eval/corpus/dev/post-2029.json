@@ -1,0 +1,29 @@
+{
+  "id": "post-2029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "the little bookstore on Elm is doing a thing where you pick a wrapped book based on three words written on the paper. mine said 'quiet, ocean, letters' and i'm already 80 pages in and obsessed\n\n$15 well spent. go support them 📚",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Elm",
+    "'quiet, ocean, letters'",
+    "80 pages",
+    "$15",
+    "📚"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

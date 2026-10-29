@@ -1,0 +1,35 @@
+{
+  "id": "doc-2032",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Service level terms for managed hosting\n\nThe provider guarantees 99.95 percent monthly uptime for the production environment, measured at the load balancer. Planned maintenance, limited to four hours per month and announced at least five business days in advance, does not count against the guarantee.\n\nIf uptime falls below the threshold, the customer receives a credit of 10% of that month's fee; below 99.5%, that rises to 25%. Credits apply to the next invoice and do not carry over.\n\nThe terms take effect on January 1, 2027.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "99.95 percent",
+    "four hours per month",
+    "five business days",
+    "does not",
+    "10%",
+    "month's",
+    "99.5%",
+    "25%",
+    "do not",
+    "January 1, 2027",
+    "take effect"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

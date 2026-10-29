@@ -1,0 +1,44 @@
+{
+  "id": "email-2028",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Simone,\n\nWe ran the A/B test for two weeks. The affect on signups was smaller than we hoped: a 2.1% lift, which is within the noise. I think we should keep the new copy anyway, since it tested better with the survey group.\n\nFull numbers are in the attached sheet.\n\nBest,\nHugo",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "affect",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "effect"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "I think",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "A/B",
+    "two weeks",
+    "2.1%"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"The affect on signups\" needs the noun \"effect\"; unambiguous after \"The\"."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "doc-3023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Shipping and delivery\n\nOrders placed before 2 p.m. Eastern ship the same business day. Items from different warehouses are shipped seperately and may arrive on different days; you will recieve a tracking number for each package.\n\nDelivery times are estimated by the carrier and are not guaranteed. Standard shipping takes three to five business days within the continental United States; expedited shipping takes one to two.\n\nIf a package is marked as delivered but has not arrived, wait 24 hours, check with neighbors, and then contact support with the order number.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "seperately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separately"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "recieve",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "receive"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "Delivery times are estimated by the carrier",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "2 p.m. Eastern",
+    "three to five",
+    "24 hours"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Two misspellings plus a passive-voice note."
+  }
+}

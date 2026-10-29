@@ -1,0 +1,46 @@
+{
+  "id": "essay-2044",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Nuclear power has a public-relations problem that it's safety record does not justify. Measured in deaths per unit of electricity, it is roughly as safe as wind and far safer than coal, which kills tens of thousands of people a year through air pollution alone. Chernobyl and Fukushima are remembered; the coal plants are not.\n\nAt the present time the obstacle is not fear but cost. The two reactors at Vogtle in Georgia came in at more than thirty billion dollars and seven years late. Until someone builds a plant on time, the argument about safety is beside the point.\n\nI am for nuclear power. I am also for admitting what it costs.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "it's safety",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its safety"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "At the present time",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Chernobyl and Fukushima",
+    "Vogtle",
+    "Georgia",
+    "thirty billion dollars",
+    "seven years"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "its/it's plus \"At the present time\" style note."
+  }
+}

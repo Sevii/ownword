@@ -1,0 +1,32 @@
+{
+  "id": "email-2045",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Amara,\n\nThe webhook for order updates is live on your staging store as of this afternoon. It sends a POST to the endpoint you gave us whenever an order moves to shipped or refunded, and it includes the Shopify ID in the payload.\n\nTwo things to confirm on your side: that your endpoint returns a 200 within 5 seconds, and that it can handle the same event twice, since we retry on timeouts.\n\nOnce you confirm, Okafor will switch it on in production.\n\nBest,\nLiam",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "webhook",
+    "staging",
+    "POST",
+    "Shopify",
+    "200",
+    "5 seconds",
+    "Okafor",
+    "production"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

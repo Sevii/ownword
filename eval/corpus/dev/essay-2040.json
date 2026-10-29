@@ -1,0 +1,48 @@
+{
+  "id": "essay-2040",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The James Webb Space Telescope cost about ten billion dollars and took twenty-five years to build, which is longer then the careers of some of the astronomers who now use it. The delays were real, and so were the overruns. The question is whether the result was worth it.\n\nThe first images, released in July 2022, settled that question for most people. The data from the telescope's instruments shows galaxies forming earlier than the models predicted, and the atmospheres of planets around other stars has been measured for the first time.\n\nTen billion dollars is a lot of money. It is also about what the United States spends on its military every two days.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "longer then",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "longer than"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "stars has been",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "stars have been"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "James Webb Space Telescope",
+    "ten billion dollars",
+    "twenty-five years",
+    "July 2022",
+    "two days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "then/than plus subject-verb agreement (\"atmospheres ... has\"). \"The data ... shows\" is acceptable mass-noun agreement and is not annotated."
+  }
+}

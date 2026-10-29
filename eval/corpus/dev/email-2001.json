@@ -1,0 +1,48 @@
+{
+  "id": "email-2001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Ms. Okafor,\n\nThank you for your message. We recieved the signed statement of work on October 14 and have opened the project in Jira under key MRL-220. The project will begin it's discovery phase on November 3, as agreed.\n\nPlease let me know if the kickoff time of 10:00 a.m. Eastern still works for your team.\n\nKind regards,\nDaniel Reyes",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "it's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 14",
+    "MRL-220",
+    "November 3",
+    "10:00 a.m.",
+    "Jira"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus \"it's\" for the possessive \"its\". Ticket key and dates must stay."
+  }
+}

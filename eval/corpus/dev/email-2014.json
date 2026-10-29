@@ -1,0 +1,47 @@
+{
+  "id": "email-2014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi team,\n\nthe cron job that rebuilds the search index failed again last night at 02:15. I restarted it manually and it finished in 40 minutes, so the index is current as of this morning.\n\nWe should definately add an alert for this before the next release. I'll open a Jira ticket today.\n\nWes",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "the cron",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "The cron"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "definately",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "definitely"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "02:15",
+    "40 minutes",
+    "Jira",
+    "cron"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

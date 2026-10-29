@@ -1,0 +1,47 @@
+{
+  "id": "essay-2019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "students",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Lowering the voting age to sixteen is usually dismissed as a gimmick, but Austria has allowed it in national elections since 2007, and the results there are worth a look. Turnout among first-time voters rose, and studies found that sixteen-year-olds voted with about the same attention to policy as their older siblings.\n\nThe strongest objection is that teenagers lack the experience to judge a goverment. But experience is not what we ask of any other voter. We ask only that they have a stake, and a sixteen-year-old who pays taxes on a part-time job and attends a school run by the state has one.\n\nOpponents say young people will simply vote the way there parents do. The evidence from Scotland, which lowered the age for the 2014 independence referendum, suggests the opposite: households argued, and some parents changed their minds.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "goverment",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "government"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "there parents",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their parents"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Austria",
+    "2007",
+    "Scotland",
+    "2014"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus there/their. \"the results there\" in block 0 is correct."
+  }
+}

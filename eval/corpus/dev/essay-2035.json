@@ -1,0 +1,47 @@
+{
+  "id": "essay-2035",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "When Iceland ran trials of a shorter working week between 2015 and 2019 productivity stayed level or improved in most workplaces, and the unions used the results to win reduced hours for most of the country's workforce. The trials covered about 2,500 workers, which is small, but the pattern has since repeated in Britain and Spain.\n\nThe objection that people will simply do less is to easy. Office work is already padded with meetings that exist because the day is long. Shorten the day, and the meetings go first.\n\nI do not think a four-day week suits every job. I think it suits more jobs than employers are willing to test.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "2019 productivity",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "2019, productivity"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "to easy",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too easy"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Iceland",
+    "2015 and 2019",
+    "2,500",
+    "Britain and Spain"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing comma after a long introductory \"When\" clause plus to/too."
+  }
+}

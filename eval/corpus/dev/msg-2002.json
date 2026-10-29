@@ -1,0 +1,44 @@
+{
+  "id": "msg-2002",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "markdown": "Reminder that the Hendersons are hosting on Saturday. We're bringing a salad, and there kids are allergic to peanuts, so no satay this time.\n\nDon't start the grill untill Marco gets there with the charcoal. He said 4:30 at the latest.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "there kids",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their kids"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Hendersons",
+    "Marco",
+    "4:30",
+    "satay"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The second \"there\" (\"gets there\") is correct."
+  }
+}

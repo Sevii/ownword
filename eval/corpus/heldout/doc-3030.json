@@ -1,0 +1,53 @@
+{
+  "id": "doc-3030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "employees",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Speaking to the press\n\nStaff may be contacted by journalists about the organisation's work, particularly during the consultation on the new goverment funding programme. Please pass any such enquiry to the communications team the same day; do not give a comment yourself, even off the record.\n\nIt could be argued that a quick factual answer does no harm, and in many cases that is somewhat true. But a single remark can be quoted as the organisation's position, and the communications team will usually be able to recognise when that is a risk.\n\nPersonal social media accounts are your own, but please do not discuss unpublished work or name clients.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "goverment",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "government"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 2,
+      "quote": "It could be argued that",
+      "category": "hedging",
+      "classification": "style"
+    },
+    {
+      "block": 2,
+      "quote": "somewhat",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "communications team",
+    "off the record",
+    "organisation",
+    "programme",
+    "enquiry",
+    "recognise"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus two hedging notes. British spellings are correct for the dialect."
+  }
+}

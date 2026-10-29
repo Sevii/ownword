@@ -1,0 +1,60 @@
+{
+  "id": "doc-2013",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Incident notes: webhook delivery failures, October 9\n\nAt 14:20 we recieved the first alert that webhook deliveries to Shopify were failing. The failures occured because the signing key was rotated on our side but the new key had not been pushed to the worker pods.\n\ni rolled the key back at 14:41, and deliveries recovered within two minutes. The permanent fix is to read the key from Vault at request time.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "recieved",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "received"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "occured",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "occurred"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "i rolled",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "I rolled"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "October 9",
+    "14:20",
+    "Shopify",
+    "had not",
+    "14:41",
+    "two minutes",
+    "Vault",
+    "webhook"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

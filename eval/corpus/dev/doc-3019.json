@@ -1,0 +1,46 @@
+{
+  "id": "doc-3019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "customers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Setting up two-factor authentication\n\nIn order to protect your account, we recommend enabling two-factor authentication. Once it is on, signing in from a new device requires a six-digit code from an authenticator app in addition to your password.\n\n- Open Settings and choose Security.\n\n- Scan the QR code with Google Authenticator, Authy, or any app that supports TOTP.\n\n- Enter the code the app shows to confirm. If the code is rejected, your phone's clock may be to far out of sync; enable automatic time in the phone's settings and try again.\n\n- Save the recovery codes somewhere safe. Each code works once and is the only way back in if you lose your phone.",
+  "expected": [
+    {
+      "block": 4,
+      "quote": "to far",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "too far"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "In order to",
+      "category": "conciseness",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "QR",
+    "Google Authenticator",
+    "Authy",
+    "TOTP",
+    "six-digit"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "to/too plus \"In order to\" style note."
+  }
+}

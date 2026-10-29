@@ -1,0 +1,29 @@
+{
+  "id": "post-2022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "the sunset tonight was unreal 🌅 took this from the pier at Ocean Beach around 6:40, no filter, no edits. sometimes the city just does this for free\n\nanyway hope everyone's having a good one",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "🌅",
+    "Ocean Beach",
+    "6:40",
+    "no filter",
+    "having a good one"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post; fragments are deliberate."
+  }
+}

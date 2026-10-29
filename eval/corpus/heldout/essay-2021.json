@@ -1,0 +1,47 @@
+{
+  "id": "essay-2021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "readers of a blog",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "The common arguement against learning a language after thirty is that the brain has closed the window. Linguists who study adult learners find something more modest: adults learn grammar faster than children and accent slower, and the difference in the end comes down to hours rather than age.\n\nWhat adults lack is not plasticity but tolerance for sounding foolish. A child will say the wrong word a hundred times a day and not care. If your embarrassed by every mistake, you will speak less, and speaking less is the only thing that actually stops you.\n\nI started Portuguese at thirty-eight. Two years in, I can argue with a taxi driver in Lisbon, which is all I ever wanted.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "arguement",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "argument"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "your embarrassed",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're embarrassed",
+        "you are embarrassed"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Portuguese",
+    "Lisbon",
+    "thirty-eight"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Misspelling plus your/you're."
+  }
+}

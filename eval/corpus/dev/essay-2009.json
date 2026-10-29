@@ -1,0 +1,36 @@
+{
+  "id": "essay-2009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-AU",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The Murray-Darling Basin produces about forty percent of Australia's agricultural output, and for most of the past century the states along its 2,500 kilometres of river have argued over who may take water from it. The 2012 Basin Plan was meant to settle the question by recognising that the river itself needs a share.\n\nIt has not settled much. Irrigators in New South Wales say the plan favours the environment over towns that depend on cotton and rice; scientists at the CSIRO say the environmental allocations are already too small, and the fish kills at Menindee in 2019 suggest they are right. Both sides accuse the Murray-Darling Basin Authority of organising its numbers to suit whoever is in government.\n\nMy own view is that a river cannot be managed as a ledger. Until the states accept that the water left in the channel is not wasted, the colour of the Darling at Menindee will keep telling the story for them.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Murray-Darling Basin",
+    "2,500 kilometres",
+    "2012 Basin Plan",
+    "New South Wales",
+    "CSIRO",
+    "Menindee",
+    "2019",
+    "kilometres",
+    "recognising",
+    "favours",
+    "organising",
+    "colour"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-AU opinion essay. Australian spellings (kilometres, recognising, favours, organising, colour) are correct for the dialect."
+  }
+}

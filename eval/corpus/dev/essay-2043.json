@@ -1,0 +1,50 @@
+{
+  "id": "essay-2043",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-GB",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Britain now gets about a third of its electricity from wind, and most of that from turbines in the North Sea that did not exist in 2010. The programme has been one of the few industrial successes of the past fifteen years, and it happened largely because the government guaranteed a price and then let the price fall.\n\nThe contracts were auctioned, the developers competed, the cost of offshore power fell from more than 150 pounds a megawatt hour in 2015 to under 40 pounds by 2019, and the people who had argued that renewable energy would always need subsidy found that the subsidy had turned into a payment in the other direction, with wind farms returning money to the Treasury when wholesale prices rose.\n\nThe turbines are now the largest machines most people will ever see, and there blades are longer than a football pitch. I realised, standing on the beach at Skegness, that the future had arrived without anyone voting on it.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "there blades",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their blades"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "The contracts were auctioned, the developers competed, the cost of offshore power fell from more than 150 pounds a megawatt hour in 2015 to under 40 pounds by 2019, and the people who had argued that renewable energy would always need subsidy found that the subsidy had turned into a payment in the other direction, with wind farms returning money to the Treasury when wholesale prices rose.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "2010",
+    "150 pounds",
+    "40 pounds",
+    "2015",
+    "2019",
+    "Treasury",
+    "Skegness",
+    "programme",
+    "realised"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "there/their plus a 67-word sentence. British spellings are correct for the dialect."
+  }
+}

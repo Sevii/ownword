@@ -1,0 +1,61 @@
+{
+  "id": "msg-2004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "group chat",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok so update on the cabin: Priya booked it for the 14th thru the 16th, its $320 total so like $80 each. lets figure out carpools this week bc parking is tight up there.\n\nalso whoever has the big cooler, bring it. dont forget sunscreen lol",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "its $320",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's $320"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "lets figure",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "let's figure"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "dont forget",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "don't forget"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "thru",
+    "bc",
+    "lol",
+    "Priya",
+    "14th",
+    "16th",
+    "$320",
+    "$80",
+    "ok so"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual group text; apostrophe slips are still errors, slang and lowercase are not."
+  }
+}

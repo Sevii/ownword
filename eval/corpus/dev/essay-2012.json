@@ -1,0 +1,33 @@
+{
+  "id": "essay-2012",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The Rosetta Stone was found in 1799 by French soldiers rebuilding a fort near the town of Rashid in the Nile delta. It carries the same decree in three scripts: Greek, which scholars could read, and two forms of Egyptian, which nobody had read for more than a thousand years.\n\nThomas Young in London made the first progress, showing that the cartouches enclosed royal names and that some hieroglyphs stood for sounds. Jean-François Champollion in Paris finished the job in 1822, drawing on his knowledge of Coptic to argue that the script mixed sound signs and sense signs in a single system. His announcement to the Académie des Inscriptions is usually treated as the birth of Egyptology.\n\nThe stone itself has sat in the British Museum since 1802. Egypt has asked for its return more than once, and the question of where it belongs is now as contested as the question of what it says was two centuries ago.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "1799",
+    "Rashid",
+    "Thomas Young",
+    "Jean-François Champollion",
+    "1822",
+    "Coptic",
+    "Académie des Inscriptions",
+    "British Museum",
+    "1802"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean history essay with accented proper nouns."
+  }
+}

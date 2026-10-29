@@ -1,0 +1,43 @@
+{
+  "id": "doc-2010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Capacity review for the Northgate programme\n\nThe current licence allows 250 concurrent users. During the 14 October rollout, the system reached it's limit twice, and 37 users were unable to log in for about 20 minutes each time.\n\nWe recommend increasing the licence to 400 users before the second site goes live on 2 November. The additional cost is £6,200 per year.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "it's",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "programme",
+    "licence",
+    "250",
+    "14 October",
+    "37 users",
+    "20 minutes",
+    "400 users",
+    "2 November",
+    "£6,200"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: \"programme\" and \"licence\" are correct."
+  }
+}

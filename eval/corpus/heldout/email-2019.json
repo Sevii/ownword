@@ -1,0 +1,53 @@
+{
+  "id": "email-2019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Ravi,\n\nMaybe we should move the retro to Thursday? Half the team is out Wednesday for the onboarding session, and i don't want to run it with four people.\n\nIf Thursday works, I'll just update the Slack reminder and the calendar invite.\n\nThanks,\nJo",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "i don't",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "I don't"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "Maybe",
+      "category": "hedging",
+      "classification": "style"
+    },
+    {
+      "block": 2,
+      "quote": "just",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Thursday",
+    "Wednesday",
+    "four people",
+    "Slack",
+    "don't",
+    "onboarding"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

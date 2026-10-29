@@ -1,0 +1,45 @@
+{
+  "id": "essay-2018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "A street tree is the cheapest piece of infrastructure a city can buy, and it is the one most often cut from the budget. A mature oak shades the pavement, slows the rain, and cools the block by several degrees in August. It's roots lift the sidewalk, which is the complaint most residents remember.\n\nThe city of Milwaukee planted 30,000 trees between 2010 and 2020, and the program was expanded by the council last year after a study tied the shade to lower summer emergency-room visits. That is the kind of evidence a budget committee can understand.\n\nIf we want cooler cities, the answer is not more air conditioning. It is more wood, planted now, for people who will not see it mature.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "It's roots",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "Its roots"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "the program was expanded by the council",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "Milwaukee",
+    "30,000",
+    "2010 and 2020",
+    "August"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "One its/it's error; one passive-voice style note."
+  }
+}

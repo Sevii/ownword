@@ -1,0 +1,50 @@
+{
+  "id": "doc-2021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Proposal: split the notifications service\n\nThe notifications service currently handles email, SMS, and push in one process. I think we should split SMS into a seperate service, since the Twilio rate limits are sort of unrelated to the other two channels and the retries keep blocking the push queue.\n\nThe split would take about two sprints. Nothing changes for callers; the API stays the same.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "seperate",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "separate"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "I think",
+      "category": "hedging",
+      "classification": "style"
+    },
+    {
+      "block": 1,
+      "quote": "sort of",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "SMS",
+    "Twilio",
+    "two sprints",
+    "Nothing changes"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

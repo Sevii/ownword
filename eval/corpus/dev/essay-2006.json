@@ -1,0 +1,28 @@
+{
+  "id": "essay-2006",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "## Why small interfaces win\n\nThe best library I have ever used exposed four functions. The worst exposed four hundred, and its documentation was a tour of every decision its authors had refused to make. An API is a promise about what a caller needs to understand, and a short promise is easier to keep.\n\nThis is not an argument for minimalism as taste. It is an argument about cost. Every public function in a library is something that cannot be renamed without breaking someone, cannot be removed without a deprecation cycle, and must be documented, tested, and explained to a new engineer during onboarding. The Unix designers understood this in 1973 when they made a file a stream of bytes and nothing more.\n\nWhen I review a design, I ask the author to list the things a user must learn before the library is useful. If the list runs past a page, the interface is not finished.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "API",
+    "Unix",
+    "1973",
+    "onboarding"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean technical essay. \"its documentation\" and \"its authors\" are correct possessives."
+  }
+}

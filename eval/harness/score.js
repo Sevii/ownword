@@ -43,9 +43,16 @@ export function scoreCase(prepared, c, envelope) {
   const onOptional = unmatched.filter((d) => [...optional, ...expectedStyle].some((o) => overlaps(d.anchor, o.anchor)));
   const falsePositives = unmatched.filter((d) => !onOptional.includes(d));
 
-  const correctFixes = lenient.matched.filter(([d, e]) =>
-    e.accept?.length ? d.replacements.some((r) => e.accept.includes(r.text)) : null,
-  );
+  // A fix is correct when applying it gives the same block text as applying
+  // an accepted replacement to the annotated span, so "to"→"too" satisfies an
+  // annotation of "to few"→"too few".
+  const correctFixes = lenient.matched.filter(([d, e]) => {
+    if (!e.accept?.length) return false;
+    const text = snapshot.blocks.find((b) => b.id === e.anchor.blockId)?.text ?? '';
+    const apply = (a, t) => text.slice(0, a.from) + t + text.slice(a.to);
+    const wanted = new Set(e.accept.map((t) => apply(e.anchor, t)));
+    return d.replacements.some((r) => wanted.has(apply(d.anchor, r.text)));
+  });
   const fixable = lenient.matched.filter(([, e]) => e.accept?.length);
 
   const forbiddenTouched = errors

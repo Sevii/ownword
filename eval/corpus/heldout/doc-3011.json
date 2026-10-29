@@ -1,0 +1,30 @@
+{
+  "id": "doc-3011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Decision record: rate limiting at the edge\n\n## Context\n\nThe public API currently enforces rate limits inside each service. Limits are inconsistent across services, and a burst from one client can exhaust a worker pool before the limit is checked. Support has handled six such incidents this quarter.\n\n## Decision\n\nWe will enforce rate limits in the Envoy proxy at the edge, keyed by API token, with a default of 600 requests per minute. Services keep their existing checks for one release as a safety net and remove them afterwards.\n\n## Consequences\n\nLimits become visible in one place and can be changed without a deploy. Latency increases by about 2 milliseconds per request for the Redis lookup, which is acceptable. Clients that currently exceed 600 requests per minute will begin receiving HTTP 429 responses; we have identified four and will contact them before rollout.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Envoy",
+    "600 requests per minute",
+    "2 milliseconds",
+    "Redis",
+    "HTTP 429",
+    "API"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean architecture decision record."
+  }
+}

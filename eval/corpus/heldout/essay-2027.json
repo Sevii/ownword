@@ -1,0 +1,48 @@
+{
+  "id": "essay-2027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "California banned single-use plastic bags in 2016, and the result was not what either side predicted. Shoppers used less thin bags, as intended, but sales of thicker trash-can liners rose because people had been reusing the free ones. A study at the University of Sydney put the net reduction in plastic at about 30 percent, not the 100 percent the campaign had implied.\n\nA policy is not a failure because it's effect is smaller than its slogan. Thirty percent is a lot of plastic. But the gap between the promise and the result is why voters stop believing environmental claims, and that cost is harder to measure than the bags.\n\nThe lesson is to count before and after, and to say the real number out loud.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "less thin bags",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "fewer thin bags"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "it's effect",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "its effect"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "California",
+    "2016",
+    "University of Sydney",
+    "30 percent",
+    "100 percent"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "fewer/less with a countable noun (unambiguous) plus its/it's. \"its slogan\" later in the same block is correct."
+  }
+}

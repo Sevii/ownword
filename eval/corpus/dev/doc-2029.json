@@ -1,0 +1,31 @@
+{
+  "id": "doc-2029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hiring update: backend engineer, October\n\nWe interviewed six candidates this month and advanced two to the final round. Both completed the take-home exercise within the suggested four hours, and the panel rated them strongly on system design.\n\nSato prefers the candidate with the Kafka background, given the streaming work planned for Q1. Ferreira leans toward the other, who has more experience mentoring junior engineers.\n\nWe will make offers to both if budget allows; otherwise we decide at the debrief on November 3.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "six candidates",
+    "four hours",
+    "Sato",
+    "Kafka",
+    "Q1",
+    "Ferreira",
+    "November 3"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

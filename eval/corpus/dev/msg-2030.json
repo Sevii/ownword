@@ -1,0 +1,29 @@
+{
+  "id": "msg-2030",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "ok so i just found out the farmers market has a guy who sells homemade hot sauce and it's insanely good. the mango habanero one is $8 and i'm not exaggerating when i say it changed my life\n\nwe're going sat morning, you in?",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "ok so",
+    "$8",
+    "sat morning",
+    "you in?",
+    "i'm not"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; run-on first sentence is register."
+  }
+}

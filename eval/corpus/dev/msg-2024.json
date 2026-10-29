@@ -1,0 +1,29 @@
+{
+  "id": "msg-2024",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "sibling",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "mom wants to know if you're coming for thanksgiving or doing the thing with Jordan's family again. she's being weird about it so just tell her either way lol\n\nalso can i borrow your air fryer this weekend? mine died",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "mom",
+    "lol",
+    "Jordan's",
+    "thanksgiving",
+    "can i"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; lowercase \"mom\" and \"thanksgiving\" are register."
+  }
+}

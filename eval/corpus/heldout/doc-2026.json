@@ -1,0 +1,32 @@
+{
+  "id": "doc-2026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Onboarding: your first two weeks on the data team\n\nDay one is mostly accounts. Your manager will have requested access to Snowflake, Looker, and the team Slack channels before you arrive; if anything is missing, ask Hernandez, who handles access requests.\n\nDuring the first week, read the three design docs pinned in #data-team and shadow one on-call shift with Lindqvist. In the second week, pick a starter ticket from the Jira board; these are small fixes scoped to take a day or two.\n\nAt the end of week two, you and your manager will agree on your first real project.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Snowflake",
+    "Looker",
+    "Slack",
+    "Hernandez",
+    "#data-team",
+    "Lindqvist",
+    "Jira",
+    "week two"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Surnames alone (Hernandez, Lindqvist) and product names are not errors."
+  }
+}

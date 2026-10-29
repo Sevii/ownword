@@ -1,0 +1,29 @@
+{
+  "id": "post-2027",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "tried running at 6am for the first time in my life and honestly? not terrible. the park was empty, the air was cool, and i was done before my brain figured out what was happening\n\ngonna try it again tmrw. check back for the inevitable regret",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "6am",
+    "honestly?",
+    "gonna",
+    "tmrw",
+    "check back"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

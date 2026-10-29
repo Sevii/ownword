@@ -1,0 +1,29 @@
+{
+  "id": "post-2023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "hot take: the best part of fall isn't the leaves, it's that nobody judges u for eating soup three times a day\n\nmade a giant pot of lentil soup this morning and i'm not sharing. ok maybe with Joy. she brought bread",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "hot take",
+    "u for",
+    "Joy",
+    "i'm not",
+    "ok maybe"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post."
+  }
+}

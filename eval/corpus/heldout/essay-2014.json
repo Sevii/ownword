@@ -1,0 +1,26 @@
+{
+  "id": "essay-2014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "I keep a paper notebook, and I am often asked why. The honest answer is that the notebook does nothing. It does not sync, it does not search, and it does not remind me of anything. Those are exactly the qualities that make it useful.\n\nDigital tools are built to capture everything, and they succeed. A note taken on a phone joins ten thousand others and is never seen again. A note taken by hand costs something to make, so I make fewer of them, and the ones I make I remember. Psychologists at Princeton and UCLA found in 2014 that students who took notes by hand understood lectures better than students who typed, probably because the slower method forced them to choose what mattered.\n\nI am not arguing against software. I am arguing that friction is sometimes the feature, and that a tool which asks nothing of you will give you nothing back.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Princeton and UCLA",
+    "2014"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean personal essay. \"a tool which asks\" is acceptable; which/that is not to be annotated."
+  }
+}

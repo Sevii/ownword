@@ -1,0 +1,30 @@
+{
+  "id": "post-2026",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "me: i'm gonna go to bed early tonight\n\nalso me at 1:30am: ok but what if i reorganized the entire spice drawer alphabetically\n\nanyway the spices are alphabetical now. paprika is between oregano and rosemary where it belongs 🫡",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "me:",
+    "also me",
+    "gonna",
+    "1:30am",
+    "🫡",
+    "ok but"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual post in meme format; three short blocks."
+  }
+}

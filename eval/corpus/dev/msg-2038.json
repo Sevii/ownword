@@ -1,0 +1,29 @@
+{
+  "id": "msg-2038",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "sibling",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "did you ever find the charger for the old camera? dad wants to scan the slides from the 92 trip and the battery is dead\n\nif not i think Amazon has them for like $12, i can just order one",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "dad",
+    "92 trip",
+    "Amazon",
+    "$12",
+    "i can just"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; lowercase \"dad\" is register."
+  }
+}

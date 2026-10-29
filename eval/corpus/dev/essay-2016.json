@@ -1,0 +1,31 @@
+{
+  "id": "essay-2016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "The password was a reasonable idea in 1961, when Fernando Corbató added one to the Compatible Time-Sharing System at MIT so that researchers could keep their files apart. It is a bad idea in 2026, when the average person maintains more than a hundred accounts and reuses the same handful of strings across most of them.\n\nThe alternatives exist. Single sign-on through SSO providers lets a company retire dozens of passwords at once. Passkeys, which Apple, Google, and Microsoft all now support, replace the shared secret with a key pair that never leaves the device. Hardware tokens have protected Google's own employees from phishing since 2017 without a single successful account takeover.\n\nWhat holds adoption back is not technology but habit, and habit is a product problem. Until the passwordless path is the default on the sign-up screen rather than an option buried in settings, most people will keep typing the name of their first pet.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "1961",
+    "Fernando Corbató",
+    "Compatible Time-Sharing System",
+    "MIT",
+    "SSO",
+    "Apple, Google, and Microsoft",
+    "2017"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean technology essay with acronyms and company names mid-sentence."
+  }
+}

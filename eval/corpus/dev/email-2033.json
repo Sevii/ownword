@@ -1,0 +1,33 @@
+{
+  "id": "email-2033",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi everyone,\n\nThe Zendesk upgrade is scheduled for Saturday, November 14, from 06:00 to 10:00 Pacific. Agents will not be able to log in during that window, and customers will see a maintenance banner on the help center.\n\nAfter the upgrade, macros and views will look the same, but the ticket sidebar moves to the right. Anika Desai has recorded a three-minute walkthrough, which you can find in the #support channel on Slack.\n\nThanks,\nOwen",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Zendesk",
+    "Saturday, November 14",
+    "06:00",
+    "10:00 Pacific",
+    "will not",
+    "Anika Desai",
+    "three-minute",
+    "#support",
+    "Slack"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

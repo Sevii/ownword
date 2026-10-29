@@ -1,0 +1,46 @@
+{
+  "id": "essay-2042",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "readers of a blog",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "The internet runs on software that a few hundred people maintain for free. The library that parses dates in your bank's app, the compression routine in your browser, and the cron scheduler on half the servers in the world were each written by someone who has ran the project alone for a decade and answers bug reports at midnight.\n\nWhen one of those people quits, the software does not stop. It just stops being fixed. The Log4j vulnerability in 2021 was patched by volunteers over a weekend while companies worth trillions of dollars waited for the download.\n\nIf you're company depends on a project like this, the least you can do is pay for it. The most you can do is assign an engineer. Either one is more than most companies have done.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "has ran",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "has run"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "you're company",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your company"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Log4j",
+    "2021",
+    "cron scheduler"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Wrong past participle (\"has ran\") plus you're/your. \"your bank's app\" in block 0 is correct."
+  }
+}

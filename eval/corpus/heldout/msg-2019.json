@@ -1,0 +1,48 @@
+{
+  "id": "msg-2019",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "roommate",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "hey can u grab milk on ur way home? we're out and i wanna make pancakes tomorow\n\nalso the the wifi has been dropping all day, did you change something on the router or is it just being dumb again",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "tomorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "u grab",
+    "ur way",
+    "wanna",
+    "wifi",
+    "hey can"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text; one misspelling and one doubled word."
+  }
+}

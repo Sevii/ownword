@@ -1,0 +1,54 @@
+{
+  "id": "essay-2041",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-CA",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Although Canada's health system is usually described as a single plan it is in fact thirteen, one for each province and territory, and the differences between them are larger than most Canadians realize. A patient in a small town in northern Ontario may drive three hundred kilometres to the nearest cancer centre; a patient in Vancouver may wait longer but travel less.\n\nThe federal government's role is to set conditions and send cheques. The Canada Health Act of 1984 requires that provinces cover what is medically neccessary, but it leaves the definition to them, which is why drugs are covered in a hospital and not in a pharmacy.\n\nI do not favour a single national system. I favour being honest about the one we have, which is a federation of neighbourhoods pretending to be a country.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "plan it",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "plan, it"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "neccessary",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "necessary"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "thirteen",
+    "Ontario",
+    "three hundred kilometres",
+    "Vancouver",
+    "Canada Health Act",
+    "1984",
+    "kilometres",
+    "centre",
+    "cheques",
+    "favour",
+    "neighbourhoods"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing comma after an introductory \"Although\" clause plus a misspelling. Canadian spellings (kilometres, centre, cheques, favour, neighbourhoods, realize) are correct for the dialect."
+  }
+}

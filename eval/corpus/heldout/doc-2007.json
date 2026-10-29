@@ -1,0 +1,53 @@
+{
+  "id": "doc-2007",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "manager",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Support metrics, Q3 2026\n\nThe number of open Zendesk tickets have dropped from 412 at the start of July to 268 at the end of September. median first-response time improved from 6.2 hours to 3.9 hours over the same period.\n\nThe two hires who joined in August handled 31% of all tickets in September, which accounts for most of the improvement.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "tickets have",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "tickets has"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "median first",
+      "category": "capitalization",
+      "classification": "likely-error",
+      "accept": [
+        "Median first"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Q3 2026",
+    "412",
+    "268",
+    "July",
+    "September",
+    "6.2 hours",
+    "3.9 hours",
+    "August",
+    "31%",
+    "Zendesk"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject is \"The number\", so singular verb."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "email-2022",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Professor Ahmed,\n\nMy collegue Dr. Sato will be out of the office untill November 18, so I will be your point of contact for the grant paperwork in the meantime.\n\nThe revised budget narrative is attached. The total request remains $148,000 over two years, with no change to the personnel lines.\n\nWith best wishes,\nIrene Kowalski",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "collegue",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "colleague"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Dr. Sato",
+    "November 18",
+    "$148,000",
+    "two years",
+    "no change"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

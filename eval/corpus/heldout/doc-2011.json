@@ -1,0 +1,47 @@
+{
+  "id": "doc-2011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Onboarding guide: first week for backend engineers\n\nIn order to get a working local environment, clone the platform repo, run make bootstrap, and ask your buddy for the Vault token.\n\nBy the end of the first week, you should have merged at least one small pull request, which is usually a fix from the good-first-issue label in Jira, attended the Tuesday architecture review and the Thursday on-call handover, read the three design documents linked from the team wiki, and set up alerts for the services your team owns in Datadog so that you can start shadowing on-call rotations in week two.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "In order to",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "To"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "By the end of the first week, you should have merged at least one small pull request, which is usually a fix from the good-first-issue label in Jira, attended the Tuesday architecture review and the Thursday on-call handover, read the three design documents linked from the team wiki, and set up alerts for the services your team owns in Datadog so that you can start shadowing on-call rotations in week two.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "make bootstrap",
+    "Vault",
+    "Jira",
+    "Tuesday",
+    "Thursday",
+    "Datadog",
+    "week two"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Style only: a redundant opener and a 71-word sentence."
+  }
+}

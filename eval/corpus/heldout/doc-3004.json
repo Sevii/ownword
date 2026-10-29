@@ -1,0 +1,32 @@
+{
+  "id": "doc-3004",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-AU",
+  "audience": "employees",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "## Annual leave\n\nFull-time staff accrue four weeks of annual leave each year, in line with the National Employment Standards. Leave accrues from the first day of employment and is shown on each payslip. Part-time staff accrue leave on a pro rata basis.\n\nTo request leave, submit the dates in the HR portal at least two weeks in advance. Your manager will authorise the request or discuss alternatives if the dates clash with a project deadline. The organisation recognises that this is not always possible for family emergencies, and those requests can be made by phone to the People team.\n\nStaff travelling for work on a public holiday receive a day in lieu. If your role requires a current driver's licence, the cost of renewal is reimbursed.\n\nLeave balances above eight weeks will be flagged in the December review, and managers will be asked to agree a plan for taking it.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "National Employment Standards",
+    "four weeks",
+    "December",
+    "authorise",
+    "organisation",
+    "recognises",
+    "travelling",
+    "licence"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean en-AU HR policy. Australian spellings and \"agree a plan\" are correct for the dialect."
+  }
+}

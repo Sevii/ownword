@@ -1,0 +1,50 @@
+{
+  "id": "doc-2018",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Sprint 42 retrospective notes\n\nThe the biggest win this sprint was cutting the CI pipeline from 28 minutes to 11 minutes. The team credited the cache changes Nadia made on October 15.\n\nWe agreed to block the calender every Wednesday afternoon for focus time and to move the stand-up to 09:30.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "The the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "The"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "calender",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "calendar"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Sprint 42",
+    "28 minutes",
+    "11 minutes",
+    "Nadia",
+    "October 15",
+    "Wednesday",
+    "09:30"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "essay-2023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Remote work has had a larger affect on downtown office districts than any recession since 1990. In San Francisco, office vacancy passed thirty percent in 2024, and the city's transit agency, which depends on fares from commuters, has warned of cuts.\n\nThe usual response from city governments has been to try to lure workers back with tax breaks for employers, cheaper parking, and campaigns about the pleasures of the office, none of which addresses the simple fact that most people who can work from home have discovered that they prefer it and are not coming back on Tuesday because of a billboard.\n\nThe better response is to stop treating downtown as a place for work and start treating it as a place to live. Converting offices to apartments is expensive, but so is an empty tower.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "larger affect",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "larger effect"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "The usual response from city governments has been to try to lure workers back with tax breaks for employers, cheaper parking, and campaigns about the pleasures of the office, none of which addresses the simple fact that most people who can work from home have discovered that they prefer it and are not coming back on Tuesday because of a billboard.",
+      "category": "sentence-length",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "1990",
+    "San Francisco",
+    "thirty percent",
+    "2024"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "affect/effect as a noun (unambiguous) plus a 61-word sentence."
+  }
+}

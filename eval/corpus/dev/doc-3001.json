@@ -1,0 +1,30 @@
+{
+  "id": "doc-3001",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Runbook: primary database failover\n\nUse this procedure when the primary Postgres instance in us-east-1 is unreachable for more than two minutes and the automatic failover has not fired. The on-call engineer runs it; a second engineer confirms each step in the incident channel.\n\n## Steps\n\n- Confirm the outage from a second region with `pg_isready`, not from the bastion host, which shares a network path with the primary.\n\n- Promote the replica with the `failover` script in the ops repo. The script refuses to run if replication lag is above 30 seconds.\n\n- Update the `DATABASE_URL` secret in Kubernetes and restart the API deployment. Pods pick up the new secret within about a minute.\n\n- Post the new primary's hostname in the channel and open a ticket to rebuild the old primary as a replica.\n\nRollback is not possible once the replica is promoted. If the old primary comes back, it must be rebuilt, never reattached.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "us-east-1",
+    "pg_isready",
+    "30 seconds",
+    "DATABASE_URL",
+    "Kubernetes",
+    "Postgres"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean runbook with inline code and identifiers. Short passives (\"is promoted\") are standard in procedures."
+  }
+}

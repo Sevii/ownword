@@ -1,0 +1,49 @@
+{
+  "id": "email-2009",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Ms. Alvarez,\n\nAfter reviewing the proposal with our engineering lead we have decided to move forward with option B. In order to meet the March 15 deadline, we will need the signed agreement back by December 1.\n\nPlease note that the price of $64,000 does not include hosting, which will be billed separately at $900 per month.\n\nBest regards,\nOliver Finch",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "engineering lead we",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "engineering lead, we"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "In order to",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "To"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "option B",
+    "March 15",
+    "December 1",
+    "$64,000",
+    "does not",
+    "$900 per month"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Missing comma after a long introductory phrase; \"In order to\" is a conciseness style note."
+  }
+}

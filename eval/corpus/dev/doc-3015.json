@@ -1,0 +1,48 @@
+{
+  "id": "doc-3015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "employees",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Expenses are reimbursed within ten business days of approval. Submit receipts through Expensify by the fifth of the month following the expense; claims older than ninety days is not reimbursed without a note from your director.\n\n- Meals while traveling are capped at $75 per day, including tip.\n\n- Mileage is paid at the IRS rate in effect on the date of of travel.\n\n- Hotel bookings above $250 per night require approval before booking.\n\n- Alcohol is reimbursed only when a client is present and is listed on the receipt.\n\nQuestions go to the finance inbox, not to individual team members.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "days is not",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "days are not"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "of of",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "of"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Expensify",
+    "$75",
+    "IRS",
+    "$250",
+    "ninety days"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Subject-verb agreement (\"claims ... is\") plus a repeated word in a list item."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "doc-3020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "engineers",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "# Cache rollout: results\n\nWe enabled the Redis cache for the product catalog on March 3. Median response time dropped from 180 ms to 45 ms, and the 99th percentile dropped from 1.2 s to 300 ms. Database CPU fell by about a third during peak hours.\n\nThe affect on the search service was smaller than expected, because search does not read from the catalog table directly. A separate cache for search is planned for Q2.\n\nCache invalidation on product updates have caused two stale reads so far, both within the first hour of rollout. The fix, a short TTL on price fields, were deployed the same afternoon.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "The affect",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "The effect"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "updates have caused",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "updates has caused"
+      ]
+    },
+    {
+      "block": 3,
+      "quote": "fields, were",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "fields, was"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Redis",
+    "March 3",
+    "180 ms",
+    "45 ms",
+    "99th percentile",
+    "1.2 s",
+    "300 ms",
+    "Q2",
+    "TTL"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "affect/effect as a noun plus two subject-verb agreement errors with intervening prepositional phrases."
+  }
+}

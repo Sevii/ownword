@@ -1,0 +1,52 @@
+{
+  "id": "post-2008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "markdown": "Stayed at the Larkspur Inn for two nights last weekend. The room was clean and the staff were genuinely helpful, but the walls are thin and we could here the couple next door untill well past midnight.\n\nBreakfast was excellent though. Four stars, but bring you're own earplugs.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "here the couple",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "hear the couple"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "untill",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "until"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "you're own",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your own"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Larkspur Inn",
+    "Four stars",
+    "two nights"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Hotel review with three slips."
+  }
+}

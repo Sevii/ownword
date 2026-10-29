@@ -1,0 +1,48 @@
+{
+  "id": "post-2014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "shoutout to the guy at the hardware store on Pine who spent 20 min helping me find the right screws for my shelf and then charged me like $1.40. there are still good people out their\n\nshelf is up btw, hasnt fallen yet 🙏",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "out their",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "out there"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "hasnt",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "hasn't"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "btw",
+    "🙏",
+    "Pine",
+    "20 min",
+    "$1.40"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "The first \"there are\" is correct; \"out their\" is not."
+  }
+}

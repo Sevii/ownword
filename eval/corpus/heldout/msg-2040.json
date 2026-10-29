@@ -1,0 +1,27 @@
+{
+  "id": "msg-2040",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-GB",
+  "audience": "neighbour",
+  "markdown": "Hello Margaret, just a note to say the council has scheduled the pavement works for next Tuesday, so there may be some noise from about 8am. They've said it should be finished in a day.\n\nIf the van blocks your drive, let me know and I'll have a word with them. I've organised a space in front of ours if you need it.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "Margaret",
+    "council",
+    "pavement",
+    "8am",
+    "Tuesday",
+    "organised"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean British message; \"organised\" is correct en-GB spelling."
+  }
+}

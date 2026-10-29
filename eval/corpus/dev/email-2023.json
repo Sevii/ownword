@@ -1,0 +1,46 @@
+{
+  "id": "email-2023",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "vendor",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi Greta,\n\nWhen the samples arrived on Monday two of the six boxes was damaged on one corner. The parts inside look fine, but I want to note it in case anything turns up during testing.\n\nCould you ask the carrier to use the reinforced cartons for the next shipment? We can cover the difference in cost.\n\nThanks,\nDerek",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "on Monday two",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "on Monday, two"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "boxes was",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "boxes were"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Monday",
+    "two of the six",
+    "reinforced cartons"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

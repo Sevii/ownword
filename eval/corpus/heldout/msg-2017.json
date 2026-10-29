@@ -1,0 +1,59 @@
+{
+  "id": "msg-2017",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "happy birthday!!! 🎉 hope your having the best day. i would of called but i know ur at work till 6\n\ndinner is on me this weekend, pick anywhere u want. except that sushi place bc its still closed for renovations",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "your having",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "you're having"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "would of called",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "would have called",
+        "would've called"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "its still",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "it's still"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "🎉",
+    "ur at",
+    "u want",
+    "bc",
+    "till 6",
+    "happy birthday!!!"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Casual text with emoji; three slips."
+  }
+}

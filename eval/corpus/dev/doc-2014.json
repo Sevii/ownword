@@ -1,0 +1,51 @@
+{
+  "id": "doc-2014",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-GB",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Proposal to extend the mentoring scheme\n\nThe steering group would favour extending the mentoring scheme to all three regional offices from April 2027. The pilot in Leeds matched 42 pairs, and 38 of them completed the full six months.\n\nWe realise the London office cannot accomodate the same number of pairs in its current meeting rooms. I think the organisation should budget for two additional rooms at the Holborn site, at roughly £14,000.",
+  "expected": [
+    {
+      "block": 2,
+      "quote": "accomodate",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "accommodate"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "I think",
+      "category": "hedging",
+      "classification": "style"
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "favour",
+    "realise",
+    "organisation",
+    "April 2027",
+    "Leeds",
+    "42 pairs",
+    "38",
+    "six months",
+    "cannot",
+    "Holborn",
+    "£14,000"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: favour, realise, organisation are correct. \"its current meeting rooms\" is correct."
+  }
+}

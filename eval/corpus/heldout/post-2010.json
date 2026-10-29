@@ -1,0 +1,54 @@
+{
+  "id": "post-2010",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "community group",
+  "markdown": "Lost cat in the Elmwood area: gray tabby, white paws, answers to Biscuit. He slipped out Tuesday night and hasn't come home. He's microchipped and very freindly, so he may of followed someone inside.\n\nPlease check you're garages and sheds. Call or text 555-0142 if you see him.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "freindly",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "friendly"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "may of followed",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "may have followed",
+        "may've followed"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "you're garages",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "your garages"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Elmwood",
+    "Biscuit",
+    "555-0142",
+    "Tuesday night"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Lost-pet notice with three slips."
+  }
+}

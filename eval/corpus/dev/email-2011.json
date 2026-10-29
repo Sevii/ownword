@@ -1,0 +1,49 @@
+{
+  "id": "email-2011",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear Mrs. Patel,\n\nFurther to our conversation on Monday, I would like to confirm what occured during the outage on 3 October. We will analyse the logs in full and send a written report by 10 October.\n\nIn the meantime, their is no need to change your login details; the incident did not involve customer credentials, and we would favour waiting for the report before taking further steps.\n\nKind regards,\nSimon Achterberg",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "occured",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "occurred"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "their",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "there"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "analyse",
+    "favour",
+    "3 October",
+    "10 October",
+    "did not",
+    "no need"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB: \"analyse\" and \"favour\" are correct. \"their is\" is the error."
+  }
+}

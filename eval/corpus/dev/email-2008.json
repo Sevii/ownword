@@ -1,0 +1,47 @@
+{
+  "id": "email-2008",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hey Tom,\n\nThe clients order from last Tuesday shipped this morning with tracking number 1Z884W. I put the the packing slip in the shared drive in case they ask for it.\n\nOne thing: they asked whether we can hold the second pallet until their warehouse reopens on November 9. I said we could, but wanted to check with you first.\n\nSam",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "clients order",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "client's order"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "the the",
+      "category": "repetition",
+      "classification": "likely-error",
+      "accept": [
+        "the"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "1Z884W",
+    "Tuesday",
+    "November 9",
+    "second pallet"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Singular client referred to throughout, so the possessive is \"client's\"."
+  }
+}

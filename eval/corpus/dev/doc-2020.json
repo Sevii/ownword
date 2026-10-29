@@ -1,0 +1,50 @@
+{
+  "id": "doc-2020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "stakeholder",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Infrastructure cost review, October\n\nOne of the four database servers were running at under 12% utilization for the whole month. We propose consolidating it with db-03 in December, which should save about $2,100 per month.\n\nSome advance planning is required, since the consolidation needs a maintenance window of at least four hours. We suggest the weekend of December 12.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "servers were",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "servers was"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "advance planning",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "planning"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "four database servers",
+    "12%",
+    "db-03",
+    "December",
+    "$2,100 per month",
+    "four hours",
+    "December 12"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"One of the servers\" takes a singular verb."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "post-2020",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-US",
+  "audience": "followers",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "PSA for anyone going to the night market tomorow: bring cash. half the stalls dont take cards and the ATM by the entrance was out of money by 7 last time\n\nthe dumpling lady near the back is the move, trust me",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "tomorow",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "tomorrow"
+      ]
+    },
+    {
+      "block": 0,
+      "quote": "dont take",
+      "category": "punctuation",
+      "classification": "likely-error",
+      "accept": [
+        "don't take"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "PSA",
+    "by 7",
+    "the move",
+    "ATM"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"is the move\" is slang and must stay."
+  }
+}

@@ -304,3 +304,58 @@ describe('harper policy: reclassified and supplemented (rules-report 2026-10-29)
     expect(await spelled({ formality: 'casual' })).toEqual([]);
   });
 });
+
+describe('harper policy: second round on the enlarged corpus', async () => {
+  const { isNameLine, isCodeLike, isUnitLetter, isCaseOnlyFix } = await import('../../src/analysis/engines/harper.js');
+  const spelled = async (t, settings = {}) => {
+    const snap = snapshotFromText(t);
+    return (await harper.run(snap, settings)).findings.filter((f) => f.category === 'spelling').map((f) => snap.blocks[0].text.slice(f.from, f.to));
+  };
+  it('recognizes sign-off lines, code-like tokens, and unit letters', () => {
+    expect(isNameLine('Jen')).toBe(true);
+    expect(isNameLine('Priya Nair,')).toBe(true);
+    expect(isNameLine('Thanks again')).toBe(false);
+    expect(isNameLine('See you Thursday at the office')).toBe(false);
+    const t = 'run kubectl in secret/helpdesk/zendesk for v2.1 after 1.2 s';
+    const raw = (word) => ({ category: 'spelling', from: t.indexOf(word), to: t.indexOf(word) + word.length });
+    expect(isCodeLike(raw('helpdesk'), t)).toBe(true);
+    expect(isCodeLike(raw('v2'), t)).toBe(true);
+    expect(isCodeLike(raw('kubectl'), t)).toBe(false);
+    expect(isUnitLetter({ category: 'spelling', from: t.lastIndexOf('s'), to: t.lastIndexOf('s') + 1 }, t)).toBe(true);
+    expect(isUnitLetter({ category: 'spelling', from: 0, to: 3 }, t)).toBe(false);
+    expect(isCaseOnlyFix({ category: 'spelling', from: 0, to: 6, replacements: ['Sunday'] }, 'sunday plans')).toBe(true);
+  });
+  it('keeps a name at a sentence start when it appears mid-sentence elsewhere, and names on their own line', async () => {
+    const snap = snapshotFromText('Attendees: Dana, Priyanka, Owen.\n\nPriyanka is blocked on the review.\n\nThanks,\n\nPriyanka');
+    const found = (await harper.run(snap, {})).findings.filter((f) => f.category === 'spelling');
+    expect(found).toEqual([]);
+    expect(await spelled('Tomorow we meet.')).toEqual(['Tomorow']);
+  });
+  it('skips paths, identifiers, and units but not ordinary misspellings', async () => {
+    expect(await spelled('Store it in secret/helpdesk/zendesk, then run kubectl; p99 fell to 1.2 s.')).toEqual([]);
+    expect(await spelled('We recieved the parcell.')).toEqual(expect.arrayContaining(['recieved', 'parcell']));
+  });
+  it('in casual writing, leaves lowercase i, day names, thru, and tho alone', async () => {
+    const snap = snapshotFromText('i think thurs works, tho friday is fine thru noon. honestly i am easy.');
+    const casual = (await harper.run(snap, { goals: { formality: 'casual' } })).findings.map((f) => f.ruleId);
+    expect(casual).toEqual([]);
+    const neutral = (await harper.run(snap, {})).findings.map((f) => f.ruleId);
+    expect(neutral).toEqual(expect.arrayContaining(['harper.CapitalizePersonalPronouns']));
+  });
+  it('replaces suggestions the corpus showed to be wrong', async () => {
+    const snap = snapshotFromText('Wait untill Friday.. Then go.');
+    const by = Object.fromEntries((await harper.run(snap, {})).findings.map((f) => [f.ruleId, f.replacements]));
+    expect(by['harper.WrongNegative']).toEqual(['until']);
+    expect(by['harper.EllipsisLength']).toEqual(['.', '...']);
+  });
+  it('merges overlapping findings that make the same edit', async () => {
+    const { mergeIssues } = await import('../../src/analysis/issues/merge.js');
+    const snap = snapshotFromText('Its the best.');
+    const base = { contractVersion: 1, documentId: 'd', sourceRevision: 0, settingsRevision: 0, category: 'grammar', classification: 'likely-error', severity: 'minor', message: '', state: 'current' };
+    const a = { ...base, id: 'a', origin: { kind: 'local', engine: 'rules', engineVersion: '2', ruleId: 'x' }, anchor: { blockId: 'b1', from: 0, to: 3, expectedText: 'Its' }, replacements: [{ text: "It's" }] };
+    const b = { ...base, id: 'b', origin: { kind: 'local', engine: 'harper', engineVersion: '2', ruleId: 'y' }, anchor: { blockId: 'b1', from: 0, to: 7, expectedText: 'Its the' }, replacements: [{ text: "It's the" }] };
+    const c = { ...b, id: 'c', replacements: [{ text: 'Its' }] };
+    expect(mergeIssues(snap, [a, b]).findings.map((f) => f.id)).toEqual(['a']);
+    expect(mergeIssues(snap, [a, c]).findings.map((f) => f.id)).toEqual(['a', 'c']);
+  });
+});

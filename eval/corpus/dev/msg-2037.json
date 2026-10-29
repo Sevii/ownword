@@ -1,0 +1,32 @@
+{
+  "id": "msg-2037",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "friend",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "just got out of the dentist, no cavities 🦷 small win. gonna grab a coffee at Blue Door if you wanna join, i'm there till like 3\n\nif not no stress, see u at Kelly's on sat",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "🦷",
+    "gonna",
+    "Blue Door",
+    "wanna",
+    "till like 3",
+    "see u",
+    "Kelly's",
+    "sat"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual text; \"till\" is fine."
+  }
+}

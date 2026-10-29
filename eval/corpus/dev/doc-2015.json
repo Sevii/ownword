@@ -1,0 +1,55 @@
+{
+  "id": "doc-2015",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "client",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Review process for the annual report\n\nEach of the three drafts were sent to the client on October 22. The first draft will be reviewed by the communications director before the marketing team sees it.\n\nWith regard to the photography, the client has asked us to use only images from the 2026 shoot. Please do not reuse anything from last year's library.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "drafts were",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "drafts was"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "will be reviewed",
+      "category": "passive-voice",
+      "classification": "style"
+    },
+    {
+      "block": 2,
+      "quote": "With regard to",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "Regarding",
+        "About"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "three drafts",
+    "October 22",
+    "2026",
+    "do not",
+    "last year's"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"Each of the drafts\" takes a singular verb."
+  }
+}

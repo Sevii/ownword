@@ -1,0 +1,31 @@
+{
+  "id": "doc-2034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "document",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Holiday schedule for 2027\n\nNext year the office observes New Year's Day on January 1, Labor Day on September 6, Thanksgiving on November 25 and 26, and Christmas Eve on December 24.\n\nIn addition, everyone receives two floating days to use at any point in the year. Enter them in Workday at least a week ahead, and check with your manager if more than two people on your team want the same day.\n\nThe full calendar is on the intranet under People and Culture.",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "New Year's Day",
+    "January 1",
+    "September 6",
+    "November 25 and 26",
+    "December 24",
+    "two floating days",
+    "Workday"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic clean case."
+  }
+}

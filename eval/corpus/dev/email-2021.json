@@ -1,0 +1,49 @@
+{
+  "id": "email-2021",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "team",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi folks,\n\nEach and every retryable error from the payment gateway now gets logged with a request ID, so we can trace them in Datadog. The gateway team said they're SLA for retries is 30 seconds, which lines up with what we see.\n\nI'll add a section to the runbook on how to search by request ID.\n\nMo",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Each and every",
+      "category": "conciseness",
+      "classification": "style",
+      "accept": [
+        "Each",
+        "Every"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "they're",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Datadog",
+    "30 seconds",
+    "retryable",
+    "runbook",
+    "request ID"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Synthetic error case."
+  }
+}

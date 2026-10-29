@@ -1,0 +1,48 @@
+{
+  "id": "email-2025",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-GB",
+  "audience": "all staff",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "Dear colleagues,\n\nThe wellbeing programme for 2027 was approved by the executive board last week, and the new centre on the ground floor will open on 11 January. Your welcome to book an introductory session from 4 January through the staff portal.\n\nThe organisation will cover the cost of the first six sessions for every employee.\n\nWith thanks,\nAnnabel Fortescue",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "Your",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "You're"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "block": 1,
+      "quote": "was approved by",
+      "category": "passive-voice",
+      "classification": "style"
+    }
+  ],
+  "forbiddenChanges": [
+    "programme",
+    "centre",
+    "organisation",
+    "2027",
+    "11 January",
+    "4 January",
+    "six sessions"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "en-GB spellings must stay. \"Your welcome\" is the error."
+  }
+}

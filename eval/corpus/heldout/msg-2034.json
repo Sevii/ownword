@@ -1,0 +1,30 @@
+{
+  "id": "msg-2034",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "message",
+  "dialect": "en-US",
+  "audience": "coworker",
+  "goals": {
+    "formality": "casual"
+  },
+  "markdown": "hey quick one, did you get the deck from Sam yet? i wanna look it over before the 2pm standup and i can't find it in the shared folder\n\nno worries if not, i'll just ping him",
+  "expected": [],
+  "optional": [],
+  "forbiddenChanges": [
+    "hey quick one",
+    "Sam",
+    "wanna",
+    "2pm",
+    "ping him",
+    "no worries"
+  ],
+  "clean": true,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Clean casual work chat."
+  }
+}

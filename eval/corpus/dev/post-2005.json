@@ -1,0 +1,36 @@
+{
+  "id": "post-2005",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "post",
+  "dialect": "en-GB",
+  "audience": "followers",
+  "markdown": "We've been organising the village fete for twelve years now, and this year's was the busiest yet. Over 400 people came through the gate, and the cake stall sold out by two o'clock.\n\nHuge thanks to everyone who volunteered. We honestly could of used twice as many hands, so if you fancy helping next year, get in touch.",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "could of used",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "could have used",
+        "could've used"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "organising",
+    "fete",
+    "400",
+    "two o'clock"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "British spelling (organising) is correct."
+  }
+}

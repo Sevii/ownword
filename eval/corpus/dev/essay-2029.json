@@ -1,0 +1,51 @@
+{
+  "id": "essay-2029",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "essay",
+  "dialect": "en-US",
+  "audience": "general reader",
+  "goals": {
+    "formality": "formal"
+  },
+  "markdown": "By the time Apollo 11 had went to the Moon in July 1969, public support for the program had already begun to fade. Polls from the mid-1960s show that a majority of Americans thought the money would be better spent elsewhere, and the 1968 budget was the first to cut NASA's funding.\n\nThe landing is remembered as a moment of unity, and for one evening it was. But the astronauts returned to a country that had largely made up its mind, and the last three planned missions were cancelled within two years. Engineers who had spent a decade on the Saturn V found there jobs gone by 1973.\n\nThe program did not end because it failed. It ended because it succeeded and nobody had decided what success was for.",
+  "expected": [
+    {
+      "block": 0,
+      "quote": "had went",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "had gone",
+        "went"
+      ]
+    },
+    {
+      "block": 1,
+      "quote": "there jobs",
+      "category": "grammar",
+      "classification": "likely-error",
+      "accept": [
+        "their jobs"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "Apollo 11",
+    "July 1969",
+    "mid-1960s",
+    "1968",
+    "NASA",
+    "Saturn V",
+    "1973"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "Wrong past participle (\"had went\") plus there/their."
+  }
+}

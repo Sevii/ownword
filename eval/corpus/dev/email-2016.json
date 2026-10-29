@@ -1,0 +1,49 @@
+{
+  "id": "email-2016",
+  "source": {
+    "kind": "synthetic",
+    "author": "claude-fable-5-1",
+    "license": "project"
+  },
+  "genre": "email",
+  "dialect": "en-US",
+  "audience": "all staff",
+  "goals": {
+    "formality": "neutral"
+  },
+  "markdown": "Hi all,\n\nStarting December 1, payroll will run on the 15th and the last business day of each month instead of every other Friday. The change will not effect your total pay; it only changes the timing.\n\nIf the new schedule creates a hardship, HR can accomodate a one-time advance in December. Email Priya Venkataraman by November 15 to request one.\n\nThanks,\nThe People Team",
+  "expected": [
+    {
+      "block": 1,
+      "quote": "effect",
+      "category": "word-choice",
+      "classification": "likely-error",
+      "accept": [
+        "affect"
+      ]
+    },
+    {
+      "block": 2,
+      "quote": "accomodate",
+      "category": "spelling",
+      "classification": "likely-error",
+      "accept": [
+        "accommodate"
+      ]
+    }
+  ],
+  "optional": [],
+  "forbiddenChanges": [
+    "December 1",
+    "15th",
+    "will not",
+    "every other Friday",
+    "November 15",
+    "Priya Venkataraman"
+  ],
+  "clean": false,
+  "labels": {
+    "reviewers": 0,
+    "notes": "\"will not effect your pay\" needs the verb \"affect\"; unambiguous because a verb is required after \"will not\"."
+  }
+}
