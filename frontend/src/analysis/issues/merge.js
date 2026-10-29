@@ -6,8 +6,10 @@
 const CLASS_ORDER = { 'likely-error': 0, style: 1, 'review-question': 2 };
 
 /**
- * Merge findings from several sources. Identical range + replacement findings
- * collapse into one (the first source wins; others are listed in provenance).
+ * Merge findings from several sources. Findings on the same range collapse
+ * into one when they offer a common replacement, or when neither offers any
+ * and they agree on the category (the first source wins; others are listed
+ * in provenance).
  * @param {Snapshot} snapshot
  * @param {Issue[]} issues
  * @returns {{ findings: Issue[], provenance: Map<string, string[]> }}
@@ -18,9 +20,11 @@ export function mergeIssues(snapshot, issues) {
   const byKey = new Map();
   /** @type {Map<string, string[]>} */
   const provenance = new Map();
+  /** @type {Map<string, Issue[]>} same range -> merged findings there */
+  const byRange = new Map();
   for (const issue of issues) {
-    const key = dedupeKey(issue);
-    const existing = byKey.get(key);
+    const range = rangeKey(issue);
+    const existing = range && byRange.get(range)?.find((e) => sameSuggestion(e, issue));
     if (existing) {
       provenance.get(existing.id)?.push(issue.id);
       // Prefer the stronger classification when sources disagree.
@@ -30,7 +34,8 @@ export function mergeIssues(snapshot, issues) {
       continue;
     }
     const copy = { ...issue };
-    byKey.set(key, copy);
+    byKey.set(copy.id, copy);
+    if (range) byRange.set(range, [...(byRange.get(range) ?? []), copy]);
     provenance.set(copy.id, [copy.id]);
   }
   const findings = [...byKey.values()].sort((a, b) => compare(a, b, order));
@@ -38,11 +43,17 @@ export function mergeIssues(snapshot, issues) {
 }
 
 /** @param {Issue} issue */
-function dedupeKey(issue) {
+function rangeKey(issue) {
   const a = issue.anchor;
-  if (!a) return `evidence:${issue.id}`;
-  const repl = issue.replacements.map((r) => r.text).sort().join('\u0000');
-  return `${a.blockId}:${a.from}:${a.to}:${repl || issue.category}`;
+  return a ? `${a.blockId}:${a.from}:${a.to}` : null;
+}
+
+/** Two findings on one range say the same thing when a replacement is shared. */
+function sameSuggestion(a, b) {
+  const ra = new Set(a.replacements.map((r) => r.text.trim()));
+  const rb = b.replacements.map((r) => r.text.trim());
+  if (!ra.size && !rb.length) return a.category === b.category;
+  return rb.some((t) => ra.has(t));
 }
 
 /** @param {Issue} a @param {Issue} b @param {Map<string, number>} order */

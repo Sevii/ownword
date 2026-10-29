@@ -6,11 +6,12 @@ import repetition from './repetition.js';
 import longSentence from './long-sentence.js';
 import passiveVoice from './passive-voice.js';
 import hedging from './hedging.js';
+import confusables from './confusables.js';
 import { nonProseSpans, overlapsAny } from '../text/segment.js';
 
-export const RULES_VERSION = '1';
+export const RULES_VERSION = '2';
 
-export const ALL_RULES = [redundantPhrase, repetition, longSentence, passiveVoice, hedging];
+export const ALL_RULES = [confusables, redundantPhrase, repetition, longSentence, passiveVoice, hedging];
 
 /**
  * Run rules over a snapshot as an engine, matching the Harper engine's shape.

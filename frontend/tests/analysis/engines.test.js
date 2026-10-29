@@ -98,6 +98,32 @@ describe('rules', () => {
   });
 });
 
+describe('confusables rule (plan §1.1)', () => {
+  const found = async (t) => {
+    const snap = snapshotFromText(t);
+    return (await rules.run(snap, {})).findings.filter((f) => f.ruleId === 'grammar.confusables').map((f) => [snap.blocks[0].text.slice(f.from, f.to), f.replacements[0]]);
+  };
+  it('fixes your/you’re, its/it’s, there/their/they’re, to/too, and Lets with strong context', async () => {
+    expect(await found('Your going to love it. Its a good day. Their is a problem. There going to review there report.')).toEqual([
+      ['Your', "You're"], ['Its', "It's"], ['Their', 'There'], ['There', "They're"], ['there', 'their'],
+    ]);
+    expect(await found("You're report is late, and it's own value is to high. Lets go.")).toEqual([["You're", 'Your'], ["it's", 'its'], ['to', 'too'], ['Lets', "Let's"]]);
+  });
+  it('collapses into one finding when Harper reports the same range with a shared replacement', async () => {
+    const snap = snapshotFromText('Their are two spots left, and its been a long day.');
+    const { envelope } = await analyze(snap, {}, { engines: [harper, rules], requestId: 'dup' });
+    const texts = envelope.findings.map((f) => snap.blocks[0].text.slice(f.anchor.from, f.anchor.to));
+    expect(texts.filter((t) => t === 'Their')).toHaveLength(1);
+    expect(texts.filter((t) => t === 'its')).toHaveLength(1);
+    expect(envelope.findings.every((f) => f.classification === 'likely-error')).toBe(true);
+  });
+
+  it('leaves correct uses alone', async () => {
+    expect(await found("Your report is late. It's a good day; its value rose. Their report is there. They're going. I went to many places. It lets you go. Let's go.")).toEqual([]);
+    expect(await found('Send it to Sam. She is close to many of them. The lets in tennis.')).toEqual([]);
+  });
+});
+
 describe('pipeline', () => {
   const settings = {};
 
