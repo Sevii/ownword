@@ -1,7 +1,7 @@
 // First-run document: explains the editor and contains deliberate mistakes
 // to try. Plain HTML parsed by the editor schema.
 
-export const WELCOME_TITLE = 'Welcome to Open Writer';
+export const WELCOME_TITLE = 'Welcome to ownword';
 
 export const WELCOME_HTML = `
 <h1>Welcome</h1>

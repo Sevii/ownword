@@ -123,7 +123,7 @@ test('narrow screens keep the draft visible and open suggestions on demand', asy
 
 test('first visit opens a welcome document with mistakes to try', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('.doc-title')).toHaveValue('Welcome to Open Writer');
+  await expect(page.locator('.doc-title')).toHaveValue('Welcome to ownword');
   await expect(cards(page).filter({ hasText: 'Teh' }).first()).toBeVisible();
 });
 
@@ -244,7 +244,7 @@ test('deleting a document right after typing in it does not bring it back', asyn
   // Delete before the save debounce fires.
   await page.getByRole('button', { name: 'Delete Untitled' }).click();
   await page.locator('.doclist__confirm').getByRole('button', { name: 'Delete' }).click();
-  await expect(page.locator('.doc-title')).toHaveValue('Welcome to Open Writer');
+  await expect(page.locator('.doc-title')).toHaveValue('Welcome to ownword');
   await page.waitForTimeout(1500);
   await page.reload();
   await expect(page.locator('.status__check')).toHaveText('Checked');
@@ -417,7 +417,7 @@ test('export the whole library as a zip and import it back without duplicates', 
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Export all documents (.zip)' }).click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toMatch(/^open-writer-library-\d{4}-\d{2}-\d{2}\.zip$/u);
+  expect(download.suggestedFilename()).toMatch(/^ownword-library-\d{4}-\d{2}-\d{2}\.zip$/u);
   const path = await download.path();
   await expect(page.getByRole('status').filter({ hasText: 'Exported 1 document.' })).toBeVisible();
 
@@ -465,18 +465,18 @@ test('a chosen folder gets a Markdown file per document and picks up outside edi
   await expect(page.locator('.folder__status')).toContainText('1 written');
   await page.getByRole('button', { name: 'Done' }).click();
   const names = await page.evaluate(() => [...window.__folder.files.keys()]);
-  expect(names).toEqual(['Welcome to Open Writer.md']);
+  expect(names).toEqual(['Welcome to ownword.md']);
 
   // Typing updates the file.
   await page.locator('.prose').click();
   await page.keyboard.press('End');
   await page.keyboard.type(' Folder test.');
-  await expect.poll(() => page.evaluate(() => window.__folder.files.get('Welcome to Open Writer.md').text)).toContain('Folder test.');
+  await expect.poll(() => page.evaluate(() => window.__folder.files.get('Welcome to ownword.md').text)).toContain('Folder test.');
 
   // An outside edit is loaded on the next check.
   await page.evaluate(() => {
-    const text = window.__folder.files.get('Welcome to Open Writer.md').text;
-    window.__folder.touch('Welcome to Open Writer.md', text.replace('# Welcome', '# Welcome back'));
+    const text = window.__folder.files.get('Welcome to ownword.md').text;
+    window.__folder.touch('Welcome to ownword.md', text.replace('# Welcome', '# Welcome back'));
   });
   await page.getByRole('button', { name: 'Settings' }).click();
   await page.getByRole('button', { name: 'Check now' }).click();
@@ -540,10 +540,10 @@ test('pin, search, and tag documents in the sidebar', async ({ page }) => {
   await expect(page.locator('.doclist__item')).toHaveCount(2);
 
   // Pin the other document: it moves to the top and stays there after a reload.
-  await page.getByRole('button', { name: 'Pin Welcome to Open Writer' }).click();
-  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to Open Writer/u);
+  await page.getByRole('button', { name: 'Pin Welcome to ownword' }).click();
+  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to ownword/u);
   await page.reload();
-  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to Open Writer/u);
+  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to ownword/u);
   await expect(page.locator('.doclist__date').nth(1)).toContainText('#travel-plans');
 
   // Search matches the first words of a document, not only its title.

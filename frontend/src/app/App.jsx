@@ -256,13 +256,13 @@ export function App() {
         )}
         {installer.updateReady && (
           <div className="banner banner--info" role="status">
-            Open Writer was updated. Reload to use the new version.
+            ownword was updated. Reload to use the new version.
             <button type="button" className="btn btn--sm" onClick={installer.reload}>Reload</button>
           </div>
         )}
         {installer.canInstall && (
           <div className="banner banner--info" role="region" aria-label="Install">
-            Install Open Writer as an app: it opens in its own window and works offline.
+            Install ownword as an app: it opens in its own window and works offline.
             <button type="button" className="btn btn--sm" onClick={installer.install}>Install</button>
             <button type="button" className="btn btn--sm btn--ghost banner__close" onClick={installer.dismiss}>Not now</button>
           </div>

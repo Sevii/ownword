@@ -1,4 +1,4 @@
-# Open Writer
+# ownword
 
 An open-source writing editor that runs in your browser. Adapted from `abstract-writer/online-writer`, retaining its React/Tiptap editor, local proofreading engine, document storage, import/export, and review-before-apply AI workflow.
 
@@ -39,12 +39,12 @@ No API keys or extra repository secrets are needed. Visitors enter their own key
 To reproduce a repository-site build locally:
 
 ```sh
-OW_BASE_PATH=/open-online-writer/ npm run build
-OW_BASE_PATH=/open-online-writer/ npm run test:pages
-OW_BASE_PATH=/open-online-writer/ npm run preview
+OW_BASE_PATH=/ownword/ npm run build
+OW_BASE_PATH=/ownword/ npm run test:pages
+OW_BASE_PATH=/ownword/ npm run preview
 ```
 
-Open the preview URL with `/open-online-writer/` appended. To return to a root-hosted build, run `npm run build` without `OW_BASE_PATH`. Set the custom domain in GitHub's Pages settings before deploying to it, then rerun the workflow. Changing the hosting origin changes the browser storage location; export drafts before moving between domains.
+Open the preview URL with `/ownword/` appended. To return to a root-hosted build, run `npm run build` without `OW_BASE_PATH`. Set the custom domain in GitHub's Pages settings before deploying to it, then rerun the workflow. Changing the hosting origin changes the browser storage location; export drafts before moving between domains.
 
 See [GitHub's custom-workflow instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Vite's GitHub Pages deployment guide](https://vite.dev/guide/static-deploy#github-pages).
 

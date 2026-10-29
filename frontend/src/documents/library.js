@@ -31,7 +31,7 @@ export function buildLibrary({ documents, prefs = {}, dismissals = [] }) {
   const { dialect, dictionary, disabledRules, longSentenceWords } = prefs;
   const manifest = {
     version: LIBRARY_VERSION,
-    app: 'open-writer',
+    app: 'ownword',
     exportedAt: new Date().toISOString(),
     prefs: { dialect, dictionary, disabledRules, longSentenceWords },
     dismissals,
@@ -39,7 +39,7 @@ export function buildLibrary({ documents, prefs = {}, dismissals = [] }) {
   };
   files['library.json'] = strToU8(JSON.stringify(manifest, null, 2));
   files['README.txt'] = strToU8(
-    'Exported from Open Writer.\n\nEach file in documents/ is one document as Markdown with its identity in the front matter. library.json holds the exact editor content, your preferences, and dismissed suggestions, and is what Open Writer imports. API keys are never exported.\n',
+    'Exported from ownword.\n\nEach file in documents/ is one document as Markdown with its identity in the front matter. library.json holds the exact editor content, your preferences, and dismissed suggestions, and is what ownword imports. API keys are never exported.\n',
   );
   return zipSync(files, { level: 6 });
 }
@@ -56,7 +56,7 @@ export function readLibrary(bytes, filename = '') {
   const manifestEntry = Object.keys(entries).find((n) => n === 'library.json' || n.endsWith('/library.json'));
   if (manifestEntry) {
     const manifest = JSON.parse(strFromU8(entries[manifestEntry]));
-    if (manifest?.app !== 'open-writer' || !Array.isArray(manifest.documents)) throw new Error('library.json is not from Open Writer.');
+    if (!['ownword', 'open-writer'].includes(manifest?.app) || !Array.isArray(manifest.documents)) throw new Error('library.json is not from ownword.');
     const documents = manifest.documents
       .filter((d) => d && typeof d.id === 'string' && d.content && typeof d.content === 'object')
       .map((d) => ({
@@ -136,5 +136,5 @@ export function mergePrefs(current, imported) {
 }
 
 export function libraryFilename(now = new Date()) {
-  return `open-writer-library-${now.toISOString().slice(0, 10)}.zip`;
+  return `ownword-library-${now.toISOString().slice(0, 10)}.zip`;
 }

@@ -1,4 +1,4 @@
-Open Writer derives its editor, analysis engine, document handling, UI,
+ownword derives its editor, analysis engine, document handling, UI,
 contracts, evaluation corpus, and tests from Abstract Writer's online-writer
 project, copied at the project owner's direction on 2026-10-26.
 The browser writing prompts are adapted from its Rust provider prompts.

@@ -22,7 +22,7 @@ for (const [path, heading, button] of LANDINGS) {
     const errors = watchErrors(page);
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
-    await expect(page).toHaveTitle(/Open Writer/u);
+    await expect(page).toHaveTitle(/ownword/u);
     expect(await page.locator('meta[name="description"]').getAttribute('content')).toBeTruthy();
     const go = page.getByRole('button', { name: button });
     await expect(go).toBeDisabled();

@@ -15,7 +15,7 @@ function serviceWorker() {
     configResolved(config) {
       base = config.base;
       if (!base.startsWith('/') || base.startsWith('//') || !base.endsWith('/')) {
-        throw new Error('Use an absolute pathname for base, such as / or /open-online-writer/.');
+        throw new Error('Use an absolute pathname for base, such as / or /ownword/.');
       }
     },
     name: 'online-writer-sw',

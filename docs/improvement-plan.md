@@ -1,7 +1,7 @@
-# Open Writer improvement plan
+# ownword improvement plan
 
-Status: 2026-10-29. Implemented on master: every item except 0.3
-(naming, a maintainer decision). The corpus is at 299 dev and 99 held-out
+Status: 2026-10-29. Every item is implemented on master, including the
+rename to ownword (0.3). The corpus is at 299 dev and 99 held-out
 cases (1.3); a confusables rule covers the mix-ups Harper missed. Latest
 results: dev precision 93.0% and lenient recall 76.4%; held-out precision
 83.8% and lenient recall 74.1% (eval/reports/final-heldout.md). Phases are ordered by dependency and by how much
@@ -63,12 +63,14 @@ Done when: `App.jsx` is under 300 lines and no test changed except additions.
 
 ### 0.3 Pick one name
 
-The repository is `ownword`, the app is Open Writer, the manifest short name
-is Writer. Decide before the site is indexed. Then update `README.md`,
-`manifest.webmanifest`, landing page titles, and `welcome.js` in one commit.
-The site is hosted at https://sevii.github.io/ownword/
-Lets use the ownword term 
-
+Done. The name is `ownword` everywhere a person sees it: `README.md`,
+`manifest.webmanifest` (name and short name), the topbar, landing page
+titles, `welcome.js`, the AI system prompt, and library exports. The site
+is hosted at https://sevii.github.io/ownword/ and the CI project-site build
+uses that base path. Storage identifiers (the IndexedDB name, the service
+worker cache prefix, and the folder picker id) keep their old values so
+existing drafts and caches survive the rename, and library import accepts
+zips written under either app id.
 
 ## Phase 1: Proofreading quality
 

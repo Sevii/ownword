@@ -22,8 +22,8 @@ jobs:
       - name: Build a GitHub Pages project site
         run: npm run build
         env:
-          OW_BASE_PATH: /open-online-writer/
+          OW_BASE_PATH: /ownword/
       - name: Check project-site navigation and offline editing
         run: npm run test:pages
         env:
-          OW_BASE_PATH: /open-online-writer/
+          OW_BASE_PATH: /ownword/

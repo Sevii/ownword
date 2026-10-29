@@ -54,7 +54,7 @@ export function Topbar(props) {
       </button>
       <span className="brand">
         <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" />
-        <span className="brand__name">Open Writer</span>
+        <span className="brand__name">ownword</span>
       </span>
       <span className="topbar__sep" />
       <input className="doc-title" aria-label="Document title" value={props.title} placeholder="Untitled" onChange={(e) => props.onTitle(e.target.value)} />
