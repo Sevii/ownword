@@ -83,6 +83,8 @@ cd ..
 npm run eval:smoke
 ```
 
+`npm run eval:full` scores the proofreader on the dev corpus and `npm run eval:gate` fails when it drops below `eval/harness/thresholds.json`; CI runs both. From `frontend/`, `npm run eval:rules` prints, per rule, how often it lands on an annotated error versus clean text. The held-out split needs `HELDOUT=1` and every run is logged.
+
 Browser tests start their own static preview on port 5004 and require a completed build. AI tests mock provider responses and spend no credits. Real-key browser compatibility and generation must be checked separately before release. Other configured browser projects require the corresponding Playwright browser installs.
 
 | Directory | Contents |

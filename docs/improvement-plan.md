@@ -1,10 +1,10 @@
 # Open Writer improvement plan
 
-Status: 2026-10-29. Implemented on master: 0.1, 0.2, 1.1, 1.2, 1.4, 2.1,
-2.2, 2.3, 3.1, 3.2, 4.1 to 4.6, 5.1 to 5.3, plus a confusables rule for
-the mix-ups Harper missed. Open: 0.3 (naming, a maintainer decision) and
-the rest of 1.3 (the corpus keeps growing; thresholds are re-based after
-each batch). Phases are ordered by dependency and by how much
+Status: 2026-10-29. Implemented on master: every item except 0.3
+(naming, a maintainer decision). The corpus is at 299 dev and 99 held-out
+cases (1.3); a confusables rule covers the mix-ups Harper missed. Latest
+results: dev precision 93.0% and lenient recall 76.4%; held-out precision
+83.8% and lenient recall 74.1% (eval/reports/final-heldout.md). Phases are ordered by dependency and by how much
 each one changes what a daily writer experiences. Every phase ends with
 `npm test`, `npm run build`, and the relevant Playwright project passing, as
 CONTRIBUTING.md requires.
