@@ -99,6 +99,7 @@ export function Topbar(props) {
             <button type="button" className="menu__item" onClick={() => exportAs('docx')}>Word document <small>.docx</small></button>
             <button type="button" className="menu__item" onClick={() => exportAs('md')}>Markdown <small>.md</small></button>
             <button type="button" className="menu__item" onClick={() => exportAs('txt')}>Plain text <small>.txt</small></button>
+            <button type="button" className="menu__item" onClick={() => exportAs('print')}>Print or save as PDF</button>
           </div>
         </details>
         <button type="button" className="icon-btn topbar__focus" aria-label="Focus mode" aria-pressed={props.focusMode} onClick={props.onToggleFocus}>

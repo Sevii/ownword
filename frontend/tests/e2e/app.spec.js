@@ -513,3 +513,56 @@ test('find and replace: count, replace all, and undo', async ({ page }) => {
   await expect(page.locator('.prose')).not.toContainText('ZZZ');
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('pin, search, and tag documents in the sidebar', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  // A second document, so the list has something to sort and search.
+  await page.getByRole('button', { name: 'New' }).click();
+  await page.getByLabel('Document title').fill('Lisbon trip');
+  await page.locator('.prose').click();
+  await page.keyboard.type('Pack sandals and a hat.');
+  await expect(page.locator('.status__save')).toHaveText('Saved on this device');
+  await expect(page.locator('.doclist__title').first()).toHaveText('Lisbon trip');
+
+  // Tag the open document; the tag shows in the list and filters it.
+  await page.getByLabel('Add a tag').fill('Travel Plans');
+  await page.getByLabel('Add a tag').press('Enter');
+  await expect(page.locator('.tags .tag--on')).toHaveText(/#travel-plans/u);
+  await expect(page.locator('.status__save')).toHaveText('Saved on this device');
+  const chip = page.locator('[aria-label="Filter by tag"] .tag', { hasText: '#travel-plans' });
+  await chip.click();
+  await expect(page.locator('.doclist__item')).toHaveCount(1);
+  await chip.click();
+  await expect(page.locator('.doclist__item')).toHaveCount(2);
+
+  // Pin the other document: it moves to the top and stays there after a reload.
+  await page.getByRole('button', { name: 'Pin Welcome to Open Writer' }).click();
+  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to Open Writer/u);
+  await page.reload();
+  await expect(page.locator('.doclist__title').first()).toHaveText(/Welcome to Open Writer/u);
+  await expect(page.locator('.doclist__date').nth(1)).toContainText('#travel-plans');
+
+  // Search matches the first words of a document, not only its title.
+  await page.getByLabel('Search documents').fill('sandals');
+  await expect(page.locator('.doclist__item')).toHaveCount(1);
+  await expect(page.locator('.doclist__title')).toHaveText('Lisbon trip');
+  await page.getByLabel('Search documents').fill('zzzz');
+  await expect(page.locator('.doclist__empty')).toBeVisible();
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});
+
+test('printing shows the document alone', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await page.locator('summary[aria-label="Export"]').click();
+  await expect(page.getByRole('button', { name: 'Print or save as PDF' })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.locator('.topbar')).toBeHidden();
+  await expect(page.locator('.statusbar')).toBeHidden();
+  await expect(page.locator('.prose')).toBeVisible();
+  await page.emulateMedia({ media: 'screen' });
+  await expect(page.locator('.topbar')).toBeVisible();
+});

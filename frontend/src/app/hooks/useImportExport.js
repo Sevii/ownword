@@ -12,6 +12,12 @@ export function useImportExport({ currentRequest, docRef, announce }) {
     const req = currentRequest();
     if (!req) return;
     const name = safeFilename(docRef.current.title);
+    if (kind === 'print') {
+      // The print stylesheet shows the document alone; the browser's dialog saves a PDF.
+      window.print();
+      count('export.print');
+      return;
+    }
     if (kind === 'copy') {
       await navigator.clipboard.writeText(toPlainText(req.snapshot));
       announce('Copied to the clipboard.');
