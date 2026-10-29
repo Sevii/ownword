@@ -233,3 +233,48 @@ describe('writing goals', () => {
     expect(await rules({ formality: 'casual' })).not.toContain('harper.SentenceCapitalization');
   });
 });
+
+describe('harper policy: reclassified and supplemented (rules-report 2026-10-29)', () => {
+  const run = async (t, settings = {}) => {
+    const snap = snapshotFromText(t);
+    const { findings } = await harper.run(snap, settings);
+    return findings.map((f) => ({ rule: f.ruleId, cls: f.classification, cat: f.category, text: snap.blocks[0].text.slice(f.from, f.to) }));
+  };
+
+  it('reports definite mistakes under style-like kinds as likely errors', async () => {
+    const all = await run('Better then nothing. I could of waited untill Friday, but I cant. Lets go..');
+    const errors = all.filter((f) => f.cls === 'likely-error');
+    expect(errors.map((f) => f.rule)).toEqual(
+      expect.arrayContaining(['harper.ThenThan', 'harper.ModalOf', 'harper.WrongNegative', 'harper.Cant', 'harper.EllipsisLength']),
+    );
+    expect(errors.find((f) => f.rule === 'harper.WrongNegative')).toMatchObject({ cat: 'spelling', text: 'untill' });
+    expect(errors.find((f) => f.rule === 'harper.ModalOf')).toMatchObject({ cat: 'word-choice', text: 'could of' });
+  });
+
+  it('keeps the raw engine unchanged for baselines', async () => {
+    const raw = createNodeHarperEngine({ policy: false });
+    await raw.setup();
+    const snap = snapshotFromText('Better then nothing.');
+    const f = (await raw.run(snap, {})).findings.find((x) => x.ruleId === 'harper.ThenThan');
+    expect(f.classification).toBe('style');
+  });
+
+  it('turns off preference and expansion rules by default', async () => {
+    const rules = (await run('We bought apples, pears and plums in 5 min, FYI.')).map((f) => f.rule);
+    expect(rules).not.toContain('harper.OxfordComma');
+    expect(rules).not.toContain('harper.ExpandMinimum');
+    expect(rules).not.toContain('harper.ForYourInformation');
+  });
+
+  it('knows everyday technical words without a personal dictionary', async () => {
+    const spelled = (await run('The wifi and bluetooth runbooks cover the retryable cron job.')).filter((f) => f.cat === 'spelling');
+    expect(spelled).toEqual([]);
+  });
+
+  it('accepts chat shorthand only when the goal is casual', async () => {
+    const text = 'can u send it bc i need it, y\'know';
+    const spelled = async (goals) => (await run(text, { goals })).filter((f) => f.cat === 'spelling').map((f) => f.text);
+    expect(await spelled({})).toEqual(expect.arrayContaining(['u', 'bc']));
+    expect(await spelled({ formality: 'casual' })).toEqual([]);
+  });
+});

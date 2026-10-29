@@ -12,15 +12,58 @@ import { nonProseSpans, overlapsAny, sentences } from '../text/segment.js';
 
 export const HARPER_VERSION = '2.13.0';
 
-// Rules off by default, from the dev-set evaluation of 2026-10-21
-// (true / false positives): OrthographicConsistency 0/3 ("Sam" -> "SAM"),
-// SplitWords 2/5 ("retryable" -> "retry able"), OkToOkay 0/1, DayOneNames 0/1.
-// Users can still see every rule's findings by re-enabling it.
-export const DEFAULT_OFF_RULES = ['OrthographicConsistency', 'SplitWords', 'OkToOkay', 'DayOneNames'];
+// Rules off by default. Evidence: eval/harness/rules-report.js on the dev
+// split, 2026-10-29 (hits on annotated errors / misses on clean text):
+// OrthographicConsistency 0/3 ("Sam" -> "SAM"), SplitWords 2/5 ("retryable"
+// -> "retry able"), OkToOkay 0/1, DayOneNames 0/1, OxfordComma 0/5 (a
+// preference, not an error), and the expansion and formatting rules below
+// (0 hits each) that rewrite deliberate shorthand such as "min", "FYI",
+// "4 B", or a hyphen in a numeric range. Users can re-enable any rule.
+export const DEFAULT_OFF_RULES = [
+  'OrthographicConsistency', 'SplitWords', 'OkToOkay', 'DayOneNames', 'OxfordComma',
+  'ExpandMinimum', 'ForYourInformation', 'ExpandMemoryShorthands', 'NumericRangeEnDash',
+  'ArriveOnWeekday', 'HaveTakeALook', 'MergeWords', 'CompoundNouns',
+];
+
+// Rules Harper reports under a style-like kind (Word Choice, Miscellaneous,
+// Enhancement) although the finding is a definite mistake. Same evidence run:
+// every finding of each rule landed on an annotated error (ThenThan 8/0,
+// ModalOf 5/0, WrongNegative 3/0, EllipsisLength 2/0, the rest 1/0). They
+// are reported as likely errors in the category the eval corpus uses.
+/** @type {Record<string, [Category, Classification]>} */
+export const RULE_OVERRIDES = {
+  ThenThan: ['word-choice', 'likely-error'],
+  ModalOf: ['word-choice', 'likely-error'],
+  WrongNegative: ['spelling', 'likely-error'],
+  EllipsisLength: ['punctuation', 'likely-error'],
+  ToTwoToo: ['word-choice', 'likely-error'],
+  NounVerbConfusion: ['word-choice', 'likely-error'],
+  Cant: ['punctuation', 'likely-error'],
+  PronounContraction: ['grammar', 'likely-error'],
+  LetsConfusion: ['punctuation', 'likely-error'],
+};
 
 // Rules skipped when the document's writing goal is casual: lowercase
 // sentence starts are deliberate in texts and chat ("hey, running late").
 export const CASUAL_OFF_RULES = new Set(['SentenceCapitalization']);
+
+// Chat shorthand that is not a misspelling in casual writing.
+export const CASUAL_WORDS = new Set([
+  'u', 'ur', 'bc', 'b4', 'pls', 'plz', 'thx', 'ty', 'tbh', 'idk', 'imo', 'imho', 'btw', 'fyi', 'asap',
+  'lol', 'omg', 'brb', 'ttyl', 'np', 'nvm', 'rn', 'tmrw', 'tho', 'cuz', 'gonna', 'wanna', 'gotta',
+  'kinda', 'sorta', 'dunno', 'ya', 'yep', 'yup', 'nope', 'ok', 'okay', "y'know", 'ppl', 'msg', 'w/', 'w/o',
+]);
+
+// Everyday technical and modern words missing from Harper's dictionary.
+// Added through the user dictionary path, so personal entries still win.
+export const EXTRA_WORDS = [
+  'wifi', 'bluetooth', 'runbook', 'runbooks', 'retryable', 'retryables', 'chaperone', 'chaperones',
+  'hirer', 'hirers', 'onboarding', 'offboarding', 'rollout', 'rollouts', 'backend', 'backends',
+  'frontend', 'frontends', 'login', 'logins', 'signup', 'signups', 'webhook', 'webhooks', 'changelog',
+  'changelogs', 'roadmap', 'roadmaps', 'timebox', 'timeboxed', 'uptime', 'downtime', 'retest', 'retests',
+  'subfolder', 'subfolders', 'podcast', 'podcasts', 'emoji', 'emojis', 'selfie', 'selfies', 'livestream',
+  'livestreams', 'hashtag', 'hashtags', 'smartwatch', 'smartwatches', 'airfryer', 'doomscrolling', 'cron', 'crontab', 'sudo', 'async', 'uuid', 'uuids', 'json', 'yaml', 'regex', 'regexes',
+];
 
 /** @typedef {import('../types.js').RawFinding} RawFinding */
 /** @typedef {import('../types.js').Snapshot} Snapshot */
@@ -79,7 +122,8 @@ export function createHarperEngine(linter, { policy = true } = {}) {
     if (policy) for (const rule of DEFAULT_OFF_RULES) if (rule in config) config[rule] = false;
     await linter.setLintConfig(config);
     await linter.clearWords();
-    if (settings.dictionary?.length) await linter.importWords([...settings.dictionary]);
+    const words = [...(policy ? EXTRA_WORDS : []), ...(settings.dictionary ?? [])];
+    if (words.length) await linter.importWords(words);
     configuredKey = key;
   }
 
@@ -115,10 +159,11 @@ export function createHarperEngine(linter, { policy = true } = {}) {
             continue;
           }
           for (const lint of lints) {
-            const raw = toRaw(block, rule, lint);
+            const raw = toRaw(block, rule, lint, policy);
             if (!raw) rejected++;
             else if (
               !overlapsAny(skip, raw.from, raw.to) &&
+              !(casual && isCasualWord(raw, block.text)) &&
               !(policy && likelyProperNoun(raw, block.text, starts)) &&
               !(policy && isAcronym(raw, block.text)) &&
               !(policy && (await isDerivedKnownWord(raw, block.text)))
@@ -166,6 +211,11 @@ export function stems(word) {
   return PREFIXES.filter((p) => lower.startsWith(p)).map((p) => lower.slice(p.length).replace(/^-/u, ''));
 }
 
+/** Chat shorthand ("u", "bc", "y'know") is not a misspelling in casual writing. */
+export function isCasualWord(raw, text) {
+  return raw.category === 'spelling' && CASUAL_WORDS.has(text.slice(raw.from, raw.to).toLowerCase());
+}
+
 /** All-caps tokens such as "SSO" or "APIs" are acronyms, not misspellings. */
 export function isAcronym(raw, text) {
   return raw.category === 'spelling' && /^\p{Lu}{2,}s?$/u.test(text.slice(raw.from, raw.to));
@@ -197,15 +247,16 @@ export function likelyProperNoun(raw, text, starts) {
  * @param {import('../types.js').Block} block
  * @param {string} rule
  * @param {import('harper.js').Lint} lint
+ * @param {boolean} [policy] apply RULE_OVERRIDES
  * @returns {RawFinding | null}
  */
-function toRaw(block, rule, lint) {
+function toRaw(block, rule, lint, policy = true) {
   const span = lint.span();
   const problem = lint.get_problem_text();
   const range = resolveSpan(block.text, span.start, span.end, problem);
   span.free?.();
   if (!range) return null;
-  const [category, classification] = KIND_MAP[lint.lint_kind()] ?? ['other', 'style'];
+  const [category, classification] = (policy && RULE_OVERRIDES[rule]) || KIND_MAP[lint.lint_kind()] || ['other', 'style'];
   const replacements = lint.suggestions().map((s) => {
     const kind = s.kind();
     const text = s.get_replacement_text();
