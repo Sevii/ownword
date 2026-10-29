@@ -22,9 +22,10 @@ const MAX_DISMISSALS = 500;
  *   onOpen: () => void, called while a document is being opened, before it is set
  *   onHandoff: (handoff: { intent?: string }) => void,
  *   announce: (text: string) => void,
+ *   onSaved?: (doc: db.StoredDocument) => void,
  * }} deps
  */
-export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, announce }) {
+export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, announce, onSaved }) {
   const [docs, setDocs] = useState([]);
   const [doc, setDoc] = useState(/** @type {db.StoredDocument | null} */ (null));
   const [prefs, setPrefs] = useState(DEFAULT_PREFS);
@@ -49,7 +50,7 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
 
   const refreshDocs = useCallback(async () => setDocs(await db.listDocuments()), []);
 
-  const autosave = useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef, persisted, setPersisted, setRecovery });
+  const autosave = useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef, persisted, setPersisted, setRecovery, onSaved });
   const { save, flushSave, cancelPendingSave, saveChain, saveIdRef, lastRecoveryAt, saveStatus, setSaveStatus, scheduleSave } = autosave;
 
   useEffect(() => {

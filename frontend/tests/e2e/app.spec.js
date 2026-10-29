@@ -433,3 +433,55 @@ test('export the whole library as a zip and import it back without duplicates', 
   await expect(page.locator('.prose strong')).toHaveText('light');
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('a chosen folder gets a Markdown file per document and picks up outside edits', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium', 'File System Access API');
+  const errors = watchErrors(page);
+  // An in-memory stand-in for the directory picker, visible to the test as window.__folder.
+  await page.addInitScript(() => {
+    const files = new Map();
+    let clock = 1000;
+    const fileHandle = (name) => ({
+      kind: 'file', name,
+      async getFile() { const f = files.get(name); return { name, lastModified: f.lastModified, text: async () => f.text }; },
+      async createWritable() { let b = ''; return { async write(t) { b += t; }, async close() { files.set(name, { text: b, lastModified: ++clock }); } }; },
+    });
+    const folder = {
+      kind: 'directory', name: 'Writing',
+      async queryPermission() { return 'granted'; },
+      async requestPermission() { return 'granted'; },
+      async getFileHandle(name, { create } = {}) { if (!files.has(name)) { if (!create) throw new DOMException('x', 'NotFoundError'); files.set(name, { text: '', lastModified: ++clock }); } return fileHandle(name); },
+      async removeEntry(name) { files.delete(name); },
+      async *entries() { for (const n of [...files.keys()]) yield [n, fileHandle(n)]; },
+    };
+    window.__folder = { files, touch: (n, t) => files.set(n, { text: t, lastModified: ++clock }) };
+    window.showDirectoryPicker = async () => folder;
+  });
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await page.getByRole('button', { name: 'Settings' }).click();
+  await page.getByRole('button', { name: 'Choose folder' }).click();
+  await expect(page.locator('.folder__status')).toContainText('Writing');
+  await expect(page.locator('.folder__status')).toContainText('1 written');
+  await page.getByRole('button', { name: 'Done' }).click();
+  const names = await page.evaluate(() => [...window.__folder.files.keys()]);
+  expect(names).toEqual(['Welcome to Open Writer.md']);
+
+  // Typing updates the file.
+  await page.locator('.prose').click();
+  await page.keyboard.press('End');
+  await page.keyboard.type(' Folder test.');
+  await expect.poll(() => page.evaluate(() => window.__folder.files.get('Welcome to Open Writer.md').text)).toContain('Folder test.');
+
+  // An outside edit is loaded on the next check.
+  await page.evaluate(() => {
+    const text = window.__folder.files.get('Welcome to Open Writer.md').text;
+    window.__folder.touch('Welcome to Open Writer.md', text.replace('# Welcome', '# Welcome back'));
+  });
+  await page.getByRole('button', { name: 'Settings' }).click();
+  await page.getByRole('button', { name: 'Check now' }).click();
+  await expect(page.locator('.folder__status')).toContainText('1 updated from the folder');
+  await page.getByRole('button', { name: 'Done' }).click();
+  await expect(page.locator('.prose h1').first()).toHaveText('Welcome back');
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});

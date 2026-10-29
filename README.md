@@ -63,6 +63,8 @@ Model lists come from the provider. Model availability, permissions, browser acc
 
 ## Data and credentials
 
+In Chrome and Edge, Settings → Folder on this computer keeps every document as a Markdown file in a folder you choose, written as you type and read back when the files change elsewhere, so Git, Obsidian, or a backup tool can see your writing. In every browser, Settings → Your documents exports the whole library as a zip and imports one back.
+
 Keys are saved unencrypted in browser IndexedDB, separately from documents, and sent in authentication headers only to fixed provider origins, or to the one custom endpoint you typed. Tick “Don’t remember this key on this device” when connecting to keep a key in memory only until the tab closes. They are not embedded in builds or exports. Use personal keys, remove them on shared devices, and set provider spending limits. Anyone with access to this browser profile can access its stored keys and drafts. Clearing site data removes local drafts and keys; export important writing.
 
 Only explicit AI actions transmit the selected scope and supporting context to your provider. Provider retention policies still apply. OpenAI requests set `store: false`; that is not a promise of zero provider retention. Cancellation aborts the browser request; it cannot undo processing or charges already incurred.

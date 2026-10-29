@@ -18,6 +18,7 @@ import { useDocumentEditor } from './hooks/useDocumentEditor.js';
 import { useImportExport } from './hooks/useImportExport.js';
 import { useExtensionBridge } from './hooks/useExtensionBridge.js';
 import { useShortcuts } from './hooks/useShortcuts.js';
+import { useFolderSync } from './hooks/useFolderSync.js';
 
 /**
  * Composition only: documents and preferences (useDocuments), local checking
@@ -35,8 +36,10 @@ export function App() {
 
   const editorRef = useRef(/** @type {import('@tiptap/core').Editor | null} */ (null));
   const pendingImport = useRef(/** @type {{ html: string, parseOptions?: object } | null} */ (null));
-  // Opening a document resets hooks created below; the ref breaks the cycle.
+  // Opening a document resets hooks created below, and a save notifies folder
+  // sync; the refs break the cycles.
   const onOpenRef = useRef(() => {});
+  const onSavedRef = useRef((/** @type {any} */ _doc) => {});
 
   const documents = useDocuments({
     editorRef,
@@ -49,8 +52,19 @@ export function App() {
       }
     },
     announce: setAnnouncement,
+    onSaved: (saved) => onSavedRef.current(saved),
   });
   const { doc, docRef, prefs, prefsRef, prefsLoaded, dismissalsRef, saveStatus, save, loadKey } = documents;
+
+  const folderSync = useFolderSync({
+    prefsLoaded,
+    docRef,
+    editorRef,
+    refreshDocs: documents.refreshDocs,
+    openDocument: documents.openDocument,
+    announce: setAnnouncement,
+  });
+  onSavedRef.current = folderSync.onSaved;
 
   const proofreading = useProofreading({
     editorRef,
@@ -190,6 +204,19 @@ export function App() {
             <button type="button" className="btn btn--sm" onClick={sendBack}>Send back</button>
           </div>
         )}
+        {folderSync.state.status === 'needs-permission' && (
+          <div className="banner banner--info" role="region" aria-label="Folder">
+            Reconnect the folder “{folderSync.state.name}” to keep saving Markdown files there.
+            <button type="button" className="btn btn--sm" onClick={folderSync.reconnect}>Reconnect folder</button>
+          </div>
+        )}
+        {folderSync.conflicts.map((c) => (
+          <div key={c.id} className="banner banner--warning" role="alert">
+            “{c.fileName}” changed in the folder and “{c.title}” was also edited here.
+            <button type="button" className="btn btn--sm btn--secondary" onClick={() => folderSync.resolveConflict(c.id, true)}>Load the file</button>
+            <button type="button" className="btn btn--sm" onClick={() => folderSync.resolveConflict(c.id, false)}>Keep this version</button>
+          </div>
+        ))}
         {saveStatus === 'error' && (
           <div className="banner banner--error" role="alert">
             Your latest changes are not saved.
@@ -266,6 +293,7 @@ export function App() {
         onEnableRule={(id) => proofreading.changePrefs({ disabledRules: prefsRef.current.disabledRules.filter((x) => x !== id) })}
         onExportLibrary={documents.exportLibrary}
         onImportLibrary={documents.importLibrary}
+        folder={folderSync}
         ai={documents.ai}
         onAiChange={documents.changeAi}
         onAiConnected={() => count('ai.connection.added')}

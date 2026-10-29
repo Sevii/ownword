@@ -531,6 +531,7 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
 .conn__endpoint { margin: .3rem 0 0; font-size: .85rem; overflow-wrap: anywhere; }
 .library__actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .5rem; }
 .library__status { margin: .4rem 0 0; }
+.folder__status { margin: .4rem 0 0; font-size: .9rem; }
 .conn__progress { display: flex; align-items: center; gap: .5rem; margin: .4rem 0; font-size: .85rem; }
 .conn__progress progress { flex: 1; accent-color: var(--accent); }
 .pill--muted { background: var(--paper-2); color: var(--muted-text); }

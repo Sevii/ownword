@@ -8,7 +8,7 @@ import { ConnectionsSection } from './ConnectionsSection.jsx';
  *   onEnableRule: (id: string) => void, ai: import('../ai/connections.js').Connections,
  *   onAiChange: (next: import('../ai/connections.js').Connections) => void, onAiConnected: () => void }} props
  */
-export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRemoveWord, onEnableRule, ai, onAiChange, onAiConnected, onExportLibrary, onImportLibrary, disabledProviders = [] }) {
+export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRemoveWord, onEnableRule, ai, onAiChange, onAiConnected, onExportLibrary, onImportLibrary, folder, disabledProviders = [] }) {
   const ref = useRef(/** @type {HTMLDialogElement | null} */ (null));
   useEffect(() => {
     const d = ref.current;
@@ -83,6 +83,7 @@ export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRe
         <ConnectionsSection value={ai} onChange={onAiChange} onConnected={onAiConnected} disabledProviders={disabledProviders} />
 
         <LibrarySection onExport={onExportLibrary} onImport={onImportLibrary} />
+        {folder && <FolderSection folder={folder} />}
 
         <h3>Privacy and storage</h3>
         <p className="muted">
@@ -150,6 +151,49 @@ function LibrarySection({ onExport, onImport }) {
         </label>
       </div>
       {status && <p className="muted library__status" role="status">{status}</p>}
+    </section>
+  );
+}
+
+/**
+ * A folder on this computer that mirrors the library as Markdown (plan §3.2).
+ * @param {{ folder: ReturnType<typeof import('./hooks/useFolderSync.js').useFolderSync> }} props
+ */
+function FolderSection({ folder }) {
+  const { supported, state } = folder;
+  const on = state.status !== 'off';
+  return (
+    <section aria-labelledby="folder-title">
+      <h3 id="folder-title">Folder on this computer</h3>
+      {!supported ? (
+        <p className="muted">
+          Saving straight into a folder needs the File System Access API, which this browser does not offer (Chrome and Edge do).
+          Use “Export all documents” above for a copy you can keep.
+        </p>
+      ) : (
+        <>
+          <p className="muted">
+            Choose a folder and every document is kept there as a Markdown file as you write, with changes made to the
+            files by other apps picked up when you open the editor. Good for Git, Obsidian, and backups.
+          </p>
+          {on && (
+            <p className="folder__status">
+              <strong>{state.name}</strong>
+              {state.status === 'needs-permission' ? ' needs permission again. ' : state.status === 'working' ? ' is being checked. ' : state.status === 'error' ? ' had a problem. ' : ' is connected. '}
+              {state.message && <span className="muted">{state.message}</span>}
+            </p>
+          )}
+          {!on && state.message && <p className="muted folder__status" role="status">{state.message}</p>}
+          <div className="library__actions">
+            {!on && <button type="button" className="btn btn--sm btn--secondary" onClick={folder.connect}>Choose folder</button>}
+            {state.status === 'needs-permission' && <button type="button" className="btn btn--sm" onClick={folder.reconnect}>Reconnect</button>}
+            {on && state.status !== 'needs-permission' && (
+              <button type="button" className="btn btn--sm btn--secondary" disabled={state.status === 'working'} onClick={folder.sync}>Check now</button>
+            )}
+            {on && <button type="button" className="btn btn--sm btn--ghost" onClick={folder.disconnect}>Disconnect</button>}
+          </div>
+        </>
+      )}
     </section>
   );
 }

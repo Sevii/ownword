@@ -18,9 +18,10 @@ export const RECOVERY_EVERY_MS = 5 * 60_000;
  *   persisted: boolean | null,
  *   setPersisted: (v: boolean) => void,
  *   setRecovery: (r: any[]) => void,
+ *   onSaved?: (doc: db.StoredDocument) => void, after a successful write
  * }} deps
  */
-export function useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef, persisted, setPersisted, setRecovery }) {
+export function useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef, persisted, setPersisted, setRecovery, onSaved }) {
   const [saveStatus, setSaveStatus] = useState('saved');
   const saveIdRef = useRef('');
   const saveTimer = useRef(0);
@@ -56,6 +57,7 @@ export function useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef
       setSaveStatus(saveTimer.current ? 'unsaved' : 'saved');
       channelRef.current?.postMessage({ type: 'saved', id: saved.id, saveId: saved.saveId });
       refreshDocs();
+      onSaved?.(saved);
       if (Date.now() - lastRecoveryAt.current > RECOVERY_EVERY_MS) {
         lastRecoveryAt.current = Date.now();
         await db.addRecovery(saved.id, saved.title, content);
