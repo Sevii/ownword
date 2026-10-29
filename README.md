@@ -2,6 +2,8 @@
 
 An open-source writing editor that runs in your browser. Adapted from `abstract-writer/online-writer`, retaining its React/Tiptap editor, local proofreading engine, document storage, import/export, and review-before-apply AI workflow.
 
+Currently hosted on github pages
+
 **No application backend, account, proxy, or telemetry.** Your documents stay in IndexedDB on your device. AI actions connect directly to the provider you choose, using your own API key and credits.
 
 ## Run
