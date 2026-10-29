@@ -222,6 +222,23 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
   overflow-x: auto;
 }
 .formatbar__inner { display: flex; align-items: center; gap: .15rem; }
+.findbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem;
+  padding: .4rem .75rem; border-bottom: 1px solid var(--border); background: var(--topbar-bg);
+  font-size: .9rem;
+}
+.findbar input[type="text"] {
+  font: inherit; padding: .3rem .5rem; border: 1px solid var(--border); border-radius: var(--r-sm);
+  background: var(--card); color: var(--fg); min-width: 10rem; flex: 1 1 10rem;
+}
+.findbar input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.findbar__count { min-width: 5rem; color: var(--muted-text); font-variant-numeric: tabular-nums; }
+.findbar__opt { display: inline-flex; align-items: center; gap: .3rem; color: var(--muted-text); }
+.findbar__group { display: flex; align-items: center; gap: .3rem; flex: 1 1 14rem; }
+.find-match { background: var(--highlight); border-radius: 2px; }
+.find-match--active { outline: 2px solid var(--accent); outline-offset: 0; }
+.focus-mode .findbar { opacity: .25; transition: opacity .2s; }
+.focus-mode .findbar:hover, .focus-mode .findbar:focus-within { opacity: 1; }
 .formatbar__sep { width: 1px; height: 1.3rem; margin: 0 .35rem; background: var(--border); flex: none; }
 .fmt {
   height: 2rem; min-width: 2rem; padding: 0 .45rem;

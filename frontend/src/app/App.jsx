@@ -7,6 +7,7 @@ import { SettingsDialog } from './SettingsDialog.jsx';
 import { Sidebar } from './Sidebar.jsx';
 import { Topbar } from './Topbar.jsx';
 import { FormatBar } from './FormatBar.jsx';
+import { FindBar } from './FindBar.jsx';
 import { AiPanel } from './AiPanel.jsx';
 import { useAiReview } from './useAiReview.js';
 import { IconReview } from './icons.jsx';
@@ -33,6 +34,7 @@ export function App() {
   const [focusMode, setFocusMode] = useState(false);
   const [storageNoticeHidden, setStorageNoticeHidden] = useState(false);
   const [assistTab, setAssistTab] = useState('suggestions');
+  const [findOpen, setFindOpen] = useState(false);
 
   const editorRef = useRef(/** @type {import('@tiptap/core').Editor | null} */ (null));
   const pendingImport = useRef(/** @type {{ html: string, parseOptions?: object } | null} */ (null));
@@ -119,6 +121,7 @@ export function App() {
     moveIssue: proofreading.moveIssue,
     save,
     toggleFocus: () => setFocusMode((f) => !f),
+    onFind: () => setFindOpen(true),
     onEscape: () => {
       if (!popover && focusMode) setFocusMode(false);
     },
@@ -167,7 +170,8 @@ export function App() {
         focusMode={focusMode}
         onToggleFocus={() => setFocusMode((f) => !f)}
       />
-      <FormatBar editor={editor} />
+      <FormatBar editor={editor} onFind={() => setFindOpen((o) => !o)} findOpen={findOpen} />
+      {findOpen && <FindBar editor={editor} onClose={() => setFindOpen(false)} />}
       <Sidebar
         open={drawerOpen && !focusMode}
         docs={documents.docs}

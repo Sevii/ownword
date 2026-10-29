@@ -7,10 +7,11 @@ import { useEffect } from 'react';
  *   moveIssue: (delta: number) => void,
  *   save: () => Promise<void>,
  *   toggleFocus: () => void,
+ *   onFind: () => void,
  *   onEscape: () => void, when no popover is open
  * }} handlers
  */
-export function useShortcuts({ moveIssue, save, toggleFocus, onEscape }) {
+export function useShortcuts({ moveIssue, save, toggleFocus, onFind, onEscape }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.altKey && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
@@ -24,6 +25,9 @@ export function useShortcuts({ moveIssue, save, toggleFocus, onEscape }) {
       if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 'f') {
         e.preventDefault();
         toggleFocus();
+      } else if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === 'f') {
+        e.preventDefault();
+        onFind();
       }
       if (e.key === 'Escape') onEscape();
     };

@@ -5,6 +5,7 @@ import StarterKit from '@tiptap/starter-kit';
 import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { Decoration, DecorationSet } from '@tiptap/pm/view';
 import { isAllowedHref, sanitizePastedHtml } from './sanitize.js';
+import { FindReplace } from './find.js';
 
 const TEXTBLOCKS = ['paragraph', 'heading', 'codeBlock'];
 
@@ -197,6 +198,7 @@ export function editorExtensions({ onIssueClick }) {
     }),
     BlockIds,
     IssueDecorations.configure({ onIssueClick }),
+    FindReplace,
     Extension.create({
       name: 'pasteSanitizer',
       addProseMirrorPlugins() {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { IconBold, IconItalic, IconLink, IconList, IconOrdered, IconQuote, IconRedo, IconUndo } from './icons.jsx';
+import { IconBold, IconItalic, IconLink, IconList, IconOrdered, IconQuote, IconRedo, IconUndo, IconSearch } from './icons.jsx';
 
 const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/u.test(navigator.platform);
 const mod = isMac ? '⌘' : 'Ctrl+';
 
-/** @param {{ editor: import('@tiptap/core').Editor | null }} props */
-export function FormatBar({ editor }) {
+/** @param {{ editor: import('@tiptap/core').Editor | null, onFind?: () => void, findOpen?: boolean }} props */
+export function FormatBar({ editor, onFind, findOpen = false }) {
   const [, rerender] = useState(0);
   useEffect(() => {
     if (!editor) return undefined;
@@ -56,6 +56,8 @@ export function FormatBar({ editor }) {
         <span className="formatbar__sep" />
         {tool('Undo', `${mod}Z`, false, () => chain().undo().run(), <IconUndo />, !editor?.can().undo())}
         {tool('Redo', `${mod}Shift+Z`, false, () => chain().redo().run(), <IconRedo />, !editor?.can().redo())}
+        <span className="formatbar__sep" />
+        {tool('Find and replace', `${mod}F`, findOpen, () => onFind?.(), <IconSearch />)}
       </div>
     </div>
   );

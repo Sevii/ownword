@@ -485,3 +485,31 @@ test('a chosen folder gets a Markdown file per document and picks up outside edi
   await expect(page.locator('.prose h1').first()).toHaveText('Welcome back');
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('find and replace: count, replace all, and undo', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await page.locator('.prose').click();
+  await page.keyboard.press(process.platform === 'darwin' ? 'Meta+f' : 'Control+f');
+  const find = page.getByLabel('Find', { exact: true });
+  await expect(find).toBeFocused();
+  await find.fill('the');
+  await expect(page.locator('.findbar__count')).toHaveText(/^\d+ of \d+$/u);
+  const total = Number((await page.locator('.findbar__count').textContent()).split(' of ')[1]);
+  expect(total).toBeGreaterThan(3);
+  await page.getByLabel('Whole word').check();
+  await expect(page.locator('.findbar__count')).toHaveText(/^\d+ of \d+$/u);
+  await expect(page.locator('.find-match').first()).toBeVisible();
+  await page.getByLabel('Replace with').fill('ZZZ');
+  await page.getByRole('button', { name: 'Replace all' }).click();
+  await expect(page.locator('.findbar__count')).toHaveText('No matches');
+  await expect(page.locator('.find-match')).toHaveCount(0);
+  await expect(page.locator('.prose')).toContainText('ZZZ');
+  await page.getByLabel('Close find').click();
+  await expect(page.locator('.findbar')).toHaveCount(0);
+  await expect(page.locator('.prose')).toBeFocused();
+  await page.locator('.prose').press(process.platform === 'darwin' ? 'Meta+z' : 'Control+z');
+  await expect(page.locator('.prose')).not.toContainText('ZZZ');
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});
