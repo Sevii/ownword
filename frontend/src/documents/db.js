@@ -134,6 +134,11 @@ export function saveDocument(doc, expectedSaveId, opts = {}) {
   });
 }
 
+/** Write a document as is (imports); a new saveId tells open tabs it changed. @param {StoredDocument} doc */
+export function putDocument(doc) {
+  return run(['documents'], 'readwrite', (tx) => done(tx.objectStore('documents').put({ ...doc, saveId: crypto.randomUUID() })));
+}
+
 /** @param {string} id */
 export function deleteDocument(id) {
   return run(['documents', 'recovery'], 'readwrite', async (tx) => {

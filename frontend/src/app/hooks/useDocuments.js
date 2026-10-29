@@ -3,7 +3,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import * as db from '../../documents/db.js';
-import { docxToHtml } from '../../documents/export.js';
+import { docxToHtml, download } from '../../documents/export.js';
+import { buildLibrary, readLibrary, mergeDocuments, mergePrefs, libraryFilename, documentFromFile } from '../../documents/library.js';
 import { sanitizeDocJson, sanitizePastedHtml } from '../../editor/sanitize.js';
 import { takeHandoff, textToHtml, titleFrom } from '../../site/handoff.js';
 import * as connections from '../../ai/connections.js';
@@ -155,17 +156,72 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
     db.setPref('aiConnections', connections.forStorage(next)).catch(() => announce('Could not save the AI connection in this browser.'));
   }
 
-  async function importDocx(file) {
+  /** Open a .docx, .md, or .txt file as a new document. */
+  async function importFile(file) {
     try {
-      const { html } = await docxToHtml(await file.arrayBuffer());
-      pendingImport.current = { html: sanitizePastedHtml(html) };
-      const created = await db.createDocument({ title: file.name.replace(/\.docx$/iu, '') });
-      count('import.docx');
-      await refreshDocs();
-      await openDocument(created.id);
+      if (/\.docx$/iu.test(file.name)) {
+        const { html } = await docxToHtml(await file.arrayBuffer());
+        pendingImport.current = { html: sanitizePastedHtml(html) };
+        const created = await db.createDocument({ title: file.name.replace(/\.docx$/iu, '') });
+        count('import.docx');
+        await refreshDocs();
+        await openDocument(created.id);
+        return;
+      }
+      const d = documentFromFile(file.name, await file.text());
+      if (d.content) {
+        const created = await db.createDocument({ title: d.title, content: d.content, goals: d.goals });
+        count('import.md');
+        await refreshDocs();
+        await openDocument(created.id);
+      } else {
+        await importText(d.text ?? '', d.title, { lines: true });
+      }
     } catch (err) {
       announce(`Could not import that file: ${err?.message ?? err}`);
     }
+  }
+
+  /** Every document, with preferences and dismissals, as one zip. Keys are never included. */
+  async function exportLibrary() {
+    await flushSave();
+    const list = await db.listDocuments();
+    const documents = (await Promise.all(list.map((d) => db.getDocument(d.id)))).filter(Boolean);
+    const bytes = buildLibrary({ documents, prefs: prefsRef.current, dismissals: dismissalsRef.current });
+    download(new Blob([bytes], { type: 'application/zip' }), libraryFilename());
+    count('export.library');
+    return documents.length;
+  }
+
+  /**
+   * Merge a library zip, a zip of Markdown files, or one Markdown or text
+   * file. Returns a sentence for the UI.
+   */
+  async function importLibrary(file) {
+    const read = readLibrary(new Uint8Array(await file.arrayBuffer()), file.name);
+    // Plain-text files need the editor to make content, so they open directly.
+    const plain = read.documents.filter((d) => !d.content);
+    const counts = await mergeDocuments(read.documents, { list: db.listDocuments, put: db.putDocument });
+    for (const d of plain) await importText(d.text ?? '', d.title, { lines: true });
+    if (read.prefs) await savePrefs(mergePrefs(prefsRef.current, read.prefs));
+    if (read.dismissals?.length) {
+      const seen = new Set(dismissalsRef.current.map((x) => JSON.stringify(x)));
+      const merged = [...dismissalsRef.current, ...read.dismissals.filter((x) => !seen.has(JSON.stringify(x)))].slice(-MAX_DISMISSALS);
+      dismissalsRef.current = merged;
+      setDismissals(merged);
+      await db.setPref('dismissals', merged).catch(() => {});
+    }
+    count('import.library');
+    await refreshDocs();
+    if (!docRef.current || docRef.current.id === 'unsaved') {
+      const list = await db.listDocuments();
+      if (list.length) await openDocument(list[0].id);
+    }
+    const parts = [];
+    if (counts.added + plain.length) parts.push(`${counts.added + plain.length} added`);
+    if (counts.updated) parts.push(`${counts.updated} updated`);
+    if (counts.skipped) parts.push(`${counts.skipped} already up to date`);
+    return `Imported: ${parts.join(', ') || 'nothing new'}.`;
   }
 
   /** Make a new document from plain text and open it. */
@@ -233,6 +289,6 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
   return {
     docs, doc, docRef, prefs, prefsRef, prefsLoaded, dismissals, dismissalsRef, recovery, persisted, storageError, loadKey, ai,
     saveStatus, save, scheduleSave, refreshDocs, openDocument, updateDoc, savePrefs, addDismissal, changeAi,
-    importDocx, importText, newDocument, removeDocument, restore, resolveConflict, resolveDeleted,
+    importFile, importText, exportLibrary, importLibrary, flushSave, newDocument, removeDocument, restore, resolveConflict, resolveDeleted,
   };
 }

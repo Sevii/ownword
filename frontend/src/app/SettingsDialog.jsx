@@ -8,7 +8,7 @@ import { ConnectionsSection } from './ConnectionsSection.jsx';
  *   onEnableRule: (id: string) => void, ai: import('../ai/connections.js').Connections,
  *   onAiChange: (next: import('../ai/connections.js').Connections) => void, onAiConnected: () => void }} props
  */
-export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRemoveWord, onEnableRule, ai, onAiChange, onAiConnected, disabledProviders = [] }) {
+export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRemoveWord, onEnableRule, ai, onAiChange, onAiConnected, onExportLibrary, onImportLibrary, disabledProviders = [] }) {
   const ref = useRef(/** @type {HTMLDialogElement | null} */ (null));
   useEffect(() => {
     const d = ref.current;
@@ -82,6 +82,8 @@ export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRe
 
         <ConnectionsSection value={ai} onChange={onAiChange} onConnected={onAiConnected} disabledProviders={disabledProviders} />
 
+        <LibrarySection onExport={onExportLibrary} onImport={onImportLibrary} />
+
         <h3>Privacy and storage</h3>
         <p className="muted">
           Proofreading runs in this browser. Your writing is not sent anywhere unless you start an AI action, which
@@ -100,6 +102,55 @@ export function SettingsDialog({ open, onClose, prefs, persisted, onChange, onRe
         </div>
       </form>
     </dialog>
+  );
+}
+
+/**
+ * Export every document as a zip, or import one (plan §3.1).
+ * @param {{ onExport: () => Promise<number>, onImport: (file: File) => Promise<string> }} props
+ */
+function LibrarySection({ onExport, onImport }) {
+  const [status, setStatus] = useState('');
+  const [busy, setBusy] = useState(false);
+  const run = async (fn) => {
+    setBusy(true);
+    setStatus('Working…');
+    try {
+      setStatus(await fn());
+    } catch (err) {
+      setStatus(`That did not work: ${err?.message ?? err}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <section aria-labelledby="library-title">
+      <h3 id="library-title">Your documents</h3>
+      <p className="muted">
+        Keep a copy of everything outside this browser: a zip with one Markdown file per document plus your preferences.
+        Importing merges by document; newer versions win and nothing is deleted. API keys are never exported.
+      </p>
+      <div className="library__actions">
+        <button type="button" className="btn btn--sm btn--secondary" disabled={busy} onClick={() => run(async () => { const n = await onExport(); return `Exported ${n} document${n === 1 ? '' : 's'}.`; })}>
+          Export all documents (.zip)
+        </button>
+        <label className={`btn btn--sm btn--secondary${busy ? ' btn--disabled' : ''}`}>
+          Import a library or file
+          <input
+            type="file"
+            accept=".zip,.md,.markdown,.txt,application/zip,text/markdown,text/plain"
+            className="visually-hidden"
+            disabled={busy}
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              e.target.value = '';
+              if (f) run(() => onImport(f));
+            }}
+          />
+        </label>
+      </div>
+      {status && <p className="muted library__status" role="status">{status}</p>}
+    </section>
   );
 }
 

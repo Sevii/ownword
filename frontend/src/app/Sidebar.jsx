@@ -47,10 +47,10 @@ export function Sidebar({ open, docs, currentId, onOpen, onNew, onDelete, onImpo
       </ul>
       <div className="drawer__foot">
         <label className="btn btn--secondary btn--sm">
-          <IconUpload /> Import .docx
+          <IconUpload /> Import file
           <input
             type="file"
-            accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            accept=".docx,.md,.markdown,.txt,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/markdown,text/plain"
             className="visually-hidden"
             onChange={(e) => {
               const f = e.target.files?.[0];

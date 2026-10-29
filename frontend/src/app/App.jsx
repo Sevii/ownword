@@ -164,7 +164,7 @@ export function App() {
         }}
         onNew={documents.newDocument}
         onDelete={documents.removeDocument}
-        onImport={documents.importDocx}
+        onImport={documents.importFile}
         recovery={documents.recovery}
         onRestore={documents.restore}
       />
@@ -264,6 +264,8 @@ export function App() {
         onChange={(patch) => proofreading.changePrefs(patch, { recheck: !('paused' in patch) })}
         onRemoveWord={(w) => proofreading.changePrefs({ dictionary: prefsRef.current.dictionary.filter((x) => x !== w) })}
         onEnableRule={(id) => proofreading.changePrefs({ disabledRules: prefsRef.current.disabledRules.filter((x) => x !== id) })}
+        onExportLibrary={documents.exportLibrary}
+        onImportLibrary={documents.importLibrary}
         ai={documents.ai}
         onAiChange={documents.changeAi}
         onAiConnected={() => count('ai.connection.added')}

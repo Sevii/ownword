@@ -408,3 +408,28 @@ test('the in-browser model row explains WebGPU support and never downloads on it
   expect(downloads).toEqual([]);
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('export the whole library as a zip and import it back without duplicates', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await page.getByRole('button', { name: 'Settings' }).click();
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export all documents (.zip)' }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toMatch(/^open-writer-library-\d{4}-\d{2}-\d{2}\.zip$/u);
+  const path = await download.path();
+  await expect(page.getByRole('status').filter({ hasText: 'Exported 1 document.' })).toBeVisible();
+
+  // Importing the same zip changes nothing; a zip of a new Markdown file adds one.
+  await page.getByLabel('Import a library or file').setInputFiles(path);
+  await expect(page.getByRole('status').filter({ hasText: 'already up to date' })).toBeVisible();
+  await page.getByLabel('Import a library or file').setInputFiles({ name: 'trip-notes.md', mimeType: 'text/markdown', buffer: Buffer.from('# Trip\n\nPack **light**.\n') });
+  await expect(page.getByRole('status').filter({ hasText: '1 added' })).toBeVisible();
+  await page.getByRole('button', { name: 'Done' }).click();
+  await expect(page.locator('.doclist__title', { hasText: 'trip notes' })).toBeVisible();
+  await page.locator('.doclist__open', { hasText: 'trip notes' }).click();
+  await expect(page.locator('.prose h1')).toHaveText('Trip');
+  await expect(page.locator('.prose strong')).toHaveText('light');
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});
