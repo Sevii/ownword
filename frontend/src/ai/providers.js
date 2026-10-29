@@ -9,6 +9,8 @@ export const ORIGINS = {
   openrouter: 'https://openrouter.ai/api/v1',
 };
 export const CUSTOM = 'custom';
+export const LOCAL = 'local';
+const LOCAL_ORIGIN = 'local://browser';
 const LOOPBACK = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 
 /** Normalize and check a user-typed base URL. Returns it without a trailing slash, or throws. */
@@ -29,14 +31,15 @@ export function isLoopback(baseUrl) {
 /** The origin requests go to: a fixed one, or the validated custom base URL. */
 export function originFor(provider, baseUrl) {
   if (provider === CUSTOM) return validateBaseUrl(baseUrl);
+  if (provider === LOCAL) return LOCAL_ORIGIN;
   if (!Object.hasOwn(ORIGINS, provider)) throw new Error('Unsupported provider.');
   return ORIGINS[provider];
 }
 export function providerHeaders(provider, key, baseUrl) {
   const origin = originFor(provider, baseUrl);
   const k = key?.trim() ?? '';
-  // A local server (Ollama, LM Studio) usually needs no key; everything else does.
-  if (!k && !(provider === CUSTOM && isLoopback(origin))) throw new Error('Add your API key in Settings.');
+  // A model in this browser needs no key, and a local server (Ollama, LM Studio) usually none.
+  if (!k && provider !== LOCAL && !(provider === CUSTOM && isLoopback(origin))) throw new Error('Add your API key in Settings.');
   return {
     'content-type': 'application/json',
     ...(provider === 'anthropic' ? {
@@ -105,7 +108,7 @@ export async function listModels(provider, key, fetchImpl = fetch, baseUrl) {
     cursor = provider === 'anthropic' && data.has_more ? data.last_id : provider === 'gemini' ? data.nextPageToken : '';
   } while (cursor && ++pages < 20);
   if (!models.length) {
-    return provider === CUSTOM
+    return provider === CUSTOM || provider === LOCAL
       ? { ok: false, error: 'unsupported', message: 'The endpoint lists no models. Pull or load a model there first.' }
       : { ok: false, error: 'unsupported', message: 'This key has no supported writing models.' };
   }

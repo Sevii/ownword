@@ -57,6 +57,7 @@ See [GitHub's custom-workflow instructions](https://docs.github.com/en/pages/get
 - Review diffs and meaning changes before applying; undo an accepted rewrite.
 - OpenAI Responses, Anthropic Messages, Gemini, and OpenRouter streaming directly from the browser.
 - Any OpenAI-compatible endpoint as a custom connection: Ollama or LM Studio on your own machine with no key, or vLLM, Groq, Together, and proxies over HTTPS.
+- A small model running in the browser itself with WebGPU (WebLLM). The weights are downloaded once (about 1 to 3 GB) and cached; after that, AI actions need no network and send nothing anywhere.
 
 Model lists come from the provider. Model availability, permissions, browser access, and billing depend on your account; a listed model may still reject a generation request. There is no proxy fallback. An interrupted, truncated, or malformed response cannot be applied as a completed rewrite.
 

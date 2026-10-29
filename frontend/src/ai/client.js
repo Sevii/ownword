@@ -1,5 +1,6 @@
 import { buildPrompt, PROMPT_VERSION } from './prompts.js';
-import { generationRequest, statusError, statusMessage, NETWORK_MESSAGE } from './providers.js';
+import { generationRequest, statusError, statusMessage, NETWORK_MESSAGE, LOCAL } from './providers.js';
+import { localProvider } from './local.js';
 
 // Translate direct provider SSE into the editor's existing review events.
 // Only an explicit successful finish can make a partial preview applicable.
@@ -12,12 +13,14 @@ export async function runAiRequest(body, opts = {}) {
   const cancel = () => abort.abort();
   opts.signal?.addEventListener('abort', cancel, { once: true });
   if (opts.signal?.aborted) cancel();
-  const timer = setTimeout(cancel, 180000);
+  // An in-browser model may first have to load its cached weights.
+  const timer = setTimeout(cancel, body.provider === LOCAL ? 600000 : 180000);
   let reader;
   try {
     if (abort.signal.aborted) throw new DOMException('Aborted', 'AbortError');
     const req = generationRequest(body, buildPrompt(body), opts.key, opts.baseUrl);
-    const res = await (opts.fetchImpl ?? fetch)(req.url, { ...req.init, signal: abort.signal });
+    const fetchImpl = opts.fetchImpl ?? (body.provider === LOCAL ? localProvider.fetch : fetch);
+    const res = await fetchImpl(req.url, { ...req.init, signal: abort.signal });
     if (!res.ok) {
       finish({ type: 'failed', error: statusError(res.status), message: statusMessage(res.status) });
     } else if (!res.body) {
@@ -89,7 +92,7 @@ export async function runAiRequest(body, opts = {}) {
   } catch (err) {
     finish(opts.signal?.aborted ? { type: 'cancelled' } : {
       type: 'failed', error: 'unavailable',
-      message: abort.signal.aborted ? 'The request timed out. Try a smaller passage.' : err instanceof TypeError ? NETWORK_MESSAGE : 'The provider returned an incomplete or unreadable response. Try again or choose another model.',
+      message: abort.signal.aborted ? 'The request timed out. Try a smaller passage.' : body.provider === LOCAL ? `The in-browser model could not answer${err?.message ? ` (${String(err.message).slice(0, 120)})` : ''}. Try a smaller passage or another model.` : err instanceof TypeError ? NETWORK_MESSAGE : 'The provider returned an incomplete or unreadable response. Try again or choose another model.',
     });
   } finally {
     clearTimeout(timer);

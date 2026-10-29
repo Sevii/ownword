@@ -1,4 +1,5 @@
-import { listModels, NETWORK_MESSAGE, LOCAL_NETWORK_MESSAGE, CUSTOM, validateBaseUrl, isLoopback } from './providers.js';
+import { listModels, NETWORK_MESSAGE, LOCAL_NETWORK_MESSAGE, CUSTOM, LOCAL, validateBaseUrl, isLoopback } from './providers.js';
+import { LOCAL_MODELS } from './local.js';
 // Keys stay in this browser and are sent only to their provider in headers.
 // A connection marked remember: false is never written to storage (plan §2.3).
 
@@ -7,6 +8,7 @@ export const PROVIDERS = [
   { id: 'openai', name: 'OpenAI', product: 'ChatGPT models', keysUrl: 'https://platform.openai.com/api-keys', keyHint: 'sk-…' },
   { id: 'gemini', name: 'Google Gemini', product: 'Gemini', keysUrl: 'https://aistudio.google.com/apikey', keyHint: 'AIza…' },
   { id: 'openrouter', name: 'OpenRouter', product: 'many models', keysUrl: 'https://openrouter.ai/settings/keys', keyHint: 'sk-or-…' },
+  { id: LOCAL, name: 'In this browser', product: 'a small model on this device with WebGPU; nothing is sent anywhere', keysUrl: '', keyHint: '' },
   { id: CUSTOM, name: 'Custom endpoint', product: 'OpenAI-compatible server: Ollama, LM Studio, vLLM, Groq, …', keysUrl: '', keyHint: 'API key (optional for localhost)', urlHint: 'http://localhost:11434/v1' },
 ];
 
@@ -36,6 +38,9 @@ export function normalize(stored) {
       const baseUrl = validCustomUrl(c.baseUrl);
       if (!baseUrl || (!c.key && !isLoopback(baseUrl))) continue;
       connections[p.id] = { key: c.key, baseUrl, ...base };
+    } else if (p.id === LOCAL) {
+      if (!LOCAL_MODELS.some((m) => m.id === c.model)) continue;
+      connections[p.id] = { key: '', ...base, models: LOCAL_MODELS.map((m) => ({ id: m.id, label: m.label })) };
     } else if (c.key) {
       connections[p.id] = { key: c.key, ...base };
     }
@@ -53,6 +58,7 @@ export function forStorage(state) {
 
 /** Check the user's key directly with their provider. */
 export async function checkKey(provider, key, { fetchImpl, baseUrl } = {}) {
+  if (provider === LOCAL) return { ok: true, models: LOCAL_MODELS.map((m) => ({ id: m.id, label: m.label })), defaultModel: LOCAL_MODELS[0].id };
   try { return await listModels(provider, key, fetchImpl, baseUrl); }
   catch (err) {
     if (provider === CUSTOM && err instanceof Error && !(err instanceof TypeError)) return { ok: false, error: 'bad-request', message: err.message };
@@ -94,6 +100,6 @@ export function activeConnection(state) {
   const c = state.active && state.connections[state.active];
   if (!c) return null;
   const label = c.models.find((m) => m.id === c.model)?.label ?? c.model;
-  const providerLabel = state.active === CUSTOM ? `${endpointLabel(c.baseUrl)} (custom endpoint)` : providerName(state.active);
+  const providerLabel = state.active === CUSTOM ? `${endpointLabel(c.baseUrl)} (custom endpoint)` : state.active === LOCAL ? 'this browser' : providerName(state.active);
   return { provider: state.active, model: c.model, key: c.key, baseUrl: c.baseUrl, label, providerLabel };
 }

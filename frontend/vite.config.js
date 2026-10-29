@@ -24,7 +24,8 @@ function serviceWorker() {
     // their own code; listing one of those would make the whole precache (and so the
     // service worker) fail to install.
     generateBundle: { order: 'post', handler(_options, bundle) {
-      const files = Object.keys(bundle).filter((f) => !f.endsWith('.map') && f !== 'sw.js');
+      // The WebLLM chunk is only wanted by people who choose an in-browser model.
+      const files = Object.keys(bundle).filter((f) => !f.endsWith('.map') && f !== 'sw.js' && !/webllm/u.test(f));
       const urls = [base, ...files.map((f) => `${base}${f}`), `${base}logo.png`, `${base}manifest.webmanifest`];
       const version = Date.now().toString(36);
       this.emitFile({
@@ -105,6 +106,12 @@ export default defineConfig({
         ['index.html', 'privacy/index.html', 'grammar-checker/index.html', 'paraphrasing-tool/index.html', 'passive-voice-checker/index.html']
           .map((p) => [p.replace(/\/?index\.html$/u, '') || 'main', fileURLToPath(new URL(p, import.meta.url))]),
       ),
+      output: {
+        manualChunks(id) {
+          if (id.includes('@mlc-ai/web-llm')) return 'webllm';
+          return undefined;
+        },
+      },
     },
   },
 });

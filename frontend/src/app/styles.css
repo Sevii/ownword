@@ -529,6 +529,8 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
 .conn__error { flex-basis: 100%; margin: .1rem 0 0; color: var(--error-fg); font-size: .85rem; }
 .conn__remember { flex-basis: 100%; display: flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--muted-text); }
 .conn__endpoint { margin: .3rem 0 0; font-size: .85rem; overflow-wrap: anywhere; }
+.conn__progress { display: flex; align-items: center; gap: .5rem; margin: .4rem 0; font-size: .85rem; }
+.conn__progress progress { flex: 1; accent-color: var(--accent); }
 .pill--muted { background: var(--paper-2); color: var(--muted-text); }
 .conn__trial { margin: .55rem 0 0; padding: .5rem .65rem; border-radius: var(--r-sm); background: var(--paper-2); font-size: .88rem; }
 .conn__trial--failed { background: var(--error-bg); color: var(--error-fg); }

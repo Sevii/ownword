@@ -27,11 +27,21 @@ export function parseModelJson(text) {
   let t = text.trim();
   const fence = t.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/u);
   if (fence) t = fence[1];
+  const asObject = (v) => (v && typeof v === 'object' && !Array.isArray(v) ? v : null);
   try {
-    const v = JSON.parse(t);
-    return v && typeof v === 'object' && !Array.isArray(v) ? v : null;
+    return asObject(JSON.parse(t));
   } catch {
-    return null;
+    // Small local models often add a sentence around the object or leave a
+    // trailing comma. Repair those two things only; anything else fails.
+    const start = t.indexOf('{');
+    const end = t.lastIndexOf('}');
+    if (start < 0 || end <= start) return null;
+    const inner = t.slice(start, end + 1).replace(/,\s*([}\]])/gu, '$1');
+    try {
+      return asObject(JSON.parse(inner));
+    } catch {
+      return null;
+    }
   }
 }
 

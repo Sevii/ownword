@@ -388,3 +388,23 @@ test('connecting a local OpenAI-compatible endpoint with no key, session only', 
   await expect(page.locator('.statusbar__ai')).toHaveText('AI: not connected');
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });
+
+test('the in-browser model row explains WebGPU support and never downloads on its own', async ({ page }) => {
+  const errors = watchErrors(page);
+  const downloads = [];
+  await page.route(/huggingface|mlc\.ai|jsdelivr|githubusercontent/u, (route) => { downloads.push(route.request().url()); route.abort(); });
+  await page.goto('/');
+  await page.locator('.statusbar__ai').click();
+  const row = page.locator('.conn', { hasText: 'In this browser' });
+  const supported = await page.evaluate(() => 'gpu' in navigator);
+  if (supported) {
+    await expect(row.getByRole('button', { name: 'Download and load' })).toBeVisible();
+    await expect(row).toContainText('downloaded once');
+  } else {
+    await expect(row.getByText('Needs WebGPU')).toBeVisible();
+    await expect(row).toContainText('does not offer WebGPU');
+  }
+  await page.getByRole('button', { name: 'Done' }).click();
+  expect(downloads).toEqual([]);
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});
