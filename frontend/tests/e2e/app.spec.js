@@ -640,11 +640,15 @@ test('a share link opens as a new document and the fragment is cleared', async (
   await page.reload();
   await expect(page.locator('.doclist__item')).toHaveCount(1);
   // The export menu offers a link; the text goes to the clipboard, never to the server.
-  await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
+  // Only Chromium can grant clipboard permissions, so capture the write in the page instead.
+  await page.evaluate(() => {
+    window.__copied = '';
+    navigator.clipboard.writeText = async (text) => { window.__copied = text; };
+  });
   await page.locator('summary[aria-label="Export"]').click();
   await page.getByRole('button', { name: 'Copy share link' }).click();
   await expect(page.locator('[role="status"][aria-live="polite"]')).toContainText('Link copied');
-  const link = await page.evaluate(() => navigator.clipboard.readText());
+  const link = await page.evaluate(() => window.__copied);
   expect(link).toMatch(/#share=[A-Za-z0-9_-]+$/u);
   expect(link).not.toContain('Shared');
   expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
