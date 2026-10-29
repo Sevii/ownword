@@ -348,3 +348,43 @@ test('reporting a wrong suggestion removes it', async ({ page }) => {
   await card.getByRole('button', { name: 'Mark as incorrect' }).click();
   await expect(cards(page).filter({ hasText: 'recieved' })).toHaveCount(0);
 });
+
+test('connecting a local OpenAI-compatible endpoint with no key, session only', async ({ page }) => {
+  const errors = watchErrors(page);
+  // Stand in for Ollama on this machine.
+  await page.route('http://localhost:11434/v1/models', async (route) => {
+    await route.fulfill({ json: { object: 'list', data: [{ id: 'llama3.2:3b', object: 'model' }, { id: 'qwen2.5:7b', object: 'model' }] } });
+  });
+  let tried;
+  await page.route('http://localhost:11434/v1/chat/completions', async (route) => {
+    tried = { body: route.request().postDataJSON(), auth: route.request().headers().authorization };
+    await route.fulfill(sse([{ choices: [{ delta: { content: 'Fix “their” and the doubled “the”.' }, finish_reason: 'stop' }] }]));
+  });
+
+  await page.goto('/');
+  await page.locator('.statusbar__ai').click();
+  const row = page.locator('.conn', { hasText: 'Custom endpoint' });
+  await row.getByLabel('Custom endpoint URL').fill('http://example.com/v1');
+  await row.getByRole('button', { name: 'Connect', exact: true }).click();
+  await expect(row.getByRole('alert')).toContainText('https');
+
+  await row.getByLabel('Custom endpoint URL').fill('http://localhost:11434/v1/');
+  await row.getByLabel('Don’t remember this key on this device').check();
+  await row.getByRole('button', { name: 'Connect', exact: true }).click();
+  await expect(row.getByText('In use')).toBeVisible();
+  await expect(row.getByText('Session only')).toBeVisible();
+  await expect(row.getByText('Endpoint: localhost:11434')).toBeVisible();
+  await expect(row.getByLabel('Model')).toHaveValue('llama3.2:3b');
+  await row.getByRole('button', { name: 'Try it' }).click();
+  await expect(row.locator('.conn__trial')).toContainText('doubled');
+  expect(tried.auth).toBeUndefined();
+  expect(tried.body).toMatchObject({ model: 'llama3.2:3b' });
+
+  await page.getByRole('button', { name: 'Done' }).click();
+  await expect(page.locator('.statusbar__ai')).toHaveText('AI: llama3.2:3b');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  // Session only: a reload forgets it.
+  await page.reload();
+  await expect(page.locator('.statusbar__ai')).toHaveText('AI: not connected');
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
+});

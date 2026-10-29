@@ -516,6 +516,7 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
 .conn__name { font-weight: 600; }
 .conn__product { font-size: .8rem; }
 .conn__head .pill { margin-left: auto; }
+.conn__head .pill + .pill { margin-left: .3rem; }
 .conn__model { margin: .55rem 0 .4rem; }
 .conn__actions { display: flex; flex-wrap: wrap; gap: .4rem; }
 .conn__add { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: .5rem; }
@@ -526,6 +527,9 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
 .conn__add input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .conn__get { font-size: .85rem; color: var(--accent-dark); }
 .conn__error { flex-basis: 100%; margin: .1rem 0 0; color: var(--error-fg); font-size: .85rem; }
+.conn__remember { flex-basis: 100%; display: flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--muted-text); }
+.conn__endpoint { margin: .3rem 0 0; font-size: .85rem; overflow-wrap: anywhere; }
+.pill--muted { background: var(--paper-2); color: var(--muted-text); }
 .conn__trial { margin: .55rem 0 0; padding: .5rem .65rem; border-radius: var(--r-sm); background: var(--paper-2); font-size: .88rem; }
 .conn__trial--failed { background: var(--error-bg); color: var(--error-fg); }
 .statusbar__ai { max-width: 16rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

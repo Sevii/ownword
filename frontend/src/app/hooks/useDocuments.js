@@ -152,7 +152,7 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
 
   function changeAi(next) {
     setAi(next);
-    db.setPref('aiConnections', next).catch(() => announce('Could not save the AI connection in this browser.'));
+    db.setPref('aiConnections', connections.forStorage(next)).catch(() => announce('Could not save the AI connection in this browser.'));
   }
 
   async function importDocx(file) {

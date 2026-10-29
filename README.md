@@ -56,12 +56,13 @@ See [GitHub's custom-workflow instructions](https://docs.github.com/en/pages/get
 - AI proofreading, tone/audience review, rewriting, and explanations.
 - Review diffs and meaning changes before applying; undo an accepted rewrite.
 - OpenAI Responses, Anthropic Messages, Gemini, and OpenRouter streaming directly from the browser.
+- Any OpenAI-compatible endpoint as a custom connection: Ollama or LM Studio on your own machine with no key, or vLLM, Groq, Together, and proxies over HTTPS.
 
 Model lists come from the provider. Model availability, permissions, browser access, and billing depend on your account; a listed model may still reject a generation request. There is no proxy fallback. An interrupted, truncated, or malformed response cannot be applied as a completed rewrite.
 
 ## Data and credentials
 
-Keys are saved unencrypted in browser IndexedDB, separately from documents, and sent in authentication headers only to fixed provider origins. They are not embedded in builds or exports. Use personal keys, remove them on shared devices, and set provider spending limits. Anyone with access to this browser profile can access its stored keys and drafts. Clearing site data removes local drafts and keys; export important writing.
+Keys are saved unencrypted in browser IndexedDB, separately from documents, and sent in authentication headers only to fixed provider origins, or to the one custom endpoint you typed. Tick “Don’t remember this key on this device” when connecting to keep a key in memory only until the tab closes. They are not embedded in builds or exports. Use personal keys, remove them on shared devices, and set provider spending limits. Anyone with access to this browser profile can access its stored keys and drafts. Clearing site data removes local drafts and keys; export important writing.
 
 Only explicit AI actions transmit the selected scope and supporting context to your provider. Provider retention policies still apply. OpenAI requests set `store: false`; that is not a promise of zero provider retention. Cancellation aborts the browser request; it cannot undo processing or charges already incurred.
 

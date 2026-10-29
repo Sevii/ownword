@@ -24,6 +24,20 @@ describe('direct provider streaming', () => {
   expect(result.terminal).toMatchObject({ type: 'completed', text: 'Café' });
   expect(seen.filter(e => ['completed','failed','cancelled'].includes(e.type))).toHaveLength(1);
  });
+ it('streams from a custom local endpoint with no key and no authorization header', async () => {
+  const result = await runAiRequest({ ...body, provider: 'custom', model: 'llama3.2:3b' }, { key: '', baseUrl: 'http://localhost:11434/v1', fetchImpl: async (actual, init) => {
+   expect(actual).toBe('http://localhost:11434/v1/chat/completions');
+   expect(init.headers.authorization).toBeUndefined();
+   expect(JSON.parse(init.body)).toMatchObject({ model: 'llama3.2:3b', stream: true });
+   return stream([{ choices: [{ delta: { content: 'Café' }, finish_reason: 'stop' }] }], 3);
+  } });
+  expect(result.terminal).toMatchObject({ type: 'completed', text: 'Café' });
+ });
+ it('refuses a custom endpoint that is not HTTPS or loopback before any request', async () => {
+  let called = false;
+  const r = await runAiRequest({ ...body, provider: 'custom' }, { key: 'k', baseUrl: 'http://example.com/v1', fetchImpl: async () => { called = true; return stream([]); } });
+  expect(called).toBe(false); expect(r.terminal.type).toBe('failed');
+ });
  it('does not apply a truncated stream', async () => {
   const r=await runAiRequest(body,{key:'k',fetchImpl:async()=>stream([{type:'response.output_text.delta',delta:'partial'}])});
   expect(r.preview).toBe('partial'); expect(r.terminal.type).toBe('failed');

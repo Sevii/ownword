@@ -9,7 +9,7 @@
   "properties": {
     "contractVersion": { "const": 1 },
     "clientRequestId": { "type": "string", "minLength": 1, "maxLength": 64 },
-    "provider": { "enum": ["openai", "anthropic", "gemini", "openrouter", "fixture"] },
+    "provider": { "enum": ["openai", "anthropic", "gemini", "openrouter", "custom", "fixture"] },
     "model": { "type": "string", "minLength": 1, "maxLength": 200 },
     "action": { "enum": ["improve", "instruct", "tone-audience", "explain", "proofread"] },
     "sourceRevision": { "type": "integer", "minimum": 0 },

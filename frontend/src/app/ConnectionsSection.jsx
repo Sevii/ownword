@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { PROVIDERS, checkKey, connect, remove, setActive, setModel } from '../ai/connections.js';
+import { PROVIDERS, checkKey, connect, remove, setActive, setModel, endpointLabel } from '../ai/connections.js';
+import { CUSTOM, validateBaseUrl } from '../ai/providers.js';
 import { runAiRequest } from '../ai/client.js';
 
 const TRY_TEXT = 'Their going to review the the report tomorow.';
@@ -17,7 +18,8 @@ export function ConnectionsSection({ value, onChange, onConnected, disabledProvi
       <h3 id="connections-title">AI connections</h3>
       <p className="muted">
         Use your own API key for AI writing help. Your key is saved on this device and sent directly to the provider.
-        API usage is billed by your provider. Remove the key here when using a shared device.
+        API usage is billed by your provider. On a shared device, tick “Don’t remember this key” or remove the key here.
+        A custom endpoint runs models on your own machine or server, such as Ollama or LM Studio.
       </p>
       <ul className="connections__list">
         {PROVIDERS.map((p) => (
@@ -31,23 +33,38 @@ export function ConnectionsSection({ value, onChange, onConnected, disabledProvi
 function ConnectionRow({ provider, value, onChange, onConnected, off }) {
   const conn = value.connections[provider.id];
   const active = value.active === provider.id;
+  const custom = provider.id === CUSTOM;
   const [key, setKey] = useState('');
+  const [url, setUrl] = useState('');
+  const [remember, setRemember] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [trial, setTrial] = useState(/** @type {{ state: 'running'|'done'|'failed', text: string } | null} */ (null));
 
+  const canAdd = custom ? Boolean(url.trim()) : Boolean(key.trim());
+
   async function add() {
-    if (!key.trim() || busy) return;
-    setBusy(true);
+    if (!canAdd || busy) return;
     setError('');
-    const result = await checkKey(provider.id, key);
+    let baseUrl;
+    if (custom) {
+      try {
+        baseUrl = validateBaseUrl(url);
+      } catch (err) {
+        setError(err.message);
+        return;
+      }
+    }
+    setBusy(true);
+    const result = await checkKey(provider.id, key, { baseUrl });
     setBusy(false);
     if (!result.ok) {
       setError(result.message);
       return;
     }
-    onChange(connect(value, provider.id, key, result));
+    onChange(connect(value, provider.id, key, result, Date.now(), { baseUrl, remember }));
     setKey('');
+    setUrl('');
     onConnected();
   }
 
@@ -65,7 +82,7 @@ function ConnectionRow({ provider, value, onChange, onConnected, off }) {
         editableBlockIds: ['try'],
         instruction: 'In one short sentence, what needs fixing?',
       },
-      { key: conn.key, onEvent: (_e, p) => setTrial({ state: 'running', text: p }) },
+      { key: conn.key, baseUrl: conn.baseUrl, onEvent: (_e, p) => setTrial({ state: 'running', text: p }) },
     );
     setTrial(
       terminal.type === 'completed'
@@ -83,9 +100,15 @@ function ConnectionRow({ provider, value, onChange, onConnected, off }) {
         {off ? (
           <span className="pill pill--error">Turned off for now</span>
         ) : (
-          conn && <span className={`pill ${active ? 'pill--ok' : ''}`}>{active ? 'In use' : 'Connected'}</span>
+          conn && (
+            <>
+              {conn.remember === false && <span className="pill pill--muted" title="This key is kept only until the tab closes">Session only</span>}
+              <span className={`pill ${active ? 'pill--ok' : ''}`}>{active ? 'In use' : 'Connected'}</span>
+            </>
+          )
         )}
       </div>
+      {conn && custom && <p className="muted conn__endpoint">Endpoint: {endpointLabel(conn.baseUrl)}</p>}
       {off && <p className="panel-note">This provider is temporarily unavailable here. Your key is kept; try another provider meanwhile.</p>}
       {conn ? (
         <>
@@ -116,6 +139,26 @@ function ConnectionRow({ provider, value, onChange, onConnected, off }) {
         </>
       ) : (
         <div className="conn__add">
+          {custom && (
+            <>
+              <label className="visually-hidden" htmlFor={`${inputId}-url`}>Custom endpoint URL</label>
+              <input
+                id={`${inputId}-url`}
+                type="url"
+                autoComplete="off"
+                spellCheck={false}
+                placeholder={provider.urlHint}
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    add();
+                  }
+                }}
+              />
+            </>
+          )}
           <label className="visually-hidden" htmlFor={inputId}>{provider.name} API key</label>
           <input
             id={inputId}
@@ -134,10 +177,14 @@ function ConnectionRow({ provider, value, onChange, onConnected, off }) {
             }}
             onKeyPress={(e) => e.key === 'Enter' && e.preventDefault()}
           />
-          <button type="button" className="btn btn--sm" disabled={!key.trim() || busy} onClick={add}>
+          <button type="button" className="btn btn--sm" disabled={!canAdd || busy} onClick={add}>
             {busy ? 'Checking…' : 'Connect'}
           </button>
-          <a className="conn__get" href={provider.keysUrl} target="_blank" rel="noopener noreferrer">Get a key</a>
+          {provider.keysUrl && <a className="conn__get" href={provider.keysUrl} target="_blank" rel="noopener noreferrer">Get a key</a>}
+          <label className="conn__remember">
+            <input type="checkbox" checked={!remember} onChange={(e) => setRemember(!e.target.checked)} />
+            Don’t remember this key on this device
+          </label>
           {error && <p className="conn__error" role="alert">{error}</p>}
         </div>
       )}

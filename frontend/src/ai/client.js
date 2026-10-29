@@ -16,7 +16,7 @@ export async function runAiRequest(body, opts = {}) {
   let reader;
   try {
     if (abort.signal.aborted) throw new DOMException('Aborted', 'AbortError');
-    const req = generationRequest(body, buildPrompt(body), opts.key);
+    const req = generationRequest(body, buildPrompt(body), opts.key, opts.baseUrl);
     const res = await (opts.fetchImpl ?? fetch)(req.url, { ...req.init, signal: abort.signal });
     if (!res.ok) {
       finish({ type: 'failed', error: statusError(res.status), message: statusMessage(res.status) });

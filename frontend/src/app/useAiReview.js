@@ -24,7 +24,7 @@ export const OUTPUT_KIND = {
 /**
  * @param {{ editorRef: { current: any }, currentRequest: () => any, revisionRef: { current: number },
  *   settingsRevRef: { current: number }, docRef: { current: any },
- *   connection: null | { provider: string, model: string, key: string, label: string, providerLabel: string },
+ *   connection: null | { provider: string, model: string, key: string, baseUrl?: string, label: string, providerLabel: string },
  *   onFindings: (issues: any[], action: Action) => void, onApplied?: () => void, announce: (msg: string) => void }} deps
  */
 export function useAiReview(deps) {
@@ -100,6 +100,7 @@ export function useAiReview(deps) {
 
     const { terminal } = await runAiRequest(body, {
       key: conn.key,
+        baseUrl: conn.baseUrl,
       signal: abort.signal,
       onEvent: (e) => {
         if (e.type === 'started') {
@@ -220,6 +221,7 @@ export function useAiReview(deps) {
       },
       {
         key: conn.key,
+        baseUrl: conn.baseUrl,
         signal: abort.signal,
         onEvent: (e, preview) => !abort.signal.aborted && e.type === 'delta' && setExplainer({ status: 'running', text: preview }),
       },
