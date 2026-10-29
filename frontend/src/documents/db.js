@@ -4,7 +4,7 @@
 const DB_NAME = 'open-writer';
 // 2: documents gained optional pinned, tags, and preview fields (no schema change).
 const DB_VERSION = 2;
-const RECOVERY_KEEP = 10;
+const RECOVERY_KEEP = 30;
 
 /** @type {Promise<IDBDatabase> | null} */
 let opening = null;

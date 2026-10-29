@@ -269,13 +269,26 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
     if (id === docRef.current?.id) await openDocument(list[0].id);
   }
 
+  /** Keep a copy of the current text as a version. */
+  async function saveVersion() {
+    const editor = editorRef.current;
+    const d = docRef.current;
+    if (!editor || !d || d.id === 'unsaved') return;
+    await db.addRecovery(d.id, d.title, editor.getJSON());
+    setRecovery(await db.listRecovery(d.id));
+  }
+
+  /** Put an earlier version back, after keeping the current text as a version. */
   async function restore(key) {
     const r = recovery.find((x) => x.key === key);
     const editor = editorRef.current;
     if (!r || !editor) return;
+    await saveVersion();
     editor.commands.setContent(sanitizeDocJson(r.content));
     count('document.recovered');
   }
+
+  const currentContent = () => editorRef.current?.getJSON() ?? null;
 
   async function resolveConflict(keepMine) {
     if (keepMine) await save(true);
@@ -301,6 +314,6 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
   return {
     docs, doc, docRef, prefs, prefsRef, prefsLoaded, dismissals, dismissalsRef, recovery, persisted, storageError, loadKey, ai,
     saveStatus, save, scheduleSave, refreshDocs, openDocument, updateDoc, setDocMeta, savePrefs, addDismissal, changeAi,
-    importFile, importText, exportLibrary, importLibrary, flushSave, newDocument, removeDocument, restore, resolveConflict, resolveDeleted,
+    importFile, importText, exportLibrary, importLibrary, flushSave, newDocument, removeDocument, restore, saveVersion, currentContent, resolveConflict, resolveDeleted,
   };
 }

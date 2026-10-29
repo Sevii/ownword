@@ -529,6 +529,18 @@ a { color: var(--accent-dark); text-underline-offset: 2px; }
 .dialog__body h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin: 1.4rem 0 .5rem; }
 .dialog__actions { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
 .dialog__actions--split { justify-content: space-between; gap: .5rem; }
+.dialog--wide { width: min(52rem, 96vw); }
+.history { display: grid; grid-template-columns: minmax(11rem, 14rem) 1fr; gap: 1rem; min-height: 14rem; }
+.history__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; align-content: start; max-height: 50dvh; overflow-y: auto; }
+.history__item {
+  display: flex; flex-direction: column; width: 100%; text-align: left; font: inherit; font-size: .85rem;
+  padding: .4rem .55rem; border: 1px solid transparent; border-radius: var(--r-sm); background: none; color: var(--fg); cursor: pointer;
+}
+.history__item:hover { background: var(--paper-2); }
+.history__item--on { background: var(--accent-tint); border-color: var(--accent-tint-2); color: var(--accent-dark); }
+.history__diff { min-width: 0; max-height: 50dvh; overflow-y: auto; padding-right: .25rem; }
+.history__summary { margin: 0 0 .6rem; font-size: .88rem; color: var(--muted-text); }
+@media (max-width: 700px) { .history { grid-template-columns: 1fr; } .history__list { max-height: 10rem; } }
 .field { display: grid; gap: .35rem; margin: .8rem 0; font-size: .9rem; }
 .field > span:first-child { font-weight: 600; font-size: .85rem; }
 .field input, .field select {

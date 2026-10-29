@@ -520,6 +520,8 @@ test('pin, search, and tag documents in the sidebar', async ({ page }) => {
   await expect(page.locator('.status__check')).toHaveText('Checked');
   // A second document, so the list has something to sort and search.
   await page.getByRole('button', { name: 'New' }).click();
+  await expect(page.locator('.doclist__item')).toHaveCount(2);
+  await expect(page.getByLabel('Document title')).toHaveValue('Untitled');
   await page.getByLabel('Document title').fill('Lisbon trip');
   await page.locator('.prose').click();
   await page.keyboard.type('Pack sandals and a hat.');
@@ -565,4 +567,28 @@ test('printing shows the document alone', async ({ page }) => {
   await expect(page.locator('.prose')).toBeVisible();
   await page.emulateMedia({ media: 'screen' });
   await expect(page.locator('.topbar')).toBeVisible();
+});
+
+test('history: save a version, see the diff, and restore it', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  await expect(page.locator('.status__check')).toHaveText('Checked');
+  await page.getByRole('button', { name: 'History' }).click();
+  await page.getByRole('button', { name: 'Save a version now' }).click();
+  await expect(page.locator('.history__item')).toHaveCount(1);
+  await expect(page.locator('.history__summary')).toHaveText('Same text as now.');
+  await page.getByRole('button', { name: 'Close' }).click();
+
+  await page.locator('.prose h1').first().click();
+  await page.keyboard.press('End');
+  await page.keyboard.type(' aboard');
+  await expect(page.locator('.status__save')).toHaveText('Saved on this device');
+  await page.getByRole('button', { name: 'History (1)' }).click();
+  await expect(page.locator('.history__summary')).toContainText('1 changed');
+  await expect(page.locator('.history__diff ins')).toContainText('aboard');
+  await page.getByRole('button', { name: 'Restore this version' }).click();
+  await expect(page.locator('.prose h1').first()).toHaveText('Welcome');
+  // Restoring kept the text from before as a version.
+  await expect(page.getByRole('button', { name: 'History (2)' })).toBeVisible();
+  expect(errors.filter((e) => !/favicon/u.test(e))).toEqual([]);
 });

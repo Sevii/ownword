@@ -33,9 +33,9 @@ export function normalizeTag(raw) {
  *   onOpen: (id: string) => void, onNew: () => void, onDelete: (id: string) => void,
  *   onPin: (id: string, pinned: boolean) => void, onTags: (id: string, tags: string[]) => void,
  *   onImport: (file: File) => void, recovery: { key: number, savedAt: number }[],
- *   onRestore: (key: number) => void }} props
+ *   onHistory: () => void }} props
  */
-export function Sidebar({ open, docs, currentId, onOpen, onNew, onDelete, onPin, onTags, onImport, recovery, onRestore }) {
+export function Sidebar({ open, docs, currentId, onOpen, onNew, onDelete, onPin, onTags, onImport, recovery, onHistory }) {
   const [confirming, setConfirming] = useState(/** @type {string | null} */ (null));
   const [query, setQuery] = useState('');
   const [tag, setTag] = useState('');
@@ -142,20 +142,9 @@ export function Sidebar({ open, docs, currentId, onOpen, onNew, onDelete, onPin,
             }}
           />
         </label>
-        {recovery.length > 0 && (
-          <details className="recovery">
-            <summary>Earlier versions of this document</summary>
-            <ul>
-              {recovery.map((r) => (
-                <li key={r.key}>
-                  <button type="button" className="btn btn--sm btn--ghost" onClick={() => onRestore(r.key)}>
-                    Restore {new Date(r.savedAt).toLocaleString()}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </details>
-        )}
+        <button type="button" className="btn btn--secondary btn--sm" onClick={onHistory}>
+          History{recovery.length ? ` (${recovery.length})` : ''}
+        </button>
       </div>
     </nav>
   );

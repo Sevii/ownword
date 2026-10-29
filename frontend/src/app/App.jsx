@@ -4,6 +4,7 @@ import * as connections from '../ai/connections.js';
 import { AssistPanel } from './AssistPanel.jsx';
 import { IssuePopover } from './IssuePopover.jsx';
 import { SettingsDialog } from './SettingsDialog.jsx';
+import { HistoryDialog } from './HistoryDialog.jsx';
 import { Sidebar } from './Sidebar.jsx';
 import { Topbar } from './Topbar.jsx';
 import { FormatBar } from './FormatBar.jsx';
@@ -35,6 +36,7 @@ export function App() {
   const [storageNoticeHidden, setStorageNoticeHidden] = useState(false);
   const [assistTab, setAssistTab] = useState('suggestions');
   const [findOpen, setFindOpen] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   const editorRef = useRef(/** @type {import('@tiptap/core').Editor | null} */ (null));
   const pendingImport = useRef(/** @type {{ html: string, parseOptions?: object } | null} */ (null));
@@ -186,7 +188,7 @@ export function App() {
         onTags={(id, tags) => documents.setDocMeta(id, { tags })}
         onImport={documents.importFile}
         recovery={documents.recovery}
-        onRestore={documents.restore}
+        onHistory={() => setHistoryOpen(true)}
       />
       <main className="desk" id="editor">
         {documents.storageError && <p className="banner banner--error" role="alert">{documents.storageError}</p>}
@@ -289,6 +291,15 @@ export function App() {
         <IssuePopover issue={popoverIssue} anchorEl={popover.el} onClose={() => setPopover(null)} {...issueHandlers} />
       )}
       <div className="visually-hidden" role="status" aria-live="polite">{announcement}</div>
+      <HistoryDialog
+        open={historyOpen}
+        onClose={() => setHistoryOpen(false)}
+        title={doc?.title ?? ''}
+        versions={documents.recovery}
+        currentContent={documents.currentContent}
+        onRestore={documents.restore}
+        onSaveNow={documents.saveVersion}
+      />
       <SettingsDialog
         open={settingsOpen}
         onClose={() => setSettingsOpen(false)}
