@@ -2,7 +2,8 @@
 // stays on this device (plan §6.7).
 
 const DB_NAME = 'open-writer';
-const DB_VERSION = 1;
+// 2: documents gained optional pinned, tags, and preview fields (no schema change).
+const DB_VERSION = 2;
 const RECOVERY_KEEP = 10;
 
 /** @type {Promise<IDBDatabase> | null} */
@@ -13,10 +14,12 @@ export function openDb() {
     const req = indexedDB.open(DB_NAME, DB_VERSION);
     req.onupgradeneeded = () => {
       const db = req.result;
-      db.createObjectStore('documents', { keyPath: 'id' });
-      const recovery = db.createObjectStore('recovery', { keyPath: 'key', autoIncrement: true });
-      recovery.createIndex('documentId', 'documentId');
-      db.createObjectStore('prefs', { keyPath: 'key' });
+      if (!db.objectStoreNames.contains('documents')) db.createObjectStore('documents', { keyPath: 'id' });
+      if (!db.objectStoreNames.contains('recovery')) {
+        const recovery = db.createObjectStore('recovery', { keyPath: 'key', autoIncrement: true });
+        recovery.createIndex('documentId', 'documentId');
+      }
+      if (!db.objectStoreNames.contains('prefs')) db.createObjectStore('prefs', { keyPath: 'key' });
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => {
@@ -64,7 +67,8 @@ const done = (req) => new Promise((res, rej) => {
 
 /**
  * @typedef {{ id: string, title: string, content: object, saveId: string, createdAt: number,
- *   updatedAt: number, goals?: { audience?: string, formality?: string, intent?: string } }} StoredDocument
+ *   updatedAt: number, goals?: { audience?: string, formality?: string, intent?: string },
+ *   pinned?: boolean, tags?: string[], preview?: string }} StoredDocument
  */
 
 export class SaveConflictError extends Error {
@@ -105,9 +109,26 @@ export async function createDocument(init = {}) {
     createdAt: now,
     updatedAt: now,
     goals: init.goals ?? {},
+    ...(init.pinned ? { pinned: true } : {}),
+    ...(init.tags?.length ? { tags: init.tags } : {}),
+    ...(init.preview ? { preview: init.preview } : {}),
   };
   await run(['documents'], 'readwrite', (tx) => done(tx.objectStore('documents').put(doc)));
   return doc;
+}
+
+/**
+ * Change list fields (pinned, tags, title) of a document that is not open
+ * here without touching its content or saveId, so no tab sees a conflict.
+ * @param {string} id @param {Partial<Pick<StoredDocument, 'pinned'|'tags'|'title'>>} patch
+ */
+export function patchDocument(id, patch) {
+  return run(['documents'], 'readwrite', async (tx) => {
+    const store = tx.objectStore('documents');
+    const existing = await done(store.get(id));
+    if (!existing) throw new DocumentMissingError();
+    await done(store.put({ ...existing, ...patch }));
+  });
 }
 
 /**

@@ -8,7 +8,7 @@ import { Node } from '@tiptap/pm/model';
 import { editorExtensions } from '../editor/extensions.js';
 import { snapshotFromDoc } from '../editor/snapshot-from-editor.js';
 import { snapshotFromMarkdown } from '../analysis/snapshot/from-markdown.js';
-import { toMarkdown } from './export.js';
+import { toMarkdown, toPlainText } from './export.js';
 
 let schema = null;
 function editorSchema() {
@@ -77,6 +77,17 @@ export function contentFromSnapshot(snapshot) {
 /** @param {string} markdown */
 export function contentFromMarkdown(markdown) {
   return contentFromSnapshot(snapshotFromMarkdown(markdown));
+}
+
+export const PREVIEW_CHARS = 200;
+
+/** The first words of a document, for search and the list. @param {object} content */
+export function previewOf(content) {
+  try {
+    return toPlainText(snapshotFromContent(content)).replace(/\s+/gu, ' ').trim().slice(0, PREVIEW_CHARS);
+  } catch {
+    return '';
+  }
 }
 
 /** @param {object} content */

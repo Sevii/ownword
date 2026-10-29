@@ -5,7 +5,7 @@
 import { useEffect, useRef, useState } from 'react';
 import * as db from '../../documents/db.js';
 import { isFolderSyncSupported, pickFolder, permissionState, requestPermission, reconcile, writeDocument } from '../../documents/folder-sync.js';
-import { contentFromMarkdown, parseFrontMatter } from '../../documents/content.js';
+import { contentFromMarkdown, parseFrontMatter, previewOf } from '../../documents/content.js';
 import { sanitizeDocJson } from '../../editor/sanitize.js';
 import { count } from '../telemetry.js';
 
@@ -42,8 +42,8 @@ export function useFolderSync({ prefsLoaded, docRef, editorRef, refreshDocs, ope
   const store = {
     list: db.listDocuments,
     get: db.getDocument,
-    put: (doc) => db.putDocument({ ...doc, content: sanitizeDocJson(doc.content) }),
-    create: (init) => db.createDocument({ ...init, content: sanitizeDocJson(init.content) }),
+    put: (doc) => db.putDocument({ ...doc, content: sanitizeDocJson(doc.content), preview: previewOf(doc.content) }),
+    create: (init) => db.createDocument({ ...init, content: sanitizeDocJson(init.content), preview: previewOf(init.content) }),
   };
 
   async function sync(label) {
@@ -141,7 +141,7 @@ export function useFolderSync({ prefsLoaded, docRef, editorRef, refreshDocs, ope
       const { meta, body } = parseFrontMatter(c.text);
       const content = sanitizeDocJson(contentFromMarkdown(body));
       if (docRef.current?.id === id && editorRef.current) editorRef.current.commands.setContent(content);
-      else await db.putDocument({ ...doc, title: meta.title ?? doc.title, content, updatedAt: Date.now() });
+      else await db.putDocument({ ...doc, title: meta.title ?? doc.title, content, preview: previewOf(content), updatedAt: Date.now() });
       const fh = await handle.getFileHandle(c.fileName);
       const file = await fh.getFile();
       indexRef.current = { ...indexRef.current, [id]: { fileName: c.fileName, lastModified: file.lastModified, updatedAt: Date.now() } };

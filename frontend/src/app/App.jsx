@@ -182,6 +182,8 @@ export function App() {
         }}
         onNew={documents.newDocument}
         onDelete={documents.removeDocument}
+        onPin={(id, pinned) => documents.setDocMeta(id, { pinned })}
+        onTags={(id, tags) => documents.setDocMeta(id, { tags })}
         onImport={documents.importFile}
         recovery={documents.recovery}
         onRestore={documents.restore}

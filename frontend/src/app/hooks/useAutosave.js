@@ -47,7 +47,8 @@ export function useAutosave({ editorRef, docRef, setDoc, refreshDocs, channelRef
     setSaveStatus('saving');
     try {
       const content = ed.getJSON();
-      const saved = await db.saveDocument({ ...d, content }, saveIdRef.current, { force });
+      const preview = ed.getText({ blockSeparator: ' ' }).replace(/\s+/gu, ' ').trim().slice(0, 200);
+      const saved = await db.saveDocument({ ...d, content, preview }, saveIdRef.current, { force });
       // Keep edits made while the write ran (a title keystroke, say); only take the new saveId.
       if (docRef.current?.id === saved.id) {
         saveIdRef.current = saved.saveId;

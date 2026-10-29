@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import * as db from '../../documents/db.js';
 import { docxToHtml, download } from '../../documents/export.js';
 import { buildLibrary, readLibrary, mergeDocuments, mergePrefs, libraryFilename, documentFromFile } from '../../documents/library.js';
+import { previewOf } from '../../documents/content.js';
 import { sanitizeDocJson, sanitizePastedHtml } from '../../editor/sanitize.js';
 import { takeHandoff, textToHtml, titleFrom } from '../../site/handoff.js';
 import * as connections from '../../ai/connections.js';
@@ -152,6 +153,16 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
     await db.setPref('dismissals', next).catch(() => {});
   }
 
+  /** Pin, unpin, or tag a document from the list. The open document goes through its save. */
+  async function setDocMeta(id, patch) {
+    if (id === docRef.current?.id) {
+      updateDoc(patch);
+      return;
+    }
+    await db.patchDocument(id, patch).catch(() => {});
+    await refreshDocs();
+  }
+
   function changeAi(next) {
     setAi(next);
     db.setPref('aiConnections', connections.forStorage(next)).catch(() => announce('Could not save the AI connection in this browser.'));
@@ -171,7 +182,7 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
       }
       const d = documentFromFile(file.name, await file.text());
       if (d.content) {
-        const created = await db.createDocument({ title: d.title, content: d.content, goals: d.goals });
+        const created = await db.createDocument({ title: d.title, content: d.content, goals: d.goals, preview: previewOf(d.content) });
         count('import.md');
         await refreshDocs();
         await openDocument(created.id);
@@ -202,7 +213,7 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
     const read = readLibrary(new Uint8Array(await file.arrayBuffer()), file.name);
     // Plain-text files need the editor to make content, so they open directly.
     const plain = read.documents.filter((d) => !d.content);
-    const counts = await mergeDocuments(read.documents, { list: db.listDocuments, put: db.putDocument });
+    const counts = await mergeDocuments(read.documents, { list: db.listDocuments, put: (doc) => db.putDocument({ ...doc, preview: previewOf(doc.content) }) });
     for (const d of plain) await importText(d.text ?? '', d.title, { lines: true });
     if (read.prefs) await savePrefs(mergePrefs(prefsRef.current, read.prefs));
     if (read.dismissals?.length) {
@@ -289,7 +300,7 @@ export function useDocuments({ editorRef, pendingImport, onOpen, onHandoff, anno
 
   return {
     docs, doc, docRef, prefs, prefsRef, prefsLoaded, dismissals, dismissalsRef, recovery, persisted, storageError, loadKey, ai,
-    saveStatus, save, scheduleSave, refreshDocs, openDocument, updateDoc, savePrefs, addDismissal, changeAi,
+    saveStatus, save, scheduleSave, refreshDocs, openDocument, updateDoc, setDocMeta, savePrefs, addDismissal, changeAi,
     importFile, importText, exportLibrary, importLibrary, flushSave, newDocument, removeDocument, restore, resolveConflict, resolveDeleted,
   };
 }
